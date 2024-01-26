@@ -2,7 +2,7 @@ import { toast, Bounce, ToastContainer as ToastOption } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { TToast } from './type';
 
-export default function ToastContainer() {
+const ToastContainer = () => {
     return (
         <ToastOption
             position="top-center"
@@ -18,7 +18,7 @@ export default function ToastContainer() {
             transition={Bounce}
         />
     );
-}
+};
 
 const Toast = ({ message }: { message: string }) => {
     return (
@@ -42,3 +42,5 @@ export const notify = (type: TToast, message: string) => {
         toast.warning(<Toast message={message} />);
     }
 };
+
+export default ToastContainer;
