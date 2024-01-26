@@ -8,6 +8,6 @@
     "singleAttributePerLine": true,
     "bracketSpacing": true,
     "bracketSameLine": false,
-    "arrowParens": "always"
-  }
-  
+    "arrowParens": "always",
+    "plugins": ["prettier-plugin-tailwindcss"]
+}
