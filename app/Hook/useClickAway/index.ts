@@ -11,16 +11,16 @@ const useClickAway = (callback: TCallback) => {
     }, [callback]);
 
     useEffect(() => {
-        const el = ref.current;
+        const element = ref.current as HTMLElement | null;
 
-        if (!el) {
+        if (!element) {
             return;
         }
 
         const eventHandler = (e: Event) => {
             const { target } = e;
 
-            if (target === el) {
+            if (element.contains(target as Node)) {
                 return;
             }
 
