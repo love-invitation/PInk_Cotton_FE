@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
-import AuthSession from '@/(route)/authSession';
+import AuthSession from '@/(rotues)/authSession';
 import ToastContainer from '@/components/toast';
-import '@Style/global.css';
+import '@styles/global.css';
 import MSWComponent from '@/mokes/MSWComponent';
 
 export const metadata: Metadata = {
