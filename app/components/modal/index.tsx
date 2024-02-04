@@ -1,6 +1,6 @@
 'use client';
 import { createPortal } from 'react-dom';
-import useClickAway from '@Hook/useClickAway';
+import useClickAway from '@hooks/useClickAway';
 import { IProps } from './type';
 
 const Modal = ({ children, visible, onClose, ...rest }: IProps) => {

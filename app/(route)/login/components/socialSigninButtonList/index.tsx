@@ -1,6 +1,6 @@
 'use client';
 import { IProps } from './type';
-import SocialSigninButtonItem from '../SocialSigninButtonItem';
+import SocialSigninButtonItem from '../socialSigninButtonItem';
 
 const SocialSigninButtonList = ({ providers }: IProps) => {
     const buttonText: Record<string, string> = {
