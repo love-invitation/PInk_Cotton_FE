@@ -3,6 +3,9 @@ module.exports = {
     content: ['./app/**/*.{js,ts,jsx,tsx}', './Component/**/*.{js,ts,jsx,tsx}'],
     theme: {
         extend: {
+            screens: {
+                '1rem': '10px',
+            },
             colors: {
                 'main-100': 'rgba(249, 130, 132, 1)', // 'main' 색상의 밝은 버전
                 'main-200': 'rgba(255, 178, 178, 1)', // 'main' 색상의 더 밝은 버전
