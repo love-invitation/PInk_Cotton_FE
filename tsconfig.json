@@ -19,7 +19,7 @@
         ],
         "paths": {
             "@/*": ["./app/*"],
-            "@Api/*": ["./app/Api/*"],
+            "@Api/*": ["./app/api/*"],
             "@Asset/*": ["./app/Asset/*"],
             "@Component/*": ["./app/Component/*"],
             "@Constant/*": ["./app/Constant/*"],

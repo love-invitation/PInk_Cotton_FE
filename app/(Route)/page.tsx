@@ -1,22 +1,22 @@
 'use client';
-import dynamic from 'next/dynamic';
-import { useState } from 'react';
-import Login from '@Component/Login';
+import { signOut, useSession } from 'next-auth/react';
+import Link from 'next/link';
 
-const Modal = dynamic(() => import('@Component/Common/Modal'), { ssr: false });
-
-export default function Home() {
-    const [isModal, setIsModal] = useState(true);
+const Home = () => {
+    const { data: session } = useSession();
 
     return (
         <>
-            <h1 className="bg-main-100 hover:text-main-100">hihi</h1>
-            <Modal
-                visible={isModal}
-                onClose={() => console.log('hio')}
+            <Link
+                href="/login"
+                className="bg-main-100 hover:text-main-100"
             >
-                <Login />
-            </Modal>
+                hihi
+            </Link>
+
+            <button onClick={() => signOut()}>로그아웃</button>
         </>
     );
-}
+};
+
+export default Home;
