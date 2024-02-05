@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import AuthSession from '@/(rotues)/authSession';
+import AuthSession from '@/(routes)/authSession';
 import ToastContainer from '@/components/toast';
 import '@styles/global.css';
 import MSWComponent from '@/mokes/MSWComponent';
@@ -10,6 +10,14 @@ export const metadata: Metadata = {
 };
 
 const RootLayout = ({ children }: Readonly<{ children: React.ReactNode }>) => {
+    if (typeof window === 'undefined' && process.env.NEXT_PUBLIC_API_MOCKING === 'enabled') {
+        (async () => {
+            const { initMocks } = await import('@/mokes');
+
+            initMocks();
+        })();
+    }
+
     return (
         <html lang="ko">
             <body>
