@@ -1,4 +1,3 @@
-'use client';
 import { IProps } from './type';
 import SocialSigninButtonItem from '../socialSigninButtonItem';
 

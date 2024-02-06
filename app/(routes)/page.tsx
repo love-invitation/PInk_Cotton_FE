@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 const Home = () => {
     const { data: session } = useSession();
-
+    console.log(session);
     async function foo() {
         const res = await fetch('/login');
         const data = await res.json();
@@ -21,7 +21,7 @@ const Home = () => {
                 hihi
             </Link>
 
-            <button onClick={() => foo()}>로그아웃</button>
+            <button onClick={() => signOut()}>로그아웃</button>
         </>
     );
 };
