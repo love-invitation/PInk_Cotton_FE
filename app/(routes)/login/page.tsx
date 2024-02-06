@@ -8,7 +8,7 @@ const LoginPage = async () => {
     const providers = (await getProviders()) || {};
 
     return (
-        <article className="flex h-screen  w-screen flex-col items-center justify-center gap-[2rem] rounded-[5rem] bg-white-base px-[10%] lg:px-[35%]">
+        <section className="flex h-screen  w-screen flex-col items-center justify-center gap-[2rem] rounded-[5rem] bg-white-base px-[10%] lg:px-[35%]">
             <h1 className="text-center text-[2.4rem] font-medium">{SITE_NAME} 로그인</h1>
             <p className="text-center text-[1.8rem] text-gray-base">
                 {SITE_NAME}
@@ -21,7 +21,7 @@ const LoginPage = async () => {
                 height={180}
             />
             <SocialSigninButtonList providers={providers} />
-        </article>
+        </section>
     );
 };
 
