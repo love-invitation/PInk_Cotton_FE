@@ -1,0 +1,33 @@
+{
+  "endOfLine": "auto",
+  "printWidth": 100,
+  "tabWidth": 2,
+  "semi": true,
+  "singleQuote": true,
+  "singleAttributePerLine": true,
+  "quoteProps": "as-needed",
+  "jsxSingleQuote": true,
+  "trailingComma": "all",
+  "arrowParens": "always",
+
+  "plugins": ["@trivago/prettier-plugin-sort-imports", "prettier-plugin-tailwindcss"],
+
+  "importOrder": [
+    ".css$",
+    ".styles",
+
+    "^react",
+    "next",
+
+    "^@",
+
+    "^[../]",
+    "^[./]",
+
+    "<THIRD_PARTY_MODULES>"
+  ],
+
+  "importOrderSeparation": true,
+
+  "importOrderSortSpecifiers": true
+}
