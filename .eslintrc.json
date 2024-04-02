@@ -1,13 +1,39 @@
 {
   "extends": [
     "next/core-web-vitals",
+    "airbnb",
+    "airbnb-typescript",
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
-    "plugin:vue/vue3-recommended",
     "plugin:prettier/recommended",
-    "plugin:storybook/recommended"
+    "plugin:storybook/recommended",
+    "prettier"
   ],
   "parserOptions": {
-    "parser": "@typescript-eslint/parser"
+    "project": "./tsconfig.json"
+  },
+  "rules": {
+    "new-cap": "off",
+    "react/jsx-no-useless-fragment": "off",
+    "jsx-a11y/label-has-associated-control": "off",
+    "react-refresh/only-export-components": "off",
+    "react/react-in-jsx-scope": "off",
+    "react/function-component-definition": [
+      2,
+      {
+        "namedComponents": "arrow-function"
+      }
+    ],
+    "react/jsx-props-no-spreading": "off",
+    "import/no-cycle": "off",
+    "import/prefer-default-export": "off",
+    "consistent-return": "off",
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": true
+      }
+    ],
+    "@typescript-eslint/no-unused-expressions": "off"
   }
 }
