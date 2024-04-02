@@ -1,20 +1,22 @@
-import type { Metadata } from "next";
+import './globals.css';
 
-import "./globals.css";
+import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "Pink Cotton",
-  description: "결혼식 청첩장",
+  title: 'Pink Cotton',
+  description: '결혼식 청첩장',
 };
 
-export default function RootLayout({
+const RootLayout = ({
   children,
 }: Readonly<{
   children: React.ReactNode;
-}>) {
+}>) => {
   return (
-    <html lang="ko">
+    <html lang='ko'>
       <body>{children}</body>
     </html>
   );
-}
+};
+
+export default RootLayout;

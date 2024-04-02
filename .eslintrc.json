@@ -10,8 +10,9 @@
     "prettier"
   ],
   "parserOptions": {
-    "project": "./tsconfig.json"
+    "project": ["./tsconfig.json"]
   },
+
   "rules": {
     "new-cap": "off",
     "react/jsx-no-useless-fragment": "off",
@@ -34,6 +35,9 @@
         "devDependencies": true
       }
     ],
-    "@typescript-eslint/no-unused-expressions": "off"
-  }
+    "@typescript-eslint/no-unused-expressions": "off",
+    "global-require": 0
+  },
+
+  "ignorePatterns": ["postcss.config.js"]
 }
