@@ -1,6 +1,8 @@
-import './globals.css';
+import '@/styles/globals.css';
 
 import type { Metadata } from 'next';
+
+import pretendardFont from '@/assets/font';
 
 export const metadata: Metadata = {
   title: 'Pink Cotton',
@@ -13,7 +15,10 @@ const RootLayout = ({
   children: React.ReactNode;
 }>) => {
   return (
-    <html lang='ko'>
+    <html
+      lang='ko'
+      className={pretendardFont.className}
+    >
       <body>{children}</body>
     </html>
   );
