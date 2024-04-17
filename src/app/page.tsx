@@ -1,5 +1,5 @@
 const Home = () => {
-  return <main>Pink Cotton</main>;
+  return <main className='h-full w-full'>Pink Cotton</main>;
 };
 
 export default Home;
