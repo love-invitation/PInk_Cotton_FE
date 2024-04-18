@@ -36,8 +36,10 @@
       }
     ],
     "@typescript-eslint/no-unused-expressions": "off",
-    "global-require": 0
+    "global-require": 0,
+    "import/order": "off",
+    "react/require-default-props": "off"
   },
 
-  "ignorePatterns": ["postcss.config.js"]
+  "ignorePatterns": ["postcss.config.js", "!/.storybook"]
 }
