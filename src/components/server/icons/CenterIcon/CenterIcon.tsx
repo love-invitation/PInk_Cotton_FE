@@ -1,7 +1,4 @@
-interface CenterProps {
-  size?: number | string;
-  fill?: string;
-}
+import { CenterProps } from './CenterIcon.type';
 
 const CenterIcon = ({ size = 32, fill = 'black' }: CenterProps) => {
   return (
