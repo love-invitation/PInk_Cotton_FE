@@ -7,14 +7,20 @@ import { CenterIcon } from '@/components/server';
 import { PinkMapProps } from './PinkMap.type';
 import { useMapAutoReturn } from './hooks';
 
-const PinkMap = ({ center }: PinkMapProps) => {
+const PinkMap = ({ center, width = '100%', height = '100%' }: PinkMapProps) => {
   const { isOutCenter, outCenterPosition, handleChangeCenter, handleOffOutCenter } =
     useMapAutoReturn();
 
   return (
-    <article className='relative h-dvh w-dvw'>
+    <article
+      className='relative'
+      style={{
+        width,
+        height,
+      }}
+    >
       <Map
-        className='relative z-[0] h-dvh w-dvw'
+        className='relative z-[0] h-full w-full'
         center={isOutCenter ? outCenterPosition : center}
         onCenterChanged={handleChangeCenter}
         isPanto
