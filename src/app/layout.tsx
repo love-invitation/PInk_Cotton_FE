@@ -5,6 +5,8 @@ import Script from 'next/script';
 
 import pretendardFont from '@/assets/font';
 
+import TanstackProvider from './_components/TanstackProvider';
+
 export const metadata: Metadata = {
   title: 'Pink Cotton',
   description: '결혼식 청첩장',
@@ -24,15 +26,17 @@ const RootLayout = ({
       lang='ko'
       className={pretendardFont.className}
     >
-      <body>
-        <Script
-          type='text/javascript'
-          src={URL}
-          strategy='beforeInteractive'
-        />
+      <TanstackProvider>
+        <body>
+          <Script
+            type='text/javascript'
+            src={URL}
+            strategy='beforeInteractive'
+          />
 
-        <main id='app'>{children}</main>
-      </body>
+          <main id='app'>{children}</main>
+        </body>
+      </TanstackProvider>
     </html>
   );
 };
