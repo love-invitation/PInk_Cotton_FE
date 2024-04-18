@@ -21,9 +21,6 @@ const config: Config = {
     extend: {
       colors: {
         white_100: '#FFFFFF',
-    extend: {
-      colors: {
-        white_100: '#FFFFFF',
 
         gray_100: '#858585',
         gray_200: '#868686',
@@ -38,23 +35,14 @@ const config: Config = {
         black_900: '#000000',
         black_500: '#333333',
         black_300: '#393939',
-        black_900: '#000000',
-        black_500: '#333333',
-        black_300: '#393939',
 
-        pink_500: '#F98284',
-        pink_300: '#FFB2B2',
-        pink_100: '#FFF0F0',
         pink_500: '#F98284',
         pink_300: '#FFB2B2',
         pink_100: '#FFF0F0',
 
         brown_500: '#8B6254',
         brown_100: '#F4EFED',
-        brown_500: '#8B6254',
-        brown_100: '#F4EFED',
 
-        green_100: '#00C73C',
         green_100: '#00C73C',
 
         yellow_100: '#FEE500',
@@ -67,52 +55,27 @@ const config: Config = {
         transparent_30: '#23232330',
         transparent_50: '#23232350',
         transparent_90: '#23232390',
-        transparent_10: '#23232310',
-        transparent_30: '#23232330',
-        transparent_50: '#23232350',
-        transparent_90: '#23232390',
 
         background: '#F9F9F9',
         text_primary: '',
         text_secondary: '',
       },
-        background: '',
-        text_primary: '',
-        text_secondary: '',
-      },
 
-      fontSize: generateSize('size'),
-      borderRadius: generateSize('radius'),
       fontSize: generateSize('size'),
       borderRadius: generateSize('radius'),
 
       zIndex: {
         // 각 컴포넌트별 z index => 0 ~ 100
-      zIndex: {
-        // 각 컴포넌트별 z index => 0 ~ 100
 
-        header: '300',
         header: '300',
 
         modal: '500',
-        modal: '500',
 
-        toast: '600',
         toast: '600',
 
         spinner: '800',
       },
-        spinner: '800',
-      },
 
-      fontWeight: {
-        regular: '400',
-        medium: '500',
-        semiBold: '600',
-        bold: '700',
-        extraBold: '800',
-        black: '900',
-      },
       fontWeight: {
         regular: '400',
         medium: '500',
@@ -126,16 +89,7 @@ const config: Config = {
         shadow_500: '0.3rem 0.3rem 2rem 0 rgba(0, 0, 0, 0.06)',
         shadow_700: '0 0.4rem 0.4rem 0 rgba(0, 0, 0, 0.25)',
       },
-      boxShadow: {
-        shadow_500: '0.3rem 0.3rem 2rem 0 rgba(0, 0, 0, 0.06)',
-        shadow_700: '0 0.4rem 0.4rem 0 rgba(0, 0, 0, 0.25)',
-      },
 
-      screens: {
-        mobile: `(max-width: 480px)`,
-        tablet: `(max-width: 768px)`,
-        laptop: `(max-width: 1024px)`,
-      },
       screens: {
         mobile: `(max-width: 480px)`,
         tablet: `(max-width: 768px)`,
