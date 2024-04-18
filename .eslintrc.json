@@ -41,5 +41,5 @@
     "react/require-default-props": "off"
   },
 
-  "ignorePatterns": ["postcss.config.js"]
+  "ignorePatterns": ["postcss.config.js", "!/.storybook"]
 }
