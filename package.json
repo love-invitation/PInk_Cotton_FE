@@ -31,7 +31,6 @@
     "@storybook/addon-essentials": "^8.0.5",
     "@storybook/addon-interactions": "^8.0.5",
     "@storybook/addon-links": "^8.0.5",
-    "@storybook/addon-onboarding": "^8.0.5",
     "@storybook/addon-styling-webpack": "^1.0.0",
     "@storybook/blocks": "^8.0.5",
     "@storybook/nextjs": "^8.0.5",
