@@ -1,4 +1,4 @@
-import { CenterIcon } from '@/components/server';
+import { CenterIcon, CloseIcon } from '@/components/server';
 import type { Meta, StoryObj } from '@storybook/react';
 
 import IconBox from './IconBox';
@@ -37,5 +37,11 @@ export const Default: Story = {
 export const Center: Story = {
   args: {
     children: <CenterIcon />,
+  },
+};
+
+export const Close: Story = {
+  args: {
+    children: <CloseIcon />,
   },
 };
