@@ -1,6 +1,6 @@
 import { CenterProps } from './CenterIcon.type';
 
-const CenterIcon = ({ size = 32, fill = 'black' }: CenterProps) => {
+const CenterIcon = ({ size = 32, fill = 'black', className = '' }: CenterProps) => {
   return (
     <svg
       width={size}
@@ -8,6 +8,7 @@ const CenterIcon = ({ size = 32, fill = 'black' }: CenterProps) => {
       viewBox='0 0 26 26'
       fill={fill}
       xmlns='http://www.w3.org/2000/svg'
+      className={className}
     >
       <path
         fillRule='evenodd'
