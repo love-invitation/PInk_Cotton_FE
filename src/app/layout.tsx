@@ -6,6 +6,7 @@ import Script from 'next/script';
 import pretendardFont from '@/assets/font';
 
 import TanstackProvider from './_components/TanstackProvider';
+import ToastProvider from './_components/ToastProvider';
 
 export const metadata: Metadata = {
   title: 'Pink Cotton',
@@ -33,8 +34,8 @@ const RootLayout = ({
             src={URL}
             strategy='beforeInteractive'
           />
-
           <main id='app'>{children}</main>
+          <ToastProvider />
         </body>
       </TanstackProvider>
     </html>
