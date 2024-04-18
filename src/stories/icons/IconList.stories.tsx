@@ -9,7 +9,7 @@ import IconBox from './IconBox';
  * 현재 PinkCotton에서 사용되어지는 Icon들을 한눈에 확인할 수 있습니다.
  * */
 const meta = {
-  title: 'Icons/공통 아이콘 리스트',
+  title: 'Icons/공통 아이콘 목록',
   component: IconBox,
   parameters: {
     layout: 'centered',
