@@ -31,6 +31,8 @@ const RootLayout = ({
           strategy='beforeInteractive'
         />
         {children}
+
+        <section id='modal' />
       </body>
     </html>
   );
