@@ -39,7 +39,7 @@ const config: Config = {
 
         pink_500: '#F98284',
         pink_300: '#FFB2B2',
-        pink_100: '',
+        pink_100: '#FFF0F0',
 
         brown_500: '#8B6254',
         brown_100: '#F4EFED',
