@@ -1,3 +1,5 @@
+'use client';
+
 import { KeyboardEvent } from 'react';
 
 import { UseKeydownModal } from './useKeydownModal.type';
