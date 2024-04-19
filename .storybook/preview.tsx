@@ -11,6 +11,17 @@ const preview: Preview = {
       },
     },
   },
+
+  decorators: [
+    (Story) => {
+      return (
+        <>
+          <div id='modal' />
+          <Story />
+        </>
+      );
+    },
+  ],
 };
 
 export default preview;

@@ -5,7 +5,6 @@ import path from 'path';
 const config: StorybookConfig = {
   stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
   addons: [
-    '@storybook/addon-onboarding',
     '@storybook/addon-links',
     '@storybook/addon-essentials',
     '@chromatic-com/storybook',
@@ -20,15 +19,17 @@ const config: StorybookConfig = {
   },
   staticDirs: ['../public'],
 
-  webpackFinal: async (config) => {
-    if (config.resolve) {
-      config.resolve.alias = {
-        ...config.resolve.alias,
+  webpackFinal: async (prevConfig) => {
+    const newConfig = { ...prevConfig };
+
+    if (newConfig.resolve) {
+      newConfig.resolve.alias = {
+        ...newConfig.resolve.alias,
         '@': path.resolve(__dirname, '../src'),
       };
     }
 
-    return config;
+    return newConfig;
   },
 };
 
