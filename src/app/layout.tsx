@@ -32,7 +32,10 @@ const RootLayout = ({
         />
         {children}
 
-        <section id='modal' />
+        <section
+          id='modal'
+          className='z-modal'
+        />
       </body>
     </html>
   );
