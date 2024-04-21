@@ -47,6 +47,7 @@ const config: Config = {
         green_100: '#00C73C',
 
         yellow_100: '#FEE500',
+        yellow_500: '#FFD400',
         yellow_kakao: '#FFEB00',
 
         red_500: '#FF4141',
