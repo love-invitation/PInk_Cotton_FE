@@ -5,8 +5,8 @@ export interface AlertModalProps {
   onClose: () => void;
   message: string;
   subMessage?: string;
-
   subMessageType?: AlertSubMessageType;
+  buttonTitle?: string;
 
   clickAwayEnable?: boolean;
 }

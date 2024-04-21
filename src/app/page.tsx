@@ -18,6 +18,7 @@ const Home = () => {
         isShow={isShowModal}
         onClose={closeModal}
         message='이건 테스트용 알림 모달 입니다.<br> 이건 테스트용 컨펌 모달 입니다. 이건 테스트용 컨펌 모달 입니다. 이건 테스트용 컨펌 모달 입니다.'
+        subMessage='이건 서브 메세지 이건 서브 메세지 이건 서브 메세지 이건 서브 메세지 이건 서브 메세지 이건 서브 메세지'
       />
     </main>
   );

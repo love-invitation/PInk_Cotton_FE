@@ -14,9 +14,10 @@ const AlertModal = ({
   isShow,
   message,
   subMessage,
-  subMessageType = 'warning',
+  subMessageType = 'basic',
   onClose,
   clickAwayEnable = true,
+  buttonTitle = '닫기',
 }: AlertModalProps) => {
   useEffect(() => {
     const messageElement = document.querySelector('#alert_message_container');
@@ -59,6 +60,14 @@ const AlertModal = ({
             )}
           />
         )}
+
+        <button
+          type='button'
+          className='my-[1rem] h-[4.8rem] w-[10rem] rounded-radius2 bg-gray_100 text-size10 font-bold text-white_100 transition-opacity hover:opacity-70'
+          onClick={onClose}
+        >
+          {buttonTitle}
+        </button>
       </main>
     </Modal>
   );
