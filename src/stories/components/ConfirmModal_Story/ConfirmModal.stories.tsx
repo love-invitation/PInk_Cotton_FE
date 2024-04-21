@@ -16,7 +16,7 @@ import type { Meta, StoryObj } from '@storybook/react';
  *
  * - **clickAwayEnable ? :**background click, Escape key를 통한 Modal 제어를 활성화 할지 전달합니다. - default : true
  *
- * - **acceptButtonTitle ? : *Accept Button의 타이틀을 변경할 수 있습니다.
+ * - **acceptButtonTitle ? : **Accept Button의 타이틀을 변경할 수 있습니다.
  * - **rejectButtonTitle ? :**Reject Button의 타이틀을 변경할 수 있습니다.
  *
  * <hr>
