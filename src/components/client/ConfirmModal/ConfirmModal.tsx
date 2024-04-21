@@ -57,7 +57,7 @@ const ConfirmModal = ({
         {warningMessage && (
           <p
             id='confirm_warning_message_container'
-            className='my-2 px-2 text-center text-size4 font-medium text-red_500'
+            className='text-red_500 my-2 px-2 text-center text-size4 font-medium'
           />
         )}
 
