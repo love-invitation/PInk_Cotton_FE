@@ -18,7 +18,8 @@ const Home = () => {
         isShow={isShowModal}
         onReject={closeModal}
         onAccept={() => {}}
-        message='이건 테스트용 컨펌 모달 입니다.'
+        message='이건 테스트용 컨펌 모달 입니다.<br> 이건 테스트용 컨펌 모달 입니다. 이건 테스트용 컨펌 모달 입니다. 이건 테스트용 컨펌 모달 입니다.'
+        warningMessage='이것은 경고 메세지 입니다.이것은 경고 메세지 입니다. 이것은 경고 메세지 입니다. 이것은 경고 메세지 입니다.'
       />
     </main>
   );
