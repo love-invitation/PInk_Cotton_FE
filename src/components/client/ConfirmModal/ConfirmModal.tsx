@@ -53,10 +53,13 @@ const ConfirmModal = ({
           id='confirm_message_container'
           className='px-2 text-center text-size10 font-medium'
         />
-        <p
-          id='confirm_warning_message_container'
-          className='px-2 text-center text-size4 font-medium text-red_500'
-        />
+
+        {warningMessage && (
+          <p
+            id='confirm_warning_message_container'
+            className='my-2 px-2 text-center text-size4 font-medium text-red_500'
+          />
+        )}
 
         <div className='flex w-full justify-center gap-4'>
           <button
