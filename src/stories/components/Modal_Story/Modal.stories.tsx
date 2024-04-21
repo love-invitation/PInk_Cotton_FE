@@ -13,7 +13,7 @@ import type { Meta, StoryObj } from '@storybook/react';
  *
  * 🔥 Modal을 제작하기 위한 layout역할을 하는 Modal Base Component 입니다.
  * <br>
- * **useModal** hook을 같이 사용해야합니다. 내부 showModal, closeModal 메서드를 통해 Modal을 컨트롤할 수 있고 , isShow 값을 Modal에 전달하여 사용할 수 있습니다<div className=""></div>
+ * **useModal** hook을 같이 사용해야합니다. 내부 showModal, closeModal 메서드를 통해 Modal을 컨트롤할 수 있고 , isShow 값을 Modal에 전달하여 사용할 수 있습니다.
  * */
 const meta = {
   title: 'Components/Modal',
