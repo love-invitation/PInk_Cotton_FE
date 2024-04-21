@@ -1,8 +1,9 @@
 export interface ConfirmModalProps {
   isShow: boolean;
-  message: string;
-
   clickAwayEnable?: boolean;
+
+  message: string;
+  warningMessage?: string;
 
   onAccept: () => void;
   onReject: () => void;
