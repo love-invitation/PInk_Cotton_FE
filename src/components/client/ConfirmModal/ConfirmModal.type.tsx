@@ -6,5 +6,7 @@ export interface ConfirmModalProps {
   warningMessage?: string;
 
   onAccept: () => void;
+  acceptButtonTitle?: string;
   onReject: () => void;
+  rejectButtonTitle?: string;
 }
