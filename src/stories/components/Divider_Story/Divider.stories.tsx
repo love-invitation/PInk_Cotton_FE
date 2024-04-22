@@ -7,6 +7,7 @@ import { Meta, StoryObj } from '@storybook/react';
  *  ### Props
  *  - **direction : **구분선의 방향을 지정합니다. - horizontal | vertical
  *  - **className : **Tailwind CSS를 사용하여 Divider의 스타일을 추가 및 수정 합니다.
+ *  - **...rest : **hr태그 요소가 가진 모든 표준 HTML 속성을 지원합니다.
  */
 
 const meta = {
