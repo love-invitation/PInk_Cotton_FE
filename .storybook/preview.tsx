@@ -16,7 +16,6 @@ const preview: Preview = {
     (Story) => {
       return (
         <>
-          <div id='modal' />
           <Story />
         </>
       );
