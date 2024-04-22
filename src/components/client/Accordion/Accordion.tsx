@@ -3,7 +3,7 @@
 import React from 'react';
 
 import { ArrowDownIcon, Divider } from '@/components/server';
-import useToggle from '@/hooks/useToggle';
+import { useToggle } from '@/hooks';
 
 import useGetElementHeight from './hooks/useGetElementHeight';
 
