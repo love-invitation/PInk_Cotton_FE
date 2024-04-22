@@ -7,24 +7,45 @@ import { useToggle } from '@/hooks';
 
 import useGetElementHeight from './hooks/useGetElementHeight';
 
+import { twJoin } from 'tailwind-merge';
+
 interface TestProps {
   children: React.ReactNode;
   buttonTitle: string;
+  type: 'main' | 'edit';
 }
 
-const Accordion = ({ children, buttonTitle }: TestProps) => {
+const Accordion = ({ children, buttonTitle, type = 'main' }: TestProps) => {
   const { isToggle, handleToggle } = useToggle();
   const { ref, height } = useGetElementHeight({ changeWatcher: children });
 
   return (
-    <article className='w-full max-w-[73rem] overflow-hidden rounded-radius10 shadow-shadow_500'>
+    <article
+      className={twJoin(
+        'w-full overflow-hidden',
+        type === 'main' && 'max-w-[55rem]',
+        type === 'edit' && 'max-w-[73rem] rounded-radius10 shadow-shadow_500',
+      )}
+    >
       <button
         type='button'
-        className='flex h-[6rem] w-full select-none items-center px-[2.4rem] text-size15 font-semibold'
+        className={twJoin(
+          'flex w-full select-none items-center',
+          type === 'edit' && 'h-[6rem] px-[2.4rem] text-size15 font-semibold',
+          type === 'main' && 'h-[8rem] text-size15 font-semibold',
+        )}
         onClick={handleToggle}
       >
-        <div className='flex flex-1 items-center gap-2'>
-          <div className='h-[2rem] w-[2rem] bg-black' />
+        <div
+          className={twJoin(
+            'flex flex-1 items-center',
+            type === 'main' && 'gap-1 pl-[1rem]',
+            type === 'edit' && 'gap-2',
+          )}
+        >
+          {type === 'edit' && <div className='h-[2rem] w-[2rem] bg-black' />}
+          {type === 'main' && <strong className='text-size18 font-medium leading-[2]'>Q.</strong>}
+
           {buttonTitle}
         </div>
 
@@ -41,8 +62,16 @@ const Accordion = ({ children, buttonTitle }: TestProps) => {
           maxHeight: isToggle ? `${height}px` : '0px',
         }}
       >
-        <Divider />
-        <div className='px-[2.4rem] py-2'>{children}</div>
+        {type === 'edit' && <Divider />}
+        <div
+          className={twJoin(
+            'w-full pb-2',
+            type === 'edit' && 'px-[2.4rem]',
+            type === 'main' && 'px-[1rem]',
+          )}
+        >
+          {children}
+        </div>
       </div>
     </article>
   );
