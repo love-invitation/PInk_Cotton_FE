@@ -57,7 +57,7 @@ const config: Config = {
         transparent_50: '#23232350',
         transparent_90: '#23232390',
 
-        background: '',
+        background: '#F9F9F9',
         text_primary: '',
         text_secondary: '',
       },
