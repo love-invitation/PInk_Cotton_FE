@@ -2,9 +2,7 @@
 
 import { useCallback, useState } from 'react';
 
-import { UseToggleProps } from './useToggle.type';
-
-const useToggle = ({ defaultValue = false }: UseToggleProps) => {
+const useToggle = (defaultValue = false) => {
   const [isToggle, setIsToggle] = useState(defaultValue);
 
   const handleToggle = useCallback(() => {
