@@ -9,7 +9,7 @@ const ModalPortal = ({ children, isShow }: ModalPortalProps) => {
   const [ModalBaseElement, setModalBaseElement] = useState<null | HTMLElement>(null);
 
   useEffect(() => {
-    const findElement = document.querySelector('#modal');
+    const findElement = document.querySelector('body');
     if (!(findElement instanceof HTMLElement)) {
       return;
     }
