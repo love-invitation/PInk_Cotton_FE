@@ -1,4 +1,4 @@
-import { CenterIcon, CloseIcon } from '@/components/server';
+import { ArrowDownIcon, CenterIcon, CloseIcon } from '@/components/server';
 import type { Meta, StoryObj } from '@storybook/react';
 
 import IconBox from './IconBox';
@@ -43,5 +43,11 @@ export const Center: Story = {
 export const Close: Story = {
   args: {
     children: <CloseIcon />,
+  },
+};
+
+export const ArrowDown: Story = {
+  args: {
+    children: <ArrowDownIcon />,
   },
 };
