@@ -1,5 +1,5 @@
 import { ConfirmModal } from '@/components/client';
-import useModal from '@/hooks/useModal';
+import { useModal } from '@/hooks';
 import type { Meta, StoryObj } from '@storybook/react';
 
 /**
