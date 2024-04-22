@@ -1,6 +1,5 @@
 'use client';
 
-import { useEffect } from 'react';
 import Lottie from 'react-lottie-player';
 
 import { Modal } from '../Modal';
@@ -19,19 +18,6 @@ const ConfirmModal = ({
   acceptButtonTitle = '확인',
   rejectButtonTitle = '취소',
 }: ConfirmModalProps) => {
-  useEffect(() => {
-    const messageElement = document.querySelector('#confirm_message_container');
-    const warningElement = document.querySelector('#confirm_warning_message_container');
-
-    if (messageElement) {
-      messageElement.innerHTML = message;
-    }
-
-    if (warningElement && warningMessage) {
-      warningElement.innerHTML = warningMessage;
-    }
-  }, [message, warningMessage, isShow]);
-
   // TODO - 임시 버튼 디자인. 추후 공용 Button Component 추가시 대체하기
   const buttonStyle = `w-[10rem] h-[4.8rem] rounded-radius2 my-[1rem] text-white_100 text-size10 font-bold hover:opacity-70 transition-opacity`;
 
@@ -50,14 +36,14 @@ const ConfirmModal = ({
         />
 
         <p
-          id='confirm_message_container'
           className='px-2 text-center text-size10 font-medium'
+          dangerouslySetInnerHTML={{ __html: message }}
         />
 
         {warningMessage && (
           <p
-            id='confirm_warning_message_container'
-            className='my-2 px-2 text-center text-size4 font-medium text-red_500'
+            className='text-red_500 my-2 px-2 text-center text-size4 font-medium'
+            dangerouslySetInnerHTML={{ __html: warningMessage }}
           />
         )}
 
