@@ -31,6 +31,11 @@ const RootLayout = ({
           strategy='beforeInteractive'
         />
         {children}
+
+        <section
+          id='modal'
+          className='z-modal'
+        />
       </body>
     </html>
   );
