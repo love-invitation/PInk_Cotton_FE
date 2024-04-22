@@ -60,9 +60,9 @@ const Accordion = ({ children, buttonTitle, type = 'main' }: AccordionProps) => 
         {type === 'edit' && <Divider />}
         <div
           className={twJoin(
-            'w-full pb-2',
-            type === 'edit' && 'px-[2.4rem]',
-            type === 'main' && 'px-[1rem]',
+            'w-full',
+            type === 'edit' && 'px-[2.4rem] py-2',
+            type === 'main' && 'px-[1rem] pb-2',
           )}
         >
           {children}
