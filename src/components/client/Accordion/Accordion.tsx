@@ -5,17 +5,12 @@ import React from 'react';
 import { ArrowDownIcon, Divider } from '@/components/server';
 import { useToggle } from '@/hooks';
 
+import { AccordionProps } from './Accordion.type';
 import useGetElementHeight from './hooks/useGetElementHeight';
 
 import { twJoin } from 'tailwind-merge';
 
-interface TestProps {
-  children: React.ReactNode;
-  buttonTitle: string;
-  type: 'main' | 'edit';
-}
-
-const Accordion = ({ children, buttonTitle, type = 'main' }: TestProps) => {
+const Accordion = ({ children, buttonTitle, type = 'main' }: AccordionProps) => {
   const { isToggle, handleToggle } = useToggle();
   const { ref, height } = useGetElementHeight({ changeWatcher: children });
 
