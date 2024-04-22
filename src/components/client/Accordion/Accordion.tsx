@@ -6,7 +6,7 @@ import { ArrowDownIcon, Divider } from '@/components/server';
 import { useToggle } from '@/hooks';
 
 import { AccordionProps } from './Accordion.type';
-import useGetElementHeight from './hooks/useGetElementHeight';
+import { useGetElementHeight } from './hooks';
 
 import { twJoin } from 'tailwind-merge';
 
