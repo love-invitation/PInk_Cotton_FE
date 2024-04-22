@@ -1,1 +1,1 @@
-export { default as useMapAutoReturn } from './useMapAutoReturn';
+export { default as useMapAutoReturn } from './useMapAutoReturn/useMapAutoReturn';
