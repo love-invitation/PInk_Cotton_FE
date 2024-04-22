@@ -19,7 +19,7 @@ const ConfirmModal = ({
   rejectButtonTitle = '취소',
 }: ConfirmModalProps) => {
   // TODO - 임시 버튼 디자인. 추후 공용 Button Component 추가시 대체하기
-  const buttonStyle = `w-[10rem] h-[4.8rem] rounded-radius2 my-[1rem] text-white_100 text-size10 font-bold hover:opacity-70 transition-opacity`;
+  const buttonStyle = `w-[10rem] h-[4.8rem] rounded-radius8 my-[1rem] text-white_100 text-size10 font-bold hover:opacity-70 transition-opacity`;
 
   return (
     <Modal
@@ -36,13 +36,13 @@ const ConfirmModal = ({
         />
 
         <p
-          className='px-2 text-center text-size10 font-medium'
+          className='px-2 text-center text-size16 font-medium'
           dangerouslySetInnerHTML={{ __html: message }}
         />
 
         {warningMessage && (
           <p
-            className='text-red_500 my-2 px-2 text-center text-size4 font-medium'
+            className='text-red_500 my-2 px-2 text-center text-size12 font-medium'
             dangerouslySetInnerHTML={{ __html: warningMessage }}
           />
         )}
