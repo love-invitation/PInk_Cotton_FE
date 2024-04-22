@@ -8,7 +8,7 @@ const generateSize = (name: string) => {
   const sizes: FontSizeMap = {};
 
   for (let i = 1; i <= 100; i += 1) {
-    sizes[`${name}${i}`] = `${i}rem`;
+    sizes[`${name}${i}`] = `${i * 0.1}rem`;
   }
 
   return sizes;
