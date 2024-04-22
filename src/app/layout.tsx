@@ -5,8 +5,7 @@ import Script from 'next/script';
 
 import pretendardFont from '@/assets/font';
 
-import TanstackProvider from './_components/TanstackProvider';
-import ToastProvider from './_components/ToastProvider';
+import { TanstackProvider, ToastProvider } from './_components';
 
 export const metadata: Metadata = {
   title: 'Pink Cotton',
