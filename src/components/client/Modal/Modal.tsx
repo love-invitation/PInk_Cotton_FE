@@ -19,7 +19,7 @@ const Modal = ({ children, isShow, onClose, clickAwayEnable }: ModalProps) => {
         role='button'
         className='flex h-full w-full cursor-default items-center justify-center bg-transparent_90 absolute left-[0px] top-[0px] z-modal'
       >
-        <article className='rounded-radius2 bg-white_100 p-2 shadow-shadow_700'>
+        <article className='rounded-radius8 bg-white_100 p-2 shadow-shadow_700'>
           <header className='relative flex h-[2.4rem] w-full justify-end'>
             <button
               type='button'
