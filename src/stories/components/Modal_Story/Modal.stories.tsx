@@ -1,5 +1,5 @@
 import { Modal } from '@/components/client/Modal';
-import useModal from '@/hooks/useModal';
+import { useModal } from '@/hooks';
 import type { Meta, StoryObj } from '@storybook/react';
 
 /**
