@@ -1,3 +1,5 @@
+import { HTMLAttributes } from 'react';
+
 export type ButtonRadiusType = 'rounded' | '1.4rem' | '0.8rem' | '0.4rem';
 export type ButtonBorderType = 'gray' | 'pink' | 'none';
 export type ButtonFontSizeType = '2rem' | '1.8rem' | '1.4rem';
@@ -5,9 +7,10 @@ export type ButtonFontWeightType = 'regular' | 'semiBold' | 'bold' | 'extraBold'
 export type ButtonFontColorType = 'white' | 'black' | 'brown' | 'gray';
 export type ButtonBackgroundColorType = 'white' | 'black' | 'pink' | 'brown' | 'naked';
 
-export interface ButtonProps {
+export interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
   className?: string;
+  onClick?: () => void;
 
   radius?: ButtonRadiusType;
 
