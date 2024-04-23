@@ -18,7 +18,4 @@ export interface ButtonProps {
 
   border?: ButtonBorderType;
   shadow?: boolean;
-
-  height?: number;
-  width?: number;
 }
