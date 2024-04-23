@@ -13,6 +13,7 @@ const Button = ({
   fontColor = 'white',
   backgroundColor = 'pink',
   border = 'none',
+  shadow = false,
 }: ButtonProps) => {
   const convertedStyle = useConvertButtonStyle({
     radius,
@@ -21,13 +22,14 @@ const Button = ({
     fontColor,
     backgroundColor,
     border,
+    shadow,
   });
 
   // const buttonStyle =
 
   return (
     <button
-      className={twJoin(`w-[20rem] h-[4rem]`, convertedStyle)}
+      className={twJoin(`w-full h-[4.2rem]`, convertedStyle)}
       type='button'
     >
       {children}
