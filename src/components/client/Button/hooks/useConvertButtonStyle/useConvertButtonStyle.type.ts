@@ -16,4 +16,5 @@ export interface UseConvertButtonStyleProps {
 
   backgroundColor: ButtonBackgroundColorType;
   border: ButtonBorderType;
+  shadow: boolean;
 }

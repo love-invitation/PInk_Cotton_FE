@@ -7,6 +7,7 @@ export type ButtonBackgroundColorType = 'white' | 'black' | 'pink' | 'brown' | '
 
 export interface ButtonProps {
   children: React.ReactNode;
+  className?: string;
 
   radius?: ButtonRadiusType;
 
