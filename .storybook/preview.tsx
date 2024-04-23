@@ -16,7 +16,9 @@ const preview: Preview = {
     (Story) => {
       return (
         <>
-          <Story />
+          <main id='app'>
+            <Story />
+          </main>
         </>
       );
     },

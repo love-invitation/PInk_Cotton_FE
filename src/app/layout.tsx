@@ -30,7 +30,8 @@ const RootLayout = ({
           src={URL}
           strategy='beforeInteractive'
         />
-        {children}
+
+        <main id='app'>{children}</main>
       </body>
     </html>
   );

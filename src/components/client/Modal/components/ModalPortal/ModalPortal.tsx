@@ -17,8 +17,8 @@ const ModalPortal = ({ children, isShow }: ModalPortalProps) => {
     setModalBaseElement(findElement);
   }, []);
 
-  if (!isShow || !ModalBaseElement) {
-    return;
+  if (!ModalBaseElement || !isShow) {
+    return null;
   }
 
   return createPortal(<>{children}</>, ModalBaseElement);
