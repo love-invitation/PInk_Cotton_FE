@@ -1,5 +1,6 @@
 import {
   ButtonBackgroundColorType,
+  ButtonBorderType,
   ButtonFontColorType,
   ButtonFontSizeType,
   ButtonFontWeightType,
@@ -14,4 +15,5 @@ export interface UseConvertButtonStyleProps {
   fontColor: ButtonFontColorType;
 
   backgroundColor: ButtonBackgroundColorType;
+  border: ButtonBorderType;
 }
