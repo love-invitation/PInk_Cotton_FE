@@ -1,11 +1,9 @@
-import { useMemo } from 'react';
-
-import { ButtonRadiusType } from '../../Button.type';
+import { ButtonFontSizeType, ButtonRadiusType } from '../../Button.type';
 import { UseConvertButtonStyleProps } from './useConvertButtonStyle.type';
 
 import { twJoin } from 'tailwind-merge';
 
-const useConvertButtonStyle = ({ radius }: UseConvertButtonStyleProps) => {
+const useConvertButtonStyle = ({ radius, fontSize }: UseConvertButtonStyleProps) => {
   const convertRadius = (radiusValue: ButtonRadiusType) => {
     switch (radiusValue) {
       case '0.4rem':
@@ -25,9 +23,23 @@ const useConvertButtonStyle = ({ radius }: UseConvertButtonStyleProps) => {
     }
   };
 
-  const radiusStyle = useMemo(() => convertRadius(radius), [radius]);
+  const convertFontSize = (fontSizeValue: ButtonFontSizeType) => {
+    switch (fontSizeValue) {
+      case '1.4rem':
+        return 'text-[1.4rem]';
 
-  return twJoin(radiusStyle);
+      case '1.8rem':
+        return 'text-[1.8rem]';
+
+      case '2rem':
+        return 'text-[2rem]';
+
+      default:
+        return 'text-[1.4rem]';
+    }
+  };
+
+  return twJoin(convertRadius(radius), convertFontSize(fontSize));
 };
 
 export default useConvertButtonStyle;
