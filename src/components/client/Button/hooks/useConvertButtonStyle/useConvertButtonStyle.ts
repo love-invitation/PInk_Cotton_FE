@@ -1,5 +1,6 @@
 import {
   convertBackgroundColor,
+  convertBorder,
   convertFontColor,
   convertFontSize,
   convertFontWeight,
@@ -15,6 +16,7 @@ const useConvertButtonStyle = ({
   fontWeight,
   fontColor,
   backgroundColor,
+  border,
 }: UseConvertButtonStyleProps) => {
   return twJoin(
     convertRadius(radius),
@@ -22,6 +24,7 @@ const useConvertButtonStyle = ({
     convertFontWeight(fontWeight),
     convertFontColor(fontColor),
     convertBackgroundColor(backgroundColor),
+    convertBorder(border),
   );
 };
 
