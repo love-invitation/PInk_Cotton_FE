@@ -1,9 +1,19 @@
-import { ButtonFontSizeType, ButtonFontWeightType, ButtonRadiusType } from '../../Button.type';
+import {
+  ButtonFontColorType,
+  ButtonFontSizeType,
+  ButtonFontWeightType,
+  ButtonRadiusType,
+} from '../../Button.type';
 import { UseConvertButtonStyleProps } from './useConvertButtonStyle.type';
 
 import { twJoin } from 'tailwind-merge';
 
-const useConvertButtonStyle = ({ radius, fontSize, fontWeight }: UseConvertButtonStyleProps) => {
+const useConvertButtonStyle = ({
+  radius,
+  fontSize,
+  fontWeight,
+  fontColor,
+}: UseConvertButtonStyleProps) => {
   const convertRadius = (radiusValue: ButtonRadiusType) => {
     switch (radiusValue) {
       case '0.4rem':
@@ -58,7 +68,31 @@ const useConvertButtonStyle = ({ radius, fontSize, fontWeight }: UseConvertButto
     }
   };
 
-  return twJoin(convertRadius(radius), convertFontSize(fontSize), convertFontWeight(fontWeight));
+  const convertFontColor = (fontColorValue: ButtonFontColorType) => {
+    switch (fontColorValue) {
+      case 'white':
+        return 'text-white_100';
+
+      case 'black':
+        return 'text_black_900';
+
+      case 'gray':
+        return 'text-gray_400';
+
+      case 'brown':
+        return 'text-brown_500';
+
+      default:
+        return 'text-white_100';
+    }
+  };
+
+  return twJoin(
+    convertRadius(radius),
+    convertFontSize(fontSize),
+    convertFontWeight(fontWeight),
+    convertFontColor(fontColor),
+  );
 };
 
 export default useConvertButtonStyle;
