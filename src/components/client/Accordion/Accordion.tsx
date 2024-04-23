@@ -6,38 +6,21 @@ import { ArrowDownIcon, Divider } from '@/components/server';
 import { useToggle } from '@/hooks';
 
 import { AccordionProps } from './Accordion.type';
-import { useGetElementHeight } from './hooks';
-
-import { twJoin } from 'tailwind-merge';
+import { useAccordionStyle, useGetElementHeight } from './hooks';
 
 const Accordion = ({ children, buttonTitle, type = 'main' }: AccordionProps) => {
   const { isToggle, handleToggle } = useToggle();
   const { ref, height } = useGetElementHeight({ changeWatcher: children });
+  const { layoutStyle, buttonStyle, buttonInnerStyle, contentStyle } = useAccordionStyle({ type });
 
   return (
-    <article
-      className={twJoin(
-        'w-full overflow-hidden',
-        type === 'main' && 'max-w-[55rem]',
-        type === 'edit' && 'max-w-[73rem] rounded-radius10 shadow-shadow_500',
-      )}
-    >
+    <article className={layoutStyle}>
       <button
         type='button'
-        className={twJoin(
-          'flex w-full select-none items-center',
-          type === 'edit' && 'h-[6rem] px-[2.4rem] text-size15 font-semibold',
-          type === 'main' && 'h-[8rem] text-size15 font-semibold',
-        )}
+        className={buttonStyle}
         onClick={handleToggle}
       >
-        <div
-          className={twJoin(
-            'flex flex-1 items-center',
-            type === 'main' && 'gap-1 pl-[1rem]',
-            type === 'edit' && 'gap-2',
-          )}
-        >
+        <div className={buttonInnerStyle}>
           {type === 'edit' && <div className='h-[2rem] w-[2rem] bg-black' />}
           {type === 'main' && <strong className='text-size18 font-medium leading-[2]'>Q.</strong>}
 
@@ -58,15 +41,8 @@ const Accordion = ({ children, buttonTitle, type = 'main' }: AccordionProps) => 
         }}
       >
         {type === 'edit' && <Divider />}
-        <div
-          className={twJoin(
-            'w-full',
-            type === 'edit' && 'px-[2.4rem] py-2',
-            type === 'main' && 'px-[1rem] pb-2',
-          )}
-        >
-          {children}
-        </div>
+
+        <div className={contentStyle}>{children}</div>
       </div>
     </article>
   );
