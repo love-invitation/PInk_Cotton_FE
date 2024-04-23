@@ -28,7 +28,7 @@ const config: Config = {
         gray_400: '#959595',
         gray_500: '#BBBBBB',
         gray_600: '#C9C9C9',
-        gary_700: '#D2D2D2',
+        gray_700: '#D2D2D2',
         gray_800: '#E0E0E0',
         gray_900: '#EFEFEF',
 
@@ -49,7 +49,7 @@ const config: Config = {
         yellow_500: '#FFD400',
         yellow_kakao: '#FFEB00',
 
-        red_500: '#FF4141',
+        red_500: '#ED4044',
 
         transparent_10: '#23232310',
         transparent_30: '#23232330',
@@ -57,6 +57,9 @@ const config: Config = {
         transparent_90: '#23232390',
 
         background: '#F9F9F9',
+
+        placeholder_100: '#DDDDE3',
+
         text_primary: '',
         text_secondary: '',
       },
