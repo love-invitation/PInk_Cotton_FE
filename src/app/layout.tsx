@@ -26,8 +26,8 @@ const RootLayout = ({
       lang='ko'
       className={pretendardFont.className}
     >
-      <TanstackProvider>
-        <body>
+      <body>
+        <TanstackProvider>
           <Script
             type='text/javascript'
             src={URL}
@@ -35,8 +35,8 @@ const RootLayout = ({
           />
           <main id='app'>{children}</main>
           <ToastProvider />
-        </body>
-      </TanstackProvider>
+        </TanstackProvider>
+      </body>
     </html>
   );
 };
