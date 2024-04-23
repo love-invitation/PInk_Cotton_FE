@@ -1,17 +1,25 @@
-import { ButtonProps } from './Button.type';
+'use client';
 
-const Button = ({ children }: ButtonProps) => {
-  return <button type='button'>{children}</button>;
+import { ButtonProps } from './Button.type';
+import { useConvertButtonStyle } from './hooks';
+
+import { twJoin } from 'tailwind-merge';
+
+const Button = ({ children, radius = '0.4rem' }: ButtonProps) => {
+  const convertedStyle = useConvertButtonStyle({
+    radius,
+  });
+
+  // const buttonStyle =
+
+  return (
+    <button
+      className={twJoin(`bg-slate-700 w-[20rem] h-[4rem]`, convertedStyle)}
+      type='button'
+    >
+      {children}
+    </button>
+  );
 };
 
 export default Button;
-
-// rounded : 999rem , 1.4rem , 0.8rem , 0.4rem
-
-// border - color :  gray, pink, deep-gray
-
-// shadow - true false
-
-// font : 14 18  20
-
-// hight , width
