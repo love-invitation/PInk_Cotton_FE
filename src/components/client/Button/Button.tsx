@@ -10,18 +10,20 @@ const Button = ({
   radius = '0.4rem',
   fontSize = '1.4rem',
   fontWeight = 'semiBold',
+  fontColor = 'white',
 }: ButtonProps) => {
   const convertedStyle = useConvertButtonStyle({
     radius,
     fontSize,
     fontWeight,
+    fontColor,
   });
 
   // const buttonStyle =
 
   return (
     <button
-      className={twJoin(`bg-slate-700 w-[20rem] h-[4rem]`, convertedStyle)}
+      className={twJoin(`w-[20rem] h-[4rem]`, convertedStyle)}
       type='button'
     >
       {children}
