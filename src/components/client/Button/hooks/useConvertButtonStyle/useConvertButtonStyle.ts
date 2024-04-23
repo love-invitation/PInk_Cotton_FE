@@ -1,4 +1,5 @@
 import {
+  ButtonBackgroundColorType,
   ButtonFontColorType,
   ButtonFontSizeType,
   ButtonFontWeightType,
@@ -13,6 +14,7 @@ const useConvertButtonStyle = ({
   fontSize,
   fontWeight,
   fontColor,
+  backgroundColor,
 }: UseConvertButtonStyleProps) => {
   const convertRadius = (radiusValue: ButtonRadiusType) => {
     switch (radiusValue) {
@@ -74,7 +76,7 @@ const useConvertButtonStyle = ({
         return 'text-white_100';
 
       case 'black':
-        return 'text_black_900';
+        return 'text-black_900';
 
       case 'gray':
         return 'text-gray_400';
@@ -87,11 +89,34 @@ const useConvertButtonStyle = ({
     }
   };
 
+  const convertBackgroundColor = (colorValue: ButtonBackgroundColorType) => {
+    switch (colorValue) {
+      case 'white':
+        return 'bg-white_100';
+
+      case 'black':
+        return 'bg-black_900';
+
+      case 'pink':
+        return 'bg-pink_500';
+
+      case 'brown':
+        return 'bg-brown_100';
+
+      case 'naked':
+        return '';
+
+      default:
+        return 'bg-pink_500';
+    }
+  };
+
   return twJoin(
     convertRadius(radius),
     convertFontSize(fontSize),
     convertFontWeight(fontWeight),
     convertFontColor(fontColor),
+    convertBackgroundColor(backgroundColor),
   );
 };
 

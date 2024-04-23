@@ -11,12 +11,14 @@ const Button = ({
   fontSize = '1.4rem',
   fontWeight = 'semiBold',
   fontColor = 'white',
+  backgroundColor = 'pink',
 }: ButtonProps) => {
   const convertedStyle = useConvertButtonStyle({
     radius,
     fontSize,
     fontWeight,
     fontColor,
+    backgroundColor,
   });
 
   // const buttonStyle =
