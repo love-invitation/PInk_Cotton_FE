@@ -39,7 +39,7 @@ const ConfirmModal = ({
         {warningMessage && (
           <p
             id='confirm_warning_message_container'
-            className='text-red_500 my-2 px-2 text-center text-size4 font-medium'
+            className='text-red_500 my-2 px-2 text-center text-size12 font-medium'
             dangerouslySetInnerHTML={{ __html: warningMessage }}
           />
         )}
