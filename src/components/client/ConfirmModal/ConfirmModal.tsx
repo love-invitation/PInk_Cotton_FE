@@ -2,11 +2,10 @@
 
 import Lottie from 'react-lottie-player';
 
+import Button from '../Button/Button';
 import { Modal } from '../Modal';
 import { ConfirmModalProps } from './ConfirmModal.type';
 import ConfirmAnimationData from './Lottie_Confirm_Animation.json';
-
-import { twJoin } from 'tailwind-merge';
 
 const ConfirmModal = ({
   isShow,
@@ -18,9 +17,6 @@ const ConfirmModal = ({
   acceptButtonTitle = '확인',
   rejectButtonTitle = '취소',
 }: ConfirmModalProps) => {
-  // TODO - 임시 버튼 디자인. 추후 공용 Button Component 추가시 대체하기
-  const buttonStyle = `w-[10rem] h-[4.8rem] rounded-radius8 my-[1rem] text-white_100 text-size10 font-bold hover:opacity-70 transition-opacity`;
-
   return (
     <Modal
       isShow={isShow}
@@ -48,22 +44,21 @@ const ConfirmModal = ({
           />
         )}
 
-        <div className='flex w-full justify-center gap-4'>
-          <button
-            type='button'
-            className={twJoin(buttonStyle, 'bg-pink_300')}
+        <div className='flex w-full justify-center gap-4 pb-2'>
+          <Button
+            className='bg-pink_300 w-[11rem]'
             onClick={onAccept}
           >
             {acceptButtonTitle}
-          </button>
+          </Button>
 
-          <button
-            type='button'
-            className={twJoin(buttonStyle, 'bg-gray_100')}
+          <Button
+            className='w-[11rem]'
             onClick={onReject}
+            backgroundColor='gray'
           >
             {rejectButtonTitle}
-          </button>
+          </Button>
         </div>
       </main>
     </Modal>
