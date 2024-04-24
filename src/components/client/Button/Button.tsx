@@ -48,10 +48,13 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     return (
       <motion.button
         ref={ref}
-        className={twMerge(twJoin(`w-full h-[4.2rem]`, convertedStyle), className)}
+        className={twMerge(
+          twJoin(`w-full h-[4.2rem] px-2 will-change-transform`, convertedStyle),
+          className,
+        )}
         type='button'
         onClick={handleClick}
-        whileTap={{ scale: 0.98, opacity: 0.8 }}
+        whileTap={{ scale: 0.97, opacity: 0.8 }}
         whileHover={{ filter: 'brightness(94%)' }}
         transition={{ duration: 0.25 }}
         {...rest}
