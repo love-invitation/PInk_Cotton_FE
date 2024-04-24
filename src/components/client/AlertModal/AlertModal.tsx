@@ -2,6 +2,7 @@
 
 import Lottie from 'react-lottie-player';
 
+import Button from '../Button/Button';
 import { Modal } from '../Modal';
 import { AlertModalProps } from './AlertModal.type';
 import AlertAnimationData from './Lottie_Alert_Animation.json';
@@ -49,13 +50,16 @@ const AlertModal = ({
           />
         )}
 
-        <button
-          type='button'
-          className='my-[1rem] h-[4.8rem] w-[10rem] rounded-radius8 bg-gray_100 text-size10 font-bold text-white_100 transition-opacity hover:opacity-70'
+        <Button
+          className='w-[12rem]'
           onClick={onClose}
+          backgroundColor='gray'
+          fontColor='white'
+          fontWeight='bold'
+          border='gray'
         >
           {buttonTitle}
-        </button>
+        </Button>
       </main>
     </Modal>
   );
