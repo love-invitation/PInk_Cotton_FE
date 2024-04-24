@@ -14,6 +14,9 @@ const convertBackgroundColor = (colorValue: ButtonBackgroundColorType) => {
     case 'brown':
       return 'bg-brown_100';
 
+    case 'gray':
+      return 'bg-gray_500';
+
     case 'naked':
       return '';
 
