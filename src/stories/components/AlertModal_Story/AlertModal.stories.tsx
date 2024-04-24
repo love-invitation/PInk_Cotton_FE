@@ -1,4 +1,4 @@
-import { AlertModal } from '@/components/client';
+import { AlertModal, Button } from '@/components/client';
 import { useModal } from '@/hooks';
 import type { Meta, StoryObj } from '@storybook/react';
 
@@ -100,20 +100,7 @@ export const Default: Story = {
             justifyContent: 'center',
           }}
         >
-          <button
-            type='button'
-            onClick={showModal}
-            style={{
-              fontSize: '14px',
-              fontWeight: '800',
-              color: 'grey',
-              padding: '10px 15px',
-              border: '4px solid grey',
-              borderRadius: '8px',
-            }}
-          >
-            모달 오픈!
-          </button>
+          <Button onClick={showModal}>모달 오픈!</Button>
 
           <ModalComponent
             args={{
