@@ -97,8 +97,6 @@ export const Default: Story = {
       return (
         <section
           style={{
-            width: '100rem',
-            height: '100rem',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
