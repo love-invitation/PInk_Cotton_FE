@@ -19,6 +19,7 @@ import type { Meta, StoryObj } from '@storybook/react';
  *
  * - **className ? : **추가적인 스타일을 정의할때 tailwind를 이용하여 지정합니다.
  * - **onClick ? : **버튼을 글릭한 경우 실행되어질 동작을 정의합니다. ( e.preventDefault() 동작 ) \- type : `() => void`
+ * - **disabled ? : **Button의 disabled 사용 여부를 지정합니다. `true` `false` \- **default : `false`**
  * */
 const meta = {
   title: 'Components/Button',
@@ -67,6 +68,10 @@ const meta = {
       control: 'boolean',
       description: 'Button의 shadow 사용 여부를 지정합니다.',
     },
+    disabled: {
+      control: 'boolean',
+      description: 'Button의 disabled 상태 부여를 지정합니다.',
+    },
   },
 
   args: {
@@ -95,6 +100,12 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {};
+
+export const DisabledTrue: Story = {
+  args: {
+    disabled: true,
+  },
+};
 
 export const SampleOne: Story = {
   args: {
