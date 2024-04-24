@@ -60,7 +60,7 @@ const meta = {
     },
     backgroundColor: {
       control: 'inline-radio',
-      options: ['white', 'black', 'pink', 'brown', 'naked'],
+      options: ['white', 'black', 'pink', 'brown', 'gray', 'naked'],
       description: 'Button의 background 색상을 지정합니다.',
     },
     shadow: {
