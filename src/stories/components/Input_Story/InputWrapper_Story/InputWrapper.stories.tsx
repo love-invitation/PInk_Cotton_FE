@@ -1,25 +1,25 @@
 import { FormProvider, useForm } from 'react-hook-form';
 
-import InputText from '@/components/client/InputText/InputText';
+import InputWrapper from '@/components/client/Input/InputWrapper/InputWrapper';
 import { Meta, StoryObj } from '@storybook/react';
 
 /**
- *  ## InputText Component
+ *  ## InputWrapper Component
  *
  *  ### Props
- *  - **children : **자식으로 InputText의 서브 컴포넌트를 지원합니다. - InputText.Input | InputText.Label | InputText.ErrorMessage
- *  - **className : **Tailwind CSS를 사용하여 InputText의 스타일을 추가 및 수정 합니다.
+ *  - **children : **자식으로 InputWrapper의 서브 컴포넌트를 지원합니다. - InputWrapper.Input | InputWrapper.Label | InputWrapper.ErrorMessage
+ *  - **className : **Tailwind CSS를 사용하여 InputWrapper의 스타일을 추가 및 수정 합니다.
  *  - **...rest : **div태그 요소가 가진 모든 표준 HTML 속성을 지원합니다.
  *
- * ### 메인 컴포넌트 : InputText : Wrapper 역할
- * ### 서브 컴포넌트 : InputText.Input | InputText.Label | InputText.ErrorMessage
+ * ### 메인 컴포넌트 : InputWrapper : Wrapper 역할
+ * ### 서브 컴포넌트 : InputWrapper.Input | InputWrapper.Label | InputWrapper.ErrorMessage
  *
  * ### 사용하는 곳에서 필요한 컴포넌트들을 조합하여 사용하면 됩니다.
  */
 
 const meta = {
-  title: 'Components/Input/InputText',
-  component: InputText,
+  title: 'Components/Input/InputWrapper',
+  component: InputWrapper,
 
   parameters: {
     layout: 'centered',
@@ -33,7 +33,7 @@ const meta = {
     },
     className: {
       control: 'text',
-      description: 'Tailwind CSS를 사용하여 InputText의 스타일을 추가 및 수정 합니다.',
+      description: 'Tailwind CSS를 사용하여 InputWrapper의 스타일을 추가 및 수정 합니다.',
     },
   },
 
@@ -51,7 +51,7 @@ const meta = {
       );
     },
   ],
-} satisfies Meta<typeof InputText>;
+} satisfies Meta<typeof InputWrapper>;
 
 export default meta;
 
@@ -61,12 +61,13 @@ export const Input: Story = {
   args: {
     children: (
       <>
-        <InputText.Label>레이블</InputText.Label>
-        <InputText.Input
-          placeholder='이름'
+        <InputWrapper.Label>레이블</InputWrapper.Label>
+        <InputWrapper.Input
+          type='text'
           name='name'
+          placeholder='이름'
         />
-        <InputText.ErrorMessage>에러 메세지</InputText.ErrorMessage>
+        <InputWrapper.ErrorMessage>에러 메세지</InputWrapper.ErrorMessage>
       </>
     ),
   },

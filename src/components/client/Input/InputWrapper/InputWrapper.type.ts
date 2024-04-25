@@ -1,6 +1,6 @@
 import { HTMLAttributes, ReactNode } from 'react';
 
-export interface ErrorMessageProps extends HTMLAttributes<HTMLParagraphElement> {
+export interface InputWrapperProps extends HTMLAttributes<HTMLDivElement> {
   children: ReactNode;
   className?: string;
 }

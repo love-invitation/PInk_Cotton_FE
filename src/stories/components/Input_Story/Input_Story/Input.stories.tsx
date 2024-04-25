@@ -1,20 +1,20 @@
 import { FormProvider, useForm } from 'react-hook-form';
 
-import InputText from '@/components/client/InputText/InputText';
+import InputWrapper from '@/components/client/Input/InputWrapper/InputWrapper';
 import { Meta, StoryObj } from '@storybook/react';
 
 /**
- *  ## InputText.Input Component
+ *  ## InputWrapper.Input Component
  *
  *  ### Props
- *  - **className : **Tailwind CSS를 사용하여 InputText.Input의 스타일을 추가 및 수정 합니다.
+ *  - **className : **Tailwind CSS를 사용하여 InputWrapper.Input의 스타일을 추가 및 수정 합니다.
  *  - **registerOptions: **react-hook-form registerOptions 옵션들을 지원합니다.
  *  - **...rest : **input태그 요소가 가진 모든 표준 HTML 속성을 지원합니다.
  */
 
 const meta = {
   title: 'Components/Input/Input',
-  component: InputText.Input,
+  component: InputWrapper.Input,
 
   parameters: {
     layout: 'centered',
@@ -41,7 +41,8 @@ const meta = {
     },
     type: {
       control: 'text',
-      description: '입력 필드의 유형을 설정합니다. 예: "text", "email", "password", "number" 등.',
+      description:
+        '입력 필드의 유형을 설정합니다. 예: "text", "email", "number", "password", "tel" 등.',
     },
     disabled: {
       control: 'boolean',
@@ -64,7 +65,7 @@ const meta = {
       );
     },
   ],
-} satisfies Meta<typeof InputText.Input>;
+} satisfies Meta<typeof InputWrapper.Input>;
 
 export default meta;
 
@@ -72,6 +73,7 @@ type Story = StoryObj<typeof meta>;
 
 export const DefaultInput: Story = {
   args: {
+    type: 'text',
     placeholder: '기본 입력',
     name: 'defaultName',
   },
@@ -98,6 +100,14 @@ export const NumberInput: Story = {
     type: 'number',
     placeholder: '숫자',
     name: 'number',
+  },
+};
+
+export const TelInput: Story = {
+  args: {
+    type: 'tel',
+    placeholder: '전화번호',
+    name: 'tel',
   },
 };
 
