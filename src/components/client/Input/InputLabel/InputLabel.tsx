@@ -1,8 +1,8 @@
-import { LabelProps } from './Label.type';
+import { InputLabelProps } from './InputLabel.type';
 
 import { twMerge } from 'tailwind-merge';
 
-const Label = ({ children, className, ...rest }: LabelProps) => {
+const InputLabel = ({ children, className, ...rest }: InputLabelProps) => {
   return (
     <label
       className={twMerge(
@@ -16,4 +16,4 @@ const Label = ({ children, className, ...rest }: LabelProps) => {
   );
 };
 
-export default Label;
+export default InputLabel;
