@@ -5,6 +5,7 @@ import React from 'react';
 import { ArrowDownIcon, Divider } from '@/components/server';
 import { useToggle } from '@/hooks';
 
+import CheckBox from '../CheckBox/CheckBox';
 import { AccordionProps } from './Accordion.type';
 import { useAccordionStyle, useGetElementHeight } from './hooks';
 
@@ -21,7 +22,12 @@ const Accordion = ({ children, buttonTitle, type = 'main' }: AccordionProps) => 
         onClick={handleToggle}
       >
         <div className={buttonInnerStyle}>
-          {type === 'edit' && <div className='h-[2rem] w-[2rem] bg-black' />}
+          {type === 'edit' && (
+            <CheckBox
+              checked={isToggle}
+              className='pointer-events-none'
+            />
+          )}
           {type === 'main' && <strong className='text-size18 font-medium leading-[2]'>Q.</strong>}
 
           {buttonTitle}
