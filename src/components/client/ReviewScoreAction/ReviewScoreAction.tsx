@@ -10,7 +10,7 @@ import { twMerge } from 'tailwind-merge';
 
 const scoreList = [1, 2, 3, 4, 5];
 
-const ReviewScoreAction = ({ onClick, score, className = '' }: ReviewScoreActionProps) => {
+const ReviewScoreAction = ({ onClick, score = 0, className = '' }: ReviewScoreActionProps) => {
   const { handleClickStar, currentScore } = useChangeReviewScore({ score, onClick });
 
   return (
