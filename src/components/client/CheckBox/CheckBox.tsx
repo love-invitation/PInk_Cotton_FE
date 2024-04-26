@@ -15,6 +15,7 @@ const CheckBox = ({
   size = 20,
   type = 'checkBox',
   disabled = false,
+  id = '',
   ...rest
 }: CheckBoxProps) => {
   const inputId = useId();
@@ -24,15 +25,15 @@ const CheckBox = ({
   return (
     <>
       <input
-        id={inputId}
-        type={type}
-        checked={checked}
+        id={id || inputId}
         style={{ display: 'none' }}
-        disabled={disabled}
         {...rest}
+        checked={checked}
+        type={type}
+        disabled={disabled}
       />
       <motion.label
-        htmlFor={inputId}
+        htmlFor={id || inputId}
         className={twMerge(
           twJoin('block rounded-[0.5rem] cursor-pointer', checkedStyle, disabledStyle),
           className,
