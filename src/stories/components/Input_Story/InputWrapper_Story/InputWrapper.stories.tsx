@@ -29,6 +29,7 @@ const meta = {
 
   argTypes: {
     children: {
+      control: { disable: true },
       description: '자식으로 올 서브 컴포넌트를 지정합니다.',
     },
     className: {

@@ -35,43 +35,43 @@ const meta = {
 
   argTypes: {
     acceptButtonTitle: {
-      control: 'null',
+      control: { disable: true },
       description: 'Accept Button의 타이틀을 변경할 수 있습니다.',
     },
 
     rejectButtonTitle: {
-      control: 'null',
+      control: { disable: true },
       description: 'Reject Button의 타이틀을 변경할 수 있습니다.',
     },
 
     onAccept: {
-      control: 'null',
+      control: { disable: true },
       description: 'Accept Button 클릭시 수행될 메서드를 전달받습니다.',
     },
 
     onReject: {
-      control: 'null',
+      control: { disable: true },
       description:
         'Modal이 닫히기 위해 수행될 메서드를 전달받습니다. - Reject Button에도 전달됩니다.',
     },
 
     isShow: {
-      control: 'null',
+      control: { disable: true },
       description: 'useModal Hook에서 isShowModal을 전달 받아 모달의 공개 여부를 지정합니다.',
     },
 
     message: {
-      control: 'null',
+      control: { disable: true },
       description: '사용자에게 전달할 Confirm 사항 메세지를 전달합니다.',
     },
 
     warningMessage: {
-      control: 'null',
+      control: { disable: true },
       description: '사용자에게 전달할 경고 메세지를 전달합니다.',
     },
 
     clickAwayEnable: {
-      control: 'null',
+      control: { disable: true },
       description:
         'background click, Escape key를 통한 Modal 제어를 활성화 할지 전달합니다. - default : true',
     },

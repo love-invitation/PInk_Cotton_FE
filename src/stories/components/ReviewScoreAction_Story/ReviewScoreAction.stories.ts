@@ -28,7 +28,7 @@ const meta = {
       description: '구분선의 방향을 지정합니다.',
     },
     onClick: {
-      control: 'null',
+      control: { disable: true },
       description: 'Star Icon을 클릭할때의 메서드를 전달 받습니다. ( score : number ) => void',
     },
     className: {

@@ -27,23 +27,23 @@ const meta = {
 
   argTypes: {
     isShow: {
-      control: 'null',
+      control: { disable: true },
       description: '현재 Modal이 보여질지에 대해 boolean 값을 제공합니다.',
     },
 
     onClose: {
-      control: 'null',
+      control: { disable: true },
       description:
         'Modal을 닫기위한 상태를 false값으로 변경할수 있는 useModal hook의 close 메서드를 전달합니다.',
     },
 
     children: {
-      control: 'null',
+      control: { disable: true },
       description: 'Modal내부에 표현할 Component 혹은 내용을 전달합니다.',
     },
 
     clickAwayEnable: {
-      control: 'null',
+      control: { disable: true },
       description:
         'Background 클릭, esc키를 통해 Modal 닫기 기능을 사용할지에 대해 전달합니다 - default : false',
       defaultValue: false,

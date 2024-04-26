@@ -39,38 +39,38 @@ const meta = {
 
   argTypes: {
     buttonTitle: {
-      control: 'null',
+      control: { disable: true },
       description: 'close Button의 타이틀을 변경할 수 있습니다.',
     },
 
     onClose: {
-      control: 'null',
+      control: { disable: true },
       description: 'Modal을 닫을때 사용할 메서드를 전달 받습니다.',
     },
 
     isShow: {
-      control: 'null',
+      control: { disable: true },
       description: 'useModal Hook에서 isShowModal을 전달 받아 모달의 공개 여부를 지정합니다.',
     },
 
     message: {
-      control: 'null',
+      control: { disable: true },
       description: '사용자에게 전달할 Confirm 사항 메세지를 전달합니다.',
     },
 
     subMessage: {
-      control: 'null',
+      control: { disable: true },
       description: '사용자에게 전달할 수 있는 추가 메세지를 전달합니다.',
     },
 
     subMessageType: {
-      control: 'null',
+      control: { disable: true },
       description:
         'danger warning basic safe 중 원하는 타입을 지정할 수 있습니다. - 타입에 따라 색상이 변경됩니다.',
     },
 
     clickAwayEnable: {
-      control: 'null',
+      control: { disable: true },
       description:
         'background click, Escape key를 통한 Modal 제어를 활성화 할지 전달합니다. - default : true',
     },
