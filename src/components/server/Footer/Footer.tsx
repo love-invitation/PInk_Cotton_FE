@@ -3,8 +3,8 @@ import { FooterInfo, FooterNavigator } from './components';
 
 const Footer = () => {
   return (
-    <footer className='w-full h-[20rem] flex justify-center'>
-      <div className='w-full max-w-[100rem] min-w-[27rem] h-full flex flex-col justify-center'>
+    <footer className='w-full h-[20rem] flex justify-center shadow-shadow_500'>
+      <div className='w-full max-w-[100rem] min-w-[27rem] h-full flex flex-col justify-center gap-[1rem]'>
         <FooterNavigator />
         <Divider />
         <FooterInfo />
