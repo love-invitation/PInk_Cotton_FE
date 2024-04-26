@@ -13,6 +13,7 @@ import type { Meta, StoryObj } from '@storybook/react';
  *
  * - **className ? : **추가적인 스타일을 정의할때 tailwind를 이용하여 지정합니다.
  * - **type ? : **이넘 타입으로 "checkbox" 만을 허용합니다. - input의 기본 여러 type을 방지하기 위해 Default 값을 지정
+ * - **id ? : **사용되는 위치에서 label과의 연동을 위해 id값을 기입할 수 있습니다.
  *
  * rest Props를 통해 Input의 속성을 그대로 전달 받습니다.
  * */
@@ -47,6 +48,10 @@ const meta = {
       options: ['checkbox'],
       description:
         '이넘 타입으로 "checkbox" 만을 허용합니다. - input의 기본 여러 type을 방지하기 위해 Default 값을 지정',
+    },
+    id: {
+      control: 'text',
+      description: '사용되는 위치에서 label과의 연동을 위해 id값을 기입할 수 있습니다.',
     },
   },
 
