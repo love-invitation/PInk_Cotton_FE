@@ -1,6 +1,7 @@
 'use client';
 
 import { StarIcon } from '@/components/server';
+import { ScoreType } from '@/types/originType/Score';
 
 import { ReviewScoreActionProps } from './ReviewScoreAction.type';
 import { useChangeReviewScore } from './hooks';
@@ -8,7 +9,7 @@ import { useChangeReviewScore } from './hooks';
 import { motion } from 'framer-motion';
 import { twMerge } from 'tailwind-merge';
 
-const scoreList = [1, 2, 3, 4, 5];
+const scoreList: ScoreType[] = [1, 2, 3, 4, 5];
 
 const ReviewScoreAction = ({ onClick, score = 0, className = '' }: ReviewScoreActionProps) => {
   const { handleClickStar, currentScore } = useChangeReviewScore({ score, onClick });

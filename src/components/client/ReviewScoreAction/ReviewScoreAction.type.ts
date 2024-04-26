@@ -1,6 +1,8 @@
+import { ScoreType } from '@/types/originType/Score';
+
 export interface ReviewScoreActionProps {
-  onClick: (score: number) => void;
-  score: number;
+  onClick: (score: ScoreType) => void;
+  score: ScoreType;
 
   className?: string;
 }
