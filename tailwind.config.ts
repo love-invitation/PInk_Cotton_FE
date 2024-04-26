@@ -108,7 +108,11 @@ const config: Config = {
       },
     },
 
-    plugins: [require('tailwindcss-animated'), require('tailwind-scrollbar-hide')],
+    plugins: [
+      require('tailwindcss-animated'),
+      require('tailwind-scrollbar-hide'),
+      require('@tailwindcss/line-clamp'),
+    ],
   },
 };
 
