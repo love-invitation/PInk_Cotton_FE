@@ -25,11 +25,13 @@ const meta = {
         '둘중 하나의 type을 전달받아 스타일을 변경합니다.  - main : 홈 질문 - edit : 청첩장 제작',
     },
     buttonTitle: {
-      control: 'string',
+      control: 'text',
       description: 'Accordion Toggle Button 내부 타이틀을 전달받습니다.',
     },
     children: {
-      control: 'null',
+      control: {
+        disable: true,
+      },
       description: 'Accordion 내부에 담을 Component를 전달받습니다.',
     },
   },

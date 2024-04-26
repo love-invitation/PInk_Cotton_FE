@@ -35,7 +35,7 @@ const meta = {
       description: 'CheckBox의 크기를 지정합니다. - number ( px 단위 )',
     },
     className: {
-      control: 'string',
+      control: 'text',
       description: '추가적인 스타일을 정의할때 tailwind를 이용하여 지정합니다.',
     },
     disabled: {
