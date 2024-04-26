@@ -1,4 +1,4 @@
-export interface ReviewStarActionProps {
+export interface ReviewScoreActionProps {
   onClick: (score: number) => void;
   score: number;
 

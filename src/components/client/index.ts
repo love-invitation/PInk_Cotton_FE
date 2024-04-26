@@ -4,3 +4,5 @@ export { default as AlertModal } from './AlertModal/AlertModal';
 export { default as Accordion } from './Accordion/Accordion';
 export { default as Button } from './Button/Button';
 export { default as CheckBox } from './CheckBox/CheckBox';
+
+export { default as ReviewScoreAction } from './ReviewScoreAction/ReviewScoreAction';

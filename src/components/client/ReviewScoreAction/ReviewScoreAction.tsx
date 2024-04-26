@@ -1,40 +1,28 @@
 'use client';
 
-import { useState } from 'react';
-
 import { StarIcon } from '@/components/server';
 
-import { ReviewStarActionProps } from './ReviewStarAction.type';
+import { ReviewScoreActionProps } from './ReviewScoreAction.type';
+import { useChangeReviewScore } from './hooks';
 
 import { motion } from 'framer-motion';
 import { twMerge } from 'tailwind-merge';
 
 const scoreList = [1, 2, 3, 4, 5];
 
-const ReviewStarAction = ({ onClick, score, className = '' }: ReviewStarActionProps) => {
-  const [currentScore, setCurrentScore] = useState(score);
-
-  const handleClickStart = (newScore: number) => {
-    if (currentScore === 1 && newScore === currentScore) {
-      setCurrentScore(0);
-      onClick(0);
-      return;
-    }
-
-    setCurrentScore(newScore);
-    onClick(newScore);
-  };
+const ReviewScoreAction = ({ onClick, score, className = '' }: ReviewScoreActionProps) => {
+  const { handleClickStar, currentScore } = useChangeReviewScore({ score, onClick });
 
   return (
     <ul className={twMerge('flex gap-[1.2rem]', className)}>
       {scoreList.map((scoreValue) => (
-        <li key={`${scoreValue}_start_review`}>
+        <li key={`${scoreValue}_review_score`}>
           <motion.button
             type='button'
             whileTap={{ scale: 0.9 }}
             whileHover={{ filter: 'brightness(90%)' }}
             aria-label={`review_action_${score}`}
-            onClick={() => handleClickStart(scoreValue)}
+            onClick={() => handleClickStar(scoreValue)}
           >
             <StarIcon
               size={28}
@@ -47,4 +35,4 @@ const ReviewStarAction = ({ onClick, score, className = '' }: ReviewStarActionPr
   );
 };
 
-export default ReviewStarAction;
+export default ReviewScoreAction;
