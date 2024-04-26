@@ -31,6 +31,7 @@ const CheckBox = ({
         checked={checked}
         type={type}
         disabled={disabled}
+        readOnly={!rest.onChange}
       />
       <motion.label
         htmlFor={id || inputId}
