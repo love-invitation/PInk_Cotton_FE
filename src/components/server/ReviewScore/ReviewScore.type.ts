@@ -1,4 +1,6 @@
+import { ScoreType } from '@/types/originType/Score';
+
 export interface ReviewScoreProps {
-  score: number;
+  score: ScoreType;
   className?: string;
 }
