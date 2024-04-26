@@ -4,7 +4,7 @@ import { Meta, StoryObj } from '@storybook/react';
 /**
  *  ## ReviewScore Action Component
  *
- * 후가 작성에서 사용자에게 Review Score를 전달 받기 위해 사용됩니다.
+ * 후기 작성에서 사용자에게 Review Score를 전달 받기 위해 사용됩니다.
  *
  *  ### Props
  *  - **score : **초기 default score를 전달 받습니다. - **default : 0**
