@@ -6,5 +6,7 @@ export interface CheckBoxProps extends HTMLAttributes<HTMLInputElement> {
   className?: string;
   disabled?: boolean;
 
+  id?: string;
+
   type?: 'checkBox';
 }
