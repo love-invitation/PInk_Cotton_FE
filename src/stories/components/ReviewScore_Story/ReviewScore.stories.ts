@@ -24,7 +24,7 @@ const meta = {
     score: {
       control: 'inline-radio',
       options: [0, 1, 2, 3, 4, 5],
-      description: '구분선의 방향을 지정합니다.',
+      description: 'score를 전달 받습니다. - default : 0',
     },
     className: {
       control: 'text',
