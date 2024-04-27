@@ -49,7 +49,7 @@ export const UploadImageListView: Story = {
           limit={10}
           onChange={() => {}}
         >
-          <UploadImage.Input multiple>다중 이미지 업로드 뷰</UploadImage.Input>
+          <UploadImage.InputLabel multiple>다중 이미지 업로드 뷰</UploadImage.InputLabel>
           <Story />
         </UploadImage>
       );
