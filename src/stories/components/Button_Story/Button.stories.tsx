@@ -80,7 +80,7 @@ const meta = {
   },
 
   decorators: [
-    (ButtonComponent) => (
+    (ButtonComponent, { args }) => (
       <div
         style={{
           width: '20rem',
@@ -90,7 +90,7 @@ const meta = {
           justifyContent: 'center',
         }}
       >
-        <ButtonComponent />
+        <ButtonComponent args={args} />
       </div>
     ),
   ],

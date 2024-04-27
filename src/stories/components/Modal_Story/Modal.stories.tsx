@@ -62,8 +62,11 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   decorators: [
-    (ModalComponent) => {
+    (ModalComponent, { args }) => {
       const { showModal, isShowModal, closeModal } = useModal();
+
+      const { children = '모달 생성을 위한 Modal Base Layout 입니다.', clickAwayEnable = true } =
+        args;
       return (
         <section
           style={{
@@ -78,8 +81,8 @@ export const Default: Story = {
             args={{
               isShow: isShowModal,
               onClose: closeModal,
-              children: '모달 생성을 위한 Modal Base Layout 입니다.',
-              clickAwayEnable: true,
+              children,
+              clickAwayEnable,
             }}
           />
         </section>

@@ -33,7 +33,7 @@ const meta = {
   },
 
   decorators: [
-    (DividerComponent) => {
+    (DividerComponent, { args }) => {
       return (
         <div
           style={{
@@ -45,7 +45,7 @@ const meta = {
             justifyContent: 'center',
           }}
         >
-          <DividerComponent />
+          <DividerComponent args={args} />
         </div>
       );
     },

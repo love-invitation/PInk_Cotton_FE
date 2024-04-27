@@ -35,12 +35,12 @@ const meta = {
 
   argTypes: {
     acceptButtonTitle: {
-      control: { disable: true },
+      control: 'text',
       description: 'Accept Button의 타이틀을 변경할 수 있습니다.',
     },
 
     rejectButtonTitle: {
-      control: { disable: true },
+      control: 'text',
       description: 'Reject Button의 타이틀을 변경할 수 있습니다.',
     },
 
@@ -61,17 +61,17 @@ const meta = {
     },
 
     message: {
-      control: { disable: true },
+      control: 'text',
       description: '사용자에게 전달할 Confirm 사항 메세지를 전달합니다.',
     },
 
     warningMessage: {
-      control: { disable: true },
+      control: 'text',
       description: '사용자에게 전달할 경고 메세지를 전달합니다.',
     },
 
     clickAwayEnable: {
-      control: { disable: true },
+      control: 'boolean',
       description:
         'background click, Escape key를 통한 Modal 제어를 활성화 할지 전달합니다. - default : true',
     },
@@ -92,8 +92,16 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   decorators: [
-    (ModalComponent) => {
+    (ModalComponent, { args }) => {
       const { showModal, isShowModal, closeModal } = useModal();
+
+      const {
+        acceptButtonTitle = '확인',
+        rejectButtonTitle = '취소',
+        clickAwayEnable = true,
+        message = '해당 메세지는 Confirm Modal 내부 메세지 입니다. br 태그를 이용해 줄바꿈도 가능합니다.',
+        warningMessage = '사용자에게 전달할 경고 메세지 입니다.',
+      } = args;
       return (
         <section
           style={{
@@ -109,9 +117,11 @@ export const Default: Story = {
               isShow: isShowModal,
               onAccept: () => {},
               onReject: closeModal,
-              message:
-                '해당 메세지는 Confirm Modal 내부 메세지 입니다. br 태그를 이용해 줄바꿈도 가능합니다.',
-              warningMessage: '사용자에게 전달할 경고 메세지 입니다.',
+              message,
+              warningMessage,
+              acceptButtonTitle,
+              rejectButtonTitle,
+              clickAwayEnable,
             }}
           />
         </section>

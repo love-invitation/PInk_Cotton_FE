@@ -39,14 +39,14 @@ const meta = {
   },
 
   decorators: [
-    (Story) => {
+    (InputWrapperComponent, { args }) => {
       const form = useForm();
       const { watch, getValues } = form;
       watch();
 
       return (
         <FormProvider {...form}>
-          <Story />
+          <InputWrapperComponent args={args} />
           <p style={{ margin: '1rem 0rem', color: 'black' }}>{JSON.stringify(getValues())}</p>
         </FormProvider>
       );

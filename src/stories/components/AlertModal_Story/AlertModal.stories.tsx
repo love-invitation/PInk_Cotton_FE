@@ -39,7 +39,7 @@ const meta = {
 
   argTypes: {
     buttonTitle: {
-      control: { disable: true },
+      control: 'text',
       description: 'close Button의 타이틀을 변경할 수 있습니다.',
     },
 
@@ -54,23 +54,24 @@ const meta = {
     },
 
     message: {
-      control: { disable: true },
+      control: 'text',
       description: '사용자에게 전달할 Confirm 사항 메세지를 전달합니다.',
     },
 
     subMessage: {
-      control: { disable: true },
+      control: 'text',
       description: '사용자에게 전달할 수 있는 추가 메세지를 전달합니다.',
     },
 
     subMessageType: {
-      control: { disable: true },
+      control: 'inline-radio',
+      options: ['danger', 'warning', 'safe', 'basic'],
       description:
         'danger warning basic safe 중 원하는 타입을 지정할 수 있습니다. - 타입에 따라 색상이 변경됩니다.',
     },
 
     clickAwayEnable: {
-      control: { disable: true },
+      control: 'boolean',
       description:
         'background click, Escape key를 통한 Modal 제어를 활성화 할지 전달합니다. - default : true',
     },
@@ -90,8 +91,17 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   decorators: [
-    (ModalComponent) => {
+    (ModalComponent, { args }) => {
       const { showModal, isShowModal, closeModal } = useModal();
+
+      const {
+        subMessage = '사용자에게 전달할 추가 메세지 입니다.',
+        subMessageType = 'basic',
+        clickAwayEnable = true,
+        message = '해당 메세지는 Confirm Modal 내부 메세지 입니다. br 태그를 이용해 줄바꿈도 가능합니다.',
+        buttonTitle = '닫기',
+      } = args;
+
       return (
         <section
           style={{
@@ -106,9 +116,11 @@ export const Default: Story = {
             args={{
               isShow: isShowModal,
               onClose: closeModal,
-              message:
-                '해당 메세지는 Confirm Modal 내부 메세지 입니다. br 태그를 이용해 줄바꿈도 가능합니다.',
-              subMessage: '사용자에게 전달할 추가 메세지 입니다.',
+              message,
+              subMessage,
+              subMessageType,
+              clickAwayEnable,
+              buttonTitle,
             }}
           />
         </section>

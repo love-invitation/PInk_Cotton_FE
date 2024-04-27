@@ -55,14 +55,14 @@ const meta = {
   },
 
   decorators: [
-    (AccordionComponent) => {
+    (AccordionComponent, { args }) => {
       return (
         <div
           style={{
             width: '50rem',
           }}
         >
-          <AccordionComponent />
+          <AccordionComponent args={args} />
         </div>
       );
     },
