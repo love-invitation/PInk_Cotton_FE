@@ -10,7 +10,7 @@ const FooterInfo = () => {
   const liStyle = 'w-full h-[1.5rem] flex items-center';
 
   return (
-    <ul className='w-full flex flex-col gap-[0.6rem] pl-[2rem] text-[1.1rem] text-gray_100 tracking-[0.05rem] text-nowrap'>
+    <ul className='w-full flex flex-col gap-[0.6rem] pl-[2rem] text-[1.1rem] text-gray_100 tracking-[0.05rem]'>
       <li className={liStyle}>
         <p>
           상호명 : <strong>PINKCOTTON</strong>
