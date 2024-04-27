@@ -69,6 +69,7 @@ const config: Config = {
 
       zIndex: {
         // 각 컴포넌트별 z index => 0 ~ 100
+        icon: '100',
 
         header: '300',
 
