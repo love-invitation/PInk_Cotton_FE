@@ -4,5 +4,6 @@ export { default as AlertModal } from './AlertModal/AlertModal';
 export { default as Accordion } from './Accordion/Accordion';
 export { default as Button } from './Button/Button';
 export { default as CheckBox } from './CheckBox/CheckBox';
-
 export { default as ReviewScoreAction } from './ReviewScoreAction/ReviewScoreAction';
+export { default as Input } from './Input/InputWrapper/InputWrapper';
+export { default as UploadImage } from './UploadImage/UploadImageWrapper/UploadImageWrapper';
