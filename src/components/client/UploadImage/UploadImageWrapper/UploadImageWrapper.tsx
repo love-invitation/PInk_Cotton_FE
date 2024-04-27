@@ -19,7 +19,7 @@ const UploadImageWrapper = ({ className, limit, onChange, children }: UploadImag
   );
 };
 
-UploadImageWrapper.Input = UploadImageInputLabel;
+UploadImageWrapper.InputLabel = UploadImageInputLabel;
 UploadImageWrapper.View = UploadImageView;
 UploadImageWrapper.ListView = UploadImageListView;
 

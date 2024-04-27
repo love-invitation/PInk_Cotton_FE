@@ -40,7 +40,7 @@ export const UploadImageView: Story = {
     (Story) => {
       return (
         <UploadImage onChange={() => {}}>
-          <UploadImage.Input>단일 이미지 업로드 뷰</UploadImage.Input>
+          <UploadImage.InputLabel>단일 이미지 업로드 뷰</UploadImage.InputLabel>
           <Story />
         </UploadImage>
       );

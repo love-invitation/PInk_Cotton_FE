@@ -59,7 +59,7 @@ export const SingleUploadImage: Story = {
   args: {
     children: (
       <>
-        <UploadImage.Input>단일 이미지 업로드</UploadImage.Input>
+        <UploadImage.InputLabel>단일 이미지 업로드</UploadImage.InputLabel>
         <UploadImage.View alt='단일 이미지 업로드' />
       </>
     ),
@@ -72,7 +72,7 @@ export const MultipleUploadImage: Story = {
   args: {
     children: (
       <>
-        <UploadImage.Input multiple>다중 이미지 업로드</UploadImage.Input>
+        <UploadImage.InputLabel multiple>다중 이미지 업로드</UploadImage.InputLabel>
         <UploadImage.ListView alt='다중 이미지 업로드' />
       </>
     ),

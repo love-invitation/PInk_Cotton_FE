@@ -2,7 +2,7 @@ import { UploadImage } from '@/components/client';
 import { Meta, StoryObj } from '@storybook/react';
 
 /**
- * ## UploadImageInput 컴포넌트
+ * ## UploadImageInputLabel 컴포넌트
  *
  * 이미지를 업로드하기 위한 입력 필드를 제공하는 컴포넌트입니다. 사용자는 이 컴포넌트를 통해 이미지 파일을 선택하고 업로드할 수 있습니다.
  *
@@ -13,7 +13,7 @@ import { Meta, StoryObj } from '@storybook/react';
  * - **className:** Tailwind CSS 클래스를 사용하여 컴포넌트 스타일을 추가하거나 수정할 수 있습니다. 디자인 커스터마이징이 가능합니다.
  *
  * ### 사용 사례(Stories)
- * 1. **SingleUploadImageInput:**
+ * 1. **SingleUploadImageInputLabel:**
  * - 단일 이미지 업로드를 위한 기본 설정입니다.
  * - 사용자는 한 번에 하나의 이미지만 선택할 수 있습니다.
  *
@@ -25,9 +25,9 @@ import { Meta, StoryObj } from '@storybook/react';
  * - 이는 UI에서 직접적으로 보이지 않는 경우에 사용될 수 있습니다.
  */
 
-const meta: Meta<typeof UploadImage.Input> = {
-  title: 'Components/UploadImage/UploadImageInput',
-  component: UploadImage.Input,
+const meta: Meta<typeof UploadImage.InputLabel> = {
+  title: 'Components/UploadImage/UploadImageInputLabel',
+  component: UploadImage.InputLabel,
   parameters: {
     layout: 'centered',
   },
@@ -57,7 +57,7 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const SingleUploadImageInput: Story = {
+export const SingleUploadImageInputLabel: Story = {
   args: {
     children: '단일 이미지 업로드',
     visible: true,
@@ -65,7 +65,7 @@ export const SingleUploadImageInput: Story = {
   },
 };
 
-export const MultipleUploadImageInput: Story = {
+export const MultipleUploadImageInputLabel: Story = {
   args: {
     children: '다중 이미지 업로드',
     visible: true,
@@ -73,7 +73,7 @@ export const MultipleUploadImageInput: Story = {
   },
 };
 
-export const HiddenUploadImageInput: Story = {
+export const HiddenUploadImageInputLabel: Story = {
   args: {
     children: '숨김 이미지 업로드',
     visible: false,
