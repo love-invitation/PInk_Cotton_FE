@@ -54,7 +54,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   decorators: [
-    (Story) => {
+    (PinkMapComponent, { args }) => {
       const KAKAO_MAP_API_KEY = process.env.DB_KAKAO_MAP_API_KEY;
       const URL = `https://dapi.kakao.com/v2/maps/sdk.js?appkey=${KAKAO_MAP_API_KEY}&libraries=services,clusterer,drawing&autoload=false`;
 
@@ -66,7 +66,7 @@ export const Default: Story = {
             strategy='lazyOnload'
           />
 
-          <Story />
+          <PinkMapComponent args={args} />
         </>
       );
     },

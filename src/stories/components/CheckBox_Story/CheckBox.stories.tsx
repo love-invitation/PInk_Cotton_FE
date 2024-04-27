@@ -65,12 +65,11 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   decorators: [
-    (CheckBoxComponent) => {
+    (CheckBoxComponent, { args }) => {
       const [isChecked, setIsChecked] = useState(false);
-
       return (
         <CheckBoxComponent
-          args={{ checked: isChecked, onClick: () => setIsChecked((state) => !state) }}
+          args={{ ...args, checked: isChecked, onClick: () => setIsChecked((state) => !state) }}
         />
       );
     },
