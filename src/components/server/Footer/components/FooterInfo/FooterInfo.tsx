@@ -7,9 +7,11 @@ const FooterInfo = () => {
   const companyNumber = '1274812가124나';
   const mailOrderBusinessReport = '79102731';
 
+  const liStyle = 'w-full h-[1.5rem] flex items-center';
+
   return (
     <ul className='w-full flex flex-col gap-[0.6rem] pl-[2rem] text-[1.1rem] text-gray_100 tracking-[0.05rem] text-nowrap'>
-      <li className='w-full h-[1.5rem] flex items-center'>
+      <li className={liStyle}>
         <p>
           상호명 : <strong>PINKCOTTON</strong>
         </p>
@@ -19,7 +21,7 @@ const FooterInfo = () => {
         />
         <p>{address}</p>
       </li>
-      <li className='w-full h-[1.5rem] flex items-center'>
+      <li className={liStyle}>
         <p>대표자 : {representative}</p>
         <Divider
           direction='vertical'
@@ -27,13 +29,13 @@ const FooterInfo = () => {
         />
         <p>이메일 : {email}</p>
       </li>
-      <li className='w-full h-[1.5rem] flex items-center'>
+      <li className={liStyle}>
         <p>사업자등록번호 : {companyNumber}</p>
       </li>
-      <li className='w-full h-[1.5rem] flex items-center'>
+      <li className={liStyle}>
         <p>통신판매업신고 : {mailOrderBusinessReport}</p>
       </li>
-      <li className='w-full h-[1.5rem] flex items-center'>
+      <li className={liStyle}>
         <p>
           Copyright ⓒ <strong>PINKCOTTON</strong> all rights reserved
         </p>
