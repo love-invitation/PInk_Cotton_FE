@@ -1,5 +1,3 @@
-import Script from 'next/script';
-
 import { PinkMap } from '@/components/client';
 import type { Meta, StoryObj } from '@storybook/react';
 
@@ -12,7 +10,8 @@ import type { Meta, StoryObj } from '@storybook/react';
  * - **width ? : **지도의 초기 너비를 지정합니다. - default 100%
  * - **height ? : **지도의 초기 높이를 지정합니다. - default 100%
  *
- * 🔥 현재 Storybook에서는 스크립트 문제로 첫 렌더링에 정상동작하지 않아 Default 메뉴 방문후 Doc으로 재방문해야합니다.
+ * 🔥 현재 Storybook에서는 스크립트 문제로 첫 렌더링에 정상동작하지 않을 수 있습니다.<br>
+ * 만약 Map이 나타나지 않는다면, 다른 Story를 방문후 재시도 해주세요!
  * */
 const meta = {
   title: 'Components/PinkMap',
@@ -52,23 +51,4 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {
-  decorators: [
-    (PinkMapComponent, { args }) => {
-      const KAKAO_MAP_API_KEY = process.env.DB_KAKAO_MAP_API_KEY;
-      const URL = `https://dapi.kakao.com/v2/maps/sdk.js?appkey=${KAKAO_MAP_API_KEY}&libraries=services,clusterer,drawing&autoload=false`;
-
-      return (
-        <>
-          <Script
-            type='text/javascript'
-            src={URL}
-            strategy='lazyOnload'
-          />
-
-          <PinkMapComponent args={args} />
-        </>
-      );
-    },
-  ],
-};
+export const Default: Story = {};
