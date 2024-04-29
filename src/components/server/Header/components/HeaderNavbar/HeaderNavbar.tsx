@@ -15,7 +15,7 @@ const HeaderNavbar = () => {
 
   return (
     <nav className='mr-[6%]'>
-      <ul className='h-[5rem] text-size18 font-regular text-gray_500 flex items-center text-nowrap'>
+      <ul className='h-[5rem] text-size18 font-normal text-gray_500 flex items-center text-nowrap'>
         <HeaderNavItem
           pathName={pathName}
           href={introduceHref}
