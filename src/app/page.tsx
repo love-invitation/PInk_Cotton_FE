@@ -1,8 +1,9 @@
-import { Footer } from '@/components/server';
+import { Footer, Header } from '@/components/server';
 
 const Home = () => {
   return (
     <main className='h-full w-full'>
+      <Header />
       <Footer />
     </main>
   );
