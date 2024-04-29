@@ -14,7 +14,7 @@ const generateSize = (name: string) => {
   return sizes;
 };
 
-const config: Config = {
+const config = {
   content: ['./src/components/**/*.{js,ts,jsx,tsx}', './src/app/**/*.{js,ts,jsx,tsx}'],
 
   theme: {
@@ -115,6 +115,6 @@ const config: Config = {
       require('@tailwindcss/line-clamp'),
     ],
   },
-};
+} satisfies Config;
 
 export default config;
