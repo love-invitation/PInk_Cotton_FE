@@ -43,3 +43,5 @@ next-env.d.ts
 .eslintcache
 
 build-storybook.log
+
+.vscode
