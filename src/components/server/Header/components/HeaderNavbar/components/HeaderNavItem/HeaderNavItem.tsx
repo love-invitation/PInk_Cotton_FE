@@ -10,7 +10,7 @@ const HeaderNavItem = ({ pathName, href, title }: HeaderNavItemProps) => {
   return (
     <li
       className={twJoin(
-        pathName === href && 'text-black_900',
+        pathName === href && 'text-black_900 font-semiBold',
         'hover:brightness-90 flex justify-center relative',
       )}
     >
