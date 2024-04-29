@@ -5,6 +5,7 @@ import {
   CloseIcon,
   DotIcon,
   StarIcon,
+  UserIcon,
 } from '@/components/server';
 import type { Meta, StoryObj } from '@storybook/react';
 
@@ -74,5 +75,11 @@ export const Star: Story = {
 export const Dot: Story = {
   args: {
     children: <DotIcon />,
+  },
+};
+
+export const User: Story = {
+  args: {
+    children: <UserIcon />,
   },
 };
