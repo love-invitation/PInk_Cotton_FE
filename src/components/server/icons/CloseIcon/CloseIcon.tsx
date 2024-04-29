@@ -1,6 +1,6 @@
 import { CloseIconProps } from './CloseIcon.type';
 
-const CloseIcon = ({ size = 32, fill = 'black', className = '' }: CloseIconProps) => {
+const CloseIcon = ({ size = 32, fill = 'black', className = '', ...rest }: CloseIconProps) => {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
@@ -9,6 +9,7 @@ const CloseIcon = ({ size = 32, fill = 'black', className = '' }: CloseIconProps
       width={size}
       fill={fill}
       className={className}
+      {...rest}
     >
       <path d='m249-183-66-66 231-231-231-231 66-66 231 231 231-231 66 66-231 231 231 231-66 66-231-231-231 231Z' />
     </svg>
