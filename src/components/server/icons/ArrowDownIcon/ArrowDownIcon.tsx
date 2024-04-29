@@ -1,6 +1,11 @@
 import { ArrowDownIconProps } from './ArrowDownIcon.type';
 
-const ArrowDownIcon = ({ size = 32, fill = 'black', className = '' }: ArrowDownIconProps) => {
+const ArrowDownIcon = ({
+  size = 32,
+  fill = 'black',
+  className = '',
+  ...rest
+}: ArrowDownIconProps) => {
   return (
     <svg
       width={size}
@@ -9,6 +14,7 @@ const ArrowDownIcon = ({ size = 32, fill = 'black', className = '' }: ArrowDownI
       fill='none'
       xmlns='http://www.w3.org/2000/svg'
       className={className}
+      {...rest}
     >
       <path
         d='M19.92 8.94995L13.4 15.47C12.63 16.24 11.37 16.24 10.6 15.47L4.08002 8.94995'

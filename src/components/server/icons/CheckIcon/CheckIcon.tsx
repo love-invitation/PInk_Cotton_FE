@@ -1,6 +1,6 @@
 import { CheckIconProps } from './CheckIcon.type';
 
-const CheckIcon = ({ size = 32, fill = 'black', className = '' }: CheckIconProps) => {
+const CheckIcon = ({ size = 32, fill = 'black', className = '', ...rest }: CheckIconProps) => {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
@@ -9,6 +9,7 @@ const CheckIcon = ({ size = 32, fill = 'black', className = '' }: CheckIconProps
       width={size}
       fill={fill}
       className={className}
+      {...rest}
     >
       <path d='M382-208 122-468l90-90 170 170 366-366 90 90-456 456Z' />
     </svg>
