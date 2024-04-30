@@ -1,7 +1,7 @@
 'use client';
 
-import UploadImageItem from '../components/UploadImageItem/UploadImageItem';
-import { useUploadImageContext } from '../context/UploadImageContext/UploadImageContext';
+import { UploadImageItem } from '../components';
+import { useUploadImageContext } from '../context';
 import { UploadImageViewProps } from './UploadImageView.type';
 
 import { twMerge } from 'tailwind-merge';
