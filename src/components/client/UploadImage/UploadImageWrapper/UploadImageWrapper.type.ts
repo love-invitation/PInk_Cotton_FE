@@ -1,5 +1,5 @@
-import { UploadImageProviderProps } from '../context/UploadImageContext/UploadImageContext.type';
+import { UploadImageContextProviderProps } from '../context/UploadImageContext/UploadImageContext.type';
 
-export interface UploadImageWrapperProps extends UploadImageProviderProps {
+export interface UploadImageWrapperProps extends UploadImageContextProviderProps {
   className?: string;
 }
