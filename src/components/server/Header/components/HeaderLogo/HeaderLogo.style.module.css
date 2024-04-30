@@ -1,0 +1,23 @@
+.header_logo {
+  margin-left: 4%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border: 1px solid red;
+}
+
+@media (min-width: 900px) {
+  .header_logo {
+    width: 28.5rem;
+    height: 5rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .header_logo {
+    width: 16.8rem;
+    height: 3rem;
+  }
+}

@@ -1,9 +1,7 @@
+import style from './HeaderLogo.style.module.css';
+
 const HeaderLogo = () => {
-  return (
-    <div className='w-[28.5rem] h-[5rem] border-2 border-red-500 ml-[4%] flex justify-center items-center'>
-      Logo place
-    </div>
-  );
+  return <div className={style.header_logo}>Logo place</div>;
 };
 
 export default HeaderLogo;
