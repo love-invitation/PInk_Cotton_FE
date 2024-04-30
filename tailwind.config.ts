@@ -115,6 +115,7 @@ const config = {
       require('tailwindcss-animated'),
       require('tailwind-scrollbar-hide'),
       require('@tailwindcss/line-clamp'),
+      require('daisyui'),
     ],
   },
 } satisfies Config;
