@@ -1,0 +1,5 @@
+@media (min-width: 900px) {
+  .header_full_wide {
+    display: flex;
+  }
+}
