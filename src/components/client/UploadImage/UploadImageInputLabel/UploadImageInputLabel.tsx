@@ -2,7 +2,7 @@
 
 import { ChangeEvent, useId, useRef } from 'react';
 
-import { useUploadImageContext } from '../context/UploadImageContext/UploadImageContext';
+import { useUploadImageContext } from '../context';
 import { UploadImageInputLabelProps } from './UploadImageInputLabel.type';
 
 import { twJoin, twMerge } from 'tailwind-merge';
