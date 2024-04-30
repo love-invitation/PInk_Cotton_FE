@@ -55,5 +55,5 @@ export const UploadImageListView: Story = {
       );
     },
   ],
-  args: {},
+  args: { alt: '다중 이미지 업로드' },
 };
