@@ -9,9 +9,10 @@ import resolveConfig from 'tailwindcss/resolveConfig';
 
 const HeaderUserInfo = () => {
   const { theme } = resolveConfig(tailwindConfig);
+
   // TODO
   // 추후 로그인 기능 제작시 store값으로 변경
-  const isLogin = false;
+  const isLogin = true;
 
   return (
     <div className='w-[11rem] h-[2.4rem] mr-[4%] flex items-center justify-center'>
