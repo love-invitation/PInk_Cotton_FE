@@ -1,5 +1,4 @@
-import { HeaderNoneResponsive } from './components';
-import HeaderResponsive from './components/HeaderResponsive/HeaderResponsive';
+import { HeaderNoneResponsive, HeaderResponsive } from './components';
 
 const Header = () => {
   return (
