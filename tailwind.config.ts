@@ -110,14 +110,14 @@ const config = {
         5: '2.5rem',
       },
     },
-
-    plugins: [
-      require('tailwindcss-animated'),
-      require('tailwind-scrollbar-hide'),
-      require('@tailwindcss/line-clamp'),
-      require('daisyui'),
-    ],
   },
+
+  plugins: [
+    require('tailwindcss-animated'),
+    require('tailwind-scrollbar-hide'),
+    require('@tailwindcss/line-clamp'),
+    require('daisyui'),
+  ],
 } satisfies Config;
 
 export default config;
