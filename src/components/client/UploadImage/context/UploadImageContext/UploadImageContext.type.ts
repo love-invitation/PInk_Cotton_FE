@@ -6,7 +6,7 @@ export interface UploadImageContextProps {
   handleRemoveImage: (selectedImage: File) => void;
 }
 
-export interface UploadImageProviderProps {
+export interface UploadImageContextProviderProps {
   children: ReactNode;
   limit?: number;
   onChange: (images: File[]) => void;

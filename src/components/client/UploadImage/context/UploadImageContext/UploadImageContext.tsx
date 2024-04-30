@@ -4,6 +4,7 @@ import {
   ChangeEvent,
   createContext,
   useCallback,
+  useContext,
   useEffect,
   useMemo,
   useRef,
@@ -11,7 +12,10 @@ import {
 } from 'react';
 import { toast } from 'react-toastify';
 
-import { UploadImageContextProps, UploadImageProviderProps } from './UploadImageContext.type';
+import {
+  UploadImageContextProps,
+  UploadImageContextProviderProps,
+} from './UploadImageContext.type';
 
 export const UploadImageContext = createContext<UploadImageContextProps>({
   images: [],
@@ -19,11 +23,13 @@ export const UploadImageContext = createContext<UploadImageContextProps>({
   handleRemoveImage: () => {},
 });
 
-export const UploadImageProvider = ({
+export const useUploadImageContext = () => useContext(UploadImageContext);
+
+export const UploadImageContextProvider = ({
   limit = 1,
   onChange,
   children,
-}: UploadImageProviderProps) => {
+}: UploadImageContextProviderProps) => {
   const [images, setImages] = useState<File[]>([]);
   const onChangeRef = useRef(onChange);
 

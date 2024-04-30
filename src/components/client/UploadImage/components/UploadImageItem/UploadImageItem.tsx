@@ -1,22 +1,18 @@
-import { useContext } from 'react';
-
 import Image from 'next/image';
 
 import { CloseIcon } from '@/components/server';
 
-import { UploadImageContext } from '../../context/UploadImageContext/UploadImageContext';
+import { useUploadImageContext } from '../../context/UploadImageContext/UploadImageContext';
 import { UploadImageItemProps } from './UploadImageItem.type';
 
 const UploadImageItem = ({ image, ...rest }: UploadImageItemProps) => {
-  const { handleRemoveImage } = useContext(UploadImageContext);
+  const { handleRemoveImage } = useUploadImageContext();
 
   return (
     <>
       <Image
         src={URL.createObjectURL(image)}
         fill
-        objectFit='cover'
-        objectPosition='center'
         className='border-0 rounded-[0.5rem]'
         {...rest}
       />
