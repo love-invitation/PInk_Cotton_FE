@@ -7,3 +7,4 @@ export { default as CheckBox } from './CheckBox/CheckBox';
 export { default as ReviewScoreAction } from './ReviewScoreAction/ReviewScoreAction';
 export { default as Input } from './Input/InputWrapper/InputWrapper';
 export { default as UploadImage } from './UploadImage/UploadImageWrapper/UploadImageWrapper';
+export { default as TextEditor } from './TextEditor/TextEditor';
