@@ -1,4 +1,4 @@
-import Divider from '@/components/server/Divider/Divider';
+import { Divider } from '@/components/server';
 import { Meta, StoryObj } from '@storybook/react';
 
 /**
