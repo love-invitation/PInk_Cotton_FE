@@ -1,4 +1,4 @@
-export const COMPANY_INFO = {
+export const PINKCOTTON_COMPANY = {
   NAME: 'PINKCOTTON',
   EMAIL: 'abcdefg@pinkcotton.com',
   REPRESENTATIVE: '아무개',
