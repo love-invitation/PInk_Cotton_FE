@@ -54,7 +54,7 @@ export const BaseTextEditor: Story = {
       return (
         <FormProvider {...form}>
           <TextEditorComponent />
-          <EditorView value={form.watch().content} />
+          <EditorView value={form.watch('content')} />
         </FormProvider>
       );
     },
