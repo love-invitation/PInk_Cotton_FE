@@ -7,3 +7,4 @@ export { default as Logo } from './Logo/Logo';
 export { default as Header } from './Header/Header';
 export { default as Carousel } from './Carousel/Carousel';
 export { default as EditorView } from './EditorView/EditorView';
+export { default as CommonList } from './CommonList/CommonList';
