@@ -1,4 +1,4 @@
-import { MockupIconProps } from '../MockUpIcon.type';
+import { MockupIconProps } from '../MockupIcon.type';
 
 const PhoneCameraIcon = ({ className }: MockupIconProps) => {
   return (
