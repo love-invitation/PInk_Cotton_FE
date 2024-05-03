@@ -9,7 +9,10 @@ const TemplateCard = ({ children, size = 'medium', className }: TemplateCardProp
   return (
     <figure
       className={twMerge(
-        twJoin('w-[11.5rem] h-[20.2rem] shadow-shadow_500 rounded-radius20', cardSize),
+        twJoin(
+          'w-[11.5rem] h-[20.2rem] shadow-shadow_500 rounded-radius40 overflow-hidden',
+          cardSize,
+        ),
         className,
       )}
     >
