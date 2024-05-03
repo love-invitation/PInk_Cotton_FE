@@ -1,4 +1,5 @@
 import { TemplateCardProps } from './TemplateCard.type';
+import { PhoneMockup } from './components';
 import { useCardSize } from './hooks';
 
 import { twJoin, twMerge } from 'tailwind-merge';
@@ -8,15 +9,11 @@ const TemplateCard = ({ children, size = 'medium', className }: TemplateCardProp
 
   return (
     <figure
-      className={twMerge(
-        twJoin(
-          'w-[11.5rem] h-[20.2rem] shadow-shadow_500 rounded-radius40 overflow-hidden',
-          cardSize,
-        ),
-        className,
-      )}
+      className={twMerge(twJoin('w-[11.5rem] h-[20.2rem] overflow-hidden', cardSize), className)}
     >
-      {children}
+      {size !== 'mockup' && children}
+
+      {size === 'mockup' && <PhoneMockup>{children}</PhoneMockup>}
     </figure>
   );
 };
