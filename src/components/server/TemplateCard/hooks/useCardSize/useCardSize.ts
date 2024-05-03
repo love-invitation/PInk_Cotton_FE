@@ -12,7 +12,7 @@ const useCardSize = ({ type }: UseCardSize) => {
       return 'w-[41.5rem] h-[81.3rem]';
 
     case 'mockup':
-      return 'w-[32.2rem] h-[68.5rem]';
+      return 'w-[32.6rem] h-[68.5rem]';
 
     default:
       return 'w-[22.7rem] h-[40.1rem]';
