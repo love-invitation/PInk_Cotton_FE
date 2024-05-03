@@ -9,3 +9,4 @@ export { default as Carousel } from './Carousel/Carousel';
 export { default as EditorView } from './EditorView/EditorView';
 export { default as CommonList } from './CommonList/CommonList';
 export { default as Banner } from './Banner/Banner';
+export { default as TemplateCard } from './TemplateCard/TemplateCard';
