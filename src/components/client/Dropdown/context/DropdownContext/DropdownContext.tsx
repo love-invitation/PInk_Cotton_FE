@@ -1,5 +1,6 @@
 import {
   KeyboardEventHandler,
+  MouseEvent,
   createContext,
   useCallback,
   useContext,
@@ -37,11 +38,15 @@ export const DropdownContextProvider = ({
   const ref = useClickAway(() => setIsVisible(false));
   const onChangeRef = useRef(onChange);
 
-  const handleValueChange = useCallback((newValue: string) => {
-    onChangeRef.current(newValue);
-    setSelectedValue(newValue);
-    setIsVisible(false);
-  }, []);
+  const handleValueChange = useCallback(
+    (event: MouseEvent<HTMLButtonElement>, newValue: string) => {
+      onChangeRef.current(newValue);
+      setSelectedValue(newValue);
+      setIsVisible(false);
+      event.stopPropagation();
+    },
+    [],
+  );
 
   const handleHideDropdown = useCallback(() => {
     setIsVisible(false);
