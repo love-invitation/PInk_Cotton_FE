@@ -1,3 +1,5 @@
+import { MouseEvent } from 'react';
+
 import { useDropdownContext } from '../context/DropdownContext/DropdownContext';
 import { DropdownListProps } from './DropdownList.type';
 
@@ -16,7 +18,7 @@ const DropdownList = ({ list, ulClassName, buttonClassName }: DropdownListProps)
               'text-left w-full h-full hover:text-pink_500 px-[1.6rem] py-[1.2rem]',
               buttonClassName,
             )}
-            onClick={() => handleValueChange(value)}
+            onClick={(event: MouseEvent<HTMLButtonElement>) => handleValueChange(event, value)}
           >
             {value}
           </button>
