@@ -8,3 +8,4 @@ export { default as ReviewScoreAction } from './ReviewScoreAction/ReviewScoreAct
 export { default as Input } from './Input/InputWrapper/InputWrapper';
 export { default as UploadImage } from './UploadImage/UploadImageWrapper/UploadImageWrapper';
 export { default as TextEditor } from './TextEditor/TextEditor';
+export { default as Dropdown } from './Dropdown/DropdownWrapper/DropdownWrapper';
