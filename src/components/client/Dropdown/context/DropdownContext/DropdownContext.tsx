@@ -10,6 +10,7 @@ import {
   useState,
 } from 'react';
 
+import { useToggle } from '@/hooks';
 import useClickAway from '@/hooks/useClickAway/useClickAway';
 
 import { DropdownContextProps, DropdownContextProviderProps } from './DropdownContext.type';
@@ -18,10 +19,10 @@ import { twMerge } from 'tailwind-merge';
 
 export const DropdownContext = createContext<DropdownContextProps>({
   selectedValue: '',
-  isVisible: false,
+  isToggle: false,
   handleValueChange: () => {},
-  handleHideDropdown: () => {},
-  handleToggleDropdown: () => {},
+  handleSetFalse: () => {},
+  handleToggle: () => {},
   handleDropdownKeyDown: () => {},
 });
 
@@ -34,56 +35,51 @@ export const DropdownContextProvider = ({
   className,
 }: DropdownContextProviderProps) => {
   const [selectedValue, setSelectedValue] = useState(defaultValue);
-  const [isVisible, setIsVisible] = useState(false);
-  const ref = useClickAway<HTMLDivElement>(() => setIsVisible(false));
+  const { isToggle, handleToggle, handleSetTrue, handleSetFalse } = useToggle(false);
+  const ref = useClickAway<HTMLDivElement>(handleSetFalse);
   const onChangeRef = useRef(onChange);
 
   const handleValueChange = useCallback(
     (event: MouseEvent<HTMLButtonElement>, newValue: string) => {
       onChangeRef.current(newValue);
       setSelectedValue(newValue);
-      setIsVisible(false);
+      handleSetFalse();
       event.stopPropagation();
     },
-    [],
+    [handleSetFalse],
   );
 
-  const handleHideDropdown = useCallback(() => {
-    setIsVisible(false);
-  }, []);
+  const handleDropdownKeyDown = useCallback<KeyboardEventHandler<HTMLDivElement>>(
+    (event) => {
+      const { key } = event;
 
-  const handleToggleDropdown = useCallback(() => {
-    setIsVisible((prev) => !prev);
-  }, []);
+      if (key === 'ArrowUp') {
+        handleSetFalse();
+      }
 
-  const handleDropdownKeyDown = useCallback<KeyboardEventHandler<HTMLDivElement>>((event) => {
-    const { key } = event;
-
-    if (key === 'ArrowUp') {
-      setIsVisible(false);
-    }
-
-    if (key === 'ArrowDown') {
-      setIsVisible(true);
-    }
-  }, []);
+      if (key === 'ArrowDown') {
+        handleSetTrue();
+      }
+    },
+    [handleSetFalse, handleSetTrue],
+  );
 
   const value = useMemo(
     () => ({
       selectedValue,
-      isVisible,
+      isToggle,
       handleValueChange,
-      handleHideDropdown,
-      handleToggleDropdown,
+      handleSetFalse,
+      handleToggle,
       handleDropdownKeyDown,
     }),
     [
-      handleDropdownKeyDown,
-      handleHideDropdown,
-      handleToggleDropdown,
-      handleValueChange,
-      isVisible,
       selectedValue,
+      isToggle,
+      handleValueChange,
+      handleSetFalse,
+      handleToggle,
+      handleDropdownKeyDown,
     ],
   );
 
@@ -97,7 +93,7 @@ export const DropdownContextProvider = ({
         ref={ref}
         role='button'
         tabIndex={0}
-        onClick={handleToggleDropdown}
+        onClick={handleToggle}
         onKeyDown={handleDropdownKeyDown}
         className={twMerge(
           'text-gray_400 text-[1.6rem] border rounded-[1rem] border-gray_800',

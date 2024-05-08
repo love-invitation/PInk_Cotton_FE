@@ -2,10 +2,10 @@ import { KeyboardEventHandler, MouseEvent, ReactNode } from 'react';
 
 export interface DropdownContextProps {
   selectedValue: string;
-  isVisible: boolean;
+  isToggle: boolean;
   handleValueChange: (event: MouseEvent<HTMLButtonElement>, newValue: string) => void;
-  handleHideDropdown: () => void;
-  handleToggleDropdown: () => void;
+  handleSetFalse: () => void;
+  handleToggle: () => void;
   handleDropdownKeyDown: KeyboardEventHandler<HTMLDivElement>;
 }
 

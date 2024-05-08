@@ -9,9 +9,19 @@ const useToggle = (defaultValue = false) => {
     setIsToggle((prevState) => !prevState);
   }, []);
 
+  const handleSetTrue = useCallback(() => {
+    setIsToggle(true);
+  }, []);
+
+  const handleSetFalse = useCallback(() => {
+    setIsToggle(false);
+  }, []);
+
   return {
     isToggle,
     handleToggle,
+    handleSetTrue,
+    handleSetFalse,
   };
 };
 
