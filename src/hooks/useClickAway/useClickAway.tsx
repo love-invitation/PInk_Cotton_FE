@@ -4,10 +4,10 @@ import { useEffect, useRef } from 'react';
 
 import { CallbackType } from './useClickAway.type';
 
-const events = ['mousedown', 'touchstart'];
+const events: ['mousedown', 'touchstart'] = ['mousedown', 'touchstart'];
 
-const useClickAway = (callback: CallbackType) => {
-  const ref = useRef(null);
+const useClickAway = <T,>(callback: CallbackType) => {
+  const ref = useRef<T | null>(null);
   const saveCallback = useRef(callback);
 
   useEffect(() => {
@@ -15,16 +15,20 @@ const useClickAway = (callback: CallbackType) => {
   }, [callback]);
 
   useEffect(() => {
-    const element = ref.current as unknown as HTMLElement;
+    const element = ref.current;
 
-    if (!element) {
+    if (!element || !(element instanceof HTMLElement)) {
       return;
     }
 
-    const eventHandler = (e: Event) => {
+    const eventHandler = (e: MouseEvent | TouchEvent) => {
       const { target } = e;
 
-      if (element.contains(target as Node)) {
+      if (!target || !(target instanceof HTMLElement)) {
+        return;
+      }
+
+      if (element.contains(target)) {
         return;
       }
 

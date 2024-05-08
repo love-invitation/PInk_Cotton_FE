@@ -35,7 +35,7 @@ export const DropdownContextProvider = ({
 }: DropdownContextProviderProps) => {
   const [selectedValue, setSelectedValue] = useState(defaultValue);
   const [isVisible, setIsVisible] = useState(false);
-  const ref = useClickAway(() => setIsVisible(false));
+  const ref = useClickAway<HTMLDivElement>(() => setIsVisible(false));
   const onChangeRef = useRef(onChange);
 
   const handleValueChange = useCallback(
