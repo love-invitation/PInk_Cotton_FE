@@ -1,1 +1,1 @@
-export type CallbackType = (e?: Event) => void;
+export type CallbackType = (e?: MouseEvent | TouchEvent) => void;
