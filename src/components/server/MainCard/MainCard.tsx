@@ -3,7 +3,7 @@ import { Button } from '@/components/client';
 import TemplateCard from '../TemplateCard/TemplateCard';
 import { MainCardProps } from './MainCard.type';
 
-const MainCard = ({ children, name, isNew = false, price, discountPrice }: MainCardProps) => {
+const MainCard = ({ children, name, id, isNew = false, price, discountPrice }: MainCardProps) => {
   return (
     <figure className='w-[35rem] h-[61.5rem] border border-red-300 flex flex-col items-center justify-center gap-[2.8rem] main_card_max:w-[17.7rem] main_card_max:h-[37rem] main_card_max:gap-[2rem]'>
       <TemplateCard
@@ -49,6 +49,7 @@ const MainCard = ({ children, name, isNew = false, price, discountPrice }: MainC
               TODO 
               샘플 보기에 대한 로직 추가
             */
+            id;
           }}
         >
           샘플보기
@@ -66,6 +67,7 @@ const MainCard = ({ children, name, isNew = false, price, discountPrice }: MainC
               TODO 
               제작 하기에 대한 로직 추가
             */
+            id;
           }}
         >
           제작하기
