@@ -1,9 +1,16 @@
 import { Button } from '@/components/client';
 
 import TemplateCard from '../TemplateCard/TemplateCard';
-import { MainCardProps } from './MainCard.type';
+import { TemplateItemProps } from './TemplateItem.type';
 
-const MainCard = ({ children, name, id, isNew = false, price, discountPrice }: MainCardProps) => {
+const TemplateItem = ({
+  children,
+  name,
+  id,
+  isNew = false,
+  price,
+  discountPrice,
+}: TemplateItemProps) => {
   return (
     <figure className='w-[35rem] h-[61.5rem] border border-red-300 flex flex-col items-center justify-center gap-[2.8rem] main_card_max:w-[17.7rem] main_card_max:h-[37rem] main_card_max:gap-[2rem]'>
       <TemplateCard
@@ -77,4 +84,4 @@ const MainCard = ({ children, name, id, isNew = false, price, discountPrice }: M
   );
 };
 
-export default MainCard;
+export default TemplateItem;
