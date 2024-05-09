@@ -12,7 +12,7 @@ const TemplateItem = ({
   discountPrice,
 }: TemplateItemProps) => {
   return (
-    <figure className='w-[35rem] h-[61.5rem] border border-red-300 flex flex-col items-center justify-center gap-[2.8rem] main_card_max:w-[17.7rem] main_card_max:h-[37rem] main_card_max:gap-[2rem]'>
+    <figure className='w-[35rem] h-[61.5rem] flex flex-col items-center justify-center gap-[2.8rem] main_card_max:w-[17.7rem] main_card_max:h-[37rem] main_card_max:gap-[2rem]'>
       <TemplateCard
         size='medium'
         className='main_card_max:hidden'
