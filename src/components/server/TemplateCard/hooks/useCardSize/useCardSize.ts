@@ -11,9 +11,6 @@ const useCardSize = ({ type }: UseCardSize) => {
     case 'large':
       return 'w-[41.5rem] h-[81.3rem] rounded-radius40 shadow-shadow_500';
 
-    case 'mockup':
-      return 'w-[32.6rem] h-[68.5rem] rounded-radius40';
-
     default:
       return 'w-[22.7rem] h-[40.1rem] rounded-radius20 shadow-shadow_500';
   }

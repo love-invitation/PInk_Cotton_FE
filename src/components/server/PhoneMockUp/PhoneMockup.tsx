@@ -1,9 +1,15 @@
 import { PhoneMockupProps } from './PhoneMockup.type';
 import { PhoneCameraIcon, PhoneSpeakerIcon } from './components';
 
-const PhoneMockup = ({ children }: PhoneMockupProps) => {
+const PhoneMockup = ({ children, width = 360, height = 693 }: PhoneMockupProps) => {
   return (
-    <div className='w-full h-full px-[0.2rem] relative'>
+    <div
+      className='px-[0.2rem] relative'
+      style={{
+        width,
+        height,
+      }}
+    >
       <div className='w-[1rem] h-[12%] bg-[#121515] absolute top-[27%] right-0' />
       <div className='w-[1rem] h-[5%] bg-[#121515] absolute top-[18.5%] left-0' />
       <div className='w-[1rem] h-[7%] bg-[#121515] absolute top-[25.5%] left-0' />
