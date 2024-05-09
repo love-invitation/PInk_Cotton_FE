@@ -8,13 +8,13 @@ const TemplateCard = ({ children, size = 'medium', className }: TemplateCardProp
   const cardSize = useCardSize({ type: size });
 
   return (
-    <figure
+    <div
       className={twMerge(twJoin('w-[11.5rem] h-[20.2rem] overflow-hidden', cardSize), className)}
     >
       {size !== 'mockup' && children}
 
       {size === 'mockup' && <PhoneMockup>{children}</PhoneMockup>}
-    </figure>
+    </div>
   );
 };
 
