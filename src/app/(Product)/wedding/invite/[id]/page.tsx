@@ -1,5 +1,5 @@
 const InvitePage = () => {
-  return <div>invite</div>;
+  return <div>invite Page</div>;
 };
 
 export default InvitePage;

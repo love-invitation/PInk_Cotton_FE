@@ -1,7 +1,7 @@
 'use client';
 
 import { StarIcon } from '@/components/server';
-import { ScoreList } from '@/constants';
+import { SCORE_LIST } from '@/constants';
 
 import { ReviewScoreActionProps } from './ReviewScoreAction.type';
 import { useChangeReviewScore } from './hooks';
@@ -14,7 +14,7 @@ const ReviewScoreAction = ({ onClick, score = 0, className = '' }: ReviewScoreAc
 
   return (
     <ul className={twMerge('flex gap-[1.2rem]', className)}>
-      {ScoreList.map((scoreValue) => (
+      {SCORE_LIST.map((scoreValue) => (
         <li key={`${scoreValue}_review_score`}>
           <motion.button
             type='button'
