@@ -1,5 +1,5 @@
-const Home = () => {
-  return <main className='h-full w-full'>Pink Cotton</main>;
+const MainPage = () => {
+  return <main className='h-full w-full'>Main</main>;
 };
 
-export default Home;
+export default MainPage;
