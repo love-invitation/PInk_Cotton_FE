@@ -8,9 +8,14 @@ import { LogoProps } from './Logo.type';
 
 const Logo = ({ ...rest }: LogoProps) => {
   return (
-    <Link href={DOMAIN_URL.MAIN}>
+    <Link
+      href={DOMAIN_URL.MAIN}
+      className='w-full h-full relative'
+    >
       <Image
         fill
+        priority
+        sizes='100%'
         {...rest}
         src={LogoImage}
         alt='웹 사이트 로고'
