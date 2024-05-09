@@ -4,4 +4,4 @@ export interface TemplateCardProps {
   className?: string;
 }
 
-export type CardSizeType = 'small' | 'medium' | 'large' | 'mockup';
+export type CardSizeType = 'small' | 'medium' | 'large';
