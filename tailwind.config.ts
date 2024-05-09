@@ -100,6 +100,7 @@ const config = {
         laptop: `(max-width: 1024px)`,
         header_min: { min: '900px' },
         header_max: { max: '900px' },
+        main_card_max: { max: '1050px' },
       },
 
       spacing: {
