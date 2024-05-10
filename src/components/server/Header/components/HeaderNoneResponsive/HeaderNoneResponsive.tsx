@@ -4,7 +4,7 @@ import HeaderUserInfo from '../HeaderUserInfo/HeaderUserInfo';
 
 const HeaderNoneResponsive = () => {
   return (
-    <header className='w-full h-[8.8rem] hidden items-center justify-between shadow-shadow_500 header_min:flex'>
+    <header className='w-full h-[9rem] hidden items-center justify-between shadow-shadow_500 header_min:flex'>
       <HeaderLogo />
       <HeaderNavbar />
       <HeaderUserInfo />
