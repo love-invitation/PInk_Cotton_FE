@@ -7,7 +7,8 @@
 
   --text-size: 3rem;
 
-  --test: 900;
+  --header-height: 9rem;
+  --footer-height: 20rem;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -37,6 +38,20 @@
     height: 100%;
 
     position: relative;
+    overflow: scroll;
+
+    ::-webkit-scrollbar {
+      display: none;
+    }
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  #fit-wrap {
+    width: 100%;
+    height: calc(100% - var(--header-height) - var(--footer-height));
+    min-height: calc(100% - var(--header-height) - var(--footer-height));
+
     overflow: scroll;
 
     ::-webkit-scrollbar {
