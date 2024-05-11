@@ -1,11 +1,14 @@
+import { MainLeftIntroduce, MainRightIntroduce } from './_components';
+
 const MainSectionOne = () => {
   return (
-    <div
+    <section
       id='calc_header_height'
-      className='w-full'
+      className='w-full flex justify-center items-center'
     >
-      MainSectionOne
-    </div>
+      <MainLeftIntroduce />
+      <MainRightIntroduce />
+    </section>
   );
 };
 
