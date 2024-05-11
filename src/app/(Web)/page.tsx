@@ -2,7 +2,7 @@ import { MainSectionOne } from './_components';
 
 const MainPage = () => {
   return (
-    <main className='h-full w-full'>
+    <main className='w-full'>
       <MainSectionOne />
     </main>
   );
