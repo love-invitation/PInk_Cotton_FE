@@ -3,7 +3,7 @@ import { INTRODUCE_LIST } from './_constants';
 
 const MainRightIntroduce = () => {
   return (
-    <ul className='flex flex-col border-2 border-blue-400 gap-[4rem]'>
+    <ul className='flex flex-col gap-[4rem] px-[1rem]'>
       {INTRODUCE_LIST.map(({ icon, title, description }) => (
         <RightIntroduceItem
           key={title}

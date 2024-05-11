@@ -103,6 +103,7 @@ const config = {
         main_card_max: { max: '1050px' },
 
         main_page_1050: { min: '1050px' },
+        main_page_550: { min: '550px' },
       },
 
       spacing: {
