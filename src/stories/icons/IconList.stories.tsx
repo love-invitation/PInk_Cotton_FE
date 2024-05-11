@@ -6,6 +6,7 @@ import {
   CloseIcon,
   DotIcon,
   Folder3DIcon,
+  Paint3DIcon,
   Send3DIcon,
   StarIcon,
   UserIcon,
@@ -102,5 +103,11 @@ export const Folder3D: Story = {
 export const Send3D: Story = {
   args: {
     children: <Send3DIcon />,
+  },
+};
+
+export const Paint3D: Story = {
+  args: {
+    children: <Paint3DIcon />,
   },
 };
