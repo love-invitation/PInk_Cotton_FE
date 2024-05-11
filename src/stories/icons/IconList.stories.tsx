@@ -2,6 +2,7 @@ import {
   ArrowDownIcon,
   CenterIcon,
   CheckIcon,
+  Clock3DIcon,
   CloseIcon,
   DotIcon,
   StarIcon,
@@ -81,5 +82,11 @@ export const Dot: Story = {
 export const User: Story = {
   args: {
     children: <UserIcon />,
+  },
+};
+
+export const Clock3D: Story = {
+  args: {
+    children: <Clock3DIcon />,
   },
 };

@@ -5,3 +5,4 @@ export { default as CheckIcon } from './CheckIcon/CheckIcon';
 export { default as StarIcon } from './StarIcon/StarIcon';
 export { default as DotIcon } from './DotIcon/DotIcon';
 export { default as UserIcon } from './UserIcon/UserIcon';
+export { default as Clock3DIcon } from './Clock3DIcon/Clock3DIcon';
