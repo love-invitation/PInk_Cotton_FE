@@ -101,6 +101,8 @@ const config = {
         header_min: { min: '900px' },
         header_max: { max: '900px' },
         main_card_max: { max: '1050px' },
+
+        main_page_1050: { min: '1050px' },
       },
 
       spacing: {
