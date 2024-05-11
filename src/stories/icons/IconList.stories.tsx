@@ -5,6 +5,7 @@ import {
   Clock3DIcon,
   CloseIcon,
   DotIcon,
+  Folder3DIcon,
   StarIcon,
   UserIcon,
 } from '@/components/server';
@@ -88,5 +89,11 @@ export const User: Story = {
 export const Clock3D: Story = {
   args: {
     children: <Clock3DIcon />,
+  },
+};
+
+export const Folder3D: Story = {
+  args: {
+    children: <Folder3DIcon />,
   },
 };
