@@ -5,7 +5,7 @@ import Script from 'next/script';
 
 import { PretendardVariable } from '@/assets/font/index';
 
-import { TanstackProvider, ToastProvider } from './_components';
+import { MswProvider, TanstackProvider, ToastProvider } from './_components';
 
 export const metadata: Metadata = {
   title: 'Pink Cotton',
@@ -33,6 +33,7 @@ const RootLayout = ({
             src={URL}
             strategy='beforeInteractive'
           />
+          <MswProvider />
           <main id='app'>{children}</main>
           <ToastProvider />
         </TanstackProvider>

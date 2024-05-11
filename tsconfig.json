@@ -28,7 +28,8 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "next.config.mjs",
-    ".storybook/**/*"
+    ".storybook/**/*",
+    "public/mockServiceWorker.js"
   ],
   "exclude": ["node_modules"]
 }
