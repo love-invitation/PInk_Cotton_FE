@@ -1,5 +1,12 @@
 const MainSectionOne = () => {
-  return <div>MainSectionOne</div>;
+  return (
+    <div
+      id='calc_header_height'
+      className='w-full'
+    >
+      MainSectionOne
+    </div>
+  );
 };
 
 export default MainSectionOne;
