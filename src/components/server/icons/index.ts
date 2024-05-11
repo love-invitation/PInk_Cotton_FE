@@ -8,3 +8,4 @@ export { default as UserIcon } from './UserIcon/UserIcon';
 export { default as Clock3DIcon } from './Clock3DIcon/Clock3DIcon';
 export { default as Folder3DIcon } from './Folder3DIcon/Folder3DIcon';
 export { default as Send3DIcon } from './Send3DIcon/Send3DIcon';
+export { default as Paint3DIcon } from './Paint3DIcon/Paint3DIcon';
