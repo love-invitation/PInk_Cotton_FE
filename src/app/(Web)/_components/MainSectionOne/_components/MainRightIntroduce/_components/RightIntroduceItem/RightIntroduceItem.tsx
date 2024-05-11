@@ -1,9 +1,20 @@
+'use client';
+
 import { RightIntroduceItemProps } from './RightIntroduceItem.type';
 
-const RightIntroduceItem = ({ icon, title, description }: RightIntroduceItemProps) => {
+import { motion } from 'framer-motion';
+
+const RightIntroduceItem = ({ icon, title, description, delayTime }: RightIntroduceItemProps) => {
   return (
-    <li className='flex gap-[1.6rem] main_page_550:gap-[3.2rem] items-center'>
-      <i className='w-[4rem] h-[4rem] main_page_550:w-[8rem] main_page_550:h-[8rem]'>{icon}</i>
+    <motion.li
+      className='flex gap-[1.6rem] main_page_550:gap-[3.2rem] items-center'
+      initial={{ opacity: 0, translateX: '-100%' }}
+      animate={{ opacity: 1, translateX: '0%' }}
+      transition={{ delay: delayTime, duration: 0.5 }}
+    >
+      <i className='min-w-[4rem] w-[4rem] min-h-[4rem] h-[4rem] main_page_550:min-w-[8rem] main_page_550:w-[8rem] main_page_550:min-h-[8rem] main_page_550:h-[8rem]'>
+        {icon}
+      </i>
 
       <span className='flex flex-col'>
         <h6 className='text-size16 main_page_550:text-size28 font-medium main_page_550:text-nowrap'>
@@ -13,7 +24,7 @@ const RightIntroduceItem = ({ icon, title, description }: RightIntroduceItemProp
           {description}
         </p>
       </span>
-    </li>
+    </motion.li>
   );
 };
 
