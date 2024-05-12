@@ -7,7 +7,7 @@ import { motion } from 'framer-motion';
 const RightIntroduceItem = ({ icon, title, description, delayTime }: RightIntroduceItemProps) => {
   return (
     <motion.li
-      className='flex gap-[1.6rem] main_page_550:gap-[3.2rem] items-center'
+      className='flex gap-[1.6rem] main_page_550:gap-[3.2rem] items-center text-black_500 select-none'
       initial={{ opacity: 0, translateX: '-100%' }}
       animate={{ opacity: 1, translateX: '0%' }}
       transition={{ delay: delayTime, duration: 0.5 }}
