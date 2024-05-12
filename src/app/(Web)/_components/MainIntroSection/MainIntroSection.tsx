@@ -1,6 +1,6 @@
 import { MainLeftIntroduce, MainRightIntroduce } from './_components';
 
-const MainSectionOne = () => {
+const MainIntroSection = () => {
   return (
     <section
       id='calc_header_height'
@@ -12,4 +12,4 @@ const MainSectionOne = () => {
   );
 };
 
-export default MainSectionOne;
+export default MainIntroSection;

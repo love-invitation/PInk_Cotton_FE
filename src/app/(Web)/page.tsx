@@ -1,9 +1,9 @@
-import { MainSectionOne } from './_components';
+import { MainIntroSection } from './_components';
 
 const MainPage = () => {
   return (
     <main className='w-full'>
-      <MainSectionOne />
+      <MainIntroSection />
     </main>
   );
 };
