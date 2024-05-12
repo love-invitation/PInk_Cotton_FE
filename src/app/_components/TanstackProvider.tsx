@@ -10,6 +10,8 @@ const TanstackProvider = ({ children }: PropsWithChildren) => {
     new QueryClient({
       defaultOptions: {
         queries: {
+          retry: false,
+          refetchOnWindowFocus: false,
           staleTime: 60 * 1000,
         },
       },
