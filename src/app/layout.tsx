@@ -3,7 +3,7 @@ import '@/styles/globals.css';
 import type { Metadata } from 'next';
 import Script from 'next/script';
 
-import { PretendardVariable } from '@/assets/font/index';
+import { PretendardFont } from '@/assets/font/index';
 
 import { MswProvider, TanstackProvider, ToastProvider } from './_components';
 
@@ -24,7 +24,7 @@ const RootLayout = ({
   return (
     <html
       lang='ko'
-      className={PretendardVariable.className}
+      className={PretendardFont.className}
     >
       <body>
         <TanstackProvider>

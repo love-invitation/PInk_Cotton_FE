@@ -1,8 +1,8 @@
 import localFont from 'next/font/local';
 
-const GyeonggiBatangBold = localFont({
+const GyeonggiBatangFont = localFont({
   src: '../../../public/fonts/Batang_Bold.woff',
   display: 'swap',
 });
 
-export default GyeonggiBatangBold;
+export default GyeonggiBatangFont;

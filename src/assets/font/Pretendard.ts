@@ -1,8 +1,8 @@
 import localFont from 'next/font/local';
 
-const PretendardVariable = localFont({
+const PretendardFont = localFont({
   src: '../../../public/fonts/PretendardVariable.woff2',
   display: 'swap',
 });
 
-export default PretendardVariable;
+export default PretendardFont;

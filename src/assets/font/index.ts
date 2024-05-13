@@ -1,2 +1,2 @@
-export { default as PretendardVariable } from './Pretendard';
-export { default as GyeonggiBatangBold } from './GyeonggiBatang';
+export { default as PretendardFont } from './Pretendard';
+export { default as GyeonggiBatangFont } from './GyeonggiBatang';
