@@ -20,9 +20,9 @@ const useAccordionStyle = ({ type }: UseAccordionStyle) => {
   const buttonStyle = useMemo(
     () =>
       twJoin(
-        'flex w-full select-none items-center',
+        'flex w-full select-none items-center break-keep text-start',
         type === 'edit' && 'h-[6rem] px-[2.4rem] text-size15 font-semibold',
-        type === 'main' && 'h-[8rem] text-size15 font-semibold',
+        type === 'main' && 'h-[8rem] text-size16 font-semibold',
       ),
     [type],
   );
