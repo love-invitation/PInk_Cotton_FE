@@ -40,7 +40,7 @@ const MainBestSection = async () => {
         </Link>
       </header>
 
-      <MainBestList />
+      <MainBestList invitation={data.result.productInfoList} />
     </section>
   );
 };
