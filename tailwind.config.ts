@@ -98,8 +98,11 @@ const config = {
         mobile: { max: '767px' },
         tablet: { min: '768px', max: '1023px' },
         laptop: { min: '1024px' },
+
         header_min: { min: '900px' },
         header_max: { max: '900px' },
+
+        review_card_max: { max: '350px' },
         main_card_max: { max: '1050px' },
 
         main_page_1050: { min: '1050px' },
