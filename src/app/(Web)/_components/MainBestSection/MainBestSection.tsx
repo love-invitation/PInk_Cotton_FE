@@ -5,6 +5,8 @@ import { ArrowRightIcon } from '@/components/server';
 import { QUERY_KEYS, QUERY_OPTIONS, getQueryClient } from '@/constants';
 import { BestInvitationsResponse } from '@/types/response/Invitations';
 
+import { MainBestList } from './_components';
+
 import resolveConfig from 'tailwindcss/resolveConfig';
 
 const MainBestSection = async () => {
@@ -20,7 +22,7 @@ const MainBestSection = async () => {
   }
 
   return (
-    <section className='w-full min-h-[75rem] bg-gray_900 shadow-shadow_500 flex flex-col items-center justify-center'>
+    <section className='w-full main_page_550:py-[4rem] py-[2.4rem] bg-gray_900 shadow-shadow_500 flex flex-col items-center justify-center gap-[4rem]'>
       <header className='w-[80%] flex items-center select-none'>
         <span className='flex flex-col grow-[1]'>
           <h3 className='text-size30 font-semiBold'>BEST</h3>
@@ -38,9 +40,7 @@ const MainBestSection = async () => {
         </Link>
       </header>
 
-      <article className='max-w-[117rem]'>
-        <div className='w-[50rem]' />
-      </article>
+      <MainBestList />
     </section>
   );
 };
