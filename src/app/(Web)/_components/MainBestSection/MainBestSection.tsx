@@ -30,7 +30,7 @@ const MainBestSection = async () => {
         </span>
         <Link
           href='/wedding/invitations'
-          className='main_page_550:flex hidden items-center gap-[1rem] text-size20 text-pink_500 underline'
+          className='main_page_550:flex hidden items-center gap-[1rem] text-size20 text-pink_500 underline transition-all hover:brightness-90'
         >
           More
           <ArrowRightIcon
