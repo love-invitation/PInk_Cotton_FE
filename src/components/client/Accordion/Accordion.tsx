@@ -28,7 +28,7 @@ const Accordion = ({ children, buttonTitle, type = 'main' }: AccordionProps) => 
               className='pointer-events-none'
             />
           )}
-          {type === 'main' && <strong className='text-size18 font-medium leading-[2]'>Q.</strong>}
+          {type === 'main' && <strong className='text-size18 leading-[2] font-semibold'>Q.</strong>}
 
           {buttonTitle}
         </div>
