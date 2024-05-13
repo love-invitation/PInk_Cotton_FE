@@ -25,8 +25,10 @@ const MainBestSection = async () => {
     <section className='w-full main_page_550:py-[4rem] py-[2.4rem] bg-gray_900 shadow-shadow_500 flex flex-col items-center justify-center gap-[4rem]'>
       <header className='w-[80%] flex items-center select-none'>
         <span className='flex flex-col grow-[1]'>
-          <h3 className='text-size30 font-semiBold'>BEST</h3>
-          <p className='text-size16 text-gray_400'>다양한 디자인의 청첩장, 마음껏 선택하세요.</p>
+          <h3 className='text-size20 main_page_1050:text-size30 font-semiBold text-nowrap'>BEST</h3>
+          <p className='text-size13 main_page_1050:text-size16 text-gray_400 break-keep'>
+            다양한 디자인의 청첩장, 마음껏 선택하세요.
+          </p>
         </span>
         <Link
           href='/wedding/invitations'
