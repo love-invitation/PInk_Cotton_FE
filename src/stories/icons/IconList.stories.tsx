@@ -1,5 +1,6 @@
 import {
   ArrowDownIcon,
+  ArrowRightIcon,
   CenterIcon,
   CheckIcon,
   Clock3DIcon,
@@ -32,7 +33,7 @@ const meta = {
 
   argTypes: {
     children: {
-      control: 'null',
+      control: { disable: true },
       description: 'Icon을 보여주기 위한 layout 용도 ( 실제 Component와 무관 )',
     },
   },
@@ -62,6 +63,12 @@ export const Close: Story = {
 export const ArrowDown: Story = {
   args: {
     children: <ArrowDownIcon />,
+  },
+};
+
+export const ArrowRight: Story = {
+  args: {
+    children: <ArrowRightIcon />,
   },
 };
 
