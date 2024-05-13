@@ -2,10 +2,12 @@ import { ReviewCard } from '@/components/server';
 
 const MainReview = () => {
   return (
-    <article className='flex flex-col gap-[4rem]'>
+    <article className='flex flex-col gap-[4rem] items-center main_page_1050:items-start'>
       <span className='flex flex-col'>
-        <h3 className='text-size30 font-semiBold text-black_500'>증명된 고객후기</h3>
-        <p className='text-size16 text-gray_400'>
+        <h3 className='text-size20 main_page_1050:text-size30 font-semiBold text-nowrap'>
+          증명된 고객후기
+        </h3>
+        <p className='text-size13 main_page_1050:text-size16 text-gray_400'>
           PINK COTTON과 함께한 고객분들의 솔직한 후기입니다.
         </p>
       </span>
