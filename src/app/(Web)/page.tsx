@@ -1,9 +1,10 @@
-import { MainIntroSection } from './_components';
+import { MainBestSection, MainIntroSection } from './_components';
 
 const MainPage = () => {
   return (
     <main className='w-full'>
       <MainIntroSection />
+      <MainBestSection />
     </main>
   );
 };
