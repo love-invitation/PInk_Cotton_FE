@@ -4,7 +4,7 @@ const INTRODUCE_LIST = [
   {
     icon: <Clock3DIcon size='100%' />,
     title: '5분이면 충분해요!',
-    description: '포대장 제목, 인사말, 웨딩 사진까지 쉽고 빠르게 완성하는 청첩장',
+    description: '초대장 제목, 인사말, 웨딩 사진까지 쉽고 빠르게 완성하는 청첩장',
   },
   {
     icon: <Folder3DIcon size='100%' />,
