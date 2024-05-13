@@ -17,9 +17,9 @@ const RightIntroduceItem = ({ icon, title, description, delayTime }: RightIntrod
       </i>
 
       <span className='flex flex-col'>
-        <h6 className='text-size16 main_page_550:text-size28 font-medium main_page_550:text-nowrap'>
+        <h3 className='text-size16 main_page_550:text-size28 font-medium main_page_550:text-nowrap'>
           {title}
-        </h6>
+        </h3>
         <p className='text-size12 main_page_550:text-size16 font-regular main_page_550:text-nowrap'>
           {description}
         </p>
