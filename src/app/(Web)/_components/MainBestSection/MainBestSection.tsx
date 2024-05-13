@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 import { QUERY_KEYS, QUERY_OPTIONS, getQueryClient } from '@/constants';
 import { BestInvitationsResponse } from '@/types/response/Invitations';
 
@@ -13,8 +15,16 @@ const MainBestSection = async () => {
   }
 
   return (
-    <section className='w-full'>
-      <article className=''>{data.message}</article>
+    <section className='w-full min-h-[75rem] bg-gray_900 shadow-shadow_500'>
+      <article className=''>
+        <div>
+          <span>
+            <h3>BEST</h3>
+            <p>다양한 디자인의 청첩장, 마음껏 선택하세요.</p>
+          </span>
+          <Link href='/wedding/invitations'>More </Link>
+        </div>
+      </article>
     </section>
   );
 };
