@@ -2,7 +2,7 @@ import { MainBestSection, MainIntroSection, MainServiceSection } from './_compon
 
 const MainPage = () => {
   return (
-    <main className='w-full'>
+    <main className='w-full text-black_500'>
       <MainIntroSection />
       <MainBestSection />
       <MainServiceSection />
