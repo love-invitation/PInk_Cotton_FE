@@ -11,3 +11,4 @@ export { default as Folder3DIcon } from './Folder3DIcon/Folder3DIcon';
 export { default as Send3DIcon } from './Send3DIcon/Send3DIcon';
 export { default as Paint3DIcon } from './Paint3DIcon/Paint3DIcon';
 export { default as LayerIcon } from './LayerIcon/LayerIcon';
+export { default as KakaoChannelIcon } from './KakaoChannelIcon/KakaoChannelIcon';
