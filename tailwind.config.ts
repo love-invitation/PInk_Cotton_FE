@@ -95,8 +95,8 @@ const config = {
       },
 
       screens: {
-        mobile: { max: '767px' },
-        tablet: { min: '768px', max: '1023px' },
+        mobile: { max: '600px' },
+        tablet: { min: '601px', max: '1023px' },
         laptop: { min: '1024px' },
 
         header_min: { min: '900px' },
