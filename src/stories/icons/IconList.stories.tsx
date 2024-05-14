@@ -7,6 +7,7 @@ import {
   CloseIcon,
   DotIcon,
   Folder3DIcon,
+  KakaoChannelIcon,
   LayerIcon,
   Paint3DIcon,
   Send3DIcon,
@@ -123,5 +124,11 @@ export const Paint3D: Story = {
 export const Layer: Story = {
   args: {
     children: <LayerIcon />,
+  },
+};
+
+export const KakaoChannel: Story = {
+  args: {
+    children: <KakaoChannelIcon />,
   },
 };
