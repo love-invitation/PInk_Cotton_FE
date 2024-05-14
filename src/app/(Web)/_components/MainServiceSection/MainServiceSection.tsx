@@ -1,5 +1,6 @@
 import { KakaoChannelIcon } from '@/components/server';
 
+import MainSectionTitle from '../MainSectionTitle/MainSectionTitle';
 import { MainQuestion, MainReview } from './_components';
 
 const MainServiceSection = () => {
@@ -15,14 +16,10 @@ const MainServiceSection = () => {
           <MainQuestion />
 
           <article className='flex flex-col gap-[4rem] items-center main_page_1050:items-start'>
-            <header>
-              <h3 className='text-size20 main_page_1050:text-size30 font-semiBold text-nowrap'>
-                고객센터
-              </h3>
-              <p className='text-size13 main_page_1050:text-size16 text-gray_400 break-keep'>
-                더 궁금한 점이 있으신가요? 아래 버튼을 눌러주세요.
-              </p>
-            </header>
+            <MainSectionTitle
+              title='고객센터'
+              subTitle='더 궁금한 점이 있으신가요? 아래 버튼을 눌러주세요.'
+            />
 
             <button
               type='button'
