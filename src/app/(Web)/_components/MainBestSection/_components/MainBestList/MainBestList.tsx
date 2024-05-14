@@ -10,7 +10,7 @@ import { AnimatePresence, motion, useInView } from 'framer-motion';
 
 const MainBestList = ({ invitation }: MainBestListProps) => {
   const ref = useRef<HTMLUListElement | null>(null);
-  const isInView = useInView(ref);
+  const isInView = useInView(ref, { once: true });
 
   return (
     <ul
