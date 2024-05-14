@@ -1,3 +1,5 @@
+import { KakaoChannelIcon } from '@/components/server';
+
 import { MainQuestion, MainReview } from './_components';
 
 const MainServiceSection = () => {
@@ -22,7 +24,16 @@ const MainServiceSection = () => {
               </p>
             </header>
 
-            <div>카카오톡 연결</div>
+            <button
+              type='button'
+              className='max-w-[35rem] flex items-center justify-center gap-[1rem] bg-yellow_kakao rounded-[2rem_2rem_2rem_0] w-full h-[6.5rem] cursor-pointer'
+            >
+              <KakaoChannelIcon size={36} />
+              <span className='h-[4rem] flex items-center justify-center bg-white_100 rounded-radius10 text-size18 font-semiBold px-[1.6rem]'>
+                <p>PINKCOTTON</p>
+                <p>고객센터</p>
+              </span>
+            </button>
           </article>
         </div>
       </div>
