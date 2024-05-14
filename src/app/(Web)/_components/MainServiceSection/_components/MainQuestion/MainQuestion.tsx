@@ -12,7 +12,7 @@ const MainQuestion = () => {
         subTitle='자주 들어오는 질문입니다. 더 궁금한 점이 있다면 카카오톡채널을 이용해주세요!'
       />
 
-      <ul>
+      <ul className='max-w-[40rem] main_page_1050:max-w-full'>
         {MAIN_QUESTION_LIST.map(({ question, answer }) => (
           <>
             <Divider />
