@@ -9,7 +9,7 @@ import { motion, useInView } from 'framer-motion';
 
 const MainRightIntroduce = () => {
   const ref = useRef<HTMLElement | null>(null);
-  const isInView = useInView(ref);
+  const isInView = useInView(ref, { once: true });
 
   return (
     <article
