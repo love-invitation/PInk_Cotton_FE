@@ -5,6 +5,7 @@ import { ArrowRightIcon } from '@/components/server';
 import { QUERY_KEYS, QUERY_OPTIONS, getQueryClient } from '@/constants';
 import { BestInvitationsResponse } from '@/types/response/Invitations';
 
+import MainSectionTitle from '../MainSectionTitle/MainSectionTitle';
 import { MainBestList } from './_components';
 
 import resolveConfig from 'tailwindcss/resolveConfig';
@@ -23,13 +24,13 @@ const MainBestSection = async () => {
 
   return (
     <section className='w-full main_page_550:py-[4rem] py-[2.4rem] bg-gray_900 shadow-shadow_500 flex flex-col items-center justify-center gap-[4rem]'>
-      <header className='w-[80%] flex items-center select-none'>
-        <span className='flex flex-col grow-[1]'>
-          <h3 className='text-size20 main_page_1050:text-size30 font-semiBold text-nowrap'>BEST</h3>
-          <p className='text-size13 main_page_1050:text-size16 text-gray_400 break-keep'>
-            다양한 디자인의 청첩장, 마음껏 선택하세요.
-          </p>
-        </span>
+      <div className='w-[80%] flex items-center select-none'>
+        <MainSectionTitle
+          title='BEST'
+          subTitle='다양한 디자인의 청첩장, 마음껏 선택하세요.'
+          layoutClassName='grow-[1]'
+        />
+
         <Link
           href='/wedding/invitations'
           className='main_page_550:flex hidden items-center gap-[1rem] text-size20 text-pink_500 underline transition-all hover:brightness-90'
@@ -40,7 +41,7 @@ const MainBestSection = async () => {
             size={15}
           />
         </Link>
-      </header>
+      </div>
 
       <MainBestList invitation={data.result.productInfoList} />
     </section>
