@@ -1,7 +1,9 @@
 import { fetchApi } from '@/api';
 
 export const getBestInvitations = async () => {
-  const response = await fetchApi('/api/product/info/best');
+  const response = await fetchApi('/api/product/info/best', {
+    next: { revalidate: 86400 },
+  });
 
   if (!response.ok) {
     throw new Error(`HTTP error! status: ${response.status}`);
