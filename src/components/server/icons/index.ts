@@ -1,7 +1,14 @@
 export { default as CenterIcon } from './CenterIcon/CenterIcon';
 export { default as CloseIcon } from './CloseIcon/CloseIcon';
 export { default as ArrowDownIcon } from './ArrowDownIcon/ArrowDownIcon';
+export { default as ArrowRightIcon } from './ArrowRightIcon/ArrowRightIcon';
 export { default as CheckIcon } from './CheckIcon/CheckIcon';
 export { default as StarIcon } from './StarIcon/StarIcon';
 export { default as DotIcon } from './DotIcon/DotIcon';
 export { default as UserIcon } from './UserIcon/UserIcon';
+export { default as Clock3DIcon } from './Clock3DIcon/Clock3DIcon';
+export { default as Folder3DIcon } from './Folder3DIcon/Folder3DIcon';
+export { default as Send3DIcon } from './Send3DIcon/Send3DIcon';
+export { default as Paint3DIcon } from './Paint3DIcon/Paint3DIcon';
+export { default as LayerIcon } from './LayerIcon/LayerIcon';
+export { default as KakaoChannelIcon } from './KakaoChannelIcon/KakaoChannelIcon';

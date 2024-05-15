@@ -47,7 +47,7 @@ const config = {
 
         yellow_100: '#FEE500',
         yellow_500: '#FFD400',
-        yellow_kakao: '#FFEB00',
+        yellow_kakao: '#FEE500',
 
         red_500: '#ED4044',
 
@@ -95,12 +95,18 @@ const config = {
       },
 
       screens: {
-        mobile: { max: '767px' },
-        tablet: { min: '768px', max: '1023px' },
+        mobile: { max: '600px' },
+        tablet: { min: '601px', max: '1023px' },
         laptop: { min: '1024px' },
+
         header_min: { min: '900px' },
         header_max: { max: '900px' },
+
+        review_card_max: { max: '350px' },
         main_card_max: { max: '1050px' },
+
+        main_page_1050: { min: '1050px' },
+        main_page_550: { min: '550px' },
       },
 
       spacing: {

@@ -1,9 +1,16 @@
 import {
   ArrowDownIcon,
+  ArrowRightIcon,
   CenterIcon,
   CheckIcon,
+  Clock3DIcon,
   CloseIcon,
   DotIcon,
+  Folder3DIcon,
+  KakaoChannelIcon,
+  LayerIcon,
+  Paint3DIcon,
+  Send3DIcon,
   StarIcon,
   UserIcon,
 } from '@/components/server';
@@ -27,7 +34,7 @@ const meta = {
 
   argTypes: {
     children: {
-      control: 'null',
+      control: { disable: true },
       description: 'Icon을 보여주기 위한 layout 용도 ( 실제 Component와 무관 )',
     },
   },
@@ -60,6 +67,12 @@ export const ArrowDown: Story = {
   },
 };
 
+export const ArrowRight: Story = {
+  args: {
+    children: <ArrowRightIcon />,
+  },
+};
+
 export const Check: Story = {
   args: {
     children: <CheckIcon />,
@@ -81,5 +94,41 @@ export const Dot: Story = {
 export const User: Story = {
   args: {
     children: <UserIcon />,
+  },
+};
+
+export const Clock3D: Story = {
+  args: {
+    children: <Clock3DIcon />,
+  },
+};
+
+export const Folder3D: Story = {
+  args: {
+    children: <Folder3DIcon />,
+  },
+};
+
+export const Send3D: Story = {
+  args: {
+    children: <Send3DIcon />,
+  },
+};
+
+export const Paint3D: Story = {
+  args: {
+    children: <Paint3DIcon />,
+  },
+};
+
+export const Layer: Story = {
+  args: {
+    children: <LayerIcon />,
+  },
+};
+
+export const KakaoChannel: Story = {
+  args: {
+    children: <KakaoChannelIcon />,
   },
 };

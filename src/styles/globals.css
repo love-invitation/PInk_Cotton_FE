@@ -61,6 +61,10 @@
     -ms-overflow-style: none;
   }
 
+  #calc_header_height {
+    min-height: calc(100dvh - var(--header-height));
+  }
+
   input:focus {
     outline: none;
   }

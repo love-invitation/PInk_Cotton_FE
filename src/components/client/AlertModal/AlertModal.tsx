@@ -35,7 +35,10 @@ const AlertModal = ({
 
         <p
           id='alert_message_container'
-          className='px-2 text-center text-size16 font-medium'
+          className={twJoin(
+            'px-2 text-center text-size16 font-medium',
+            subMessage ? 'mb-[2rem]' : 'mb-[4rem]',
+          )}
           dangerouslySetInnerHTML={{ __html: message }}
         />
 
@@ -43,7 +46,7 @@ const AlertModal = ({
           <p
             id='alert_sub_message_container'
             className={twJoin(
-              'my-2 px-2 text-center text-size12 font-medium',
+              'mb-[2rem] px-2 text-center text-size12 font-medium',
               convertSubMessageColor(subMessageType),
             )}
             dangerouslySetInnerHTML={{ __html: subMessage }}
