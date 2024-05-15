@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 
 const MswProvider = () => {
   useEffect(() => {
-    if (process.env.NEXT_PUBLIC_API_MOCKING === 'enabled') {
+    if (typeof window !== 'undefined' && process.env.NEXT_PUBLIC_API_MOCKING === 'enabled') {
       require('@/mocks/browser');
     }
   }, []);
