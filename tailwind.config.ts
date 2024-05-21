@@ -103,10 +103,6 @@ const config = {
         header_max: { max: '1024px' },
 
         review_card_max: { max: '350px' },
-        main_card_max: { max: '1050px' },
-
-        main_page_1050: { min: '1050px' },
-        main_page_550: { min: '550px' },
       },
 
       spacing: {
