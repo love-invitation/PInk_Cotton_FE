@@ -12,7 +12,7 @@ const HeaderNavbar = () => {
 
   return (
     <nav className='header_min:mr-[10%] header_max:w-full header_max:h-full'>
-      <ul className='text-gray_500 flex items-center text-nowrap font-regular header_min:h-[5rem] header_min:text-size18 header_max:h-[4.2rem] header_max:text-size12 justify-evenly'>
+      <ul className='text-gray_500 flex items-center text-nowrap font-regular header_min:h-[5rem] header_min:text-size18 header_max:h-[4.2rem] header_max:text-size16 justify-evenly'>
         <HeaderNavItem
           pathName={pathName}
           href={DOMAIN_URL.MAIN}

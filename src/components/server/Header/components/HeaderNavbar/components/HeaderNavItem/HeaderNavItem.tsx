@@ -15,7 +15,7 @@ const HeaderNavItem = ({ pathName, href, title }: HeaderNavItemProps) => {
       )}
     >
       <Link href={href}>{title}</Link>
-      {pathName === href && <DotIcon className='absolute bottom-[-0.6rem]' />}
+      {pathName === href && <DotIcon className='absolute bottom-[-0.5rem]' />}
     </li>
   );
 };
