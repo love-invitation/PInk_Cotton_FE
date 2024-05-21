@@ -20,7 +20,7 @@ const RightIntroduceItem = ({ icon, title, description, delayTime }: RightIntrod
         <h3 className='text-size24 laptop:text-size28 font-medium laptop:text-nowrap break-keep'>
           {title}
         </h3>
-        <p className='text-size16 laptop:text-size21 font-regular laptop:text-nowrap break-keep'>
+        <p className='text-size16 laptop:text-size16 font-regular laptop:text-nowrap break-keep'>
           {description}
         </p>
       </span>
