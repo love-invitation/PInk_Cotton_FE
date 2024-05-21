@@ -24,7 +24,7 @@ const RootLayout = ({
   return (
     <html
       lang='ko'
-      className={`${PretendardFont.className} mobile:text-[45%] tablet:text-[55%] text-black_900`}
+      className={`${PretendardFont.className} mobile:text-[55%] tablet:text-[55%] text-black_900`}
     >
       <body>
         <TanstackProvider>
