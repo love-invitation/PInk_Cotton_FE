@@ -5,10 +5,12 @@ import MainSectionTitle from '../../../MainSectionTitle/MainSectionTitle';
 const MainReview = () => {
   return (
     <article className='flex flex-col gap-[4rem] items-center laptop:items-start'>
-      <MainSectionTitle
-        title='증명된 고객후기'
-        subTitle='PINKCOTTON과 함께한 고객분들의 솔직한 후기입니다.'
-      />
+      <div className='w-full px-[1rem]'>
+        <MainSectionTitle
+          title='증명된 고객후기'
+          subTitle='PINKCOTTON과 함께한 고객분들의 솔직한 후기입니다.'
+        />
+      </div>
 
       <ul className='flex gap-[2rem] laptop:flex-row flex-col items-center'>
         <li>

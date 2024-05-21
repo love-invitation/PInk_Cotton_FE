@@ -13,7 +13,7 @@ const TemplateItem = ({
     <figure className='flex flex-col items-center justify-center gap-[2.8rem]'>
       <TemplateCard size='medium'>{children}</TemplateCard>
 
-      <figcaption className='flex flex-col items-center gap-[2rem] main_card_max:gap-[1rem]'>
+      <figcaption className='flex flex-col items-center gap-[2rem]'>
         <span className='relative flex justify-center'>
           <h1 className='text-size20 font-semiBold'>{name}</h1>
           {isNew && (
