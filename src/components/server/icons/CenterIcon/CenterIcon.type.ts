@@ -1,7 +1,7 @@
 import { SVGProps } from 'react';
 
 export interface CenterProps extends SVGProps<SVGSVGElement> {
-  size?: number | string;
+  size?: string;
   fill?: string;
   className?: string;
 }

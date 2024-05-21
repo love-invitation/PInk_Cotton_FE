@@ -1,6 +1,11 @@
 import { CloseIconProps } from './CloseIcon.type';
 
-const CloseIcon = ({ size = 32, fill = 'black', className = '', ...rest }: CloseIconProps) => {
+const CloseIcon = ({
+  size = '3.2rem',
+  fill = 'black',
+  className = '',
+  ...rest
+}: CloseIconProps) => {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'

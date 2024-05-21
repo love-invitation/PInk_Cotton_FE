@@ -1,6 +1,6 @@
 import { Folder3DIconProps } from './Folder3DIcon.type';
 
-const Folder3DIcon = ({ size = 32, className = '', ...rest }: Folder3DIconProps) => {
+const Folder3DIcon = ({ size = '3.2rem', className = '', ...rest }: Folder3DIconProps) => {
   return (
     <svg
       width={size}

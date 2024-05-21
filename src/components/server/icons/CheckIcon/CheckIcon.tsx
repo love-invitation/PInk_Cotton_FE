@@ -1,6 +1,11 @@
 import { CheckIconProps } from './CheckIcon.type';
 
-const CheckIcon = ({ size = 32, fill = 'black', className = '', ...rest }: CheckIconProps) => {
+const CheckIcon = ({
+  size = '3.2rem',
+  fill = 'black',
+  className = '',
+  ...rest
+}: CheckIconProps) => {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'

@@ -1,6 +1,6 @@
 import { DotIconProps } from './DotIcon.type';
 
-const DotIcon = ({ size = 5, fill = 'black', className = '', ...rest }: DotIconProps) => {
+const DotIcon = ({ size = '0.5rem', fill = 'black', className = '', ...rest }: DotIconProps) => {
   return (
     <svg
       width={size}

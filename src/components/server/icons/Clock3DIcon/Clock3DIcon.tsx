@@ -1,6 +1,6 @@
 import { Clock3DIconProps } from './Clock3DIcon.type';
 
-const Clock3DIcon = ({ size = 32, className = '', ...rest }: Clock3DIconProps) => {
+const Clock3DIcon = ({ size = '3.2rem', className = '', ...rest }: Clock3DIconProps) => {
   return (
     <svg
       width={size}

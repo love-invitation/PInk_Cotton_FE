@@ -1,6 +1,11 @@
 import { StarIconProps } from './StarIcon.type';
 
-const StarIcon = ({ size = 32, fill = '#FCD240', className = '', ...rest }: StarIconProps) => {
+const StarIcon = ({
+  size = '3.2rem',
+  fill = '#FCD240',
+  className = '',
+  ...rest
+}: StarIconProps) => {
   return (
     <svg
       width={size}

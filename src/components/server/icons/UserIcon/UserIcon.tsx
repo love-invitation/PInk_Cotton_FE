@@ -1,6 +1,6 @@
 import { UserIconProps } from './UserIcon.type';
 
-const UserIcon = ({ size = 32, fill = 'black', className = '', ...rest }: UserIconProps) => {
+const UserIcon = ({ size = '3.2rem', fill = 'black', className = '', ...rest }: UserIconProps) => {
   return (
     <svg
       width={size}
