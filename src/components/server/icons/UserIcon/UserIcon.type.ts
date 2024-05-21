@@ -1,7 +1,7 @@
 import { SVGProps } from 'react';
 
 export interface UserIconProps extends SVGProps<SVGSVGElement> {
-  size?: number | string;
+  size?: string;
   fill?: string;
   className?: string;
 }

@@ -1,6 +1,6 @@
 import { Paint3DIconProps } from './Paint3DIcon.type';
 
-const Paint3DIcon = ({ size = 32, className, ...rest }: Paint3DIconProps) => {
+const Paint3DIcon = ({ size = '3.2rem', className, ...rest }: Paint3DIconProps) => {
   return (
     <svg
       width={size}

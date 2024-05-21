@@ -1,7 +1,7 @@
 import { KakaoChannelIconProps } from './KakaoChannelIcon.type';
 
 const KakaoChannelIcon = ({
-  size = 32,
+  size = '3.2rem',
   className,
   textColor = '#FEE500',
   ...rest

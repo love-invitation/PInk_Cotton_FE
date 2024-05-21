@@ -2,7 +2,12 @@ import { ArrowRightIconProps } from './ArrowRightIcon.type';
 
 import { twMerge } from 'tailwind-merge';
 
-const ArrowRightIcon = ({ size = 32, className, fill = 'black', ...rest }: ArrowRightIconProps) => {
+const ArrowRightIcon = ({
+  size = '3.2rem',
+  className,
+  fill = 'black',
+  ...rest
+}: ArrowRightIconProps) => {
   return (
     <svg
       width={size}

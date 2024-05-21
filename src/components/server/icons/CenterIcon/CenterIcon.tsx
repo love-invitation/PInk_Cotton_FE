@@ -1,6 +1,6 @@
 import { CenterProps } from './CenterIcon.type';
 
-const CenterIcon = ({ size = 32, fill = 'black', className = '', ...rest }: CenterProps) => {
+const CenterIcon = ({ size = '3.2rem', fill = 'black', className = '', ...rest }: CenterProps) => {
   return (
     <svg
       width={size}

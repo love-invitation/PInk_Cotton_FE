@@ -1,7 +1,7 @@
 import { ArrowDownIconProps } from './ArrowDownIcon.type';
 
 const ArrowDownIcon = ({
-  size = 32,
+  size = '3.2rem',
   fill = 'black',
   className = '',
   ...rest

@@ -1,6 +1,6 @@
 import { Send3DIconProps } from './Send3DIcon.type';
 
-const Send3DIcon = ({ size = 32, className = '', ...rest }: Send3DIconProps) => {
+const Send3DIcon = ({ size = '3.2rem', className = '', ...rest }: Send3DIconProps) => {
   return (
     <svg
       width={size}
