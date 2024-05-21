@@ -22,7 +22,7 @@ const HeaderUserInfo = () => {
           className='rounded-none text-gray_100 flex items-center px-0 header_min:w-full header_min:h-full header_min:text-nowrap header_min:justify-around header_max:w-[2.4rem] header_max:h-[2.4rem] header_max:justify-center'
         >
           <UserIcon
-            size={24}
+            size='2.4rem'
             fill={theme.colors.gray_100}
             className='header_max:w-[2.4rem] header_max:h-[2.4rem]'
           />
