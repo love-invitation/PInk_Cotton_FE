@@ -35,7 +35,7 @@ const meta: Meta<typeof CommonList> = {
       description: 'Tailwind CSS를 사용하여 ul 태그에 스타일을 추가 및 수정합니다.',
     },
     children: {
-      control: 'function',
+      control: { disabled: true },
       description:
         '각 데이터 아이템으로부터 JSX를 반환하는 함수입니다. 반환된 JSX는 리스트의 각 항목을 표현합니다.',
     },
