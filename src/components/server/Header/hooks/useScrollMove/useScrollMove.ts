@@ -8,6 +8,10 @@ const useScrollMove = ({ target }: UseScrollMoveProps) => {
   const ref = useRef<Element | null>(null);
 
   useEffect(() => {
+    if (!target) {
+      return;
+    }
+
     const element = document.querySelector(target);
 
     if (!element) {
