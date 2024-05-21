@@ -23,7 +23,7 @@ const MainBestSection = async () => {
   }
 
   return (
-    <section className='w-full py-[8rem] bg-gray_900 shadow-shadow_500 flex flex-col items-center justify-center gap-[6rem]'>
+    <section className='w-full py-[8rem] bg-gray_900 shadow-shadow_500 flex flex-col items-center justify-center gap-[10rem]'>
       <div className='w-[80%] flex items-center select-none'>
         <MainSectionTitle
           title='BEST'
