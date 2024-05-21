@@ -34,7 +34,7 @@ const Accordion = ({ children, buttonTitle, type = 'main' }: AccordionProps) => 
         </div>
 
         <ArrowDownIcon
-          size={20}
+          size='2rem'
           className={`transition-transform duration-500 ${isToggle && 'rotate-180'}`}
         />
       </button>

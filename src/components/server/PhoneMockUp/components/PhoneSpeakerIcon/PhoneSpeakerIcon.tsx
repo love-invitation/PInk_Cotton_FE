@@ -3,8 +3,8 @@ import { MockupIconProps } from '../MockupIcon.type';
 const PhoneSpeakerIcon = ({ className }: MockupIconProps) => {
   return (
     <svg
-      width='38'
-      height='6'
+      width='3.8rem'
+      height='0.6rem'
       viewBox='0 0 38 6'
       fill='none'
       xmlns='http://www.w3.org/2000/svg'

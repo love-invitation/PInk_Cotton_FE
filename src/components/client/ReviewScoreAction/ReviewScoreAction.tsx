@@ -24,7 +24,7 @@ const ReviewScoreAction = ({ onClick, score = 0, className = '' }: ReviewScoreAc
             onClick={() => handleClickStar(scoreValue)}
           >
             <StarIcon
-              size={28}
+              size='2.8rem'
               fill={currentScore < scoreValue ? '#BBBBBB' : '#FFD400'}
             />
           </motion.button>

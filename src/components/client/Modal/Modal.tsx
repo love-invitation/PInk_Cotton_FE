@@ -28,7 +28,7 @@ const Modal = ({ children, isShow, onClose, clickAwayEnable }: ModalProps) => {
               onClick={onClose}
             >
               <CloseIcon
-                size={24}
+                size='2.4rem'
                 className='transition-opacity hover:opacity-40'
               />
             </button>

@@ -54,7 +54,7 @@ const AlertModal = ({
         )}
 
         <Button
-          className='w-[12rem]'
+          className='w-[12rem] mb-[0.5rem]'
           onClick={onClose}
           backgroundColor='gray'
           fontColor='white'
