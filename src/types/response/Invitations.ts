@@ -14,7 +14,7 @@ export interface BestInvitationsItem {
   imageUrl: string;
   templateName: string;
   price: number;
-  discountedPrice: number;
+  discountedPrice?: number;
   best: boolean;
   newest: boolean;
 }
