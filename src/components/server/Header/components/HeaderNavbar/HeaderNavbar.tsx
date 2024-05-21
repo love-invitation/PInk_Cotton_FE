@@ -11,7 +11,9 @@ import { HeaderNavItem } from './components';
 const HeaderNavbar = () => {
   const pathName = usePathname();
 
-  const { handleMoveScroll } = useScrollMove({ target: DOMAIN_URL.SERVICE });
+  const { handleMoveScroll } = useScrollMove({
+    target: pathName === '/' ? '#service' : null,
+  });
 
   return (
     <nav className='header_min:mr-[10%] header_max:w-full header_max:h-full'>
@@ -38,14 +40,24 @@ const HeaderNavbar = () => {
           className='h-[30%] mx-[2rem]'
         />
 
-        <li>
-          <button
-            type='button'
-            onClick={handleMoveScroll}
-          >
-            고객센터
-          </button>
-        </li>
+        {pathName !== '/' && (
+          <HeaderNavItem
+            pathName={pathName}
+            href={DOMAIN_URL.SERVICE}
+            title='고객센터'
+          />
+        )}
+
+        {pathName === '/' && (
+          <li>
+            <button
+              type='button'
+              onClick={handleMoveScroll}
+            >
+              고객센터
+            </button>
+          </li>
+        )}
       </ul>
     </nav>
   );

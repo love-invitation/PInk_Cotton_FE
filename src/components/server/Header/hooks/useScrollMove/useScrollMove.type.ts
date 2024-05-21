@@ -1,3 +1,3 @@
 export interface UseScrollMoveProps {
-  target: string;
+  target: string | null;
 }
