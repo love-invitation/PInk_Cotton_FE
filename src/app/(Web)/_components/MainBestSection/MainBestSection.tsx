@@ -23,7 +23,7 @@ const MainBestSection = async () => {
   }
 
   return (
-    <section className='w-full main_page_550:py-[4rem] py-[2.4rem] bg-gray_900 shadow-shadow_500 flex flex-col items-center justify-center gap-[4rem]'>
+    <section className='w-full py-[4rem] bg-gray_900 shadow-shadow_500 flex flex-col items-center justify-center gap-[6rem]'>
       <div className='w-[80%] flex items-center select-none'>
         <MainSectionTitle
           title='BEST'
@@ -33,7 +33,7 @@ const MainBestSection = async () => {
 
         <Link
           href='/wedding/invitations'
-          className='main_page_550:flex hidden items-center gap-[1rem] text-size20 text-pink_500 underline transition-all hover:brightness-90'
+          className='flex items-center gap-[1rem] text-size20 text-pink_500 underline transition-all hover:brightness-90'
         >
           More
           <ArrowRightIcon

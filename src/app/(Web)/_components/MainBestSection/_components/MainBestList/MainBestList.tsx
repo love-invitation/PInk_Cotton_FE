@@ -15,7 +15,7 @@ const MainBestList = ({ invitation }: MainBestListProps) => {
   return (
     <ul
       ref={ref}
-      className='w-full min-h-[37rem] main_page_550:max-w-[117rem] flex gap-[2rem] overflow-scroll scrollbar-hide items-center justify-center scroll-smooth'
+      className='w-full min-h-[37rem] max-w-[100rem] px-[6rem] flex justify-between gap-[6rem] overflow-scroll scrollbar-hide items-center scroll-smooth'
     >
       <AnimatePresence>
         {isInView &&
