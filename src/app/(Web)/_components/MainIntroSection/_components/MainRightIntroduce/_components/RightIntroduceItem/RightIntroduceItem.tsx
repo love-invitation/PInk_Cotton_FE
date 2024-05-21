@@ -7,20 +7,20 @@ import { motion } from 'framer-motion';
 const RightIntroduceItem = ({ icon, title, description, delayTime }: RightIntroduceItemProps) => {
   return (
     <motion.li
-      className='flex gap-[1.6rem] main_page_550:gap-[3.2rem] items-center text-black_500 select-none'
+      className='flex gap-[2rem] laptop:gap-[3.2rem] items-center text-black_500 select-none'
       initial={{ opacity: 0, translateX: '-100%' }}
       animate={{ opacity: 1, translateX: '0%' }}
       transition={{ delay: delayTime, duration: 0.5 }}
     >
-      <i className='min-w-[4rem] w-[4rem] min-h-[4rem] h-[4rem] main_page_550:min-w-[8rem] main_page_550:w-[8rem] main_page_550:min-h-[8rem] main_page_550:h-[8rem]'>
+      <i className='min-w-[6rem] w-[6rem] min-h-[6rem] h-[6rem] laptop:min-w-[8rem] laptop:w-[8rem] laptop:min-h-[8rem] laptop:h-[8rem]'>
         {icon}
       </i>
 
       <span className='flex flex-col'>
-        <h3 className='text-size16 main_page_550:text-size28 font-medium main_page_550:text-nowrap'>
+        <h3 className='text-size24 laptop:text-size28 font-medium laptop:text-nowrap break-keep'>
           {title}
         </h3>
-        <p className='text-size12 main_page_550:text-size16 font-regular main_page_550:text-nowrap'>
+        <p className='text-size16 laptop:text-size21 font-regular laptop:text-nowrap break-keep'>
           {description}
         </p>
       </span>

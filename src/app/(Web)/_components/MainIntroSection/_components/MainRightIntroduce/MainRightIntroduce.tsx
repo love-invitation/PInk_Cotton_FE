@@ -13,7 +13,7 @@ const MainRightIntroduce = () => {
 
   return (
     <article
-      className='main_page_1050:w-[54rem] main_page_1050:overflow-hidden'
+      className='laptop:w-[54rem] min-h-[37rem] overflow-hidden'
       ref={ref}
     >
       {isInView && (
