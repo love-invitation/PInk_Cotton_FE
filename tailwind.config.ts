@@ -99,8 +99,8 @@ const config = {
         tablet: { min: '601px', max: '1023px' },
         laptop: { min: '1024px' },
 
-        header_min: { min: '900px' },
-        header_max: { max: '900px' },
+        header_min: { min: '1024px' },
+        header_max: { max: '1024px' },
 
         review_card_max: { max: '350px' },
         main_card_max: { max: '1050px' },
