@@ -1,6 +1,6 @@
 const DOMAIN_URL = {
   MAIN: '/',
-  SERVICE: '/service',
+  SERVICE: '#service',
   PROFILE: '/profile',
   LOGIN: '/login',
   WEDDING_INVITATIONS: '/wedding/invitations',
