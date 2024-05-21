@@ -4,13 +4,13 @@ import MainSectionTitle from '../../../MainSectionTitle/MainSectionTitle';
 
 const MainReview = () => {
   return (
-    <article className='flex flex-col gap-[4rem] items-center main_page_1050:items-start'>
+    <article className='flex flex-col gap-[4rem] items-center laptop:items-start'>
       <MainSectionTitle
         title='증명된 고객후기'
         subTitle='PINKCOTTON과 함께한 고객분들의 솔직한 후기입니다.'
       />
 
-      <ul className='flex gap-[2rem] main_page_1050:flex-row flex-col items-center'>
+      <ul className='flex gap-[2rem] laptop:flex-row flex-col items-center'>
         <li>
           <ReviewCard
             nickName='잔액부족'
