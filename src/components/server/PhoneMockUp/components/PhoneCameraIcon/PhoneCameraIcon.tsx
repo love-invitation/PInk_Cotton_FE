@@ -3,8 +3,8 @@ import { MockupIconProps } from '../MockupIcon.type';
 const PhoneCameraIcon = ({ className }: MockupIconProps) => {
   return (
     <svg
-      width='13'
-      height='12'
+      width='1.3rem'
+      height='1.2rem'
       viewBox='0 0 13 12'
       fill='none'
       xmlns='http://www.w3.org/2000/svg'

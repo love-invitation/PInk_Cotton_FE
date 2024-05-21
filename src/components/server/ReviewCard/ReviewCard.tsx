@@ -21,7 +21,7 @@ const ReviewCard = ({ nickName, score, title, content }: ReviewCardProps) => {
         {title}
       </h6>
 
-      <p className='w-full review_card_max:text-size12 text-size14 font-medium text-gray_200 review_card_max:leading-[1.6rem] leading-[2.8rem] overflow-hidden line-clamp-2'>
+      <p className='w-full review_card_max:text-size12 text-size14 font-medium text-gray_200 review_card_max:leading-[1.8rem] leading-[2.8rem] overflow-hidden line-clamp-2'>
         {content}
       </p>
     </div>

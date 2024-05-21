@@ -11,7 +11,7 @@ const ReviewScore = ({ score = 0, className = '' }: ReviewScoreProps) => {
       {SCORE_LIST.map((scoreValue) => (
         <li key={`${scoreValue}_review_score`}>
           <StarIcon
-            size={28}
+            size='2.8rem'
             fill={score < scoreValue ? '#BBBBBB' : '#FFD400'}
           />
         </li>
