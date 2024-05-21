@@ -1,8 +1,8 @@
 const LayerIcon = () => {
   return (
     <svg
-      width='10rem'
-      height='11.3rem'
+      width='100%'
+      height='100%'
       viewBox='0 0 100 113'
       fill='none'
       xmlns='http://www.w3.org/2000/svg'
