@@ -38,7 +38,7 @@ const MainBestSection = async () => {
           More
           <ArrowRightIcon
             fill={theme.colors.pink_500}
-            size={15}
+            size='1.5rem'
           />
         </Link>
       </div>
