@@ -9,7 +9,7 @@ const MainServiceSection = () => {
       <div className='px-[2rem] py-[6rem] flex flex-col gap-[10rem]'>
         <MainReview />
 
-        <div className='w-full flex flex-col main_page_1050:flex-row gap-[10rem] main_page_1050:gap-0 justify-between'>
+        <div className='w-full flex flex-col laptop:flex-row gap-[10rem] laptop:gap-0 justify-between'>
           <MainQuestion />
 
           <MainService />
