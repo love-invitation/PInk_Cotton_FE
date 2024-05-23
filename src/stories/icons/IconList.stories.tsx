@@ -7,8 +7,11 @@ import {
   CloseIcon,
   DotIcon,
   Folder3DIcon,
+  GoogleLogoIcon,
   KakaoChannelIcon,
+  KakaoLogoIcon,
   LayerIcon,
+  NaverLogoIcon,
   Paint3DIcon,
   Send3DIcon,
   StarIcon,
@@ -130,5 +133,23 @@ export const Layer: Story = {
 export const KakaoChannel: Story = {
   args: {
     children: <KakaoChannelIcon />,
+  },
+};
+
+export const KakaoLogo: Story = {
+  args: {
+    children: <KakaoLogoIcon />,
+  },
+};
+
+export const NaverLogo: Story = {
+  args: {
+    children: <NaverLogoIcon />,
+  },
+};
+
+export const GoogleLogo: Story = {
+  args: {
+    children: <GoogleLogoIcon />,
   },
 };
