@@ -35,6 +35,7 @@ const HeaderUserInfo = () => {
         <Link
           className='underline text-pink_500 text-size16 font-semiBold'
           href='/login'
+          scroll={false}
         >
           로그인
         </Link>
