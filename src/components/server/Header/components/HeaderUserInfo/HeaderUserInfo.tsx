@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 import { Button } from '@/components/client';
 import { UserIcon } from '@/components/server/icons';
 
@@ -10,7 +12,7 @@ const HeaderUserInfo = () => {
 
   // TODO
   // 추후 로그인 기능 제작시 store값으로 변경
-  const isLogin = true;
+  const isLogin = false;
 
   return (
     <div className='w-[11rem] h-[2.4rem] mr-[4%] flex items-center justify-center'>
@@ -30,14 +32,12 @@ const HeaderUserInfo = () => {
         </Button>
       )}
       {!isLogin && (
-        <Button
-          fontSize='1.8rem'
-          fontWeight='semiBold'
-          backgroundColor='naked'
-          className='underline text-pink_500 header_max:text-size12'
+        <Link
+          className='underline text-pink_500 text-size16 font-semiBold'
+          href='/login'
         >
           로그인
-        </Button>
+        </Link>
       )}
     </div>
   );
