@@ -114,6 +114,13 @@ const config = {
         4: '2rem',
         5: '2.5rem',
       },
+
+      gridTemplateColumns: {
+        'auto-fill-minmax': 'repeat(auto-fill, minmax(20rem, 1fr))',
+      },
+      gridAutoRows: {
+        auto: 'minmax(auto, auto)',
+      },
     },
   },
 
