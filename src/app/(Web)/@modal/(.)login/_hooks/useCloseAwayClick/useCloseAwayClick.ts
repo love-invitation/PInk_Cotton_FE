@@ -10,7 +10,7 @@ const useCloseAwayClick = () => {
   const route = useRouter();
   const [isExit, setIsExit] = useState(false);
 
-  const ref = useClickAway<HTMLElement>(() => {
+  const ref = useClickAway<HTMLDivElement>(() => {
     setIsExit(true);
   });
 

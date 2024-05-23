@@ -12,3 +12,4 @@ export { default as Banner } from './Banner/Banner';
 export { default as TemplateCard } from './TemplateCard/TemplateCard';
 export { default as PhoneMockup } from './PhoneMockUp/PhoneMockup';
 export { default as TemplateItem } from './TemplateItem/TemplateItem';
+export { default as LoginContainer } from './LoginContainer/LoginContainer';
