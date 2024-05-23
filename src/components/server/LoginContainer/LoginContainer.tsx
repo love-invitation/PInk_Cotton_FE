@@ -1,33 +1,12 @@
-'use client';
-
-import { forwardRef } from 'react';
-
 import Image from 'next/image';
 
 import { LOGIN_IMAGE } from '@/assets/images';
 
 import { LoginButtons } from './components';
 
-import { motion } from 'framer-motion';
-
-const LoginContainer = forwardRef<HTMLElement>((_, ref) => {
+const LoginContainer = () => {
   return (
-    <motion.article
-      initial={{
-        scale: 0,
-        opacity: 0,
-      }}
-      animate={{
-        scale: 1,
-        opacity: 1,
-      }}
-      exit={{
-        scale: 0,
-        opacity: 0,
-      }}
-      ref={ref}
-      className='w-full px-[2rem] pb-[2rem] max-w-[70rem] h-[70rem] bg-white_100 rounded-radius25 flex flex-col items-center justify-center gap-[4rem]'
-    >
+    <article className='w-full px-[2rem] pb-[2rem] max-w-[70rem] h-[70rem] bg-white_100 rounded-radius25 flex flex-col items-center justify-center gap-[4rem]'>
       <span className='flex flex-col items-center justify-center gap-[1.6rem]'>
         <h2 className='text-size26 font-medium'>로그인</h2>
         <p className='text-size18 font-medium break-keep text-gray_100'>
@@ -44,8 +23,8 @@ const LoginContainer = forwardRef<HTMLElement>((_, ref) => {
       </i>
 
       <LoginButtons />
-    </motion.article>
+    </article>
   );
-});
+};
 
 export default LoginContainer;

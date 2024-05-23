@@ -1,6 +1,6 @@
 'use client';
 
-import { LoginContainer } from '@/components/client';
+import { LoginContainer } from '@/components/server';
 
 import { useCloseAwayClick } from './_hooks';
 
@@ -24,7 +24,23 @@ const LoginModal = () => {
           }}
           className='w-dvw h-dvh bg-transparent_90 fixed top-0 left-0 z-modal flex items-center justify-center'
         >
-          <LoginContainer ref={ref} />
+          <motion.div
+            initial={{
+              scale: 0,
+              opacity: 0,
+            }}
+            animate={{
+              scale: 1,
+              opacity: 1,
+            }}
+            exit={{
+              scale: 0,
+              opacity: 0,
+            }}
+            ref={ref}
+          >
+            <LoginContainer />
+          </motion.div>
         </motion.section>
       )}
     </AnimatePresence>
