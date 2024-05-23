@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 import { LOGIN_IMAGE } from '@/assets/images';
 
-import { useCloseAwayClick } from './hooks';
+import { useCloseAwayClick } from './_hooks';
 
 const LoginModal = () => {
   const ref = useCloseAwayClick();
