@@ -47,9 +47,11 @@ const config = {
 
         yellow_100: '#FEE500',
         yellow_500: '#FFD400',
-        yellow_kakao: '#FEE500',
 
         red_500: '#ED4044',
+
+        naver_brand: '#00C73C',
+        kakao_brand: '#fae110',
 
         transparent_10: '#23232310',
         transparent_30: '#23232330',
