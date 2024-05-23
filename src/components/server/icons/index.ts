@@ -13,3 +13,4 @@ export { default as Paint3DIcon } from './Paint3DIcon/Paint3DIcon';
 export { default as LayerIcon } from './LayerIcon/LayerIcon';
 export { default as KakaoChannelIcon } from './KakaoChannelIcon/KakaoChannelIcon';
 export { default as NaverLogoIcon } from './NaverLogoIcon/NaverLogoIcon';
+export { default as KakaoLogoIcon } from './KakaoLogoIcon/KakaoLogoIcon';
