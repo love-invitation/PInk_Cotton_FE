@@ -20,7 +20,7 @@ const MainService = () => {
 
       <button
         type='button'
-        className='max-w-[35rem] flex items-center justify-center gap-[1rem] bg-yellow_kakao rounded-[2rem_2rem_2rem_0] w-full h-[6.5rem]'
+        className='max-w-[35rem] flex items-center justify-center gap-[1rem] bg-kakao_brand rounded-[2rem_2rem_2rem_0] w-full h-[6.5rem]'
         onClick={showModal}
       >
         <KakaoChannelIcon size='3.6rem' />
