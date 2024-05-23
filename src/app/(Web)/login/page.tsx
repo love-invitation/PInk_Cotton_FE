@@ -1,7 +1,14 @@
-'use client';
+import { LoginContainer } from '@/components/server';
 
 const LoginPage = () => {
-  return <div>LoginPage - not parallel</div>;
+  return (
+    <section
+      id='fit-wrap'
+      className='flex items-center justify-center'
+    >
+      <LoginContainer />
+    </section>
+  );
 };
 
 export default LoginPage;
