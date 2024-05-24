@@ -1,20 +1,33 @@
-// import { TemplateProps } from './Template.type';
+import Image from 'next/image';
 
-// const Template = ({ id }: TemplateProps) => {
-//   if (id === 1) {
-//     return (
-//       <>
-//         <header>
-//           <h3>{`${year} / ${month} / ${day}`}</h3>
-//           <p>{week}</p>
-//           <Image src={src} />
-//           <p>{description}</p>
-//         </header>
-//       </>
-//     );
-//   }
+import { TemplateProps } from './Template.type';
 
-//   return null;
-// };
+const Template = ({ title, details, groomName, brideName, productItem }: TemplateProps) => {
+  const { id, imageUrl } = productItem;
 
-// export default Template;
+  if (id === 1) {
+    return (
+      <>
+        <header>
+          <h3>{title}</h3>
+          <Image
+            src={imageUrl}
+            alt='123'
+            width={259}
+            height={200}
+          />
+          <div>
+            <p>{groomName}</p>
+            <p>{brideName}</p>
+          </div>
+
+          <p>{details}</p>
+        </header>
+      </>
+    );
+  }
+
+  return null;
+};
+
+export default Template;
