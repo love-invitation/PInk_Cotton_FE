@@ -2,8 +2,8 @@ export interface InvitationsResponse {
   status: number;
   message: string;
   result: {
-    title: string;
-    detail: string;
+    title?: string;
+    details: string;
     groomName: string;
     brideName: string;
     productInfoList: InvitationsItem[];
