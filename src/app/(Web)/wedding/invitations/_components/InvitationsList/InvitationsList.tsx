@@ -15,7 +15,10 @@ const InvitationsList = ({ productInfoList }: InvitationsListProps) => {
           key={id}
           className='flex justify-center'
         >
-          <Link href={`/wedding/invitations/${id}`}>
+          <Link
+            href={`/wedding/invitations/${id}`}
+            scroll={false}
+          >
             <TemplateItem
               name={templateName}
               isNew={newest}
