@@ -10,6 +10,18 @@ export interface InvitationsResponse {
   };
 }
 
+export interface InvitationResponse {
+  status: number;
+  message: string;
+  result: {
+    title?: string;
+    details: string;
+    groomName: string;
+    brideName: string;
+    productInfo: InvitationsItem;
+  };
+}
+
 export interface InvitationsItem {
   id: number;
   imageUrl: string;
