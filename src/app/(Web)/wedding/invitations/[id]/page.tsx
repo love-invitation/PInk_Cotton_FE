@@ -1,8 +1,7 @@
-import Image from 'next/image';
-import Link from 'next/link';
+import { QUERY_OPTIONS, getQueryClient } from '@/constants';
+import { HydrationBoundary, dehydrate } from '@tanstack/react-query';
 
-import { QUERY_KEYS, QUERY_OPTIONS, getQueryClient } from '@/constants';
-import { InvitationsResponse } from '@/types/response';
+import { InvitationFloating } from '../_components';
 
 interface FloatingProps {
   params: {
@@ -11,40 +10,16 @@ interface FloatingProps {
 }
 
 const Floating = async ({ params }: FloatingProps) => {
+  const { id } = params;
   const queryClient = getQueryClient();
-  await queryClient.prefetchQuery(QUERY_OPTIONS.ALL_INVITATIONS());
-  const data = queryClient.getQueryData<InvitationsResponse>(QUERY_KEYS.ALL_INVITATIONS);
-  const { title, details, groomName, brideName } = data?.result || {};
-  const { productInfoList } = data?.result || { productInfoList: [] };
-  const { imageUrl } =
-    productInfoList?.find((productInfo) => productInfo.id === Number(params.id)) || {};
+  await queryClient.prefetchQuery(QUERY_OPTIONS.INVITATION(id));
 
   return (
-    <div
-      className='flex justify-center items-center text-black_900'
-      id='fit-wrap'
-    >
-      <article className='flex justify-center items-center flex-col'>
-        <h3>{title}</h3>
-        <Image
-          src={imageUrl || ''}
-          alt='123'
-          width={259}
-          height={200}
-        />
-        <div className='flex'>
-          <p>{groomName}</p>
-          <p>{brideName}</p>
-        </div>
-        <p>{details}</p>
-        <Link
-          href='/wedding/invitations/produce'
-          className='bg-pink_500 text-white_100'
-        >
-          제작하기
-        </Link>
+    <HydrationBoundary state={dehydrate(queryClient)}>
+      <article className='bg-white_100 text-black_900 pt-[4rem] flex justify-center'>
+        <InvitationFloating id={id} />
       </article>
-    </div>
+    </HydrationBoundary>
   );
 };
 
