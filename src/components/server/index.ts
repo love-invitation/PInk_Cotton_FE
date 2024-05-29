@@ -11,6 +11,6 @@ export { default as CommonList } from './CommonList/CommonList';
 export { default as Banner } from './Banner/Banner';
 export { default as TemplateCard } from './TemplateCard/TemplateCard';
 export { default as PhoneMockup } from './PhoneMockUp/PhoneMockup';
-export { default as TemplateItem } from './TemplateItem/TemplateItem';
+export { default as InvitationItem } from './InvitationItem/InvitationItem';
 export { default as LoginContainer } from './LoginContainer/LoginContainer';
 export { default as InvitationTemplate } from './InvitationTemplate/InvitationTemplate';

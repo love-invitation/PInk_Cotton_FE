@@ -1,14 +1,14 @@
 import TemplateCard from '../TemplateCard/TemplateCard';
-import { TemplateItemProps } from './TemplateItem.type';
+import { InvitationItemProps } from './InvitationItem.type';
 
-const TemplateItem = ({
+const InvitationItem = ({
   children,
   name,
   // id,
   isNew = false,
   price,
   discountPrice,
-}: TemplateItemProps) => {
+}: InvitationItemProps) => {
   return (
     <figure className='flex flex-col items-center justify-center gap-[2.8rem]'>
       <TemplateCard size='medium'>{children}</TemplateCard>
@@ -32,4 +32,4 @@ const TemplateItem = ({
   );
 };
 
-export default TemplateItem;
+export default InvitationItem;

@@ -2,7 +2,7 @@
 
 import { useRef } from 'react';
 
-import { TemplateItem } from '@/components/server';
+import { InvitationItem } from '@/components/server';
 
 import { MainBestListProps } from './MainBestList.type';
 
@@ -27,14 +27,14 @@ const MainBestList = ({ invitation }: MainBestListProps) => {
               transition={{ duration: 1, delay: index * 0.5 }}
               key={templateName}
             >
-              <TemplateItem
+              <InvitationItem
                 name={templateName}
                 isNew={newest}
                 price={price}
                 id={templateName}
               >
                 {templateName}
-              </TemplateItem>
+              </InvitationItem>
             </motion.li>
           ))}
       </AnimatePresence>

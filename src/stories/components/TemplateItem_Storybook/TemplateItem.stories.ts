@@ -1,4 +1,4 @@
-import { TemplateItem } from '@/components/server';
+import { InvitationItem } from '@/components/server';
 import { Meta, StoryObj } from '@storybook/react';
 
 /**
@@ -15,8 +15,8 @@ import { Meta, StoryObj } from '@storybook/react';
  */
 
 const meta = {
-  title: 'Components/TemplateItem',
-  component: TemplateItem,
+  title: 'Components/InvitationItem',
+  component: InvitationItem,
   parameters: {
     layout: 'centered',
   },
@@ -61,7 +61,7 @@ const meta = {
     price: '14,000',
     id: 'example_template',
   },
-} satisfies Meta<typeof TemplateItem>;
+} satisfies Meta<typeof InvitationItem>;
 
 export default meta;
 
@@ -69,13 +69,13 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {};
 
-export const NewTemplateItem: Story = {
+export const NewInvitationItem: Story = {
   args: {
     isNew: true,
   },
 };
 
-export const DiscountTemplateItem: Story = {
+export const DiscountInvitationItem: Story = {
   args: {
     discountPrice: '9,900',
   },
