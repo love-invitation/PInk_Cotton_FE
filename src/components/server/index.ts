@@ -13,3 +13,4 @@ export { default as TemplateCard } from './TemplateLayout/TemplateLayout';
 export { default as PhoneMockup } from './PhoneMockUp/PhoneMockup';
 export { default as InvitationItem } from './InvitationItem/InvitationItem';
 export { default as LoginContainer } from './LoginContainer/LoginContainer';
+export { default as TemplateLayout } from './TemplateLayout/TemplateLayout';
