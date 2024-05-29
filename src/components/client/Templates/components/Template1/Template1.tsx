@@ -2,15 +2,10 @@
 
 import Image from 'next/image';
 
+import { TemplateProps } from '../../Templates.type';
 import { useGetTemplateWidth } from '../../hooks';
 
-export interface TemplateProps {
-  detail: string;
-  groomName: string;
-  brideName: string;
-}
-
-const Template1 = ({ detail, groomName, brideName }: TemplateProps) => {
+const Template1 = ({ details, groomName, brideName, imageUrl }: TemplateProps) => {
   const { ref, width } = useGetTemplateWidth();
 
   return (
@@ -29,10 +24,9 @@ const Template1 = ({ detail, groomName, brideName }: TemplateProps) => {
       >
         우리결혼합니다
       </h3>
-      {/* 이미지 */}
 
       <Image
-        src='https://invitation-bucket.s3.ap-northeast-2.'
+        src={imageUrl}
         className='border-2 border-orange-400'
         width={width * 0.614}
         height={width * 0.614}
@@ -55,14 +49,14 @@ const Template1 = ({ detail, groomName, brideName }: TemplateProps) => {
         </span>
 
         <p
-          className='text-center'
+          className='text-center whitespace-pre-line'
           style={{
             fontSize: `${width * 0.05}px`,
+            whiteSpace: 'break-spaces',
           }}
-          dangerouslySetInnerHTML={{
-            __html: detail,
-          }}
-        />
+        >
+          {details}
+        </p>
       </figcaption>
     </figure>
   );
