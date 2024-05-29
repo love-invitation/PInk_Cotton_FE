@@ -1,4 +1,4 @@
-export interface TemplateCardProps {
+export interface TemplateLayoutProps {
   children: React.ReactNode;
   size?: CardSizeType;
   className?: string;

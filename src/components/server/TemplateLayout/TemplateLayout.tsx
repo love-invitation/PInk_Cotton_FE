@@ -1,9 +1,9 @@
-import { TemplateCardProps } from './TemplateCard.type';
+import { TemplateLayoutProps } from './TemplateLayout.type';
 import { useCardSize } from './hooks';
 
 import { twJoin, twMerge } from 'tailwind-merge';
 
-const TemplateCard = ({ children, size = 'medium', className }: TemplateCardProps) => {
+const TemplateLayout = ({ children, size = 'medium', className }: TemplateLayoutProps) => {
   const cardSize = useCardSize({ type: size });
 
   return (
@@ -15,4 +15,4 @@ const TemplateCard = ({ children, size = 'medium', className }: TemplateCardProp
   );
 };
 
-export default TemplateCard;
+export default TemplateLayout;
