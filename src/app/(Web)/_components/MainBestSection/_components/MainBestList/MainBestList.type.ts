@@ -1,5 +1,5 @@
-import { BestInvitationsItem } from '@/types/response';
+import { InvitationItem } from '@/types/response';
 
 export interface MainBestListProps {
-  invitation: BestInvitationsItem[];
+  invitation: InvitationItem[];
 }

@@ -1,5 +1,5 @@
-import { InvitationsItem } from '@/types/response';
+import { InvitationItem } from '@/types/response';
 
 export interface InvitationsListProps {
-  productInfoList: InvitationsItem[];
+  productInfoList: InvitationItem[];
 }
