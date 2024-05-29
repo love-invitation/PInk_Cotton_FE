@@ -34,7 +34,7 @@ const InvitationFloating = ({ id }: InvitationFloatingProps) => {
         height={100}
       />
       <Link
-        href={`wedding/invitations/produce${id}`}
+        href={`/wedding/invitations/produce${id}`}
         className='bg-pink_500 text-white_100 w-full py-[1rem] flex justify-center text-[1.6rem] border-solid	border-2 rounded-2xl'
       >
         제작하기
