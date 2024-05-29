@@ -1,4 +1,4 @@
-import TemplateCard from '../TemplateCard/TemplateCard';
+import TemplateLayout from '../TemplateLayout/TemplateLayout';
 import { InvitationItemProps } from './InvitationItem.type';
 
 const InvitationItem = ({
@@ -11,7 +11,7 @@ const InvitationItem = ({
 }: InvitationItemProps) => {
   return (
     <figure className='flex flex-col items-center justify-center gap-[2.8rem]'>
-      <TemplateCard size='medium'>{children}</TemplateCard>
+      <TemplateLayout size='medium'>{children}</TemplateLayout>
 
       <figcaption className='flex flex-col items-center gap-[2rem]'>
         <span className='relative flex justify-center'>
