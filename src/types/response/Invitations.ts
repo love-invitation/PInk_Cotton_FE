@@ -6,7 +6,7 @@ export interface InvitationsResponse {
     details: string;
     groomName: string;
     brideName: string;
-    productInfoList: InvitationsItem[];
+    productInfoList: InvitationItem[];
   };
 }
 
@@ -18,11 +18,11 @@ export interface InvitationResponse {
     details: string;
     groomName: string;
     brideName: string;
-    productInfo: InvitationsItem;
+    productInfo: InvitationItem;
   };
 }
 
-export interface InvitationsItem {
+export interface InvitationItem {
   id: number;
   imageUrl: string;
   templateName: string;
