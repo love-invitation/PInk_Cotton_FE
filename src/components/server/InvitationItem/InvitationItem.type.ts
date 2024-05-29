@@ -1,4 +1,4 @@
-export interface TemplateItemProps {
+export interface InvitationItemProps {
   children: React.ReactNode;
   name: string;
   price: number | string;

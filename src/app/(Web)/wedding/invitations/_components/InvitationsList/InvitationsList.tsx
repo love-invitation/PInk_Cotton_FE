@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-import { CommonList, TemplateItem } from '@/components/server';
+import { CommonList, InvitationItem } from '@/components/server';
 
 import { InvitationsListProps } from './InvitationsList.type';
 
@@ -19,7 +19,7 @@ const InvitationsList = ({ productInfoList }: InvitationsListProps) => {
             href={`/wedding/invitations/${id}`}
             scroll={false}
           >
-            <TemplateItem
+            <InvitationItem
               name={templateName}
               isNew={newest}
               price={price}
@@ -27,7 +27,7 @@ const InvitationsList = ({ productInfoList }: InvitationsListProps) => {
               id={templateName}
             >
               {templateName}
-            </TemplateItem>
+            </InvitationItem>
           </Link>
         </li>
       )}
