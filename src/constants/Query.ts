@@ -15,19 +15,19 @@ export const QUERY_OPTIONS = {
   BEST_INVITATIONS: () => ({
     queryKey: QUERY_KEYS.BEST_INVITATIONS,
     queryFn: () => getBestInvitations(),
-    gcTime: 86400000,
-    staleTime: 86400000,
+    gcTime: 1000 * 60 * 60 * 24,
+    staleTime: 1000 * 60 * 60 * 24,
   }),
   ALL_INVITATIONS: () => ({
     queryKey: QUERY_KEYS.ALL_INVITATIONS,
     queryFn: () => getAllInvitations(),
-    gcTime: 86400000,
-    staleTime: 86400000,
+    gcTime: 1000 * 60 * 60 * 24,
+    staleTime: 1000 * 60 * 60 * 24,
   }),
   INVITATION: (productInfoId: number | string) => ({
     queryKey: QUERY_KEYS.INVITATION(productInfoId),
     queryFn: () => getInvitation(productInfoId),
-    gcTime: 86400000,
-    staleTime: 86400000,
+    gcTime: 1000 * 60 * 60 * 24,
+    staleTime: 1000 * 60 * 60 * 24,
   }),
 };
