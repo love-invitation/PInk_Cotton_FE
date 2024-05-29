@@ -2,7 +2,7 @@ import { fetchApi } from '@/api';
 
 export const getBestInvitations = async () => {
   const response = await fetchApi('/api/product/info/best', {
-    next: { revalidate: 86400000 },
+    next: { revalidate: 1000 * 60 * 60 * 24 },
   });
 
   if (!response.ok) {
@@ -14,7 +14,7 @@ export const getBestInvitations = async () => {
 
 export const getAllInvitations = async () => {
   const response = await fetchApi('/api/product/info', {
-    next: { revalidate: 86400000 },
+    next: { revalidate: 1000 * 60 * 60 * 24 },
   });
 
   if (!response.ok) {
@@ -26,7 +26,7 @@ export const getAllInvitations = async () => {
 
 export const getInvitation = async (productInfoId: number | string) => {
   const response = await fetchApi(`/api/product/info/${productInfoId}`, {
-    next: { revalidate: 86400000 },
+    next: { revalidate: 1000 * 60 * 60 * 24 },
   });
 
   if (!response.ok) {
