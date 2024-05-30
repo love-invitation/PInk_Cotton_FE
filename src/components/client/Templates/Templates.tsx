@@ -20,7 +20,14 @@ const Templates = ({ id, details = '', brideName, groomName, imageUrl }: Templat
       );
 
     case 'tem2':
-      return <Template2 />;
+      return (
+        <Template2
+          details={detailReplace}
+          groomName={groomName}
+          brideName={brideName}
+          imageUrl={imageUrl}
+        />
+      );
 
     default:
       return (
