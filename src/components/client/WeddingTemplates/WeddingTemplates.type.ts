@@ -1,4 +1,4 @@
-export interface TemplatesProps {
+export interface WeddingTemplatesProps {
   id: 'tem1' | 'tem2' | 'tem3' | 'tem4';
   details: string;
   groomName: string;
@@ -6,7 +6,7 @@ export interface TemplatesProps {
   imageUrl: string;
 }
 
-export interface TemplateProps {
+export interface WeddingTemplateProps {
   details: string;
   groomName: string;
   brideName: string;

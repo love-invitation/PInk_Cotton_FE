@@ -9,4 +9,4 @@ export { default as Input } from './Input/InputWrapper/InputWrapper';
 export { default as UploadImage } from './UploadImage/UploadImageWrapper/UploadImageWrapper';
 export { default as TextEditor } from './TextEditor/TextEditor';
 export { default as Dropdown } from './Dropdown/DropdownWrapper/DropdownWrapper';
-export { default as Templates } from './Templates/Templates';
+export { default as WeddingTemplates } from './WeddingTemplates/WeddingTemplates';

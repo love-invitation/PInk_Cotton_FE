@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 
-import { Templates } from '@/components/client';
+import { WeddingTemplates } from '@/components/client';
 import { TemplateLayout } from '@/components/server';
 import { QUERY_OPTIONS } from '@/constants';
 import useClickAway from '@/hooks/useClickAway/useClickAway';
@@ -28,7 +28,7 @@ const InvitationFloating = ({ id }: InvitationFloatingProps) => {
       ref={ref}
     >
       <TemplateLayout size='large'>
-        <Templates
+        <WeddingTemplates
           id={
             // 추후에 아이디값 결정 후 반영하기
             'tem1'
