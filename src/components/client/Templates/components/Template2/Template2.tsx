@@ -29,7 +29,7 @@ const Template2 = ({ imageUrl, groomName, brideName, details }: TemplateProps) =
         className='relative'
         style={{
           width: `${width}px`,
-          height: `${width * 0.5417}px`,
+          height: `${width * 0.6842}px`,
         }}
       >
         <Image
