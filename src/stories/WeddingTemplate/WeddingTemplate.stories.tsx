@@ -3,7 +3,9 @@ import { TemplateLayout } from '@/components/server';
 import type { Meta, StoryObj } from '@storybook/react';
 
 /**
- * ## Accordion Component
+ * ## Wedding Invitation Template
+ *
+ * 현재 모든 청첩장 Template의 비율은 width값을 기준으로 동작합니다. <br>
  *
  * ### Props
  * - **id : **사용할 Wedding Template의 id를 전달받습니다.
