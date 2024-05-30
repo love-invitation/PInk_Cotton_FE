@@ -65,7 +65,7 @@ const meta = {
       return (
         <div
           style={{
-            margin: '10rem',
+            margin: '4rem',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
