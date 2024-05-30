@@ -2,10 +2,10 @@
 
 import Image from 'next/image';
 
-import { TemplateProps } from '../../Templates.type';
+import { WeddingTemplateProps } from '../../WeddingTemplates.type';
 import { useGetTemplateWidth } from '../../hooks';
 
-const Template3 = ({ groomName, brideName, imageUrl, details }: TemplateProps) => {
+const Template3 = ({ groomName, brideName, imageUrl, details }: WeddingTemplateProps) => {
   const { ref, width } = useGetTemplateWidth();
 
   return (
@@ -36,7 +36,7 @@ const Template3 = ({ groomName, brideName, imageUrl, details }: TemplateProps) =
           src={imageUrl}
           className='border-2 border-orange-400'
           fill
-          objectFit='contain'
+          objectFit='cover'
           alt='template - 1 Image'
         />
       </div>
