@@ -1,5 +1,5 @@
 import { TemplatesProps } from './Templates.type';
-import { Template1 } from './components';
+import { Template1, Template2 } from './components';
 
 const Templates = ({ id, details = '', brideName, groomName, imageUrl }: TemplatesProps) => {
   /**
@@ -18,6 +18,9 @@ const Templates = ({ id, details = '', brideName, groomName, imageUrl }: Templat
           imageUrl={imageUrl}
         />
       );
+
+    case 'tem2':
+      return <Template2 />;
 
     default:
       return (
