@@ -11,7 +11,7 @@ const WeddingTemplate4 = ({ groomName, brideName, imageUrl, details }: WeddingTe
   return (
     <figure
       ref={ref}
-      className='w-full h-full flex flex-col border-2 border-red-300 items-center justify-center'
+      className='w-full h-full flex flex-col items-center justify-center'
       style={{
         gap: `${width * 0.0702}px`,
       }}
