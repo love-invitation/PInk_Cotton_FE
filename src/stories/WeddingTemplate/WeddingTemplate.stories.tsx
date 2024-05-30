@@ -7,6 +7,8 @@ import type { Meta, StoryObj } from '@storybook/react';
  *
  * 현재 모든 청첩장 Template의 비율은 width값을 기준으로 동작합니다. <br>
  *
+ * ( 현재 작업 비율 : width 228px height 401px )
+ *
  * ### Props
  * - **id : **사용할 Wedding Template의 id를 전달받습니다.
  *
