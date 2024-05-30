@@ -2,16 +2,16 @@
 
 import Image from 'next/image';
 
-import { TemplateProps } from '../../Templates.type';
+import { WeddingTemplateProps } from '../../WeddingTemplates.type';
 import { useGetTemplateWidth } from '../../hooks';
 
-const Template1 = ({ details, groomName, brideName, imageUrl }: TemplateProps) => {
+const WeddingTemplate4 = ({ groomName, brideName, imageUrl, details }: WeddingTemplateProps) => {
   const { ref, width } = useGetTemplateWidth();
 
   return (
     <figure
       ref={ref}
-      className='w-full h-full flex flex-col items-center justify-center'
+      className='w-full h-full flex flex-col border-2 border-red-300 items-center justify-center'
       style={{
         gap: `${width * 0.0702}px`,
       }}
@@ -22,19 +22,19 @@ const Template1 = ({ details, groomName, brideName, imageUrl }: TemplateProps) =
           letterSpacing: `${width * 0.008}px`,
         }}
       >
-        우리결혼합니다
+        WEDDING
       </h3>
 
       <div
-        className='relative'
+        className='relative overflow-hidden '
         style={{
-          width: `${width * 0.614}px`,
-          height: `${width * 0.614}px`,
+          width: `${width * 0.6667}px`,
+          height: `${width * 0.9474}px`,
         }}
       >
         <Image
           src={imageUrl}
-          className='border-2 border-orange-400'
+          className='rounded-t-[99rem] border-2 border-orange-400'
           fill
           objectFit='contain'
           alt='template - 1 Image'
@@ -70,4 +70,4 @@ const Template1 = ({ details, groomName, brideName, imageUrl }: TemplateProps) =
   );
 };
 
-export default Template1;
+export default WeddingTemplate4;

@@ -2,10 +2,10 @@
 
 import Image from 'next/image';
 
-import { TemplateProps } from '../../Templates.type';
+import { WeddingTemplateProps } from '../../WeddingTemplates.type';
 import { useGetTemplateWidth } from '../../hooks';
 
-const Template2 = ({ imageUrl, groomName, brideName, details }: TemplateProps) => {
+const WeddingTemplate1 = ({ details, groomName, brideName, imageUrl }: WeddingTemplateProps) => {
   const { ref, width } = useGetTemplateWidth();
 
   return (
@@ -28,8 +28,8 @@ const Template2 = ({ imageUrl, groomName, brideName, details }: TemplateProps) =
       <div
         className='relative'
         style={{
-          width: `${width}px`,
-          height: `${width * 0.6842}px`,
+          width: `${width * 0.614}px`,
+          height: `${width * 0.614}px`,
         }}
       >
         <Image
@@ -70,4 +70,4 @@ const Template2 = ({ imageUrl, groomName, brideName, details }: TemplateProps) =
   );
 };
 
-export default Template2;
+export default WeddingTemplate1;
