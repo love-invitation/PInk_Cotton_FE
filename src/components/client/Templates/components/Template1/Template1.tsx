@@ -11,7 +11,7 @@ const Template1 = ({ details, groomName, brideName, imageUrl }: TemplateProps) =
   return (
     <figure
       ref={ref}
-      className='w-full h-full border-2 border-red-500 flex flex-col items-center justify-center'
+      className='w-full h-full flex flex-col items-center justify-center'
       style={{
         gap: `${width * 0.0702}px`,
       }}
@@ -25,13 +25,21 @@ const Template1 = ({ details, groomName, brideName, imageUrl }: TemplateProps) =
         우리결혼합니다
       </h3>
 
-      <Image
-        src={imageUrl}
-        className='border-2 border-orange-400'
-        width={width * 0.614}
-        height={width * 0.614}
-        alt='template - 1 Image'
-      />
+      <div
+        className='relative'
+        style={{
+          width: `${width * 0.614}px`,
+          height: `${width * 0.614}px`,
+        }}
+      >
+        <Image
+          src={imageUrl}
+          className='border-2 border-orange-400'
+          fill
+          objectFit='contain'
+          alt='template - 1 Image'
+        />
+      </div>
       <figcaption
         className='flex flex-col items-center justify-center'
         style={{ gap: `${width * 0.02}px` }}
