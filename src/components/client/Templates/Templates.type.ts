@@ -1,5 +1,5 @@
 export interface TemplatesProps {
-  id: 'tem1' | 'tem2';
+  id: 'tem1' | 'tem2' | 'tem3';
   details: string;
   groomName: string;
   brideName: string;
