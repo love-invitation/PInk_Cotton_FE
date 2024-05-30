@@ -1,5 +1,5 @@
 import { TemplatesProps } from './Templates.type';
-import { Template1, Template2, Template3 } from './components';
+import { Template1, Template2, Template3, Template4 } from './components';
 
 const Templates = ({ id, details = '', brideName, groomName, imageUrl }: TemplatesProps) => {
   /**
@@ -32,6 +32,16 @@ const Templates = ({ id, details = '', brideName, groomName, imageUrl }: Templat
     case 'tem3':
       return (
         <Template3
+          details={detailReplace}
+          groomName={groomName}
+          brideName={brideName}
+          imageUrl={imageUrl}
+        />
+      );
+
+    case 'tem4':
+      return (
+        <Template4
           details={detailReplace}
           groomName={groomName}
           brideName={brideName}
