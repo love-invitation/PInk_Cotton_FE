@@ -16,7 +16,7 @@ const Floating = async ({ params }: FloatingProps) => {
 
   return (
     <HydrationBoundary state={dehydrate(queryClient)}>
-      <article className='bg-white_100 text-black_900 border-solid	border-2 rounded-2xl shadow-lg fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 pt-[4rem]'>
+      <article className='bg-white_100 text-black_900 border-solid	border-2 rounded-2xl shadow-lg fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'>
         <InvitationFloating id={id} />
       </article>
     </HydrationBoundary>
