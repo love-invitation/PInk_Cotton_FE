@@ -12,7 +12,7 @@ const ProducePage = () => {
 
   return (
     <FormProvider {...form}>
-      <form className='flex py-[4.8rem] px-[12rem]'>
+      <form className='flex py-[4.8rem] px-[12rem] gap-[2rem]'>
         <InvitationCover />
         <ProduceFormInput />
       </form>
