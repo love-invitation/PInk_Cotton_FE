@@ -24,7 +24,7 @@ const InvitationFloating = ({ id }: InvitationFloatingProps) => {
 
   return (
     <div
-      className='flex flex-col justify-center items-center gap-[2rem]'
+      className='flex flex-col justify-center items-center'
       ref={ref}
     >
       <TemplateLayout size='large'>
