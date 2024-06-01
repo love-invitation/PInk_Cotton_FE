@@ -32,10 +32,12 @@ const CoverInput = () => {
           <div className='flex gap-[1.7rem]'>
             <Input.Input
               name='groom.name'
+              value={watch('groom.name')}
               placeholder='이름'
             />
             <Input.Input
               name='bride.name'
+              value={watch('bride.name')}
               placeholder='이름'
             />
           </div>
