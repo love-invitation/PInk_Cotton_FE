@@ -9,8 +9,13 @@ import CheckBox from '../CheckBox/CheckBox';
 import { AccordionProps } from './Accordion.type';
 import { useAccordionStyle, useGetElementHeight } from './hooks';
 
-const Accordion = ({ children, buttonTitle, type = 'main' }: AccordionProps) => {
-  const { isToggle, handleToggle } = useToggle();
+const Accordion = ({
+  children,
+  buttonTitle,
+  type = 'main',
+  defaultToggleValue,
+}: AccordionProps) => {
+  const { isToggle, handleToggle } = useToggle(defaultToggleValue);
   const { ref, height } = useGetElementHeight({ changeWatcher: children });
   const { layoutStyle, buttonStyle, buttonInnerStyle, contentStyle } = useAccordionStyle({ type });
 

@@ -9,6 +9,7 @@ const CoverInput = () => {
     <Accordion
       buttonTitle='표지'
       type='edit'
+      defaultToggleValue
     >
       <div className='flex flex-col gap-[4.7rem] py-[4rem]'>
         <UploadImage
