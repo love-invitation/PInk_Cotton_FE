@@ -13,7 +13,7 @@ const PERSON = {
 };
 
 const IMAGE_SECTION = {
-  image: '',
+  image: null,
   title: '',
   contents: '',
 };
@@ -26,7 +26,7 @@ const INVITATION = {
     contents: '',
   },
   reservation: {
-    date: [],
+    date: '',
     type: '',
   },
   place: {
