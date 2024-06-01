@@ -12,7 +12,7 @@ const useAccordionStyle = ({ type }: UseAccordionStyle) => {
       twJoin(
         'w-full overflow-hidden',
         type === 'main' && 'max-w-[55rem]',
-        type === 'edit' && 'rounded-radius10 shadow-shadow_500',
+        type === 'edit' && 'max-w-[73rem] rounded-radius10 shadow-shadow_500',
       ),
     [type],
   );
