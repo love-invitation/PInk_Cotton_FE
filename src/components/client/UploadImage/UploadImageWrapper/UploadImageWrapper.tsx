@@ -12,9 +12,7 @@ const UploadImageWrapper = ({ className, limit, onChange, children }: UploadImag
       limit={limit}
       onChange={onChange}
     >
-      <div className={twMerge('flex flex-col justify-center items-center', className)}>
-        {children}
-      </div>
+      <div className={twMerge('flex', className)}>{children}</div>
     </UploadImageContextProvider>
   );
 };
