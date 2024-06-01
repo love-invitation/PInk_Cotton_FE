@@ -9,6 +9,7 @@ import type { Meta, StoryObj } from '@storybook/react';
  *
  * - **buttonTitle ? : **Accordion Toggle Button 내부 타이틀을 전달받습니다.
  * - **type ? : **둘중 하나의 type을 전달받아 스타일을 변경합니다.  - main : 홈 질문 - edit : 청첩장 제작
+ * - **defaultToggleValue ? : **Accordion의 기본 toggle 상태를 전달받습니다.
  * */
 const meta = {
   title: 'Components/Accordion',
@@ -27,6 +28,10 @@ const meta = {
     buttonTitle: {
       control: 'text',
       description: 'Accordion Toggle Button 내부 타이틀을 전달받습니다.',
+    },
+    defaultToggleValue: {
+      control: 'boolean',
+      description: 'Accordion의 기본 toggle 상태를 전달받습니다.',
     },
     children: {
       control: {
