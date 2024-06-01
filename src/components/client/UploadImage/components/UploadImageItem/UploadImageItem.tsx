@@ -12,7 +12,6 @@ const UploadImageItem = ({ image, ...rest }: UploadImageItemProps) => {
     <>
       <Image
         src={URL.createObjectURL(image)}
-        fill
         className='border-0 rounded-[0.5rem]'
         {...rest}
       />
@@ -23,7 +22,7 @@ const UploadImageItem = ({ image, ...rest }: UploadImageItemProps) => {
         onClick={() => handleRemoveImage(image)}
         className='absolute z-icon border-0 right-0 top-0 rounded-[0.5rem] bg-white_100 bg-opacity-50 hover:bg-opacity-30'
       >
-        <CloseIcon size={24} />
+        <CloseIcon size='2.4rem' />
       </button>
     </>
   );
