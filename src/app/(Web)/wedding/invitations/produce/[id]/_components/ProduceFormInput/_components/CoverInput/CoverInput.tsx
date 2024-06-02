@@ -28,28 +28,30 @@ const CoverInput = () => {
             />
           </div>
         </UploadImage>
-        <Input className='gap-[1.7rem]'>
+        <Input className='gap-[3.3rem]'>
           <Input.Label>텍스트</Input.Label>
-          <div className='flex gap-[1.7rem]'>
+          <div className='flex flex-col gap-[1.7rem]'>
+            <div className='flex gap-[1.7rem]'>
+              <Input.Input
+                name='groom.name'
+                value={watch('groom.name')}
+                placeholder='이름'
+              />
+              <Input.Input
+                name='bride.name'
+                value={watch('bride.name')}
+                placeholder='이름'
+              />
+            </div>
             <Input.Input
-              name='groom.name'
-              value={watch('groom.name')}
-              placeholder='이름'
+              name='cover.title'
+              placeholder='제목'
             />
             <Input.Input
-              name='bride.name'
-              value={watch('bride.name')}
-              placeholder='이름'
+              name='cover.contents'
+              placeholder='예약 일시 및 장소'
             />
           </div>
-          <Input.Input
-            name='cover.title'
-            placeholder='제목'
-          />
-          <Input.Input
-            name='cover.contents'
-            placeholder='예약 일시 및 장소'
-          />
         </Input>
       </div>
     </Accordion>
