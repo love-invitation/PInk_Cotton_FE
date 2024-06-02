@@ -8,7 +8,7 @@ import { twMerge } from 'tailwind-merge';
 const InputWrapper = ({ children, className, ...rest }: InputWrapperProps) => {
   return (
     <div
-      className={twMerge('flex flex-col', className)}
+      className={twMerge('flex', className)}
       {...rest}
     >
       {children}
