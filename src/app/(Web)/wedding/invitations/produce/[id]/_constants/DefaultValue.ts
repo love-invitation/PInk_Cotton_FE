@@ -8,8 +8,8 @@ const PERSON = {
   phone: '',
   account: { ...ACCOUNT },
   relation: '',
-  father: { account: { ...ACCOUNT }, name: '', phone: '' },
-  mother: { account: { ...ACCOUNT }, name: '', phone: '' },
+  father: { account: { ...ACCOUNT }, name: '', phone: '', deceased: false },
+  mother: { account: { ...ACCOUNT }, name: '', phone: '', deceased: false },
 };
 
 const IMAGE_SECTION = {
