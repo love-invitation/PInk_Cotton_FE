@@ -4,9 +4,12 @@ import { useFormContext } from 'react-hook-form';
 
 import { GeoPosition } from '@/types/originType';
 
-const useGetAddress = () => {
+import { UseGetAddressProps } from './useGetAddress.type';
+
+const useGetAddress = ({ showModal }: UseGetAddressProps) => {
   const [center, setCenter] = useState<GeoPosition | null>(null);
   const [geocoder, setGeocoder] = useState<kakao.maps.services.Geocoder | null>(null);
+  const [alertMessage, setAlertMessage] = useState('');
   const { setValue, watch } = useFormContext();
 
   useEffect(() => {
@@ -23,7 +26,8 @@ const useGetAddress = () => {
       onComplete: (data: Address) => {
         setValue('place.address', data.roadAddress);
         if (!geocoder) {
-          // 경고 처리 하기
+          showModal();
+          setAlertMessage('지도를 불러오는 과정에 \n 문제가 발생하였습니다.');
           return;
         }
 
@@ -38,7 +42,8 @@ const useGetAddress = () => {
       },
 
       onError: () => {
-        // 실패 처리 하기
+        showModal();
+        setAlertMessage('주소 입력 과정에서 \n 문제가 발생하였습니다.');
       },
     });
   };
@@ -47,6 +52,7 @@ const useGetAddress = () => {
     center,
     handleClickAddress,
     address: watch('place.address'),
+    alertMessage,
   };
 };
 

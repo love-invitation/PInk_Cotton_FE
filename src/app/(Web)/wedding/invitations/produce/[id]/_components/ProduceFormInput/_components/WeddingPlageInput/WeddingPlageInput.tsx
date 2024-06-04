@@ -1,11 +1,13 @@
 'use client';
 
-import { Accordion, Input, PinkMap } from '@/components/client';
+import { Accordion, AlertModal, Input, PinkMap } from '@/components/client';
+import { useModal } from '@/hooks';
 
 import { useGetAddress } from './hooks';
 
 const WeddingPlageInput = () => {
-  const { center, handleClickAddress, address } = useGetAddress();
+  const { isShowModal, closeModal, showModal } = useModal();
+  const { center, handleClickAddress, address, alertMessage } = useGetAddress({ showModal });
 
   return (
     <Accordion
@@ -49,6 +51,12 @@ const WeddingPlageInput = () => {
           />
         )}
       </Input>
+
+      <AlertModal
+        message={alertMessage}
+        isShow={isShowModal}
+        onClose={closeModal}
+      />
     </Accordion>
   );
 };
