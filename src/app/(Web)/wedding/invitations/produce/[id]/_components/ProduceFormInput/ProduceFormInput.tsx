@@ -2,7 +2,7 @@ import { ArticleInput, CoverInput, GroomBrideInput, WeddingPlageInput } from './
 
 const ProduceFormInput = () => {
   return (
-    <section className='flex flex-col gap-[2rem]'>
+    <section className='w-[60%] min-w-[30rem] flex flex-col gap-[2rem] mobile:w-full'>
       <WeddingPlageInput />
       <CoverInput />
       <ArticleInput />
