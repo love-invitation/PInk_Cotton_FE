@@ -7,7 +7,7 @@ const ArticleInput = () => {
       type='edit'
       defaultToggleValue
     >
-      <Input className='flex-col gap-[2.1rem] py-[4rem]'>
+      <Input className='flex-col h-[45rem] gap-[2.1rem] py-[4rem] justify-center'>
         <div className='flex items-center gap-[3.3rem]'>
           <Input.Label>제목</Input.Label>
           <Input.Input
