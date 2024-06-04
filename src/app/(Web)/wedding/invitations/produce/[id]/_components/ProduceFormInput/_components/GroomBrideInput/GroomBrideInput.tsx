@@ -18,7 +18,7 @@ const GroomBrideInput = ({ type }: GroomBrideInputProps) => {
 
   const commonStyle = {
     inputContainer: 'w-full flex items-center gap-[2rem]',
-    inputLabel: 'w-[5rem]',
+    inputLabel: 'w-[10rem]',
     input: 'w-[20rem]',
     checkboxContainer: 'h-full flex items-center gap-2',
     checkboxLabel: 'text-size16 font-bold',
@@ -31,17 +31,17 @@ const GroomBrideInput = ({ type }: GroomBrideInputProps) => {
       defaultToggleValue
     >
       <Input className='w-full flex flex-col py-[2rem] gap-[2rem]'>
-        <div className={commonStyle.inputContainer}>
+        {/* <div className={commonStyle.inputContainer}>
           <Input.Label className={commonStyle.inputLabel}>{typeName}</Input.Label>
           <Input.Input
             className={commonStyle.input}
             name={`${type}.name`}
             placeholder='이름'
           />
-        </div>
+        </div> */}
 
         <div className={commonStyle.inputContainer}>
-          <Input.Label className={commonStyle.inputLabel}>아버님</Input.Label>
+          <Input.Label className={commonStyle.inputLabel}>{`${typeName}측 아버님`}</Input.Label>
           <Input.Input
             className={commonStyle.input}
             name={`${type}.father.name`}
@@ -64,7 +64,7 @@ const GroomBrideInput = ({ type }: GroomBrideInputProps) => {
         </div>
 
         <div className={commonStyle.inputContainer}>
-          <Input.Label className={commonStyle.inputLabel}>어머님</Input.Label>
+          <Input.Label className={commonStyle.inputLabel}>{`${typeName}측 어머님`}</Input.Label>
           <Input.Input
             className={commonStyle.input}
             name={`${type}.mother.name`}
