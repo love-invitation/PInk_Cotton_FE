@@ -1,8 +1,9 @@
-import { ArticleInput, CoverInput, GroomBrideInput } from './_components';
+import { ArticleInput, CoverInput, GroomBrideInput, WeddingPlageInput } from './_components';
 
 const ProduceFormInput = () => {
   return (
     <section className='flex flex-col gap-[2rem]'>
+      <WeddingPlageInput />
       <CoverInput />
       <ArticleInput />
       <GroomBrideInput type='groom' />
