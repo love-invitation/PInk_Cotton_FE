@@ -65,6 +65,10 @@
     min-height: calc(100dvh - var(--header-height));
   }
 
+  #calc_header_footer_height {
+    min-height: calc(100dvh - var(--header-height) - var(--footer-height));
+  }
+
   input:focus {
     outline: none;
   }
