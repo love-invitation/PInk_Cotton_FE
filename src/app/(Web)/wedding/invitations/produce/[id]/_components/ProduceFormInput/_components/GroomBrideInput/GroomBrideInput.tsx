@@ -31,15 +31,6 @@ const GroomBrideInput = ({ type }: GroomBrideInputProps) => {
       defaultToggleValue
     >
       <Input className='w-full flex flex-col py-[2rem] gap-[2rem]'>
-        {/* <div className={commonStyle.inputContainer}>
-          <Input.Label className={commonStyle.inputLabel}>{typeName}</Input.Label>
-          <Input.Input
-            className={commonStyle.input}
-            name={`${type}.name`}
-            placeholder='이름'
-          />
-        </div> */}
-
         <div className={commonStyle.inputContainer}>
           <Input.Label className={commonStyle.inputLabel}>{`${typeName}측 아버님`}</Input.Label>
           <Input.Input
