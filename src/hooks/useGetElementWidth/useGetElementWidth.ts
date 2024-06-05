@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 
-const useGetTemplateWidth = () => {
+const useGetElementWidth = () => {
   const ref = useRef<HTMLDivElement>(null);
   const [width, setWidth] = useState(0);
 
@@ -28,4 +28,4 @@ const useGetTemplateWidth = () => {
   };
 };
 
-export default useGetTemplateWidth;
+export default useGetElementWidth;
