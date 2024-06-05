@@ -11,7 +11,15 @@ const useGetTemplateWidth = () => {
       return;
     }
 
-    setWidth(layoutElement.getBoundingClientRect().width);
+    const handleResize = () => {
+      setWidth(layoutElement.getBoundingClientRect().width);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
   }, []);
 
   return {
