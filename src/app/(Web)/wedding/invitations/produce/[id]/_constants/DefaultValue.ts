@@ -27,7 +27,8 @@ const INVITATION = {
   },
   reservation: {
     date: '',
-    type: '',
+    time: '',
+    type: true,
   },
   place: {
     name: '',
