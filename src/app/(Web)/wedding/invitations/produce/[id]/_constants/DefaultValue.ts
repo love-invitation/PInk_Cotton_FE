@@ -14,7 +14,6 @@ const PERSON = {
 
 const IMAGE_SECTION = {
   image: null,
-  title: '',
   contents: '',
 };
 
