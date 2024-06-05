@@ -21,7 +21,8 @@ const InvitationCover = () => {
         style={{ height: `${width * 1.76}px`, borderRadius: `${width * 0.0702}px` }}
       >
         <WeddingTemplates
-          id={id}
+          //  여기 해결 방법 제시좀 부탁드립니다
+          id={typeof id === 'string' ? id : ''}
           details={watch('cover.contents')}
           groomName={watch('groom.name')}
           brideName={watch('bride.name')}
