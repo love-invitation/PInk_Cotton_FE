@@ -1,4 +1,10 @@
-import { ArticleInput, CoverInput, GroomBrideInput, WeddingPlageInput } from './_components';
+import {
+  ArticleInput,
+  CoverInput,
+  GroomBrideInput,
+  ReservationInput,
+  WeddingPlageInput,
+} from './_components';
 
 const ProduceFormInput = () => {
   return (
@@ -7,6 +13,7 @@ const ProduceFormInput = () => {
       <ArticleInput />
       <GroomBrideInput type='groom' />
       <GroomBrideInput type='bride' />
+      <ReservationInput />
       <WeddingPlageInput />
     </section>
   );
