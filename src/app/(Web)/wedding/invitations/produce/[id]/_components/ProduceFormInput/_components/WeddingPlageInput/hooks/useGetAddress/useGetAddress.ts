@@ -25,6 +25,7 @@ const useGetAddress = ({ showModal }: UseGetAddressProps) => {
     open({
       onComplete: (data: Address) => {
         setValue('place.address', data.roadAddress);
+
         if (!geocoder) {
           showModal();
           setAlertMessage('지도를 불러오는 과정에 \n 문제가 발생하였습니다.');
