@@ -33,6 +33,7 @@ const config = {
         gray_900: '#EFEFEF',
 
         black_900: '#000000',
+        black_800: '#060606',
         black_500: '#333333',
         black_300: '#393939',
 
