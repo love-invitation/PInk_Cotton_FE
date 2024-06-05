@@ -11,6 +11,8 @@ const useGetElementWidth = () => {
       return;
     }
 
+    setWidth(layoutElement.getBoundingClientRect().width);
+
     const handleResize = () => {
       setWidth(layoutElement.getBoundingClientRect().width);
     };
