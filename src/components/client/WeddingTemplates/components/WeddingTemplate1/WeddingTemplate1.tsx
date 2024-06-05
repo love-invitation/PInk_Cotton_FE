@@ -2,11 +2,12 @@
 
 import Image from 'next/image';
 
+import { useGetElementWidth } from '@/hooks';
+
 import { WeddingTemplateProps } from '../../WeddingTemplates.type';
-import { useGetTemplateWidth } from '../../hooks';
 
 const WeddingTemplate1 = ({ details, groomName, brideName, imageUrl }: WeddingTemplateProps) => {
-  const { ref, width } = useGetTemplateWidth();
+  const { ref, width } = useGetElementWidth();
 
   return (
     <figure
