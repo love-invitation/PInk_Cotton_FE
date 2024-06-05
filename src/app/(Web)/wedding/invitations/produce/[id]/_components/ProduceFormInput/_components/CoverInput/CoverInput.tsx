@@ -34,17 +34,13 @@ const CoverInput = () => {
             <div className='flex gap-[1.7rem]'>
               <Input.Input
                 name='groom.name'
-                placeholder='이름'
+                placeholder='신랑님 이름'
               />
               <Input.Input
                 name='bride.name'
-                placeholder='이름'
+                placeholder='신부님 이름'
               />
             </div>
-            <Input.Input
-              name='cover.title'
-              placeholder='제목'
-            />
             <Input.Input
               name='cover.contents'
               placeholder='예약 일시 및 장소'
