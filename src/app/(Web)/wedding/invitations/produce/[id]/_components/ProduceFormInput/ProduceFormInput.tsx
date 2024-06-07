@@ -2,6 +2,7 @@ import {
   ArticleInput,
   ContactsInput,
   CoverInput,
+  GalleryInput,
   GroomBrideInput,
   ReservationInput,
   TransportationInput,
@@ -19,6 +20,7 @@ const ProduceFormInput = () => {
       <ReservationInput />
       <WeddingPlaceInput />
       <TransportationInput />
+      <GalleryInput />
     </section>
   );
 };
