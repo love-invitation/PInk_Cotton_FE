@@ -5,3 +5,4 @@ export { default as WeddingPlaceInput } from './WeddingPlaceInput/WeddingPlaceIn
 export { default as ReservationInput } from './ReservationInput/ReservationInput';
 export { default as TransportationInput } from './TransportationInput/TransportationInput';
 export { default as ContactsInput } from './ContactsInput/ContactsInput';
+export { default as GalleryInput } from './GalleryInput/GalleryInput';
