@@ -12,7 +12,7 @@ const UploadImageListView = ({ ulClassName, liClassName, ...rest }: UploadImageL
   return (
     <ul
       className={twMerge(
-        'flex gap-2 w-[56.4rem] h-[39.4rem] border rounded-[1rem] border-gray_500 py-[2.4rem] px-[1.6rem]',
+        'flex gap-[3rem] content-start w-[56.4rem] h-[39.4rem] border rounded-[1rem] border-gray_500 py-[2.4rem] px-[1.6rem] flex-wrap overflow-scroll',
         ulClassName,
       )}
     >
