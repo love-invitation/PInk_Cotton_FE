@@ -11,7 +11,7 @@ const AllInvitations = () => {
   }
 
   return (
-    <section className='py-[7.3rem]'>
+    <section className='flex flex-col gap-[6.4rem] py-[7.3rem]'>
       <h3 className='text-[3rem] font-semibold px-[10%]'>ALL</h3>
       <InvitationsList productInfoList={data.result.productInfoList} />
     </section>
