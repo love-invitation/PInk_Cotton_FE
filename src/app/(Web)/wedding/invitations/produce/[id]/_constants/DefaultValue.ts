@@ -21,12 +21,12 @@ const CONTACTS = {
     name: '',
     phone: '',
 
-    others: [{ relationship: '', name: '', phone: '' }],
+    others: [],
   },
   bride: {
     name: '',
     phone: '',
-    others: [{ relationship: '', name: '', phone: '' }],
+    others: [],
   },
 };
 
