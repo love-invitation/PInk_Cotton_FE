@@ -29,9 +29,9 @@ const ContactInputItem = ({ type }: ContactInputItemProps) => {
 
   return (
     <div className='w-full flex flex-col py-[4rem] items-center gap-[4rem]'>
-      <div className='w-full relative flex items-center gap-[2rem] tablet:flex-col tablet:items-start tablet:gap-[1rem] mobile:flex-col mobile:items-start mobile:gap-[1rem]'>
-        <div className='flex items-center gap-[2rem] tablet:gap-[1rem] mobile:gap-[1rem]'>
-          <Input.Label className='w-[4rem] text-center'>{typeName}</Input.Label>
+      <div className='w-full relative flex items-center gap-[0.6rem] tablet:flex-col tablet:items-start mobile:flex-col mobile:items-start'>
+        <div className='flex items-center gap-[0.6rem]'>
+          <Input.Label className='w-[8rem] text-center'>{typeName}</Input.Label>
           <Input.Input
             className={style.nameInput}
             name={`contacts.${type}.name`}
@@ -51,12 +51,12 @@ const ContactInputItem = ({ type }: ContactInputItemProps) => {
           <ul className='w-full flex flex-col gap-[2rem]'>
             {fields.map((field, index) => (
               <li
-                className='w-full relative flex items-center gap-[2rem] tablet:flex-col tablet:items-start tablet:gap-[1rem] mobile:flex-col mobile:items-start mobile:gap-[1rem]'
+                className='w-full relative flex items-center gap-[0.6rem] tablet:flex-col tablet:items-start mobile:flex-col mobile:items-start'
                 key={field.id}
               >
-                <span className='flex items-center gap-[2rem] tablet:gap-[1rem] mobile:gap-[1rem]'>
+                <span className='flex items-center gap-[0.6rem]'>
                   <Input.Input
-                    className={style.nameInput}
+                    className='w-[8rem]'
                     name={`contacts.${type}.others.${index}.relationship`}
                     placeholder='관계'
                   />
