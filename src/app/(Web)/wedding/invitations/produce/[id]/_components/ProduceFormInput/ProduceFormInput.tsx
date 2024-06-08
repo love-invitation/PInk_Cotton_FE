@@ -1,5 +1,6 @@
 import {
   ArticleInput,
+  ContactsInput,
   CoverInput,
   GroomBrideInput,
   ReservationInput,
@@ -10,6 +11,7 @@ import {
 const ProduceFormInput = () => {
   return (
     <section className='w-[60%] min-w-[30rem] flex flex-col gap-[2rem] mobile:w-full'>
+      <ContactsInput />
       <CoverInput />
       <GroomBrideInput type='groom' />
       <GroomBrideInput type='bride' />
