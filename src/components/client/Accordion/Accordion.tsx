@@ -16,7 +16,7 @@ const Accordion = ({
   defaultToggleValue,
 }: AccordionProps) => {
   const { isToggle, handleToggle } = useToggle(defaultToggleValue);
-  const { ref, height } = useGetElementHeight({ changeWatcher: children });
+  const { ref, height } = useGetElementHeight();
   const { layoutStyle, buttonStyle, buttonInnerStyle, contentStyle } = useAccordionStyle({ type });
 
   return (

@@ -2,20 +2,31 @@
 
 import { useEffect, useRef, useState } from 'react';
 
-import { UseGetElementHeightProps } from './useGetElementHeight.type';
-
-const useGetElementHeight = ({ changeWatcher }: UseGetElementHeightProps) => {
+const useGetElementHeight = () => {
   const [height, setHeight] = useState(0);
   const ref = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     const { current } = ref;
+
     if (!current) {
       return;
     }
-
     setHeight(current.scrollHeight);
-  }, [changeWatcher]);
+
+    const observe = new MutationObserver(() => {
+      setHeight(current.scrollHeight);
+    });
+
+    observe.observe(current, {
+      childList: true,
+      subtree: true,
+    });
+
+    return () => {
+      observe.disconnect();
+    };
+  }, []);
 
   return { ref, height };
 };
