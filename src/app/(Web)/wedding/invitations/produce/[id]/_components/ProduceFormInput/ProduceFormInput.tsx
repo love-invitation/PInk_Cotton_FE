@@ -4,19 +4,19 @@ import {
   GroomBrideInput,
   ReservationInput,
   TransportationInput,
-  WeddingPlageInput,
+  WeddingPlaceInput,
 } from './_components';
 
 const ProduceFormInput = () => {
   return (
     <section className='w-[60%] min-w-[30rem] flex flex-col gap-[2rem] mobile:w-full'>
-      <TransportationInput />
       <CoverInput />
       <ArticleInput />
       <GroomBrideInput type='groom' />
       <GroomBrideInput type='bride' />
       <ReservationInput />
-      <WeddingPlageInput />
+      <WeddingPlaceInput />
+      <TransportationInput />
     </section>
   );
 };
