@@ -5,6 +5,7 @@ import {
   CheckIcon,
   Clock3DIcon,
   CloseIcon,
+  DeleteIcon,
   DotIcon,
   Folder3DIcon,
   GoogleLogoIcon,
@@ -151,5 +152,11 @@ export const NaverLogo: Story = {
 export const GoogleLogo: Story = {
   args: {
     children: <GoogleLogoIcon />,
+  },
+};
+
+export const Delete: Story = {
+  args: {
+    children: <DeleteIcon />,
   },
 };

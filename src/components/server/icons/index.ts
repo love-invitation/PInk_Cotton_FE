@@ -15,3 +15,4 @@ export { default as KakaoChannelIcon } from './KakaoChannelIcon/KakaoChannelIcon
 export { default as NaverLogoIcon } from './NaverLogoIcon/NaverLogoIcon';
 export { default as KakaoLogoIcon } from './KakaoLogoIcon/KakaoLogoIcon';
 export { default as GoogleLogoIcon } from './GoogleLogoIcon/GoogleLogoIcon';
+export { default as DeleteIcon } from './DeleteIcon/DeleteIcon';
