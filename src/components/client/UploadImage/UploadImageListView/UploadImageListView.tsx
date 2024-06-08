@@ -19,7 +19,7 @@ const UploadImageListView = ({ ulClassName, liClassName, ...rest }: UploadImageL
       {images.map((image) => {
         return (
           <li
-            key={image.lastModified}
+            key={`${image.name}-${image.lastModified}`}
             className={twMerge(
               'relative w-[10rem] h-[10rem] hover:scale-110 transition-transform',
               liClassName,

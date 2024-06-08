@@ -45,12 +45,22 @@ export const UploadImageContextProvider = ({
         return toast.warn(`최대 ${limit}만큼 업로드가 가능합니다.`);
       }
 
-      const imagesArray = Array.from(selectedImages);
+      const selectedImagesArray = Array.from(selectedImages);
+      const filteredImages = images
+        .filter(
+          (image) =>
+            !selectedImagesArray.some(
+              (selectedImage) =>
+                selectedImage.name === image.name &&
+                selectedImage.lastModified === image.lastModified,
+            ),
+        )
+        .concat(selectedImagesArray);
 
-      onChangeRef.current(imagesArray);
-      setImages(imagesArray);
+      onChangeRef.current(filteredImages);
+      setImages(filteredImages);
     },
-    [limit],
+    [images, limit],
   );
 
   const handleRemoveImage = useCallback(
