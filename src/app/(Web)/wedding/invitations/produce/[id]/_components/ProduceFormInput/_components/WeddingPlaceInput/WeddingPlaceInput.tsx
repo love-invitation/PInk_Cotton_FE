@@ -5,7 +5,7 @@ import { useModal } from '@/hooks';
 
 import { useGetAddress } from './hooks';
 
-const WeddingPlageInput = () => {
+const WeddingPlaceInput = () => {
   const { isShowModal, closeModal, showModal } = useModal();
   const { center, handleClickAddress, address, alertMessage } = useGetAddress({ showModal });
 
@@ -62,4 +62,4 @@ const WeddingPlageInput = () => {
   );
 };
 
-export default WeddingPlageInput;
+export default WeddingPlaceInput;
