@@ -7,6 +7,8 @@ const PreviewModal = ({ isShow, onClose }: PreviewModalProps) => {
     <Modal
       isShow={isShow}
       onClose={onClose}
+      clickAwayEnable
+      disabledCloseButton
     >
       PreviewModal
     </Modal>
