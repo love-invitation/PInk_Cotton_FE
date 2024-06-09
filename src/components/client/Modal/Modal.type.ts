@@ -3,4 +3,5 @@ export interface ModalProps {
   isShow: boolean;
   onClose: () => void;
   clickAwayEnable?: boolean;
+  disabledCloseButton?: boolean;
 }
