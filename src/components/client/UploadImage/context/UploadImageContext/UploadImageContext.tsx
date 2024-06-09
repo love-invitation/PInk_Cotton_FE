@@ -42,7 +42,7 @@ export const UploadImageContextProvider = ({
       }
 
       if (selectedImages.length > limit) {
-        return toast.warn(`최대 ${limit}만큼 업로드가 가능합니다.`);
+        return toast.warn(`최대 ${limit}장 선택 가능합니다.`);
       }
 
       const selectedImagesArray = Array.from(selectedImages);
