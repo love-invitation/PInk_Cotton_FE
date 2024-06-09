@@ -1,6 +1,7 @@
 'use client';
 
 import { Button } from '@/components/client';
+import { ImageIcon } from '@/components/server';
 import { useModal } from '@/hooks';
 
 import { PreviewModal } from './components';
@@ -11,10 +12,13 @@ const InvitationCoverPreview = () => {
     <>
       <Button
         radius='rounded'
-        className='w-[8rem] h-[8rem] sticky bottom-[2rem] left-[2rem] hidden mobile:block'
+        className='w-[6rem] h-[6rem] items-center justify-center sticky bottom-[2rem] left-[2rem] hidden mobile:flex'
         onClick={showModal}
       >
-        미리보기
+        <ImageIcon
+          size='3.6rem'
+          fill='white'
+        />
       </Button>
 
       <PreviewModal
