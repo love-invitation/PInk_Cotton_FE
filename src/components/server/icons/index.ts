@@ -16,3 +16,4 @@ export { default as NaverLogoIcon } from './NaverLogoIcon/NaverLogoIcon';
 export { default as KakaoLogoIcon } from './KakaoLogoIcon/KakaoLogoIcon';
 export { default as GoogleLogoIcon } from './GoogleLogoIcon/GoogleLogoIcon';
 export { default as DeleteIcon } from './DeleteIcon/DeleteIcon';
+export { default as ImageIcon } from './ImageIcon/ImageIcon';

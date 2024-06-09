@@ -9,6 +9,7 @@ import {
   DotIcon,
   Folder3DIcon,
   GoogleLogoIcon,
+  ImageIcon,
   KakaoChannelIcon,
   KakaoLogoIcon,
   LayerIcon,
@@ -158,5 +159,11 @@ export const GoogleLogo: Story = {
 export const Delete: Story = {
   args: {
     children: <DeleteIcon />,
+  },
+};
+
+export const Image: Story = {
+  args: {
+    children: <ImageIcon />,
   },
 };
