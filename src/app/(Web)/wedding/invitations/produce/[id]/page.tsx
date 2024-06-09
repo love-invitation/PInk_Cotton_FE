@@ -2,7 +2,7 @@
 
 import { FormProvider, useForm } from 'react-hook-form';
 
-import { InvitationCover, ProduceFormInput } from './_components';
+import { InvitationCover, InvitationCoverPreview, ProduceFormInput } from './_components';
 import { DEFAULT_VALUE } from './_constants';
 
 const ProducePage = () => {
@@ -19,6 +19,8 @@ const ProducePage = () => {
         <div className='w-full max-w-[140rem] flex tablet:gap-[2rem] gap-[8rem] justify-center mobile:flex-col'>
           <InvitationCover />
           <ProduceFormInput />
+
+          <InvitationCoverPreview />
         </div>
       </form>
     </FormProvider>
