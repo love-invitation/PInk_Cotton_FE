@@ -6,3 +6,4 @@ export { default as ReservationInput } from './ReservationInput/ReservationInput
 export { default as TransportationInput } from './TransportationInput/TransportationInput';
 export { default as ContactsInput } from './ContactsInput/ContactsInput';
 export { default as GalleryInput } from './GalleryInput/GalleryInput';
+export { default as AccountInput } from './AccountInput/AccountInput';
