@@ -104,7 +104,7 @@ const ContactInputItem = ({ type }: ContactInputItemProps) => {
           insert(fields.length, { relationship: '', name: '', phone: '' });
         }}
       >
-        + 신랑측 연락처 추가
+        {`+ ${typeName}측 연락처 추가`}
       </Button>
     </div>
   );
