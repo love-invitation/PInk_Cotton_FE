@@ -10,6 +10,7 @@ const AccountInput = () => {
       defaultToggleValue
     >
       <AccountInputItem type='groom' />
+      <AccountInputItem type='bride' />
     </Accordion>
   );
 };
