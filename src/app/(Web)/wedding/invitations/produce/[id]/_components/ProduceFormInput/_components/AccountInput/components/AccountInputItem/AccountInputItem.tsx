@@ -105,7 +105,7 @@ const AccountInputItem = ({ type }: AccountInputItemProps) => {
           insert(fields.length, { name: '', bank: '', account: '' });
         }}
       >
-        + 신랑측 계좌 번호 추가
+        {`+ ${typeName}측 계좌 번호 추가`}
       </Button>
     </div>
   );
