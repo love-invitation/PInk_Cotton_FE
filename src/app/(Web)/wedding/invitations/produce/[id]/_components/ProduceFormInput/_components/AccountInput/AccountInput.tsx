@@ -1,5 +1,7 @@
 import { Accordion } from '@/components/client';
 
+import { AccountInputItem } from './components';
+
 const AccountInput = () => {
   return (
     <Accordion
@@ -7,7 +9,7 @@ const AccountInput = () => {
       type='edit'
       defaultToggleValue
     >
-      AccountInput
+      <AccountInputItem type='groom' />
     </Accordion>
   );
 };
