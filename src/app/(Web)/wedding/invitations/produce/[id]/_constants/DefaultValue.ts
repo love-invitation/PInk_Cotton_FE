@@ -1,14 +1,8 @@
-const ACCOUNT = {
-  name: '',
-  number: '',
-};
-
 const PERSON = {
   name: '',
-  account: { ...ACCOUNT },
   relation: '',
-  father: { account: { ...ACCOUNT }, name: '', deceased: false },
-  mother: { account: { ...ACCOUNT }, name: '', deceased: false },
+  father: { name: '', deceased: false },
+  mother: { name: '', deceased: false },
 };
 
 const IMAGE_SECTION = {
@@ -26,6 +20,19 @@ const CONTACTS = {
   bride: {
     name: '',
     phone: '',
+    others: [],
+  },
+};
+
+const ACCOUNTS = {
+  groom: {
+    bank: '',
+    account: '',
+    others: [],
+  },
+  bride: {
+    bank: '',
+    account: '',
     others: [],
   },
 };
@@ -53,6 +60,7 @@ const INVITATION = {
   bride: { ...PERSON },
   guestbookCheck: false,
   contacts: { ...CONTACTS },
+  accounts: { ...ACCOUNTS },
   priority: {
     article: 0,
     weddingDate: 0,
@@ -67,9 +75,9 @@ const INVITATION = {
 };
 
 export default {
-  ACCOUNT,
   PERSON,
   IMAGE_SECTION,
   INVITATION,
   CONTACTS,
+  ACCOUNTS,
 };
