@@ -34,7 +34,7 @@ const ContactInputItem = ({ type }: ContactInputItemProps) => {
     <div className='w-full flex flex-col py-[4rem] items-center gap-[4rem]'>
       <div className={style.inputLayout}>
         <div className={style.inputContainer}>
-          <Input.Label className='w-[8rem] text-center'>{typeName}</Input.Label>
+          <Input.Label className='w-[10rem] text-center'>{typeName}</Input.Label>
           <Input.Input
             className={style.nameInput}
             name={`contacts.${type}.name`}
@@ -59,7 +59,7 @@ const ContactInputItem = ({ type }: ContactInputItemProps) => {
               >
                 <div className={style.inputContainer}>
                   <Input.Input
-                    className='w-[8rem]'
+                    className='w-[10rem]'
                     name={`contacts.${type}.others.${index}.relationship`}
                     placeholder='관계'
                   />
