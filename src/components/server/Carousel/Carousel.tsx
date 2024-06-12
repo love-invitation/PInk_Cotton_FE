@@ -6,7 +6,7 @@ import { twMerge } from 'tailwind-merge';
 const Carousel = ({ srcList, width = '100%', height = '100%', className = '' }: CarouselProps) => {
   return (
     <ul
-      className={twMerge('carousel border-2 bg-black', className)}
+      className={twMerge('carousel bg-black', className)}
       style={{ width, height }}
     >
       {srcList &&
@@ -14,6 +14,7 @@ const Carousel = ({ srcList, width = '100%', height = '100%', className = '' }: 
           <CarouselImageItem
             src={src}
             index={index}
+            key={src}
           />
         ))}
     </ul>
