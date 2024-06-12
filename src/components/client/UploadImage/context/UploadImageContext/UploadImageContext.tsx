@@ -21,6 +21,7 @@ export const UploadImageContext = createContext<UploadImageContextProps>({
   images: [],
   handleUploadImage: () => {},
   handleRemoveImage: () => {},
+  handleClearImage: () => {},
 });
 
 export const useUploadImageContext = () => useContext(UploadImageContext);
@@ -73,13 +74,19 @@ export const UploadImageContextProvider = ({
     [images],
   );
 
+  const handleClearImage = useCallback(() => {
+    onChangeRef.current([]);
+    setImages([]);
+  }, []);
+
   const value = useMemo(
     () => ({
       images,
       handleUploadImage,
       handleRemoveImage,
+      handleClearImage,
     }),
-    [images, handleUploadImage, handleRemoveImage],
+    [images, handleUploadImage, handleRemoveImage, handleClearImage],
   );
 
   useEffect(() => {
