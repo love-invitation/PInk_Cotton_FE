@@ -1,3 +1,4 @@
+import UploadImageClearButton from '../UploadImageClearButton/UploadImageClearButton';
 import UploadImageInputLabel from '../UploadImageInputLabel/UploadImageInputLabel';
 import UploadImageListView from '../UploadImageListView/UploadImageListView';
 import UploadImageView from '../UploadImageView/UploadImageView';
@@ -20,5 +21,6 @@ const UploadImageWrapper = ({ className, limit, onChange, children }: UploadImag
 UploadImageWrapper.InputLabel = UploadImageInputLabel;
 UploadImageWrapper.View = UploadImageView;
 UploadImageWrapper.ListView = UploadImageListView;
+UploadImageWrapper.ClearButton = UploadImageClearButton;
 
 export default UploadImageWrapper;
