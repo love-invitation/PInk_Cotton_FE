@@ -5,7 +5,9 @@ import {
   CoverInput,
   GalleryInput,
   GroomBrideInput,
+  GuestBookCheck,
   ReservationInput,
+  ThumbnailInput,
   TransportationInput,
   WeddingPlaceInput,
 } from './_components';
@@ -23,6 +25,8 @@ const ProduceFormInput = () => {
       <GalleryInput />
       <ContactsInput />
       <AccountInput />
+      <ThumbnailInput />
+      <GuestBookCheck />
     </section>
   );
 };

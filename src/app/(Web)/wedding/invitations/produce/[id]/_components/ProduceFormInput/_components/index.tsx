@@ -7,3 +7,5 @@ export { default as TransportationInput } from './TransportationInput/Transporta
 export { default as ContactsInput } from './ContactsInput/ContactsInput';
 export { default as GalleryInput } from './GalleryInput/GalleryInput';
 export { default as AccountInput } from './AccountInput/AccountInput';
+export { default as ThumbnailInput } from './ThumbnailInput/ThumbnailInput';
+export { default as GuestBookCheck } from './GuestBookCheck/GuestBookCheck';
