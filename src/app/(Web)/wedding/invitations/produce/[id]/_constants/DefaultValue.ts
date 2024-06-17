@@ -39,7 +39,7 @@ const ACCOUNTS = {
 
 const INVITATION = {
   cover: { ...IMAGE_SECTION },
-  thumbnail: { ...IMAGE_SECTION },
+  thumbnail: { ...IMAGE_SECTION, title: '' },
   article: {
     title: '',
     contents: '',
