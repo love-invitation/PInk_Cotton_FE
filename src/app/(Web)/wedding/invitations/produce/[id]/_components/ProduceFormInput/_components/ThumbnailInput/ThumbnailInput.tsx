@@ -2,8 +2,14 @@ import { useFormContext } from 'react-hook-form';
 
 import { Accordion, Input, UploadImage } from '@/components/client';
 
+import { twJoin } from 'tailwind-merge';
+
 const ThumbnailInput = () => {
   const { watch, setValue } = useFormContext();
+  const className = twJoin(
+    'bg-gray_900 w-[16rem] h-[16rem] rounded-[1rem] flex items-center justify-center',
+    watch('thumbnail.image') && 'bg-transparent',
+  );
 
   return (
     <Accordion
@@ -16,7 +22,7 @@ const ThumbnailInput = () => {
           onChange={(image) => setValue('thumbnail.image', image[0])}
         >
           <Input.Label>사진</Input.Label>
-          <div className='bg-gray_900 w-[16rem] h-[16rem] rounded-[1rem] flex items-center justify-center'>
+          <div className={className}>
             <UploadImage.InputLabel visible={!watch('thumbnail.image')}>
               클릭 후 업로드
             </UploadImage.InputLabel>
