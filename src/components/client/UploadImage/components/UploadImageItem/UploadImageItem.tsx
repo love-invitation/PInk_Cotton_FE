@@ -12,7 +12,7 @@ const UploadImageItem = ({ image, ...rest }: UploadImageItemProps) => {
     <>
       <Image
         src={URL.createObjectURL(image)}
-        className='border-0 rounded-[0.5rem]'
+        className='border-0 rounded-[0.5rem] object-contain'
         {...rest}
       />
 
