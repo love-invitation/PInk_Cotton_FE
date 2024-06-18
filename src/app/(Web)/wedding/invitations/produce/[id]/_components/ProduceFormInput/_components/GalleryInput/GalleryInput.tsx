@@ -17,6 +17,7 @@ const GalleryInput = () => {
       <Accordion
         buttonTitle='갤러리'
         type='edit'
+        defaultToggleValue
       >
         <UploadImage
           limit={limit}
