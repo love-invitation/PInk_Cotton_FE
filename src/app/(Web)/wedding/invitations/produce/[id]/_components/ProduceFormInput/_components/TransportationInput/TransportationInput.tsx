@@ -24,7 +24,7 @@ const TransportationInput = () => {
               key={field.id}
               className='w-full flex flex-col gap-[1.2rem]'
             >
-              <Input.Label>{`${index + 1}번째 교통수단`}</Input.Label>
+              <Input.Label>교통수단</Input.Label>
               <Input.Input
                 name={`transportation.${index}.kind`}
                 placeholder='교통 수단을 입력해주세요. (지하철, 버스)'
