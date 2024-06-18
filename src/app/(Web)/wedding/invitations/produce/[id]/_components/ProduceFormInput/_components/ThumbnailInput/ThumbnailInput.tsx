@@ -15,6 +15,7 @@ const ThumbnailInput = () => {
     <Accordion
       buttonTitle='공유 썸네일'
       type='edit'
+      defaultToggleValue
     >
       <div className='flex flex-col gap-[4.7rem] py-[4rem]'>
         <UploadImage
