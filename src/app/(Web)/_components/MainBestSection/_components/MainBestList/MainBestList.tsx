@@ -21,7 +21,7 @@ const MainBestList = ({ invitation }: MainBestListProps) => {
     >
       <AnimatePresence>
         {isInView &&
-          invitation.map(({ templateName, newest, price, imageUrl, id }, index) => (
+          invitation.map(({ templateName, newest, price, id }, index) => (
             <motion.li
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -39,7 +39,7 @@ const MainBestList = ({ invitation }: MainBestListProps) => {
                   id={id}
                   groomName={TEMPLATE_TEMPORARY_VALUE.groom}
                   brideName={TEMPLATE_TEMPORARY_VALUE.bride}
-                  imageUrl={imageUrl}
+                  imageUrl={TEMPLATE_TEMPORARY_VALUE.imageUrl}
                   details={TEMPLATE_TEMPORARY_VALUE.detail}
                 />
               </InvitationItem>
