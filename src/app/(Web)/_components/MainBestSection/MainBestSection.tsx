@@ -43,7 +43,12 @@ const MainBestSection = async () => {
         </Link>
       </div>
 
-      <MainBestList invitation={data.result.productInfoList} />
+      <MainBestList
+        invitation={data.result.productInfoList}
+        groom={data.result.groomName}
+        bride={data.result.brideName}
+        detail={data.result.details}
+      />
     </section>
   );
 };

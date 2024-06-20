@@ -4,13 +4,12 @@ import { useRef } from 'react';
 
 import { WeddingTemplates } from '@/components/client';
 import { InvitationItem } from '@/components/server';
-import { TEMPLATE_TEMPORARY_VALUE } from '@/constants';
 
 import { MainBestListProps } from './MainBestList.type';
 
 import { AnimatePresence, motion, useInView } from 'framer-motion';
 
-const MainBestList = ({ invitation }: MainBestListProps) => {
+const MainBestList = ({ invitation, bride, groom, detail }: MainBestListProps) => {
   const ref = useRef<HTMLUListElement | null>(null);
   const isInView = useInView(ref, { once: true });
 
@@ -21,7 +20,7 @@ const MainBestList = ({ invitation }: MainBestListProps) => {
     >
       <AnimatePresence>
         {isInView &&
-          invitation.map(({ templateName, newest, price, id }, index) => (
+          invitation.map(({ templateName, newest, price, id, imageUrl }, index) => (
             <motion.li
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -37,10 +36,10 @@ const MainBestList = ({ invitation }: MainBestListProps) => {
               >
                 <WeddingTemplates
                   id={id}
-                  groomName={TEMPLATE_TEMPORARY_VALUE.groom}
-                  brideName={TEMPLATE_TEMPORARY_VALUE.bride}
-                  imageUrl={TEMPLATE_TEMPORARY_VALUE.imageUrl}
-                  details={TEMPLATE_TEMPORARY_VALUE.detail}
+                  groomName={groom}
+                  brideName={bride}
+                  imageUrl={imageUrl}
+                  details={detail}
                 />
               </InvitationItem>
             </motion.li>
