@@ -20,7 +20,7 @@ const WeddingTemplates = ({
   const detailReplace = details.replace(/\\n | \n/g, '\n');
 
   switch (id) {
-    case '1':
+    case 1:
       return (
         <WeddingTemplate1
           details={detailReplace}
@@ -30,7 +30,7 @@ const WeddingTemplates = ({
         />
       );
 
-    case '2':
+    case 2:
       return (
         <WeddingTemplate2
           details={detailReplace}
@@ -40,7 +40,7 @@ const WeddingTemplates = ({
         />
       );
 
-    case '3':
+    case 3:
       return (
         <WeddingTemplate3
           details={detailReplace}
@@ -50,7 +50,7 @@ const WeddingTemplates = ({
         />
       );
 
-    case '4':
+    case 4:
       return (
         <WeddingTemplate4
           details={detailReplace}

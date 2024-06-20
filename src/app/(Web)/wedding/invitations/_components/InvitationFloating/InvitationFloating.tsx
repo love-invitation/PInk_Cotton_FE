@@ -29,10 +29,7 @@ const InvitationFloating = ({ id }: InvitationFloatingProps) => {
     >
       <TemplateLayout size='large'>
         <WeddingTemplates
-          id={
-            // 추후에 아이디값 결정 후 반영하기
-            'tem1'
-          }
+          id={id}
           details={data.result.details}
           groomName={data.result.groomName}
           brideName={data.result.brideName}

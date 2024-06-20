@@ -24,7 +24,7 @@ const PreviewModal = ({ isShow, onClose }: PreviewModalProps) => {
     >
       <div className='w-[26rem] h-[45.7rem]'>
         <WeddingTemplates
-          id={typeof id === 'string' ? id : id[0]}
+          id={Number(id || id[0])}
           details={watch('cover.contents')}
           groomName={watch('groom.name')}
           brideName={watch('bride.name')}
