@@ -12,13 +12,11 @@ const CarouselImageItem = ({ src, index }: CarouselImageItemProps) => {
       key={src}
     >
       <Image
+        className='object-cover'
         src={src}
         alt={`이미지 ${index}`}
         fill
         sizes='100%'
-        style={{
-          objectFit: 'contain',
-        }}
       />
     </li>
   );
