@@ -1,4 +1,6 @@
+import { WeddingTemplates } from '@/components/client';
 import { LayerIcon, PhoneMockup } from '@/components/server';
+import { TEMPLATE_TEMPORARY_VALUE } from '@/constants';
 
 const MainLeftIntroduce = () => {
   return (
@@ -9,14 +11,13 @@ const MainLeftIntroduce = () => {
             width='100%'
             height='100%'
           >
-            {
-              /*
-              TODO
-
-              추후 Template 넣기
-            */
-              null
-            }
+            <WeddingTemplates
+              id={4}
+              imageUrl={TEMPLATE_TEMPORARY_VALUE.imageUrl}
+              groomName={TEMPLATE_TEMPORARY_VALUE.groom}
+              brideName={TEMPLATE_TEMPORARY_VALUE.bride}
+              details={TEMPLATE_TEMPORARY_VALUE.detail}
+            />
           </PhoneMockup>
         </div>
         <p className='text-size16 font-regular text-gray-400'>화면을 내려보세요!</p>
