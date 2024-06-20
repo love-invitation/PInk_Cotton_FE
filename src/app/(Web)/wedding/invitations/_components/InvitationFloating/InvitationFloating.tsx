@@ -29,7 +29,7 @@ const InvitationFloating = ({ id }: InvitationFloatingProps) => {
     >
       <TemplateLayout size='large'>
         <WeddingTemplates
-          id={id}
+          id={data.result.productInfo.id}
           details={data.result.details}
           groomName={data.result.groomName}
           brideName={data.result.brideName}

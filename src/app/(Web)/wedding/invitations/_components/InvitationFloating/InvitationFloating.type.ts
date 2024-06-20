@@ -1,3 +1,3 @@
 export interface InvitationFloatingProps {
-  id: number;
+  id: string;
 }
