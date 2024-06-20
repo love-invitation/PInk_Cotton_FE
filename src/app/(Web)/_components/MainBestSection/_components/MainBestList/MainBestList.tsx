@@ -2,7 +2,9 @@
 
 import { useRef } from 'react';
 
+import { WeddingTemplates } from '@/components/client';
 import { InvitationItem } from '@/components/server';
+import { TEMPLATE_TEMPORARY_VALUE } from '@/constants';
 
 import { MainBestListProps } from './MainBestList.type';
 
@@ -19,7 +21,7 @@ const MainBestList = ({ invitation }: MainBestListProps) => {
     >
       <AnimatePresence>
         {isInView &&
-          invitation.map(({ templateName, newest, price }, index) => (
+          invitation.map(({ templateName, newest, price, imageUrl, id }, index) => (
             <motion.li
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -33,7 +35,13 @@ const MainBestList = ({ invitation }: MainBestListProps) => {
                 price={price}
                 id={templateName}
               >
-                {templateName}
+                <WeddingTemplates
+                  id={id}
+                  groomName={TEMPLATE_TEMPORARY_VALUE.groom}
+                  brideName={TEMPLATE_TEMPORARY_VALUE.bride}
+                  imageUrl={imageUrl}
+                  details={TEMPLATE_TEMPORARY_VALUE.detail}
+                />
               </InvitationItem>
             </motion.li>
           ))}
