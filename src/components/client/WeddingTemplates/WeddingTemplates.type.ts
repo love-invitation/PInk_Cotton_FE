@@ -1,5 +1,5 @@
 export interface WeddingTemplatesProps {
-  id: string;
+  id: string | number;
   details: string;
   groomName: string;
   brideName: string;
