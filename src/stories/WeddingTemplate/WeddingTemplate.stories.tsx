@@ -54,7 +54,7 @@ const meta = {
   },
 
   args: {
-    id: 'tem2',
+    id: 2,
     details: '2025.10.20.토요일 오후 2시 \n 메종 드 프라이어 그랜드홀',
     groomName: '도레미',
     brideName: '파솔라',
@@ -87,24 +87,24 @@ type Story = StoryObj<typeof meta>;
 
 export const Template1: Story = {
   args: {
-    id: 'tem1',
+    id: 1,
   },
 };
 
 export const Template2: Story = {
   args: {
-    id: 'tem2',
+    id: 2,
   },
 };
 
 export const Template3: Story = {
   args: {
-    id: 'tem3',
+    id: 3,
   },
 };
 
 export const Template4: Story = {
   args: {
-    id: 'tem4',
+    id: 4,
   },
 };
