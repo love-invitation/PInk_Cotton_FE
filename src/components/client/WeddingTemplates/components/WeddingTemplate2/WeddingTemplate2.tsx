@@ -35,9 +35,8 @@ const WeddingTemplate2 = ({ imageUrl, groomName, brideName, details }: WeddingTe
       >
         <Image
           src={imageUrl}
-          className='object-top'
+          className='object-top object-cover'
           fill
-          objectFit='cover'
           alt='template - 1 Image'
         />
       </div>

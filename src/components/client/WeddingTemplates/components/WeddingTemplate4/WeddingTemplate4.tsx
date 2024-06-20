@@ -35,9 +35,8 @@ const WeddingTemplate4 = ({ groomName, brideName, imageUrl, details }: WeddingTe
       >
         <Image
           src={imageUrl}
-          className='rounded-t-[99rem]'
+          className='rounded-t-[99rem] object-cover'
           fill
-          objectFit='cover'
           alt='template - 1 Image'
         />
       </div>
