@@ -42,10 +42,6 @@ export const UploadImageContextProvider = ({
         return;
       }
 
-      if (selectedImages.length > limit) {
-        return toast.warn(`최대 ${limit}장 선택 가능합니다.`);
-      }
-
       const selectedImagesArray = Array.from(selectedImages);
       const filteredImages = images
         .filter(
@@ -57,6 +53,10 @@ export const UploadImageContextProvider = ({
             ),
         )
         .concat(selectedImagesArray);
+
+      if (filteredImages.length > limit) {
+        return toast.warn(`최대 ${limit}장 선택 가능합니다.`);
+      }
 
       onChangeRef.current(filteredImages);
       setImages(filteredImages);
