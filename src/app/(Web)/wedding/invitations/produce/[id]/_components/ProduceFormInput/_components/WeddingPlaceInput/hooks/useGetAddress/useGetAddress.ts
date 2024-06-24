@@ -34,9 +34,14 @@ const useGetAddress = ({ showModal }: UseGetAddressProps) => {
 
         geocoder.addressSearch(data.address, (result, state) => {
           if (state === kakao.maps.services.Status.OK) {
+            const lat = Number(result[0].y);
+            const lng = Number(result[0].x);
+
+            setValue('place.lat', lat);
+            setValue('place.lng', lng);
             setCenter({
-              lat: Number(result[0].y),
-              lng: Number(result[0].x),
+              lat,
+              lng,
             });
           }
         });

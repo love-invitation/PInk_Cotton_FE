@@ -1,38 +1,105 @@
-const PERSON = {
+interface Parent {
+  name: string;
+  deceased: boolean;
+}
+
+interface Person {
+  name: string;
+  relation: string;
+  father: Parent;
+  mother: Parent;
+}
+
+interface ImageSection {
+  image: File | null;
+  contents: string;
+}
+
+interface ContactDetails {
+  name: string;
+  phoneNumber: string;
+  others: { name: string; phoneNumber: string; relation: string }[];
+}
+
+interface Contacts {
+  groom: ContactDetails;
+  bride: ContactDetails;
+}
+
+interface AccountDetails {
+  bankName: string;
+  accountNumber: string;
+  others: { name: string; bankName: string; accountNumber: string }[];
+}
+
+interface Accounts {
+  groom: AccountDetails;
+  bride: AccountDetails;
+}
+
+export interface Invitation {
+  cover: ImageSection;
+  thumbnail: ImageSection & { title: string };
+  article: {
+    title: string;
+    contents: string;
+  };
+  reservation: {
+    date: string;
+    time: string;
+    type: boolean;
+  };
+  place: {
+    name: string;
+    detail: string;
+    address: string;
+    lat: null | number;
+    lng: null | number;
+  };
+  transportation: { kind: string; detail: string }[];
+  gallery: File[];
+  groom: Person;
+  bride: Person;
+  guestbookCheck: boolean;
+  contacts: Contacts;
+  accounts: Accounts;
+  priority: { name: string; priority: number }[];
+}
+
+const PERSON: Person = {
   name: '',
   relation: '',
   father: { name: '', deceased: false },
   mother: { name: '', deceased: false },
 };
 
-const IMAGE_SECTION = {
+const IMAGE_SECTION: ImageSection = {
   image: null,
   contents: '',
 };
 
-const CONTACTS = {
+const CONTACTS: Contacts = {
   groom: {
     name: '',
-    phone: '',
-
+    phoneNumber: '',
     others: [],
   },
   bride: {
     name: '',
-    phone: '',
+    phoneNumber: '',
     others: [],
   },
 };
 
-const ACCOUNTS = {
+const ACCOUNTS: Accounts = {
   groom: {
-    bank: '',
-    account: '',
+    bankName: '',
+    accountNumber: '',
     others: [],
   },
   bride: {
-    bank: '',
-    account: '',
+    bankName: '',
+    accountNumber: '',
     others: [],
   },
 };
@@ -53,26 +120,28 @@ const INVITATION = {
     name: '',
     detail: '',
     address: '',
+    lat: null,
+    lng: null,
   },
-  transportation: [{ kind: '', detail: '' }],
+  transportation: [],
   gallery: [],
   groom: { ...PERSON },
   bride: { ...PERSON },
   guestbookCheck: false,
   contacts: { ...CONTACTS },
   accounts: { ...ACCOUNTS },
-  priority: {
-    article: 0,
-    weddingDate: 0,
-    weddingPlace: 0,
-    transport: 0,
-    contact: 0,
-    thumbnail: 0,
-    gallery: 0,
-    guestbook: 0,
-    account: 0,
-  },
-};
+  priority: [
+    { name: 'article', priority: 1 },
+    { name: 'weddingDate', priority: 2 },
+    { name: 'weddingPlace', priority: 3 },
+    { name: 'transport', priority: 4 },
+    { name: 'gallery', priority: 5 },
+    { name: 'contact', priority: 6 },
+    { name: 'account', priority: 7 },
+    { name: 'thumbnail', priority: 8 },
+    { name: 'guestbook', priority: 9 },
+  ],
+} satisfies Invitation;
 
 export default {
   PERSON,
