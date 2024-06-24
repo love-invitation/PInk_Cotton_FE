@@ -2,14 +2,19 @@
 
 import { useFieldArray, useFormContext } from 'react-hook-form';
 
+import tailwindConfig from '@/../tailwind.config';
 import { Accordion, Button, Input } from '@/components/client';
+import { DeleteIcon } from '@/components/server';
+
+import resolveConfig from 'tailwindcss/resolveConfig';
 
 const TransportationInput = () => {
   const { control, setValue, getValues } = useFormContext();
-  const { fields } = useFieldArray({
+  const { fields, remove } = useFieldArray({
     control,
     name: 'transportation',
   });
+  const { theme } = resolveConfig(tailwindConfig);
 
   return (
     <Accordion
@@ -24,7 +29,21 @@ const TransportationInput = () => {
               key={field.id}
               className='w-full flex flex-col gap-[1.2rem]'
             >
-              <Input.Label>교통수단</Input.Label>
+              <div className='flex justify-between items-center'>
+                <Input.Label>교통수단</Input.Label>
+                <Button
+                  backgroundColor='naked'
+                  className='w-[2.4rem] p-0 h-[2.4rem]'
+                  onClick={() => {
+                    remove(index);
+                  }}
+                >
+                  <DeleteIcon
+                    size='2.4rem'
+                    fill={theme.colors.gray_500}
+                  />
+                </Button>
+              </div>
               <Input.Input
                 name={`transportation.${index}.kind`}
                 placeholder='교통 수단을 입력해주세요. (지하철, 버스)'
