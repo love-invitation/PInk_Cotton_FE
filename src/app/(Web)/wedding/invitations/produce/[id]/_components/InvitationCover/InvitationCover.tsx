@@ -1,20 +1,29 @@
+'use client';
+
 import { useFormContext } from 'react-hook-form';
 
 import { useParams } from 'next/navigation';
 
 import { Button, WeddingTemplates } from '@/components/client';
-import { useGetElementWidth } from '@/hooks';
+import { MUTATE_OPTIONS } from '@/constants';
+import { useGetElementWidth, usePreviewImage } from '@/hooks';
+import { useMutation } from '@tanstack/react-query';
+
+import { Invitation } from '../../_constants/DefaultValue';
 
 const InvitationCover = () => {
-  const { watch } = useFormContext();
+  const { watch, handleSubmit } = useFormContext<Invitation>();
+  const { mutate } = useMutation(MUTATE_OPTIONS.INVITATION());
   const { ref, width } = useGetElementWidth();
   const { id } = useParams();
-
+  const templateId = typeof id === 'string' ? Number(id) : Number(id[0]);
+  const { imageUrl } = usePreviewImage(watch('cover.image'));
   const IMAGE_ASSETS =
     'https://invitation-bucket.s3.ap-northeast-2.amazonaws.com/productInfo/sample_image.png';
-  const coverImageUrl = watch('cover.image')
-    ? URL.createObjectURL(watch('cover.image'))
-    : IMAGE_ASSETS;
+
+  const onValid = (invitationInfo: Invitation) => {
+    mutate({ id: templateId, invitationInfo });
+  };
 
   return (
     <section className='min-w-[20rem] w-[40%] mobile:w-full flex flex-col gap-[2.7rem]'>
@@ -28,14 +37,16 @@ const InvitationCover = () => {
           details={watch('cover.contents') || '예약 일시 및 장소'}
           groomName={watch('groom.name') || '신랑님 이름'}
           brideName={watch('bride.name') || '신부님 이름'}
-          imageUrl={coverImageUrl}
+          imageUrl={imageUrl || IMAGE_ASSETS}
         />
       </article>
       <Button
+        type='submit'
         backgroundColor='black'
         className='w-full h-[6rem] rounded-[1rem]'
         fontColor='white'
         fontSize='1.8rem'
+        onClick={handleSubmit(onValid)}
       >
         저장하기
       </Button>

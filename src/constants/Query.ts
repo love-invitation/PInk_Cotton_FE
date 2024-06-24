@@ -1,6 +1,12 @@
 import { cache } from 'react';
 
-import { getAllInvitations, getBestInvitations, getInvitation } from '@/services/server';
+import { Invitation } from '@/app/(Web)/wedding/invitations/produce/[id]/_constants/DefaultValue';
+import {
+  getAllInvitations,
+  getBestInvitations,
+  getInvitation,
+  postInvitation,
+} from '@/services/server';
 import { QueryClient } from '@tanstack/react-query';
 
 export const getQueryClient = cache(() => new QueryClient());
@@ -29,5 +35,12 @@ export const QUERY_OPTIONS = {
     queryFn: () => getInvitation(productInfoId),
     gcTime: 1000 * 60 * 60 * 24,
     staleTime: 1000 * 60 * 60 * 24,
+  }),
+};
+
+export const MUTATE_OPTIONS = {
+  INVITATION: () => ({
+    mutationFn: ({ id, invitationInfo }: { id: number; invitationInfo: Invitation }) =>
+      postInvitation({ id, invitationInfo }),
   }),
 };

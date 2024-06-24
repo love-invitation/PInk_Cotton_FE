@@ -38,13 +38,13 @@ const AccountInputItem = ({ type }: AccountInputItemProps) => {
           <Input.Label className='w-[10rem] text-center'>{typeName}</Input.Label>
           <Input.Input
             className={style.bankInput}
-            name={`accounts.${type}.bank`}
+            name={`accounts.${type}.bankName`}
             placeholder='은행명'
           />
         </div>
         <Input.Input
           className={style.phoneInput}
-          name={`accounts.${type}.account`}
+          name={`accounts.${type}.accountNumber`}
           placeholder='계좌 번호'
         />
       </div>
@@ -66,14 +66,14 @@ const AccountInputItem = ({ type }: AccountInputItemProps) => {
                   />
                   <Input.Input
                     className={style.bankInput}
-                    name={`accounts.${type}.others.${index}.bank`}
+                    name={`accounts.${type}.others.${index}.bankName`}
                     placeholder='은행명'
                   />
                 </div>
 
                 <Input.Input
                   className={style.phoneInput}
-                  name={`accounts.${type}.others.${index}.account`}
+                  name={`accounts.${type}.others.${index}.accountNumber`}
                   placeholder='계좌 번호'
                 />
 
@@ -102,7 +102,7 @@ const AccountInputItem = ({ type }: AccountInputItemProps) => {
         fontColor='black'
         radius='0.8rem'
         onClick={() => {
-          insert(fields.length, { name: '', bank: '', account: '' });
+          insert(fields.length, { name: '', bankName: '', accountNumber: '' });
         }}
       >
         {`+ ${typeName}측 계좌 번호 추가`}

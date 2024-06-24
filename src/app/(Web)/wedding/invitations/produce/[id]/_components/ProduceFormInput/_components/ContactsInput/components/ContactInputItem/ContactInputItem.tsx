@@ -43,7 +43,7 @@ const ContactInputItem = ({ type }: ContactInputItemProps) => {
         </div>
         <Input.Input
           className={style.phoneInput}
-          name={`contacts.${type}.phone`}
+          name={`contacts.${type}.phoneNumber`}
           placeholder='전화 번호 (010-1234-5678)'
         />
       </div>
@@ -60,7 +60,7 @@ const ContactInputItem = ({ type }: ContactInputItemProps) => {
                 <div className={style.inputContainer}>
                   <Input.Input
                     className='w-[10rem]'
-                    name={`contacts.${type}.others.${index}.relationship`}
+                    name={`contacts.${type}.others.${index}.relation`}
                     placeholder='관계'
                   />
                   <Input.Input
@@ -72,7 +72,7 @@ const ContactInputItem = ({ type }: ContactInputItemProps) => {
 
                 <Input.Input
                   className={style.phoneInput}
-                  name={`contacts.${type}.others.${index}.phone`}
+                  name={`contacts.${type}.others.${index}.phoneNumber`}
                   placeholder='전화 번호 (010-1234-5678)'
                 />
 
@@ -101,7 +101,7 @@ const ContactInputItem = ({ type }: ContactInputItemProps) => {
         fontColor='black'
         radius='0.8rem'
         onClick={() => {
-          insert(fields.length, { relationship: '', name: '', phone: '' });
+          insert(fields.length, { relation: '', name: '', phoneNumber: '' });
         }}
       >
         {`+ ${typeName}측 연락처 추가`}
