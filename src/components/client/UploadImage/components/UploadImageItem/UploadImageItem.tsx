@@ -1,17 +1,19 @@
 import Image from 'next/image';
 
 import { CloseIcon } from '@/components/server';
+import { usePreviewImage } from '@/hooks';
 
 import { useUploadImageContext } from '../../context/UploadImageContext/UploadImageContext';
 import { UploadImageItemProps } from './UploadImageItem.type';
 
 const UploadImageItem = ({ image, ...rest }: UploadImageItemProps) => {
   const { handleRemoveImage } = useUploadImageContext();
+  const { imageUrl } = usePreviewImage(image);
 
   return (
     <>
       <Image
-        src={URL.createObjectURL(image)}
+        src={imageUrl}
         className='border-0 rounded-[0.5rem] object-contain'
         {...rest}
       />
