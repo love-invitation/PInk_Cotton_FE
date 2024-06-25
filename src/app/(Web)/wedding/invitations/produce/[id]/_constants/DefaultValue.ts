@@ -139,7 +139,6 @@ const INVITATION = {
     { name: 'contact', priority: 6 },
     { name: 'account', priority: 7 },
     { name: 'thumbnail', priority: 8 },
-    { name: 'guestbook', priority: 9 },
   ],
 } satisfies Invitation;
 
