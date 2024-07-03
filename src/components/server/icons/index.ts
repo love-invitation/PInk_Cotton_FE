@@ -17,3 +17,4 @@ export { default as KakaoLogoIcon } from './KakaoLogoIcon/KakaoLogoIcon';
 export { default as GoogleLogoIcon } from './GoogleLogoIcon/GoogleLogoIcon';
 export { default as DeleteIcon } from './DeleteIcon/DeleteIcon';
 export { default as ImageIcon } from './ImageIcon/ImageIcon';
+export { default as SpinnerIcon } from './SpinnerIcon/SpinnerIcon';
