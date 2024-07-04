@@ -1,14 +1,21 @@
 import { InputErrorMessageProps } from './InputErrorMessage.type';
 
-import { twMerge } from 'tailwind-merge';
+import { twJoin, twMerge } from 'tailwind-merge';
 
 const InputErrorMessage = ({ children, className, ...rest }: InputErrorMessageProps) => {
   return (
     <p
-      className={twMerge('text-red_500 shrink-0 text-[1.3rem] font-medium', className)}
+      className={twMerge(
+        twJoin(
+          'text-red_500 shrink-0 text-[1.3rem] font-medium overflow-hidden text-ellipsis whitespace-nowrap',
+          children && 'visible',
+          !children && 'invisible',
+        ),
+        className,
+      )}
       {...rest}
     >
-      {children}
+      {children || '에러 없음'}
     </p>
   );
 };
