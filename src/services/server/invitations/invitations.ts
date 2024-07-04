@@ -1,5 +1,5 @@
 import { fetchApi } from '@/api';
-import { Invitation } from '@/app/(Web)/wedding/invitations/produce/[id]/_constants';
+import { InvitationInput } from '@/constants';
 
 export const getInvitation = async (produceId: number | string) => {
   const response = await fetchApi(`/product/invitation/read/${produceId}`, {
@@ -18,7 +18,7 @@ export const postInvitation = async ({
   invitationInfo,
 }: {
   id: number;
-  invitationInfo: Invitation;
+  invitationInfo: InvitationInput;
 }) => {
   const formData = new FormData();
   const {
