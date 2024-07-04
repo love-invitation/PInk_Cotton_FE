@@ -1,28 +1,43 @@
 'use client';
 
 import { useFormContext } from 'react-hook-form';
+import { toast } from 'react-toastify';
 
-import { useParams } from 'next/navigation';
+import { useParams, useRouter } from 'next/navigation';
 
 import { Button, WeddingTemplates } from '@/components/client';
-import { MUTATE_OPTIONS } from '@/constants';
+import { SpinnerIcon } from '@/components/server';
+import { DOMAIN_URL, InvitationInput, MUTATE_OPTIONS } from '@/constants';
 import { useGetElementWidth, usePreviewImage } from '@/hooks';
+import { PostInvitation } from '@/types/response';
 import { useMutation } from '@tanstack/react-query';
 
-import { Invitation } from '../../_constants/DefaultValue';
-
 const InvitationCover = () => {
-  const { watch, handleSubmit } = useFormContext<Invitation>();
-  const { mutate } = useMutation(MUTATE_OPTIONS.INVITATION());
+  const { watch, handleSubmit } = useFormContext<InvitationInput>();
+  const { mutate, isPending } = useMutation(MUTATE_OPTIONS.INVITATION());
+  const { imageUrl } = usePreviewImage(watch('cover.image'));
   const { ref, width } = useGetElementWidth();
+  const route = useRouter();
   const { id } = useParams();
   const templateId = typeof id === 'string' ? Number(id) : Number(id[0]);
-  const { imageUrl } = usePreviewImage(watch('cover.image'));
-  const IMAGE_ASSETS =
-    'https://invitation-bucket.s3.ap-northeast-2.amazonaws.com/productInfo/sample_image.png';
 
-  const onValid = (invitationInfo: Invitation) => {
-    mutate({ id: templateId, invitationInfo });
+  const onValid = (invitationInfo: InvitationInput) => {
+    mutate(
+      { id: templateId, invitationInfo },
+      {
+        onSuccess: ({ result }: PostInvitation) => route.push(DOMAIN_URL.WEDDING_PREVIEW(result)),
+      },
+    );
+  };
+
+  const onFail = () => {
+    toast.warn(
+      <h1 className='text-[2rem] text-center'>
+        요구사항을
+        <br />
+        모두 만족해주세요
+      </h1>,
+    );
   };
 
   return (
@@ -37,18 +52,19 @@ const InvitationCover = () => {
           details={watch('cover.contents') || '예약 일시 및 장소'}
           groomName={watch('groom.name') || '신랑님 이름'}
           brideName={watch('bride.name') || '신부님 이름'}
-          imageUrl={imageUrl || IMAGE_ASSETS}
+          imageUrl={imageUrl || DOMAIN_URL.MAIN_IMAGE}
         />
       </article>
       <Button
         type='submit'
-        backgroundColor='black'
-        className='w-full h-[6rem] rounded-[1rem]'
+        disabled={isPending}
+        backgroundColor='pink'
+        className='w-full h-[6rem] rounded-[1rem] flex justify-center items-center'
         fontColor='white'
         fontSize='1.8rem'
-        onClick={handleSubmit(onValid)}
+        onClick={handleSubmit(onValid, onFail)}
       >
-        저장하기
+        {isPending ? <SpinnerIcon className='animate-spin' /> : '저장하기'}
       </Button>
     </section>
   );

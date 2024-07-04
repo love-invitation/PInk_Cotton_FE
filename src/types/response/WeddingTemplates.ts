@@ -31,3 +31,9 @@ export interface WeddingTemplateItem {
   best: boolean;
   newest: boolean;
 }
+
+export interface PostInvitation {
+  status: number;
+  message: string;
+  result: number;
+}
