@@ -3,9 +3,14 @@
 import { useFormContext } from 'react-hook-form';
 
 import { Accordion, CheckBox, Input } from '@/components/client';
+import { INVITATION_FORM, InvitationInput } from '@/constants';
 
 const ReservationInput = () => {
-  const { watch, setValue } = useFormContext();
+  const {
+    watch,
+    setValue,
+    formState: { errors },
+  } = useFormContext<InvitationInput>();
 
   return (
     <Accordion
@@ -14,21 +19,28 @@ const ReservationInput = () => {
       defaultToggleValue
     >
       <div className='flex flex-col gap-[1.9rem] py-[4rem]'>
-        <Input className='items-center gap-[3.3rem]'>
-          <Input.Label>예약일</Input.Label>
-          <Input.Input
-            type='date'
-            name='booking.date'
-            className=''
-          />
-        </Input>
-        <Input className='items-center gap-[4.7rem]'>
-          <Input.Label>시각</Input.Label>
-          <Input.Input
-            type='time'
-            name='booking.time'
-          />
-        </Input>
+        <div className='flex flex-col gap-[1rem]'>
+          <Input className='items-center gap-[3.3rem]'>
+            <Input.Label>예약일</Input.Label>
+            <Input.Input
+              type='date'
+              name='booking.date'
+              registerOptions={INVITATION_FORM.REGISTER_OPTION.BOOKING.DATE}
+            />
+          </Input>
+          <Input.ErrorMessage>{errors?.booking?.date?.message}</Input.ErrorMessage>
+        </div>
+        <div className='flex flex-col gap-[1rem]'>
+          <Input className='items-center gap-[4.7rem]'>
+            <Input.Label>시각</Input.Label>
+            <Input.Input
+              type='time'
+              name='booking.time'
+              registerOptions={INVITATION_FORM.REGISTER_OPTION.BOOKING.TIME}
+            />
+          </Input>
+          <Input.ErrorMessage>{errors?.booking?.time?.message}</Input.ErrorMessage>
+        </div>
         <Input className='items-center gap-[4.7rem]'>
           <Input.Label>표시</Input.Label>
           <div className='flex items-center gap-[1rem]'>

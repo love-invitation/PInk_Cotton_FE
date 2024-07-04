@@ -5,11 +5,17 @@ import { useFieldArray, useFormContext } from 'react-hook-form';
 import tailwindConfig from '@/../tailwind.config';
 import { Accordion, Button, Input } from '@/components/client';
 import { CloseIcon } from '@/components/server';
+import { INVITATION_FORM, InvitationInput } from '@/constants';
 
 import resolveConfig from 'tailwindcss/resolveConfig';
 
 const TransportationInput = () => {
-  const { control, setValue, getValues } = useFormContext();
+  const {
+    control,
+    setValue,
+    getValues,
+    formState: { errors },
+  } = useFormContext<InvitationInput>();
   const { fields, remove } = useFieldArray({
     control,
     name: 'transport',
@@ -47,11 +53,15 @@ const TransportationInput = () => {
               <Input.Input
                 name={`transport.${index}.kind`}
                 placeholder='교통 수단을 입력해주세요. (지하철, 버스)'
+                registerOptions={INVITATION_FORM.REGISTER_OPTION.TRANSPORT.KIND}
               />
+              <Input.ErrorMessage>{errors.transport?.[index]?.kind?.message}</Input.ErrorMessage>
               <Input.Input
                 name={`transport.${index}.detail`}
                 placeholder='가는 방법을 작성해주세요.'
+                registerOptions={INVITATION_FORM.REGISTER_OPTION.TRANSPORT.DETAIL}
               />
+              <Input.ErrorMessage>{errors.transport?.[index]?.detail?.message}</Input.ErrorMessage>
             </li>
           ))}
         </ul>
@@ -62,9 +72,9 @@ const TransportationInput = () => {
           border='gray'
           fontColor='black'
           radius='0.8rem'
-          onClick={() => {
-            setValue('transport', [...getValues('transport'), { kind: '', detail: '' }]);
-          }}
+          onClick={() =>
+            setValue('transport', [...getValues('transport'), { kind: '', detail: '' }])
+          }
         >
           + 교통수단 추가
         </Button>
