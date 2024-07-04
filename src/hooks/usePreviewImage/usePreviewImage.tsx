@@ -5,7 +5,7 @@ const usePreviewImage = (image: File | null) => {
 
   useEffect(() => {
     if (!image) {
-      return;
+      return setImageUrl('');
     }
 
     const url = URL.createObjectURL(image);
