@@ -1,4 +1,6 @@
 const DOMAIN_URL = {
+  MAIN_IMAGE:
+    'https://invitation-bucket.s3.ap-northeast-2.amazonaws.com/productInfo/sample_image.png',
   MAIN: '/',
   SERVICE: '/#service',
   PROFILE: '/profile',

@@ -8,6 +8,8 @@ import {
 } from '@/services/server';
 import { QueryClient } from '@tanstack/react-query';
 
+import { InvitationInput } from '.';
+
 export const getQueryClient = cache(() => new QueryClient());
 
 export const QUERY_KEYS = {
@@ -44,5 +46,12 @@ export const QUERY_OPTIONS = {
     queryFn: () => getInvitation(produceId),
     gcTime: 1000 * 60 * 60 * 24,
     staleTime: 1000 * 60 * 60 * 24,
+  }),
+};
+
+export const MUTATE_OPTIONS = {
+  INVITATION: () => ({
+    mutationFn: ({ id, invitationInfo }: { id: number; invitationInfo: InvitationInput }) =>
+      postInvitation({ id, invitationInfo }),
   }),
 };

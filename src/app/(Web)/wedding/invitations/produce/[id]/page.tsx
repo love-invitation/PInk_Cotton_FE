@@ -2,13 +2,12 @@
 
 import { FormProvider, useForm } from 'react-hook-form';
 
+import { INVITATION_FORM } from '@/constants';
+
 import { InvitationCover, InvitationCoverPreview, ProduceFormInput } from './_components';
-import { DEFAULT_VALUE } from './_constants';
 
 const ProducePage = () => {
-  const form = useForm({
-    defaultValues: DEFAULT_VALUE.INVITATION,
-  });
+  const form = useForm(INVITATION_FORM.BASIC_OPTION);
 
   return (
     <FormProvider {...form}>
