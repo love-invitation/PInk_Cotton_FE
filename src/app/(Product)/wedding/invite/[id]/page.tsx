@@ -14,9 +14,16 @@ const InvitePage = async ({ params }: { params: { id: string } }) => {
     return null;
   }
 
+  /**
+   * TODO
+   *
+   * 테스트를 위해넣은 bg black & inner white 제거
+   */
   return (
     <HydrationBoundary state={dehydrate(queryClient)}>
-      {data.result.article.title}
+      <section className='w-full h-full flex justify-center bg-slate-600'>
+        <div className='max-w-[60rem] w-full h-full bg-white'>{data.result.cover.detail}</div>
+      </section>
     </HydrationBoundary>
   );
 };
