@@ -41,7 +41,7 @@ const WeddingTemplate4 = ({ groomName, brideName, imageUrl, details }: WeddingTe
         />
       </div>
       <figcaption
-        className='flex flex-col items-center justify-center'
+        className='w-full flex flex-col items-center justify-center'
         style={{ gap: `${width * 0.02}px` }}
       >
         <span
