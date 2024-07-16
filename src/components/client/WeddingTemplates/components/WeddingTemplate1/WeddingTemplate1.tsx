@@ -49,11 +49,12 @@ const WeddingTemplate1 = ({ details, groomName, brideName, imageUrl }: WeddingTe
           style={{
             gap: `${width * 0.016}px`,
             fontSize: `${width * 0.0702}px`,
+            lineHeight: `${width * 0.0742}px`,
           }}
         >
-          <h2 className='break-all text-end w-[49%] leading-[2.5rem]'>{groomName}</h2>
+          <h2 className='break-all text-end w-[49%]'>{groomName}</h2>
           <p className='grow-1 flex justify-center w-[2%]'>·</p>
-          <h2 className='break-all w-[49%] leading-[2.5rem]'>{brideName}</h2>
+          <h2 className='break-all w-[49%]'>{brideName}</h2>
         </span>
 
         <p
