@@ -15,6 +15,7 @@ const WeddingTemplate2 = ({ imageUrl, groomName, brideName, details }: WeddingTe
       className='w-full h-full flex flex-col items-center justify-center'
       style={{
         gap: `${width * 0.0702}px`,
+        height: `${width * 1.77}px`,
       }}
     >
       <h3
