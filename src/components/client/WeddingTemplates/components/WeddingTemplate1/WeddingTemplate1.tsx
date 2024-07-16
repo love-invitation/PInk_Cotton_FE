@@ -41,19 +41,19 @@ const WeddingTemplate1 = ({ details, groomName, brideName, imageUrl }: WeddingTe
         />
       </div>
       <figcaption
-        className='flex flex-col items-center justify-center'
+        className='w-full flex flex-col items-center justify-center'
         style={{ gap: `${width * 0.02}px` }}
       >
         <span
-          className='flex tracking-widest'
+          className='w-full flex items-center justify-center tracking-widest px-[2rem]'
           style={{
             gap: `${width * 0.016}px`,
             fontSize: `${width * 0.0702}px`,
           }}
         >
-          <h2>{groomName}</h2>
-          <p>·</p>
-          <h2>{brideName}</h2>
+          <h2 className='break-all text-end w-[49%] leading-[2.5rem]'>{groomName}</h2>
+          <p className='grow-1 flex justify-center w-[2%]'>·</p>
+          <h2 className='break-all w-[49%] leading-[2.5rem]'>{brideName}</h2>
         </span>
 
         <p
