@@ -7,7 +7,7 @@ const InviteCover = ({ coverData }: InviteCoverProps) => {
     <article className='w-full animate-fadeIn opacity-0'>
       <WeddingTemplates
         id={coverData.templateId}
-        details={coverData.detail}
+        details={coverData.coverContents}
         brideName={coverData.brideName}
         groomName={coverData.groomName}
         imageUrl={coverData.imageUrl}
