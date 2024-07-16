@@ -19,12 +19,12 @@ const InvitePage = async ({ params }: { params: { id: string } }) => {
   /**
    * TODO
    *
-   * 테스트를 위해넣은 bg black & inner white 제거
+   * 개발 환경을 위한 shadow 추후 제거
    */
   return (
     <HydrationBoundary state={dehydrate(queryClient)}>
-      <section className='w-full h-full flex justify-center bg-slate-600'>
-        <div className='max-w-[60rem] w-full h-full bg-white'>
+      <section className='w-full h-full flex justify-center'>
+        <div className='max-w-[60rem] w-full h-full overflow-scroll shadow-shadow_700'>
           <InviteCover coverData={data.result.cover} />
         </div>
       </section>
