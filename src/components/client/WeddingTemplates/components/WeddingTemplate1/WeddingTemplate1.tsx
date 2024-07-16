@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { useGetElementWidth } from '@/hooks';
 
 import { WeddingTemplateProps } from '../../WeddingTemplates.type';
+import GroomBrideName from '../GroomBrideName/GroomBrideName';
 
 const WeddingTemplate1 = ({ details, groomName, brideName, imageUrl }: WeddingTemplateProps) => {
   const { ref, width } = useGetElementWidth();
@@ -44,18 +45,11 @@ const WeddingTemplate1 = ({ details, groomName, brideName, imageUrl }: WeddingTe
         className='w-full flex flex-col items-center justify-center'
         style={{ gap: `${width * 0.02}px` }}
       >
-        <span
-          className='w-full flex items-center justify-center tracking-widest px-[2rem]'
-          style={{
-            gap: `${width * 0.016}px`,
-            fontSize: `${width * 0.0702}px`,
-            lineHeight: `${width * 0.0742}px`,
-          }}
-        >
-          <h2 className='break-all text-end w-[49%]'>{groomName}</h2>
-          <p className='grow-1 flex justify-center w-[2%]'>·</p>
-          <h2 className='break-all w-[49%]'>{brideName}</h2>
-        </span>
+        <GroomBrideName
+          width={width}
+          brideName={brideName}
+          groomName={groomName}
+        />
 
         <p
           className='text-center whitespace-pre-line'
