@@ -5,6 +5,7 @@ import {
   getBestWeddingTemplates,
   getInvitation,
   getWeddingTemplate,
+  postInvitation,
 } from '@/services/server';
 import { QueryClient } from '@tanstack/react-query';
 
