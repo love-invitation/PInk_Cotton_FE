@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { useGetElementWidth } from '@/hooks';
 
 import { WeddingTemplateProps } from '../../WeddingTemplates.type';
-import GroomBrideName from '../GroomBrideName/GroomBrideName';
+import TemplateInfo from '../TemplateInfo/TemplateInfo';
 
 const WeddingTemplate2 = ({ imageUrl, groomName, brideName, details }: WeddingTemplateProps) => {
   const { ref, width } = useGetElementWidth();
@@ -41,26 +41,13 @@ const WeddingTemplate2 = ({ imageUrl, groomName, brideName, details }: WeddingTe
           alt='template - 1 Image'
         />
       </div>
-      <figcaption
-        className='w-full flex flex-col items-center justify-center'
-        style={{ gap: `${width * 0.02}px` }}
-      >
-        <GroomBrideName
-          width={width}
-          brideName={brideName}
-          groomName={groomName}
-        />
 
-        <p
-          className='text-center whitespace-pre-line'
-          style={{
-            fontSize: `${width * 0.05}px`,
-            whiteSpace: 'break-spaces',
-          }}
-        >
-          {details}
-        </p>
-      </figcaption>
+      <TemplateInfo
+        width={width}
+        brideName={brideName}
+        groomName={groomName}
+        details={details}
+      />
     </figure>
   );
 };
