@@ -2,7 +2,7 @@ import { fetchApi } from '@/api';
 import { InvitationInput } from '@/constants';
 
 export const getInvitation = async (produceId: number | string) => {
-  const response = await fetchApi(`/product/invitation/read/${produceId}`, {
+  const response = await fetchApi(`/api/v1/products/invitations/${produceId}`, {
     next: { revalidate: 1000 * 60 * 60 * 24 },
   });
 
