@@ -2,6 +2,7 @@
 
 export interface InvitationCover {
   priority: number;
+  templateId: number;
   imageUrl: string;
   imageOriginName: string;
   imageStoreFileName: string;
