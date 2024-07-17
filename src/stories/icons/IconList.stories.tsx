@@ -5,6 +5,7 @@ import {
   CheckIcon,
   Clock3DIcon,
   CloseIcon,
+  DarkFlowerIcon,
   DeleteIcon,
   DotIcon,
   Folder3DIcon,
@@ -165,5 +166,11 @@ export const Delete: Story = {
 export const Image: Story = {
   args: {
     children: <ImageIcon />,
+  },
+};
+
+export const DarkFlower: Story = {
+  args: {
+    children: <DarkFlowerIcon />,
   },
 };
