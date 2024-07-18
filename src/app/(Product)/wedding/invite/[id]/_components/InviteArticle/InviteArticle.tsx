@@ -50,20 +50,20 @@ const InviteArticle = ({ article }: InviteArticleProps) => {
         transition={{ duration: 1.5, delay: 1.2 }}
       >
         <span className='w-full flex justify-center items-center gap-[0.5rem] text-size20'>
-          {!groom.father.deceased && <DarkFlowerIcon size='1.8rem' />}
+          {groom.father.deceased && <DarkFlowerIcon size='1.8rem' />}
           <p>{groom.father.name}</p>
           <DotIcon />
-          {!groom.mother.deceased && <DarkFlowerIcon size='1.8rem' />}
+          {groom.mother.deceased && <DarkFlowerIcon size='1.8rem' />}
           <p>{groom.mother.name}</p>
           <small className='text-18 text-nowrap'>의 장남</small>
           <p>{groom.name}</p>
         </span>
 
         <span className='w-full flex justify-center items-center gap-[0.5rem] text-size20'>
-          {!bride.father.deceased && <DarkFlowerIcon size='1.8rem' />}
+          {bride.father.deceased && <DarkFlowerIcon size='1.8rem' />}
           <p>{bride.father.name}</p>
           <DotIcon />
-          {!bride.mother.deceased && <DarkFlowerIcon size='1.8rem' />}
+          {bride.mother.deceased && <DarkFlowerIcon size='1.8rem' />}
           <p>{bride.mother.name}</p>
           <small className='text-18 text-nowrap'>의 차녀</small>
           <p>{bride.name}</p>
