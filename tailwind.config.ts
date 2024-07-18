@@ -128,10 +128,18 @@ const config = {
           '0%': { opacity: '0' },
           '100%': { opacity: '1' },
         },
+
+        wave: {
+          '0%': { rotate: '0deg' },
+          '100%': { rotate: '360deg' },
+        },
       },
 
       animation: {
         fadeIn: 'fadeIn 2s 0.5s ease-in-out forwards',
+        wave1: 'wave 30s infinite linear',
+        wave2: 'wave 33s infinite linear',
+        wave3: 'wave 36s infinite linear',
       },
     },
   },
