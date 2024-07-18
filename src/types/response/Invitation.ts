@@ -28,10 +28,8 @@ export interface InvitationWeddingPlace {
 
 export interface InvitationArticleItem {
   name: string;
-  fatherName: string;
-  isFatherCondolences: boolean;
-  motherName: string;
-  isMotherCondolences: boolean;
+  father: { name: string; deceased: boolean };
+  mother: { name: string; deceased: boolean };
   relation: string;
 }
 
@@ -39,8 +37,8 @@ export interface InvitationArticle {
   priority: number;
   title: string;
   contents: string;
-  groomInfo: InvitationArticleItem;
-  brideInfo: InvitationArticleItem;
+  groom: InvitationArticleItem;
+  bride: InvitationArticleItem;
 }
 
 /** Contact */
