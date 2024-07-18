@@ -2,7 +2,7 @@ import { QUERY_KEYS, QUERY_OPTIONS, getQueryClient } from '@/constants';
 import { InvitationResponse } from '@/types/response';
 import { HydrationBoundary, dehydrate } from '@tanstack/react-query';
 
-import { InviteCover } from './_components';
+import { InviteArticle, InviteCover } from './_components';
 
 // 600246308994180233 ID key 값
 
@@ -26,6 +26,7 @@ const InvitePage = async ({ params }: { params: { id: string } }) => {
       <section className='w-full h-full flex justify-center'>
         <div className='max-w-[60rem] w-full h-full overflow-scroll shadow-shadow_700'>
           <InviteCover coverData={data.result.cover} />
+          <InviteArticle article={data.result.article} />
         </div>
       </section>
     </HydrationBoundary>
