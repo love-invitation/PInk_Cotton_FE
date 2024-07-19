@@ -23,8 +23,8 @@ const InvitePage = async ({ params }: { params: { id: string } }) => {
    */
   return (
     <HydrationBoundary state={dehydrate(queryClient)}>
-      <section className='w-full h-full flex justify-center'>
-        <div className='max-w-[60rem] w-full h-full overflow-scroll shadow-shadow_700'>
+      <section className='w-full h-full flex justify-center bg-gray_900'>
+        <div className='max-w-[60rem] w-full h-full overflow-scroll bg-white'>
           <InviteCover coverData={data.result.cover} />
           <InviteArticle article={data.result.article} />
         </div>

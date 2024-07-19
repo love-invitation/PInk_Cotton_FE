@@ -5,7 +5,6 @@ import { useRef } from 'react';
 import { DarkFlowerIcon, DotIcon } from '@/components/server';
 
 import { InviteArticleProps } from './InviteArticle.type';
-import { ArticleBottomWave, ArticleTopWave } from './components';
 
 import { motion, useInView } from 'framer-motion';
 
@@ -17,8 +16,6 @@ const InviteArticle = ({ article }: InviteArticleProps) => {
   const { groom, bride } = article;
   return (
     <article className='w-full h-fit py-[16rem] px-[1.6rem] flex flex-col items-center gap-[4.5rem] relative overflow-hidden'>
-      <ArticleTopWave />
-
       <motion.span
         ref={ref}
         className='w-full flex flex-col text-pink_500 gap-[1rem] opacity-0'
@@ -69,8 +66,6 @@ const InviteArticle = ({ article }: InviteArticleProps) => {
           <p>{bride.name}</p>
         </span>
       </motion.span>
-
-      <ArticleBottomWave />
     </article>
   );
 };
