@@ -17,6 +17,7 @@ import {
   LayerIcon,
   NaverLogoIcon,
   Paint3DIcon,
+  SMSIcon,
   Send3DIcon,
   StarIcon,
   UserIcon,
@@ -179,5 +180,11 @@ export const DarkFlower: Story = {
 export const Call: Story = {
   args: {
     children: <CallIcon />,
+  },
+};
+
+export const SMS: Story = {
+  args: {
+    children: <SMSIcon />,
   },
 };
