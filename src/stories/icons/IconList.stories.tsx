@@ -1,6 +1,7 @@
 import {
   ArrowDownIcon,
   ArrowRightIcon,
+  CallIcon,
   CenterIcon,
   CheckIcon,
   Clock3DIcon,
@@ -172,5 +173,11 @@ export const Image: Story = {
 export const DarkFlower: Story = {
   args: {
     children: <DarkFlowerIcon />,
+  },
+};
+
+export const Call: Story = {
+  args: {
+    children: <CallIcon />,
   },
 };
