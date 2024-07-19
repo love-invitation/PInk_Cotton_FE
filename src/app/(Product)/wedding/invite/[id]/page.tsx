@@ -16,11 +16,6 @@ const InvitePage = async ({ params }: { params: { id: string } }) => {
     return null;
   }
 
-  /**
-   * TODO
-   *
-   * 개발 환경을 위한 shadow 추후 제거
-   */
   return (
     <HydrationBoundary state={dehydrate(queryClient)}>
       <section className='w-full h-full flex justify-center bg-gray_900'>
