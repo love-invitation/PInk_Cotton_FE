@@ -20,3 +20,4 @@ export { default as ImageIcon } from './ImageIcon/ImageIcon';
 export { default as SpinnerIcon } from './SpinnerIcon/SpinnerIcon';
 export { default as DarkFlowerIcon } from './DarkFlowerIcon/DarkFlowerIcon';
 export { default as CallIcon } from './CallIcon/CallIcon';
+export { default as SMSIcon } from './SMSIcon/SMSIcon';
