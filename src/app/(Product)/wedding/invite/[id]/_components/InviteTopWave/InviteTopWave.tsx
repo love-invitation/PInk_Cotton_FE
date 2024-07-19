@@ -1,7 +1,8 @@
 import { twJoin } from 'tailwind-merge';
 
-const ArticleBottomWave = () => {
-  const waveStyle = 'w-[120rem] h-[120rem] bg-pink_500 absolute top-[96%] rounded-[40%] opacity-30';
+const InviteTopWave = () => {
+  const waveStyle =
+    'w-[120rem] h-[120rem] bg-pink_500 absolute bottom-[96%] rounded-[40%] opacity-30';
   return (
     <>
       <div className={twJoin(waveStyle, 'animate-wave1')} />
@@ -11,4 +12,4 @@ const ArticleBottomWave = () => {
   );
 };
 
-export default ArticleBottomWave;
+export default InviteTopWave;
