@@ -10,7 +10,7 @@ const ContactList = ({ type }: ContactListProps) => {
   return (
     <ul className='w-[40%] max-w-[16rem] flex flex-col gap-[6rem]'>
       <li className='w-full flex flex-col gap-[2rem]'>
-        <p className='w-full text-size20 text-nowrap text-center font-semiBold'>
+        <p className='w-full text-size20 text-nowrap text-center font-bold'>
           {`${typeName}에게 연락하기`}
         </p>
 
