@@ -51,8 +51,8 @@ export interface InvitationContactItem {
 
 export interface InvitationContact {
   priority: number;
-  groomContactInfo: InvitationContactItem[];
-  brideContactInfo: InvitationContactItem[];
+  groom: InvitationContactItem[];
+  bride: InvitationContactItem[];
 }
 
 /** Transport */
