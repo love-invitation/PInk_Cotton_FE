@@ -1,11 +1,21 @@
+import { useMemo } from 'react';
+
 import ContactAnchorBox from '../ContactAnchorBox/ContactAnchorBox';
 import ContactItem from '../ContactItem/ContactItem';
 import { ContactListProps } from './ContactList.type';
 
-const ContactList = ({ type }: ContactListProps) => {
+const ContactList = ({ type, data }: ContactListProps) => {
   const typeName = type === 'bride' ? '신부' : '산렁';
 
-  const TEST_LIST = ['123', '456'];
+  const mainData = useMemo(
+    () => data.find(({ relation }) => relation === typeName) || { phoneNumber: 'no have number' },
+    [data, typeName],
+  );
+
+  const otherList = useMemo(
+    () => data.filter(({ relation }) => relation !== typeName),
+    [data, typeName],
+  );
 
   return (
     <ul className='w-[40%] max-w-[16rem] flex flex-col gap-[6rem]'>
@@ -14,13 +24,21 @@ const ContactList = ({ type }: ContactListProps) => {
           {`${typeName}에게 연락하기`}
         </p>
 
-        <ContactAnchorBox labelName={typeName} />
+        <ContactAnchorBox
+          labelName={typeName}
+          phoneNumber={mainData.phoneNumber}
+        />
       </li>
 
-      <p className='w-full text-size16 text-gray_400 text-center'>{`${typeName} 측 혼주`}</p>
+      {otherList.length !== 0 && (
+        <p className='w-full text-size16 text-gray_400 text-center'>{`${typeName} 측 혼주`}</p>
+      )}
 
-      {TEST_LIST.map((item) => (
-        <ContactItem key={item} />
+      {otherList.map((other) => (
+        <ContactItem
+          key={other.relation}
+          otherData={other}
+        />
       ))}
     </ul>
   );
