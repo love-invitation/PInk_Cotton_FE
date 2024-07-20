@@ -7,7 +7,7 @@ const TemplateInfo = ({ width, brideName, groomName, details }: TemplateInfoProp
       style={{ gap: `${width * 0.02}px` }}
     >
       <span
-        className='w-full flex items-center justify-center tracking-widest px-[2rem]'
+        className='w-full flex items-center justify-center tracking-widest px-[2rem] font-bold'
         style={{
           gap: `${width * 0.016}px`,
           fontSize: `${width * 0.0702}px`,
