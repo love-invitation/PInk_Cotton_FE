@@ -77,7 +77,7 @@ export const postInvitation = async ({
     new Blob([JSON.stringify(invitationDto)], { type: 'application/json' }),
   );
 
-  const response = await fetchApi('/product/invitation/create', {
+  const response = await fetchApi('/api/v1/products/invitations', {
     method: 'POST',
     body: formData,
     credentials: 'include',
