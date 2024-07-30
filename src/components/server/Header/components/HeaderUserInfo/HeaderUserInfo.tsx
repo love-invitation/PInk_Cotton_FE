@@ -1,23 +1,28 @@
+'use client';
+
 import Link from 'next/link';
 
 import { Button } from '@/components/client';
 import { UserIcon } from '@/components/server/icons';
+import { MUTATE_OPTIONS, QUERY_OPTIONS } from '@/constants';
+import { useMutation, useQuery } from '@tanstack/react-query';
 
 import tailwindConfig from '../../../../../../tailwind.config';
 
 import resolveConfig from 'tailwindcss/resolveConfig';
 
 const HeaderUserInfo = () => {
+  const { data, isError, isFetched } = useQuery(QUERY_OPTIONS.AUTH_USER());
+  const { mutate } = useMutation(MUTATE_OPTIONS.LOGOUT());
   const { theme } = resolveConfig(tailwindConfig);
-
-  // TODO
-  // 추후 로그인 기능 제작시 store값으로 변경
-  const isLogin = false;
+  const isLogin = !isError && data?.result;
+  const commonStyles = 'underline text-pink_500 text-size16 font-semiBold';
 
   return (
     <div className='w-[11rem] h-[2.4rem] mr-[4%] flex items-center justify-center'>
       {isLogin && (
         <Button
+          disabled={isFetched}
           backgroundColor='naked'
           fontSize='1.8rem'
           fontWeight='regular'
@@ -31,14 +36,23 @@ const HeaderUserInfo = () => {
           <span className='hidden header_min:block'>마이페이지</span>
         </Button>
       )}
-      {!isLogin && (
+      {!isLogin ? (
         <Link
-          className='underline text-pink_500 text-size16 font-semiBold'
+          className={commonStyles}
           href='/login'
           scroll={false}
         >
           로그인
         </Link>
+      ) : (
+        <button
+          className={commonStyles}
+          type='button'
+          onClick={() => mutate()}
+          disabled={isFetched}
+        >
+          로그아웃
+        </button>
       )}
     </div>
   );
