@@ -2,9 +2,11 @@ import { cache } from 'react';
 
 import {
   getAllWeddingTemplates,
+  getAuthUser,
   getBestWeddingTemplates,
   getInvitation,
   getWeddingTemplate,
+  logoutAuth,
   postInvitation,
 } from '@/services/server';
 import { QueryClient } from '@tanstack/react-query';
@@ -18,6 +20,7 @@ export const QUERY_KEYS = {
   ALL_WEDDING_TEMPLATES: ['all', 'invitations'],
   WEDDING_TEMPLATE: (templateId: number | string) => ['invitation', 'template', templateId],
   INVITATION: (produceId: number | string) => ['invitation', 'produce', produceId],
+  AUTH_USER: ['auth'],
 };
 
 export const QUERY_OPTIONS = {
@@ -48,11 +51,27 @@ export const QUERY_OPTIONS = {
     gcTime: 1000 * 60 * 60 * 24,
     staleTime: 1000 * 60 * 60 * 24,
   }),
+
+  AUTH_USER: () => ({
+    queryKey: QUERY_KEYS.AUTH_USER,
+    queryFn: () => getAuthUser(),
+    gcTime: Infinity,
+    staleTime: Infinity,
+  }),
 };
 
 export const MUTATE_OPTIONS = {
   INVITATION: () => ({
     mutationFn: ({ id, invitationInfo }: { id: number; invitationInfo: InvitationInput }) =>
       postInvitation({ id, invitationInfo }),
+  }),
+
+  LOGOUT: () => ({
+    mutationFn: () => logoutAuth(),
+    onSettled: () => {
+      getQueryClient().invalidateQueries({
+        queryKey: QUERY_KEYS.AUTH_USER,
+      });
+    },
   }),
 };
