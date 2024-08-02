@@ -104,12 +104,6 @@ export interface InvitationResponse {
     cover: InvitationCover;
     place: InvitationWeddingPlace;
 
-    weddingDate: {
-      priority: number;
-      date: string;
-      dateType: string;
-    };
-
     article: InvitationArticle;
 
     contact: InvitationContact;
