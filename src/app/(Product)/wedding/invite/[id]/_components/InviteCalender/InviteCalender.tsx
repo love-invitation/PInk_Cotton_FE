@@ -2,6 +2,7 @@
 
 import { useMemo, useRef } from 'react';
 
+import { INVITE_ANIMATION } from '../../Invite.constants';
 import { InviteCalenderProps } from './InviteCalender.type';
 
 import { motion, useInView } from 'framer-motion';
@@ -19,16 +20,6 @@ const CONVERT_DAY: { [key: number]: string } = {
 const InviteCalender = ({ calenderData }: InviteCalenderProps) => {
   const ref = useRef(null);
   const inView = useInView(ref);
-
-  const initAni = {
-    bottom: '2.4rem',
-    opacity: 0,
-  };
-
-  const animate = {
-    bottom: '0',
-    opacity: 1,
-  };
 
   const date = useMemo(() => {
     const newDate = new Date(calenderData);
@@ -57,8 +48,8 @@ const InviteCalender = ({ calenderData }: InviteCalenderProps) => {
         <>
           <motion.h2
             className='w-full relative flex justify-center text-size16 text-pink_500 tracking-[0.4rem] text-center'
-            initial={initAni}
-            animate={animate}
+            initial={INVITE_ANIMATION.INIT}
+            animate={INVITE_ANIMATION.ANIMATE}
             transition={{ duration: 1 }}
           >
             WEDDING DAY
@@ -66,8 +57,8 @@ const InviteCalender = ({ calenderData }: InviteCalenderProps) => {
 
           <motion.span
             className='w-full relative flex flex-col gap-[1.2rem] items-center text-size20'
-            initial={initAni}
-            animate={animate}
+            initial={INVITE_ANIMATION.INIT}
+            animate={INVITE_ANIMATION.ANIMATE}
             transition={{ duration: 1, delay: 0.3 }}
           >
             <p>{`${date.year}.${date.month}.${date.day}`}</p>
