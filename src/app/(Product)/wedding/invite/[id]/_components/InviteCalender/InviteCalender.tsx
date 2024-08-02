@@ -1,10 +1,22 @@
 'use client';
 
-import { useRef } from 'react';
+import { useMemo, useRef } from 'react';
+
+import { InviteCalenderProps } from './InviteCalender.type';
 
 import { motion, useInView } from 'framer-motion';
 
-const InviteCalender = () => {
+const CONVERT_DAY: { [key: number]: string } = {
+  0: '일요일',
+  1: '월요일',
+  2: '화요일',
+  3: '수요일',
+  4: '목요일',
+  5: '금요일',
+  6: '토요일',
+};
+
+const InviteCalender = ({ calenderData }: InviteCalenderProps) => {
   const ref = useRef(null);
   const inView = useInView(ref);
 
@@ -17,6 +29,24 @@ const InviteCalender = () => {
     bottom: '0',
     opacity: 1,
   };
+
+  const date = useMemo(() => {
+    const newDate = new Date(calenderData);
+
+    const hours = newDate.getHours();
+    const period = hours >= 12 ? '오후' : '오전';
+    const convertHours = hours % 12 || 12;
+
+    return {
+      year: newDate.getFullYear(),
+      month: (newDate.getMonth() + 1).toString().padStart(2, '0'),
+      day: newDate.getDate().toString().padStart(2, '0'),
+      week: newDate.getDay(),
+      period,
+      hours: convertHours.toString().toString().padStart(2, '0'),
+      minute: newDate.getMinutes().toString().padStart(2, '0'),
+    };
+  }, [calenderData]);
 
   return (
     <article
@@ -40,8 +70,8 @@ const InviteCalender = () => {
             animate={animate}
             transition={{ duration: 1, delay: 0.3 }}
           >
-            <p>2024.04.24</p>
-            <p className='text-size18'>토요일 오후 1시 30분</p>
+            <p>{`${date.year}.${date.month}.${date.day}`}</p>
+            <p className='text-size18'>{`${CONVERT_DAY[date.week]} ${date.period} ${date.hours}시 ${date.minute}분`}</p>
           </motion.span>
         </>
       )}
