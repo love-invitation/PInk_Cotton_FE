@@ -102,7 +102,7 @@ export interface InvitationResponse {
     isPaid: boolean;
 
     cover: InvitationCover;
-    weddingPlace: InvitationWeddingPlace;
+    place: InvitationWeddingPlace;
 
     weddingDate: {
       priority: number;
