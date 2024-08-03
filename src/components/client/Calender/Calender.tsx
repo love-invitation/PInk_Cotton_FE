@@ -17,9 +17,9 @@ const Calender = ({ month, week, date }: CalenderProps) => {
         gridTemplateColumns: 'repeat(7, 1fr)',
       }}
     >
-      {WEEK_LIST.map((dayName, index) => (
+      {WEEK_LIST.map(({ day, key }, index) => (
         <li
-          key={dayName}
+          key={key}
           className='w-full min-w-[3rem] mb-[1.4rem] flex items-center justify-center h-[4rem]'
         >
           <p
@@ -28,7 +28,7 @@ const Calender = ({ month, week, date }: CalenderProps) => {
               index === 0 && 'text-pink_500',
             )}
           >
-            {dayName}
+            {day}
           </p>
         </li>
       ))}
