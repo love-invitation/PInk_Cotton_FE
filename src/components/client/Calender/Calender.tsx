@@ -41,13 +41,7 @@ const Calender = ({ month, week, date }: CalenderProps) => {
   );
 
   return (
-    <ul
-      className='w-full p-[0.6rem] flex gap-[0.4rem] select-none'
-      style={{
-        display: 'grid',
-        gridTemplateColumns: 'repeat(7, 1fr)',
-      }}
-    >
+    <ul className='w-full p-[0.6rem] grid grid-cols-calender gap-[0.4rem] select-none'>
       {WEEK_LIST.map(({ day, key }, index) => (
         <li
           key={key}
