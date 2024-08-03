@@ -44,7 +44,7 @@ const InviteCalender = ({ calenderData }: InviteCalenderProps) => {
   return (
     <article
       ref={ref}
-      className='w-full flex flex-col items-center gap-[6rem] py-[12rem]'
+      className='w-full flex flex-col items-center gap-[4rem] py-[10rem]'
     >
       {inView && (
         <>
@@ -71,7 +71,7 @@ const InviteCalender = ({ calenderData }: InviteCalenderProps) => {
             initial={INVITE_ANIMATION.INIT}
             animate={INVITE_ANIMATION.ANIMATE}
             transition={{ duration: 1, delay: 0.6 }}
-            className='w-[90%] relative h-[0.3rem] bg-gray_700'
+            className='w-[90%] relative h-[0.3rem] bg-gray_900 brightness-[103%]'
           />
 
           <motion.div
@@ -91,7 +91,7 @@ const InviteCalender = ({ calenderData }: InviteCalenderProps) => {
             initial={INVITE_ANIMATION.INIT}
             animate={INVITE_ANIMATION.ANIMATE}
             transition={{ duration: 1, delay: 1.2 }}
-            className='w-[90%] relative h-[0.3rem] bg-gray_700'
+            className='w-[90%] relative h-[0.3rem] bg-gray_900 brightness-[103%]'
           />
         </>
       )}
