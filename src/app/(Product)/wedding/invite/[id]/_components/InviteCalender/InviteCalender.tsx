@@ -2,6 +2,8 @@
 
 import { useMemo, useRef } from 'react';
 
+import { Calender } from '@/components/client';
+
 import { INVITE_ANIMATION } from '../../Invite.constants';
 import { InviteCalenderProps } from './InviteCalender.type';
 
@@ -71,6 +73,19 @@ const InviteCalender = ({ calenderData }: InviteCalenderProps) => {
             transition={{ duration: 1, delay: 0.6 }}
             className='w-[90%] relative h-[0.3rem] bg-gray_700'
           />
+
+          <motion.div
+            initial={INVITE_ANIMATION.INIT}
+            animate={INVITE_ANIMATION.ANIMATE}
+            transition={{ duration: 1, delay: 0.9 }}
+            className='w-full relative'
+          >
+            <Calender
+              month={Number(date.month)}
+              date={Number(date.day)}
+              week={date.week}
+            />
+          </motion.div>
 
           <motion.hr
             initial={INVITE_ANIMATION.INIT}

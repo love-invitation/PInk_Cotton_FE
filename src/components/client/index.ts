@@ -10,3 +10,4 @@ export { default as UploadImage } from './UploadImage/UploadImageWrapper/UploadI
 export { default as TextEditor } from './TextEditor/TextEditor';
 export { default as Dropdown } from './Dropdown/DropdownWrapper/DropdownWrapper';
 export { default as WeddingTemplates } from './WeddingTemplates/WeddingTemplates';
+export { default as Calender } from './Calender/Calender';
