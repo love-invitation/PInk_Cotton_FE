@@ -42,7 +42,7 @@ const InviteCalender = ({ calenderData }: InviteCalenderProps) => {
   return (
     <article
       ref={ref}
-      className='w-full flex flex-col gap-[6rem] py-[12rem]'
+      className='w-full flex flex-col items-center gap-[6rem] py-[12rem]'
     >
       {inView && (
         <>
@@ -64,6 +64,20 @@ const InviteCalender = ({ calenderData }: InviteCalenderProps) => {
             <p>{`${date.year}.${date.month}.${date.day}`}</p>
             <p className='text-size18'>{`${CONVERT_DAY[date.week]} ${date.period} ${date.hours}시 ${date.minute}분`}</p>
           </motion.span>
+
+          <motion.hr
+            initial={INVITE_ANIMATION.INIT}
+            animate={INVITE_ANIMATION.ANIMATE}
+            transition={{ duration: 1, delay: 0.6 }}
+            className='w-[90%] relative h-[0.3rem] bg-gray_700'
+          />
+
+          <motion.hr
+            initial={INVITE_ANIMATION.INIT}
+            animate={INVITE_ANIMATION.ANIMATE}
+            transition={{ duration: 1, delay: 1.2 }}
+            className='w-[90%] relative h-[0.3rem] bg-gray_700'
+          />
         </>
       )}
     </article>
