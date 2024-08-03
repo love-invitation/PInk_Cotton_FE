@@ -13,4 +13,12 @@ export const MONTHLY_DATE_LIST: { [key: number]: number } = {
   12: 31,
 };
 
-export const WEEK_LIST = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
+export const WEEK_LIST = [
+  { day: 'S', key: 'Sunday' },
+  { day: 'M', key: 'Monday' },
+  { day: 'T', key: 'Tuesday' },
+  { day: 'W', key: 'Wednesday' },
+  { day: 'T', key: 'Thursday' },
+  { day: 'F', key: 'Friday' },
+  { day: 'S', key: 'Saturday' },
+];
