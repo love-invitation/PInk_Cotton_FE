@@ -44,7 +44,7 @@ const InviteCalender = ({ calenderData }: InviteCalenderProps) => {
   return (
     <article
       ref={ref}
-      className='w-full flex flex-col items-center gap-[4rem] py-[10rem]'
+      className='w-full flex flex-col items-center gap-[4rem] py-[10rem] select-none'
     >
       {inView && (
         <>
