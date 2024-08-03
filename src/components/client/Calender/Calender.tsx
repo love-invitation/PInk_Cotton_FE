@@ -1,6 +1,8 @@
 'use client';
 
-import { WEEK_LIST } from './Calender.constants';
+import { useCallback } from 'react';
+
+import { HOLIDAY_2024_LIST, WEEK_LIST } from './Calender.constants';
 import { CalenderProps } from './Calender.type';
 import { useDateList } from './hooks';
 
@@ -8,6 +10,35 @@ import { twJoin } from 'tailwind-merge';
 
 const Calender = ({ month, week, date }: CalenderProps) => {
   const list = useDateList({ month, week });
+
+  const dateStyle = useCallback(
+    ({
+      currentDate,
+      currentMonth,
+      index,
+    }: {
+      currentMonth: number;
+      currentDate: number;
+      index: number;
+    }) => {
+      if (currentMonth !== month) {
+        return 'text-gray_600';
+      }
+
+      if (currentDate === date) {
+        return 'text-white rounded-[50%] bg-pink_300 font-bold';
+      }
+
+      if (index % 7 === 0) {
+        return 'text-pink_500';
+      }
+
+      if (!!HOLIDAY_2024_LIST[currentMonth] && !!HOLIDAY_2024_LIST[currentMonth][currentDate]) {
+        return 'text-pink_500';
+      }
+    },
+    [month, date],
+  );
 
   return (
     <ul
@@ -41,11 +72,7 @@ const Calender = ({ month, week, date }: CalenderProps) => {
           <p
             className={twJoin(
               'flex items-center justify-center w-[3rem] h-[3rem] text-size18',
-              itemMonth !== month && 'text-gray_600',
-              itemMonth === month &&
-                itemDate === date &&
-                'text-white rounded-[50%] bg-pink_300 font-bold',
-              index % 7 === 0 && itemMonth === month && itemDate !== date && 'text-pink_500',
+              dateStyle({ currentMonth: itemMonth, currentDate: itemDate, index }),
             )}
           >
             {itemDate}
