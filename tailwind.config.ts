@@ -118,6 +118,7 @@ const config = {
 
       gridTemplateColumns: {
         'auto-fill-minmax': 'repeat(auto-fill, minmax(20rem, 1fr))',
+        calender: 'repeat(7, 1fr)',
       },
       gridAutoRows: {
         auto: 'minmax(auto, auto)',
