@@ -21,7 +21,7 @@ const CONVERT_DAY: { [key: number]: string } = {
 
 const InviteCalender = ({ calenderData }: InviteCalenderProps) => {
   const ref = useRef(null);
-  const inView = useInView(ref);
+  const inView = useInView(ref, { once: true });
 
   const date = useMemo(() => {
     const newDate = new Date(calenderData);
