@@ -41,9 +41,9 @@ const Calender = ({ month, week, date }: CalenderProps) => {
   );
 
   return (
-    <ul className='w-full p-[0.6rem] grid grid-cols-calender gap-[0.4rem] select-none'>
+    <table className='w-full p-[0.6rem] grid grid-cols-calender gap-[0.4rem] select-none'>
       {WEEK_LIST.map(({ day, key }, index) => (
-        <li
+        <th
           key={key}
           className='w-full min-w-[3rem] mb-[1.4rem] flex items-center justify-center h-[4rem]'
         >
@@ -55,11 +55,11 @@ const Calender = ({ month, week, date }: CalenderProps) => {
           >
             {day}
           </p>
-        </li>
+        </th>
       ))}
 
       {list.map(({ month: itemMonth, date: itemDate }, index) => (
-        <li
+        <td
           key={`${itemMonth}${itemDate}`}
           className='w-full min-w-[3rem] flex items-center justify-center h-[4rem]'
         >
@@ -71,9 +71,9 @@ const Calender = ({ month, week, date }: CalenderProps) => {
           >
             {itemDate}
           </p>
-        </li>
+        </td>
       ))}
-    </ul>
+    </table>
   );
 };
 
