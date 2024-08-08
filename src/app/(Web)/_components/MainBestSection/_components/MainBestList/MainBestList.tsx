@@ -26,7 +26,7 @@ const MainBestList = ({ invitation, bride, groom, detail }: MainBestListProps) =
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 1, delay: index * 0.5 }}
-              key={templateName}
+              key={id}
             >
               <InvitationItem
                 name={templateName}
