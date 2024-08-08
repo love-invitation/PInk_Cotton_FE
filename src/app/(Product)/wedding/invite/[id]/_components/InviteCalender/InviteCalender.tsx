@@ -1,12 +1,13 @@
 'use client';
 
-import { useMemo, useRef } from 'react';
+import { useRef } from 'react';
 
 import { Calender } from '@/components/client';
 
 import { INVITE_ANIMATION } from '../../Invite.constants';
 import { INVITE_STYLE } from '../../Invite.style';
 import { InviteCalenderProps } from './InviteCalender.type';
+import { useConvertInviteDate } from './hooks';
 
 import { motion, useInView } from 'framer-motion';
 
@@ -21,26 +22,10 @@ const CONVERT_DAY: { [key: number]: string } = {
 };
 
 const InviteCalender = ({ calenderData }: InviteCalenderProps) => {
+  const date = useConvertInviteDate({ calenderData });
+
   const ref = useRef(null);
   const inView = useInView(ref, { once: true });
-
-  const date = useMemo(() => {
-    const newDate = new Date(calenderData);
-
-    const hours = newDate.getHours();
-    const period = hours >= 12 ? '오후' : '오전';
-    const convertHours = hours % 12 || 12;
-
-    return {
-      year: newDate.getFullYear(),
-      month: (newDate.getMonth() + 1).toString().padStart(2, '0'),
-      day: newDate.getDate().toString().padStart(2, '0'),
-      week: newDate.getDay(),
-      period,
-      hours: convertHours.toString().toString().padStart(2, '0'),
-      minute: newDate.getMinutes().toString().padStart(2, '0'),
-    };
-  }, [calenderData]);
 
   return (
     <article
