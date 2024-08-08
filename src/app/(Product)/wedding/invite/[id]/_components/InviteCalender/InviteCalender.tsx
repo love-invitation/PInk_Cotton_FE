@@ -5,6 +5,7 @@ import { useMemo, useRef } from 'react';
 import { Calender } from '@/components/client';
 
 import { INVITE_ANIMATION } from '../../Invite.constants';
+import { INVITE_STYLE } from '../../Invite.style';
 import { InviteCalenderProps } from './InviteCalender.type';
 
 import { motion, useInView } from 'framer-motion';
@@ -49,7 +50,7 @@ const InviteCalender = ({ calenderData }: InviteCalenderProps) => {
       {inView && (
         <>
           <motion.h2
-            className='w-full relative flex justify-center text-size16 text-pink_500 tracking-[0.4rem] text-center'
+            className={INVITE_STYLE.TITLE}
             initial={INVITE_ANIMATION.INIT}
             animate={INVITE_ANIMATION.ANIMATE}
             transition={{ duration: 1 }}
