@@ -3,6 +3,7 @@
 import { useRef } from 'react';
 
 import { INVITE_ANIMATION } from '../../Invite.constants';
+import { INVITE_STYLE } from '../../Invite.style';
 import { InviteArticleProps } from './InviteArticle.type';
 import { ArticleGroomBrideInfo } from './components';
 
@@ -23,9 +24,7 @@ const InviteArticle = ({ article }: InviteArticleProps) => {
         animate={inView ? INVITE_ANIMATION.ANIMATE : {}}
         transition={{ duration: 1.5 }}
       >
-        <h2 className='w-full flex justify-center text-size16 tracking-[0.4rem] text-center'>
-          INVITATION
-        </h2>
+        <h2 className={INVITE_STYLE.TITLE}>INVITATION</h2>
         <h1 className='w-full flex justify-center text-size22 break-keep text-center'>
           {article.title}
         </h1>
