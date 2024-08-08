@@ -4,7 +4,13 @@ import { QUERY_KEYS, QUERY_OPTIONS, getQueryClient } from '@/constants';
 import { InvitationResponse } from '@/types/response';
 import { HydrationBoundary, dehydrate } from '@tanstack/react-query';
 
-import { InviteArticle, InviteCalender, InviteContact, InviteCover } from './_components';
+import {
+  InviteArticle,
+  InviteCalender,
+  InviteContact,
+  InviteCover,
+  InviteGallery,
+} from './_components';
 
 // 600246308994180233 ID key 값
 
@@ -34,6 +40,7 @@ const InvitePage = async ({ params }: { params: { id: string } }) => {
           <InviteArticle article={data.result.article} />
           <InviteContact contactData={data.result.contact} />
           <InviteCalender calenderData={data.result.cover.weddingDate} />
+          <InviteGallery />
         </div>
       </section>
     </HydrationBoundary>
