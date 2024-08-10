@@ -8,6 +8,7 @@ import { InviteArticleProps } from './InviteArticle.type';
 import { ArticleGroomBrideInfo } from './components';
 
 import { motion, useInView } from 'framer-motion';
+import { twJoin } from 'tailwind-merge';
 
 const InviteArticle = ({ article }: InviteArticleProps) => {
   const ref = useRef(null);
@@ -16,7 +17,7 @@ const InviteArticle = ({ article }: InviteArticleProps) => {
   const contentReplaced = article.contents.replace(/\\n | \n/g, '\n');
   const { groom, bride } = article;
   return (
-    <article className='w-full h-fit py-[16rem] px-[1.6rem] flex flex-col items-center gap-[4.5rem] relative overflow-hidden'>
+    <article className={twJoin(INVITE_STYLE.LAYOUT, 'px-[1.6rem] gap-[4.5rem]')}>
       <motion.span
         ref={ref}
         className='w-full relative flex flex-col text-pink_500 gap-[1rem] opacity-0'

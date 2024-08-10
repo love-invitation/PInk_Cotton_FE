@@ -11,6 +11,7 @@ import { InviteCalenderProps } from './InviteCalender.type';
 import { useConvertInviteDate } from './hooks';
 
 import { motion, useInView } from 'framer-motion';
+import { twJoin } from 'tailwind-merge';
 
 const InviteCalender = ({ calenderData }: InviteCalenderProps) => {
   const date = useConvertInviteDate({ calenderData });
@@ -21,7 +22,7 @@ const InviteCalender = ({ calenderData }: InviteCalenderProps) => {
   return (
     <article
       ref={ref}
-      className='w-full flex flex-col items-center gap-[4rem] py-[10rem] select-none'
+      className={twJoin(INVITE_STYLE.LAYOUT, 'items-center gap-[4rem]')}
     >
       {inView && (
         <>
