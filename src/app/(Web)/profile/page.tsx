@@ -1,5 +1,11 @@
+import ProfileBanner from './components/ProfileBanner/ProfileBanner';
+
 const ProfilePage = () => {
-  return <div>Profile Page</div>;
+  return (
+    <div>
+      <ProfileBanner />
+    </div>
+  );
 };
 
 export default ProfilePage;
