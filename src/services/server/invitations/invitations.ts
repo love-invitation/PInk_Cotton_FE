@@ -1,6 +1,18 @@
 import { fetchApi } from '@/api';
 import { InvitationInput } from '@/constants';
 
+export const getMyInvitation = async () => {
+  const response = await fetchApi(`/api/v1/orders`, {
+    credentials: 'include',
+  });
+
+  if (!response.ok) {
+    throw new Error(`HTTP error! status: ${response.status}`);
+  }
+
+  return response.json();
+};
+
 export const getInvitation = async (produceId: number | string) => {
   const response = await fetchApi(`/api/v1/products/invitations/${produceId}`, {
     next: { revalidate: 1000 * 60 * 60 * 24 },

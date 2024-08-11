@@ -5,6 +5,7 @@ import {
   getAuthUser,
   getBestWeddingTemplates,
   getInvitation,
+  getMyInvitation,
   getWeddingTemplate,
   logoutAuth,
   postInvitation,
@@ -21,6 +22,7 @@ export const QUERY_KEYS = {
   WEDDING_TEMPLATE: (templateId: number | string) => ['invitation', 'template', templateId],
   INVITATION: (produceId: number | string) => ['invitation', 'produce', produceId],
   AUTH_USER: ['auth'],
+  MY_INVITATIONS: ['my', 'invitations'],
 };
 
 export const QUERY_OPTIONS = {
@@ -57,6 +59,12 @@ export const QUERY_OPTIONS = {
     queryFn: () => getAuthUser(),
     gcTime: Infinity,
     staleTime: Infinity,
+  }),
+
+  MY_INVITATIONS: () => ({
+    queryKey: QUERY_KEYS.MY_INVITATIONS,
+    queryFn: () => getMyInvitation(),
+    suspense: true,
   }),
 };
 

@@ -98,7 +98,7 @@ export interface InvitationResponse {
   status: number;
   message: string;
   result: {
-    tsid: number;
+    tsid: bigint;
     isPaid: boolean;
 
     cover: InvitationCover;
