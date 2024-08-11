@@ -3,7 +3,7 @@ import { useFormContext } from 'react-hook-form';
 import { Accordion, Input, UploadImage } from '@/components/client';
 import { INVITATION_FORM, InvitationInput } from '@/constants';
 
-import { useImageFormError } from '../../_hooks';
+import { useImageFormError } from '../../hooks';
 
 import { twJoin } from 'tailwind-merge';
 

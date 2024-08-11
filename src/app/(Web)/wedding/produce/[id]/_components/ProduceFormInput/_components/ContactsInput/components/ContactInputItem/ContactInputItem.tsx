@@ -5,7 +5,7 @@ import { Button, Input } from '@/components/client';
 import { CloseIcon } from '@/components/server';
 import { INVITATION_FORM, InvitationInput } from '@/constants';
 
-import { useInputPhoneNumber } from '../../_hooks';
+import { useInputPhoneNumber } from '../../hooks';
 import { ContactInputItemProps } from './ContactInputItem.type';
 
 import resolveConfig from 'tailwindcss/resolveConfig';
