@@ -6,9 +6,10 @@ const DOMAIN_URL = {
   PROFILE: '/profile',
   LOGIN: '/login',
   WEDDING_INVITATIONS: '/wedding/invitations',
-  WEDDING_PRODUCE: '/wedding/invitations/produce',
-  WEDDING_EDIT: (id: string | number | bigint) => `/wedding/invitations/edit/${id}`,
-  WEDDING_PREVIEW: (id: string | number | bigint) => `/wedding/preview/${id}`,
+  WEDDING_INVITATION: (id: string | number | bigint) => `/wedding/invitations/${id}`,
+  WEDDING_PRODUCE: (id: string | number | bigint) => `/wedding/produce/${id}`,
+  WEDDING_EDIT: (id: string | number | bigint) => `/wedding/edit/${id}`,
+  WEDDING_PREVIEW: (id: string | number | bigint) => `/wedding/invite/${id}`,
   WEDDING_INVITE: (id: string | number) => `/wedding/invite/${id}`,
 };
 
