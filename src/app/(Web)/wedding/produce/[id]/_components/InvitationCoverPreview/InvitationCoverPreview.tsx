@@ -4,7 +4,7 @@ import { Button } from '@/components/client';
 import { ImageIcon } from '@/components/server';
 import { useModal } from '@/hooks';
 
-import { PreviewModal } from './components';
+import { PreviewModal } from './_components';
 
 const InvitationCoverPreview = () => {
   const { isShowModal, closeModal, showModal } = useModal();

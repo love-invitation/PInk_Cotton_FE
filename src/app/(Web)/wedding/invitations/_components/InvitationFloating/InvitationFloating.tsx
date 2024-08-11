@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation';
 
 import { WeddingTemplates } from '@/components/client';
 import { TemplateLayout } from '@/components/server';
-import { QUERY_OPTIONS } from '@/constants';
+import { DOMAIN_URL, QUERY_OPTIONS } from '@/constants';
 import useClickAway from '@/hooks/useClickAway/useClickAway';
 import { WeddingTemplateResponse } from '@/types/response';
 import { useQuery } from '@tanstack/react-query';
@@ -37,7 +37,7 @@ const InvitationFloating = ({ id }: InvitationFloatingProps) => {
         />
       </TemplateLayout>
       <Link
-        href={`/wedding/invitations/produce/${id}`}
+        href={DOMAIN_URL.WEDDING_PRODUCE(id)}
         className='bg-pink_500 text-white_100 w-full py-[1rem] flex justify-center text-[1.6rem] border-solid	border-2 rounded-2xl'
       >
         제작하기
