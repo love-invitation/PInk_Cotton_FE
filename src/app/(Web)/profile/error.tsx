@@ -1,15 +1,12 @@
 'use client';
 
-const Error = ({ reset }: { reset: () => void }) => {
+import { Button } from '@/components/client';
+
+const Error = ({ error, resetErrorBoundary }: { error: Error; resetErrorBoundary: () => void }) => {
   return (
-    <div>
-      <h2>Something went wrong!</h2>
-      <button
-        type='button'
-        onClick={() => reset()}
-      >
-        Try again
-      </button>
+    <div className='flex flex-col justify-center items-center gap-[5rem]'>
+      <h2 className='text-[5rem]'>{error.toString()}</h2>
+      <Button onClick={() => resetErrorBoundary()}>Try again</Button>
     </div>
   );
 };

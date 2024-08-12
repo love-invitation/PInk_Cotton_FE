@@ -64,7 +64,6 @@ export const QUERY_OPTIONS = {
   MY_INVITATIONS: () => ({
     queryKey: QUERY_KEYS.MY_INVITATIONS,
     queryFn: () => getMyInvitation(),
-    suspense: true,
   }),
 };
 
