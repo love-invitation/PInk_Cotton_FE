@@ -1,3 +1,5 @@
+import { Fragment } from 'react';
+
 import { Accordion } from '@/components/client';
 import { Divider } from '@/components/server';
 
@@ -16,10 +18,9 @@ const MainQuestion = () => {
 
       <ul className='max-w-[40rem] laptop:max-w-full'>
         {MAIN_QUESTION_LIST.map(({ question, answer }) => (
-          <>
+          <Fragment key={question}>
             <Divider />
-
-            <li key={question}>
+            <li>
               <Accordion
                 type='main'
                 buttonTitle={question}
@@ -30,7 +31,7 @@ const MainQuestion = () => {
                 </p>
               </Accordion>
             </li>
-          </>
+          </Fragment>
         ))}
 
         <Divider />
