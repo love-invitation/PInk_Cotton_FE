@@ -2,6 +2,7 @@ import Image from 'next/image';
 
 import { INVITE_STYLE } from '../../Invite.style';
 import { InviteGalleryProps } from './InviteGallery.type';
+import { GalleryModal } from './components';
 
 import { twMerge } from 'tailwind-merge';
 
@@ -27,6 +28,8 @@ const InviteGallery = ({ galleryData }: InviteGalleryProps) => {
           </li>
         ))}
       </ul>
+
+      <GalleryModal />
     </article>
   );
 };
