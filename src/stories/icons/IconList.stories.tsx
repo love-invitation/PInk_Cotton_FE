@@ -1,6 +1,8 @@
 import {
   ArrowDownIcon,
   ArrowRightIcon,
+  BracketLeftIcon,
+  BracketRightIcon,
   CallIcon,
   CenterIcon,
   CheckIcon,
@@ -186,5 +188,17 @@ export const Call: Story = {
 export const SMS: Story = {
   args: {
     children: <SMSIcon />,
+  },
+};
+
+export const BracketLeft: Story = {
+  args: {
+    children: <BracketLeftIcon />,
+  },
+};
+
+export const BracketRight: Story = {
+  args: {
+    children: <BracketRightIcon />,
   },
 };
