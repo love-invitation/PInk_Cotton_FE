@@ -7,16 +7,10 @@ import { useRouter } from 'next/navigation';
 import tailwind from '@/../tailwind.config';
 import { ModalPortal } from '@/components/client/Modal';
 import { BracketLeftIcon, BracketRightIcon, Carousel, CloseIcon } from '@/components/server';
-import { InvitationGalleryItem } from '@/types/response';
+
+import { GalleryModalProps } from './GalleryModal.type';
 
 import resolveConfig from 'tailwindcss/resolveConfig';
-
-interface GalleryModalProps {
-  isShow: boolean;
-  onClose: () => void;
-  viewNumber: number;
-  galleryList: InvitationGalleryItem[];
-}
 
 const GalleryModal = ({ galleryList, viewNumber, isShow, onClose }: GalleryModalProps) => {
   const [viewIndex, setViewIndex] = useState(viewNumber);
