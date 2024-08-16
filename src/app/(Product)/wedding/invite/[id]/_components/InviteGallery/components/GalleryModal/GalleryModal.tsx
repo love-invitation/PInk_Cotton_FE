@@ -1,43 +1,25 @@
 'use client';
 
-import { useEffect, useMemo, useState } from 'react';
-
-import { useRouter } from 'next/navigation';
+import { useMemo } from 'react';
 
 import tailwind from '@/../tailwind.config';
 import { ModalPortal } from '@/components/client/Modal';
 import { BracketLeftIcon, BracketRightIcon, Carousel, CloseIcon } from '@/components/server';
 
 import { GalleryModalProps } from './GalleryModal.type';
+import { useGalleryMoving } from './hooks';
 
 import resolveConfig from 'tailwindcss/resolveConfig';
 
 const GalleryModal = ({ galleryList, viewNumber, isShow, onClose }: GalleryModalProps) => {
-  const [viewIndex, setViewIndex] = useState(viewNumber);
-  const route = useRouter();
-
   const list = useMemo(() => galleryList.map(({ imageUrl }) => imageUrl), [galleryList]);
+
+  const { handleClickNext, handleClickPrev } = useGalleryMoving({
+    viewNumber,
+    maxIndex: galleryList.length - 1,
+  });
+
   const { theme } = resolveConfig(tailwind);
-
-  const handleClickPrev = () => {
-    setViewIndex((index) => {
-      const nextIndex = index - 1 >= 0 ? index - 1 : 0;
-      return nextIndex;
-    });
-  };
-
-  const handleClickNext = () => {
-    const maxLength = galleryList.length - 1;
-
-    setViewIndex((index) => {
-      const nextIndex = index + 1 <= maxLength ? index + 1 : maxLength;
-      return nextIndex;
-    });
-  };
-
-  useEffect(() => {
-    route.push(`#photo_${viewIndex}`);
-  }, [viewIndex, route]);
 
   return (
     <ModalPortal isShow={isShow}>
