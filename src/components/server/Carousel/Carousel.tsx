@@ -6,7 +6,7 @@ import { twMerge } from 'tailwind-merge';
 const Carousel = ({ srcList, width = '100%', height = '100%', className = '' }: CarouselProps) => {
   return (
     <ul
-      className={twMerge('carousel bg-black', className)}
+      className={twMerge('carousel pointer-events-none select-none', className)}
       style={{ width, height }}
     >
       {srcList &&
