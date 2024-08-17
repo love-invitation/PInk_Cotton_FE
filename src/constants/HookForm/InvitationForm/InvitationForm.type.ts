@@ -1,3 +1,5 @@
+import { InvitationResponse } from '@/types/response';
+
 export interface ParentInput {
   name: string;
   deceased: boolean;
@@ -52,4 +54,11 @@ export interface InvitationInput {
   contacts: ContactsInput;
   accounts: AccountsInput;
   priority: { name: string; priority: number }[];
+}
+
+export interface InitialStateOption {
+  invitation: InvitationResponse;
+  coverImageFile: Blob;
+  thumbnailImageFile: Blob;
+  galleryImageFiles: Blob[];
 }

@@ -1,4 +1,4 @@
-import { InvitationInput } from './InvitationForm.type';
+import { InitialStateOption, InvitationInput } from './InvitationForm.type';
 
 const DEFAULT_VALUE = {
   cover: { image: null, contents: '' },
@@ -65,6 +65,66 @@ const INVITATION_FORM = {
   BASIC_OPTION: {
     defaultValues: DEFAULT_VALUE,
     mode: 'onSubmit' as const,
+  },
+  INITIAL_STATE_OPTION: ({
+    invitation,
+    coverImageFile,
+    thumbnailImageFile,
+    galleryImageFiles,
+  }: InitialStateOption) => {
+    const {
+      cover,
+      thumbnail,
+      article,
+      booking,
+      place,
+      transport,
+      guestbookCheck = false,
+      contact,
+      account,
+    } = invitation.result;
+    const [date, time] = booking.date.split(' ');
+
+    return {
+      defaultValues: {
+        cover: {
+          image: coverImageFile,
+          contents: cover.coverContents,
+        },
+        thumbnail: {
+          ...thumbnail,
+          image: thumbnailImageFile,
+        },
+        article: {
+          ...article,
+        },
+        booking: {
+          date,
+          time,
+          dateType: booking.dateType,
+        },
+        place: {
+          ...place,
+        },
+        transport: transport.transport,
+        gallery: galleryImageFiles,
+        groom: {
+          ...article.groom,
+        },
+        bride: {
+          ...article.bride,
+        },
+        guestbookCheck,
+        contacts: {
+          ...contact,
+        },
+        accounts: {
+          ...account,
+        },
+        priority: DEFAULT_VALUE.priority,
+      },
+      mode: 'onSubmit' as const,
+    };
   },
   DEFAULT_VALUE,
   REGISTER_OPTION: {
