@@ -4,6 +4,11 @@ export interface MyInvitationItem {
   lastModified: string;
   isPaid: boolean;
   tsid: bigint;
+  thumbnail: {
+    title: string;
+    contents: string;
+    imageUrl: string;
+  };
 }
 
 export interface MyInvitationsResponse {
