@@ -31,7 +31,8 @@
     "react-snowfall": "^2.1.0",
     "react-toastify": "^10.0.5",
     "tailwind-scrollbar-hide": "^1.1.7",
-    "tailwindcss-animated": "^1.0.1"
+    "tailwindcss-animated": "^1.0.1",
+    "uuid": "^10.0.0"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^1.2.26",
