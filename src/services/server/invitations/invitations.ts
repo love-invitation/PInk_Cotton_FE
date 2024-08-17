@@ -116,7 +116,7 @@ export const putInvitation = async ({
   id,
   invitationInfo,
 }: {
-  id: number;
+  id: bigint;
   invitationInfo: InvitationInput;
 }) => {
   const formData = new FormData();
@@ -149,7 +149,6 @@ export const putInvitation = async ({
   });
 
   const invitationDto = {
-    productInfoId: id,
     title: article.title,
     contents: article.contents,
     coverContents: cover.contents,
@@ -176,7 +175,7 @@ export const putInvitation = async ({
     new Blob([JSON.stringify(invitationDto)], { type: 'application/json' }),
   );
 
-  const response = await fetchApi('/api/v1/products/invitations', {
+  const response = await fetchApi(`/api/v1/products/invitations/${id}`, {
     method: 'PUT',
     body: formData,
     credentials: 'include',

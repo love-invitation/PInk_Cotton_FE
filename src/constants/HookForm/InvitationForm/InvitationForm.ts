@@ -44,8 +44,8 @@ const DEFAULT_VALUE = {
   },
   priority: [
     { name: 'article', priority: 1 },
-    { name: 'weddingDate', priority: 2 },
-    { name: 'weddingPlace', priority: 3 },
+    { name: 'booking', priority: 2 },
+    { name: 'place', priority: 3 },
     { name: 'transport', priority: 4 },
     { name: 'gallery', priority: 5 },
     { name: 'contact', priority: 6 },
@@ -56,8 +56,8 @@ const DEFAULT_VALUE = {
 
 const LIMIT = {
   NAME: 10,
-  COVER_CONTENTS: 20,
-  RELATION: 5,
+  COVER_CONTENTS: 60,
+  RELATION: 10,
   PHONE_NUMBER: 11,
 };
 
@@ -95,32 +95,20 @@ const INVITATION_FORM = {
           ...thumbnail,
           image: thumbnailImageFile,
         },
-        article: {
-          ...article,
-        },
+        article,
         booking: {
           date,
           time,
           dateType: booking.dateType,
         },
-        place: {
-          ...place,
-        },
+        place,
         transport: transport.transport,
         gallery: galleryImageFiles,
-        groom: {
-          ...article.groom,
-        },
-        bride: {
-          ...article.bride,
-        },
+        groom: article.groom,
+        bride: article.bride,
         guestbookCheck,
-        contacts: {
-          ...contact,
-        },
-        accounts: {
-          ...account,
-        },
+        contacts: contact,
+        accounts: account,
         priority: DEFAULT_VALUE.priority,
       },
       mode: 'onSubmit' as const,
