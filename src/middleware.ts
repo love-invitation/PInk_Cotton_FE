@@ -9,7 +9,11 @@ export const middleware = async (request: NextRequest) => {
     return NextResponse.redirect(new URL('/', request.url));
   }
 
-  if (pathname.startsWith('/wedding/invitations/produce') && !accessToken) {
+  if (pathname.startsWith('/wedding/produce') && !accessToken) {
+    return NextResponse.redirect(new URL('/login', request.url));
+  }
+
+  if (pathname.startsWith('/wedding/edit') && !accessToken) {
     return NextResponse.redirect(new URL('/login', request.url));
   }
 
@@ -19,5 +23,5 @@ export const middleware = async (request: NextRequest) => {
 };
 
 export const config = {
-  matcher: ['/login', '/wedding/invitations/produce/:id*', '/profile'],
+  matcher: ['/login', '/wedding/produce/:id*', '/wedding/edit/:id*', '/profile'],
 };
