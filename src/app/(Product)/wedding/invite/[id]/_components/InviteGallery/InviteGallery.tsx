@@ -1,26 +1,17 @@
 'use client';
 
-import { useCallback, useState } from 'react';
-
 import { useModal } from '@/hooks';
 
 import { INVITE_STYLE } from '../../Invite.style';
 import { InviteGalleryProps } from './InviteGallery.type';
 import { GalleryItem, GalleryModal } from './components';
+import { useGalleryRoute } from './hooks';
 
 import { twMerge } from 'tailwind-merge';
 
 const InviteGallery = ({ galleryData }: InviteGalleryProps) => {
-  const [viewNumber, setViewNumber] = useState(0);
   const { isShowModal, closeModal, showModal } = useModal();
-
-  const handleClick = useCallback(
-    (index: number) => {
-      setViewNumber(index);
-      showModal();
-    },
-    [showModal],
-  );
+  const { handleClick, viewNumber } = useGalleryRoute({ onActive: showModal });
 
   return (
     <article className={twMerge(INVITE_STYLE.LAYOUT, 'gap-[6rem]')}>
