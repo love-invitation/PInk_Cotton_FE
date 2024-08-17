@@ -3,31 +3,24 @@
 import { useFormContext } from 'react-hook-form';
 import { toast } from 'react-toastify';
 
-import { useParams, useRouter } from 'next/navigation';
+import { useParams } from 'next/navigation';
 
 import { Button, WeddingTemplates } from '@/components/client';
 import { SpinnerIcon } from '@/components/server';
-import { DOMAIN_URL, InvitationInput, MUTATE_OPTIONS } from '@/constants';
+import { DOMAIN_URL, InvitationInput } from '@/constants';
 import { useGetElementWidth, usePreviewImage } from '@/hooks';
-import { PostInvitation } from '@/types/response';
-import { useMutation } from '@tanstack/react-query';
 
-const InvitationCover = () => {
+import { InvitationCoverProps } from './InvitationCover.type';
+
+const InvitationCover = ({ isPending, onClick }: InvitationCoverProps) => {
   const { watch, handleSubmit } = useFormContext<InvitationInput>();
-  const { mutate, isPending } = useMutation(MUTATE_OPTIONS.INVITATION());
   const { imageUrl } = usePreviewImage(watch('cover.image'));
   const { ref, width } = useGetElementWidth();
-  const route = useRouter();
   const { id } = useParams();
   const templateId = typeof id === 'string' ? Number(id) : Number(id[0]);
 
   const onValid = (invitationInfo: InvitationInput) => {
-    mutate(
-      { id: templateId, invitationInfo },
-      {
-        onSuccess: ({ result }: PostInvitation) => route.push(DOMAIN_URL.WEDDING_PREVIEW(result)),
-      },
-    );
+    onClick(templateId, invitationInfo);
   };
 
   const onFail = () => {
