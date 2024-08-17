@@ -10,7 +10,7 @@ const DOMAIN_URL = {
   WEDDING_PRODUCE: (id: string | number | bigint) => `/wedding/produce/${id}`,
   WEDDING_EDIT: (id: string | number | bigint) => `/wedding/edit/${id}`,
   WEDDING_PREVIEW: (id: string | number | bigint) => `/wedding/invite/${id}`,
-  WEDDING_INVITE: (id: string | number) => `/wedding/invite/${id}`,
+  WEDDING_INVITE: (id: string | number | bigint) => `/wedding/invite/${id}`,
 };
 
 export default DOMAIN_URL;

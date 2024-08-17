@@ -98,12 +98,14 @@ export const QUERY_OPTIONS = {
       thumbnailImage: Blob;
       galleryImages: Blob[];
     }) => {
-      const coverImageFile = new File([coverImage], coverImage.type, { type: coverImage.type });
-      const thumbnailImageFile = new File([thumbnailImage], thumbnailImage.type, {
+      const coverImageFile = new File([coverImage], coverImage.type.replace('/', '.'), {
+        type: coverImage.type,
+      });
+      const thumbnailImageFile = new File([thumbnailImage], thumbnailImage.type.replace('/', '.'), {
         type: thumbnailImage.type,
       });
       const galleryImageFiles = galleryImages.map(
-        (blob) => new File([blob], blob.type, { type: blob.type }),
+        (blob) => new File([blob], blob.type.replace('/', '.'), { type: blob.type }),
       );
 
       return { coverImageFile, thumbnailImageFile, galleryImageFiles };
@@ -120,7 +122,7 @@ export const MUTATE_OPTIONS = {
   }),
 
   INVITATION_PUT: () => ({
-    mutationFn: ({ id, invitationInfo }: { id: number; invitationInfo: InvitationInput }) =>
+    mutationFn: ({ id, invitationInfo }: { id: bigint; invitationInfo: InvitationInput }) =>
       putInvitation({ id, invitationInfo }),
   }),
 
