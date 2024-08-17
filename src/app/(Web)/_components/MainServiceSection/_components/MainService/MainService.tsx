@@ -1,13 +1,26 @@
 'use client';
 
-import { AlertModal } from '@/components/client';
 import { KakaoChannelIcon } from '@/components/server';
-import { useModal } from '@/hooks';
 
 import MainSectionTitle from '../../../MainSectionTitle/MainSectionTitle';
 
+const KAKAO_API_KEY = process.env.NEXT_PUBLIC_KAKAO_API_KEY;
+const KAKAO_CHANNEL_ID = process.env.NEXT_PUBLIC_PINK_KAKAO_CHANNEL_ID;
+
 const MainService = () => {
-  const { showModal, isShowModal, closeModal } = useModal();
+  const addKakaoChannel = () => {
+    if (window.Kakao) {
+      const kakao = window.Kakao;
+
+      if (!kakao.isInitialized()) {
+        kakao.init(KAKAO_API_KEY);
+      }
+
+      kakao.Channel.chat({
+        channelPublicId: KAKAO_CHANNEL_ID,
+      });
+    }
+  };
 
   return (
     <article className='flex flex-col gap-[4rem] items-center'>
@@ -21,19 +34,13 @@ const MainService = () => {
       <button
         type='button'
         className='max-w-[35rem] flex items-center justify-center gap-[1rem] bg-kakao_brand rounded-[2rem_2rem_2rem_0] w-full h-[6.5rem]'
-        onClick={showModal}
+        onClick={addKakaoChannel}
       >
         <KakaoChannelIcon size='3.6rem' />
         <p className='h-[4rem] flex items-center justify-center bg-white_100 rounded-radius10 text-size18 font-semiBold px-[1.6rem]'>
           PINKCOTTON 고객센터
         </p>
       </button>
-
-      <AlertModal
-        message='현재 준비중인 기능입니다.'
-        isShow={isShowModal}
-        onClose={closeModal}
-      />
     </article>
   );
 };
