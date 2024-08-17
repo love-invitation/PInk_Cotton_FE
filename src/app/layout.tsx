@@ -12,6 +12,13 @@ export const metadata: Metadata = {
   description: '결혼식 청첩장',
 };
 
+declare global {
+  interface Window {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    Kakao: any;
+  }
+}
+
 const KAKAO_API_KEY = process.env.DB_KAKAO_MAP_API_KEY;
 
 const URL = `https://dapi.kakao.com/v2/maps/sdk.js?appkey=${KAKAO_API_KEY}&libraries=services,clusterer,drawing&autoload=false`;
@@ -32,6 +39,10 @@ const RootLayout = ({
             type='text/javascript'
             src={URL}
             strategy='beforeInteractive'
+          />
+          <Script
+            src='https://developers.kakao.com/sdk/js/kakao.js'
+            strategy='afterInteractive'
           />
           <MswProvider />
           <main id='app'>{children}</main>
