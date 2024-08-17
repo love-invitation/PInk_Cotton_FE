@@ -11,6 +11,8 @@ import { DOMAIN_URL } from '@/constants';
 import { MyINvitationItemProps } from './MyInvitationItem.type';
 
 const REVIEW_FORM_URL = process.env.NEXT_PUBLIC_REVIEW_FORM_URL as string;
+const KAKAO_API_KEY = process.env.NEXT_PUBLIC_KAKAO_API_KEY;
+const PINK_COTTON_URL = process.env.NEXT_PUBLIC_PINK_COTTON_URL;
 
 const MyInvitationItem = ({
   imageUrl,
@@ -18,40 +20,34 @@ const MyInvitationItem = ({
   lastModified,
   isPaid,
   tsid,
+  thumbnail,
 }: MyINvitationItemProps) => {
   useEffect(() => {
     if (typeof window !== 'undefined') {
       const { Kakao } = window;
 
       if (!Kakao.isInitialized()) {
-        Kakao.init(process.env.NEXT_PUBLIC_KAKAO_API_KEY);
+        Kakao.init(KAKAO_API_KEY);
       }
     }
   }, []);
 
   const handleShare = () => {
     const { Kakao } = window;
+    const { title: thumbnailTitle, contents, imageUrl: thumbnailImageUrl } = thumbnail;
+    const linkUrl = `${PINK_COTTON_URL}${DOMAIN_URL.WEDDING_INVITE(tsid)}`;
 
     Kakao.Share.sendDefault({
       objectType: 'feed',
       content: {
-        title: 'title',
-        description: '특별한 이벤트에 당신을 초대합니다!',
-        imageUrl,
+        title: thumbnailTitle,
+        description: contents,
+        imageUrl: thumbnailImageUrl,
         link: {
-          mobileWebUrl: 'https://yourwebsite.com',
-          webUrl: 'https://yourwebsite.com',
+          mobileWebUrl: linkUrl,
+          webUrl: linkUrl,
         },
       },
-      buttons: [
-        {
-          title: 'ㅗㅑ',
-          link: {
-            mobileWebUrl: 'https://yourwebsite.com',
-            webUrl: 'https://yourwebsite.com',
-          },
-        },
-      ],
     });
   };
 
