@@ -11,4 +11,5 @@ export interface UploadImageContextProviderProps {
   children: ReactNode;
   limit?: number;
   onChange: (images: File[]) => void;
+  defaultImages?: File[];
 }
