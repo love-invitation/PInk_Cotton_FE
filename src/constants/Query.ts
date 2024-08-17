@@ -1,6 +1,7 @@
 import { cache } from 'react';
 
 import {
+  fetchImageAsBlob,
   getAllWeddingTemplates,
   getAuthUser,
   getBestWeddingTemplates,
@@ -9,7 +10,9 @@ import {
   getWeddingTemplate,
   logoutAuth,
   postInvitation,
+  putInvitation,
 } from '@/services/server';
+import { InvitationResponse } from '@/types/response';
 import { QueryClient } from '@tanstack/react-query';
 
 import { InvitationInput } from '.';
@@ -23,6 +26,11 @@ export const QUERY_KEYS = {
   INVITATION: (produceId: number | string) => ['invitation', 'produce', produceId],
   AUTH_USER: ['auth'],
   MY_INVITATIONS: ['my', 'invitations'],
+  COVERT_IMAGE_FILE: (invitation: InvitationResponse) => [
+    invitation.result.cover.imageUrl,
+    invitation.result.thumbnail.imageUrl,
+    ...invitation.result.gallery.galleries.map((value) => value.imageUrl),
+  ],
 };
 
 export const QUERY_OPTIONS = {
@@ -50,27 +58,70 @@ export const QUERY_OPTIONS = {
   INVITATION: (produceId: number | string) => ({
     queryKey: QUERY_KEYS.INVITATION(produceId),
     queryFn: () => getInvitation(produceId),
-    gcTime: 1000 * 60 * 60 * 24,
-    staleTime: 1000 * 60 * 60 * 24,
   }),
 
   AUTH_USER: () => ({
     queryKey: QUERY_KEYS.AUTH_USER,
     queryFn: () => getAuthUser(),
-    gcTime: Infinity,
-    staleTime: Infinity,
+    gcTime: 0,
+    staleTime: 0,
   }),
 
   MY_INVITATIONS: () => ({
     queryKey: QUERY_KEYS.MY_INVITATIONS,
     queryFn: () => getMyInvitation(),
   }),
+
+  COVERT_IMAGE_FILE: (invitation: InvitationResponse) => ({
+    queryKey: QUERY_KEYS.COVERT_IMAGE_FILE(invitation),
+    queryFn: async () => {
+      const coverImagePromise = fetchImageAsBlob(invitation.result.cover.imageUrl);
+      const thumbnailImagePromise = fetchImageAsBlob(invitation.result.thumbnail.imageUrl);
+      const galleryImagePromises = invitation.result.gallery.galleries.map(
+        ({ imageUrl }: { imageUrl: string }) => fetchImageAsBlob(imageUrl),
+      );
+
+      const [coverImage, thumbnailImage, ...galleryImages] = await Promise.all([
+        coverImagePromise,
+        thumbnailImagePromise,
+        ...galleryImagePromises,
+      ]);
+
+      return { coverImage, thumbnailImage, galleryImages };
+    },
+    select: ({
+      coverImage,
+      thumbnailImage,
+      galleryImages,
+    }: {
+      coverImage: Blob;
+      thumbnailImage: Blob;
+      galleryImages: Blob[];
+    }) => {
+      const coverImageFile = new File([coverImage], coverImage.type, { type: coverImage.type });
+      const thumbnailImageFile = new File([thumbnailImage], thumbnailImage.type, {
+        type: thumbnailImage.type,
+      });
+      const galleryImageFiles = galleryImages.map(
+        (blob) => new File([blob], blob.type, { type: blob.type }),
+      );
+
+      return { coverImageFile, thumbnailImageFile, galleryImageFiles };
+    },
+    gcTime: Infinity,
+    staleTime: Infinity,
+  }),
 };
 
 export const MUTATE_OPTIONS = {
-  INVITATION: () => ({
+  INVITATION_POST: () => ({
     mutationFn: ({ id, invitationInfo }: { id: number; invitationInfo: InvitationInput }) =>
       postInvitation({ id, invitationInfo }),
+  }),
+
+  INVITATION_PUT: () => ({
+    mutationFn: ({ id, invitationInfo }: { id: number; invitationInfo: InvitationInput }) =>
+      putInvitation({ id, invitationInfo }),
   }),
 
   LOGOUT: () => ({
