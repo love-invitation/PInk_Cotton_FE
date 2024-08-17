@@ -5,6 +5,7 @@ import { useUploadImageContext } from '../context';
 import { UploadImageListViewProps } from './UploadImageListView.type';
 
 import { twMerge } from 'tailwind-merge';
+import { v4 as uuidv4 } from 'uuid';
 
 const UploadImageListView = ({ ulClassName, liClassName, ...rest }: UploadImageListViewProps) => {
   const { images } = useUploadImageContext();
@@ -19,7 +20,7 @@ const UploadImageListView = ({ ulClassName, liClassName, ...rest }: UploadImageL
       {images.map((image) => {
         return (
           <li
-            key={`${image.name}-${image.lastModified}`}
+            key={uuidv4()}
             className={twMerge(
               'relative w-[10rem] h-[10rem] hover:scale-110 transition-transform',
               liClassName,

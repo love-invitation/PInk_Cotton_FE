@@ -10,6 +10,10 @@ const UploadImageItem = ({ image, ...rest }: UploadImageItemProps) => {
   const { handleRemoveImage } = useUploadImageContext();
   const { imageUrl } = usePreviewImage(image);
 
+  if (!imageUrl) {
+    return;
+  }
+
   return (
     <>
       <Image

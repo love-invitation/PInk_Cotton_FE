@@ -9,8 +9,9 @@ import { GalleryCarousel } from './_components';
 
 const GalleryInput = () => {
   const { isToggle, handleToggle } = useToggle(false);
-  const { setValue } = useFormContext();
+  const { setValue, watch } = useFormContext();
   const limit = 20;
+  const galleryImages = watch('gallery');
 
   return (
     <>
@@ -22,6 +23,7 @@ const GalleryInput = () => {
         <UploadImage
           limit={limit}
           onChange={(images) => setValue('gallery', images)}
+          defaultImages={galleryImages}
           className='flex-col items-center gap-[2.7rem] py-[4rem]'
         >
           <Input.Label>최대 {limit}장까지 업로드 가능해요.</Input.Label>

@@ -30,8 +30,9 @@ export const UploadImageContextProvider = ({
   limit = 1,
   onChange,
   children,
+  defaultImages,
 }: UploadImageContextProviderProps) => {
-  const [images, setImages] = useState<File[]>([]);
+  const [images, setImages] = useState<File[]>(defaultImages || []);
   const onChangeRef = useRef(onChange);
 
   const handleUploadImage = useCallback(

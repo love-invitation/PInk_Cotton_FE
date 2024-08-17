@@ -13,6 +13,7 @@ const ThumbnailInput = () => {
     formState: { errors },
   } = useFormContext<InvitationInput>();
   const { handleChangeImage } = useImageFormError({ type: 'thumbnail' });
+  const thumbnailImage = watch('thumbnail.image');
 
   return (
     <Accordion
@@ -24,15 +25,16 @@ const ThumbnailInput = () => {
         <UploadImage
           className='gap-[4rem]'
           onChange={handleChangeImage}
+          defaultImages={(thumbnailImage && [thumbnailImage]) || undefined}
         >
           <Input.Label>사진</Input.Label>
           <div
             className={twJoin(
               'relative bg-gray_900 w-[16rem] h-[16rem] rounded-[1rem] flex items-center justify-center',
-              watch('thumbnail.image') && 'bg-transparent',
+              thumbnailImage && 'bg-transparent',
             )}
           >
-            <UploadImage.InputLabel visible={!watch('thumbnail.image')}>
+            <UploadImage.InputLabel visible={!thumbnailImage}>
               클릭 후 업로드
             </UploadImage.InputLabel>
             <UploadImage.View

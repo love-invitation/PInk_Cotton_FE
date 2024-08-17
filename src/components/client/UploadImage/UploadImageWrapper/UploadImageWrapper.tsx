@@ -7,11 +7,18 @@ import { UploadImageWrapperProps } from './UploadImageWrapper.type';
 
 import { twMerge } from 'tailwind-merge';
 
-const UploadImageWrapper = ({ className, limit, onChange, children }: UploadImageWrapperProps) => {
+const UploadImageWrapper = ({
+  className,
+  limit,
+  onChange,
+  defaultImages,
+  children,
+}: UploadImageWrapperProps) => {
   return (
     <UploadImageContextProvider
       limit={limit}
       onChange={onChange}
+      defaultImages={defaultImages}
     >
       <div className={twMerge('flex', className)}>{children}</div>
     </UploadImageContextProvider>
