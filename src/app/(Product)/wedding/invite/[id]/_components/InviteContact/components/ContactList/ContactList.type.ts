@@ -1,6 +1,6 @@
-import { InvitationContactItem } from '@/types/response';
+import { ContactDetail } from '@/types/response';
 
 export interface ContactListProps {
   type: 'bride' | 'groom';
-  data: InvitationContactItem[];
+  data: ContactDetail[];
 }

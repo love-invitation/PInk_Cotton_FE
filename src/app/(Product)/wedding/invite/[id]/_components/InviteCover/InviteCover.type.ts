@@ -1,5 +1,5 @@
-import { InvitationCover } from '@/types/response';
+import { Cover } from '@/types/response';
 
 export interface InviteCoverProps {
-  coverData: InvitationCover;
+  coverData: Cover;
 }

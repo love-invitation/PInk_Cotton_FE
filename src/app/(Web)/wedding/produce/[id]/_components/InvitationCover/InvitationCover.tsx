@@ -17,7 +17,7 @@ const InvitationCover = ({ isPending, onClick }: InvitationCoverProps) => {
   const { imageUrl } = usePreviewImage(watch('cover.image'));
   const { ref, width } = useGetElementWidth();
   const { id } = useParams();
-  const templateId = typeof id === 'string' ? BigInt(id) : BigInt(id[0]);
+  const templateId = typeof id === 'string' ? id : id[0];
 
   const onValid = (invitationInfo: InvitationInput) => {
     onClick(templateId, invitationInfo);

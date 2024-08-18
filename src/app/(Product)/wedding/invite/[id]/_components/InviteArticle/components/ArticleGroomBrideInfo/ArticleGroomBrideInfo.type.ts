@@ -1,5 +1,5 @@
-import { InvitationArticleItem } from '@/types/response';
+import { Person } from '@/types/response';
 
 export interface ArticleGroomBrideInfoProps {
-  info: InvitationArticleItem;
+  info: Person;
 }

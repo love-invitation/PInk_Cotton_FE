@@ -26,7 +26,7 @@ const ProducePage = () => {
             isPending={isPending}
             onClick={(id, invitationInfo) =>
               mutate(
-                { id, invitationInfo },
+                { id: Number(id), invitationInfo },
                 {
                   onSuccess: ({ result }: PostInvitation) =>
                     route.push(DOMAIN_URL.WEDDING_PREVIEW(result)),

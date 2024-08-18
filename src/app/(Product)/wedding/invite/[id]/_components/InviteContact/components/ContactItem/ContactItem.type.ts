@@ -1,5 +1,5 @@
-import { InvitationContactItem } from '@/types/response';
+import { ContactDetail } from '@/types/response';
 
 export interface ContactItemProps {
-  otherData: InvitationContactItem;
+  otherData: ContactDetail;
 }

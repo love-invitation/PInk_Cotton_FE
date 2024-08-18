@@ -1,5 +1,5 @@
-import { InvitationArticle } from '@/types/response';
+import { Article } from '@/types/response';
 
 export interface InviteArticleProps {
-  article: InvitationArticle;
+  article: Article;
 }
