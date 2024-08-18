@@ -15,13 +15,13 @@ const MyInvitations = () => {
         id='calc_header_footer_height'
         className='flex justify-center items-center text-[5rem]'
       >
-        제작하신 청첩장이 없습니다.
+        제작된 청첩장이 없습니다.
       </h1>
     );
   }
 
   return (
-    <ul className='py-[5%] grid [grid-template-columns:repeat(auto-fill,minmax(40rem,40rem))] auto-rows-auto gap-[10rem] justify-center items-center'>
+    <ul className='py-[5%] px-[10%] grid [grid-template-columns:repeat(auto-fill,minmax(35rem,35rem))] auto-rows-auto gap-[10rem] items-center justify-center'>
       {data?.result.map(({ imageUrl, title, lastModified, isPaid, tsid, thumbnail }) => (
         <MyInvitationItem
           key={tsid}
