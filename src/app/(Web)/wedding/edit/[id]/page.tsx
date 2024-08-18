@@ -1,56 +1,40 @@
 'use client';
 
-import { FormProvider, useForm } from 'react-hook-form';
+import { QUERY_OPTIONS } from '@/constants';
+import { InvitationResponse } from '@/types/response';
+import { useQuery } from '@tanstack/react-query';
 
-import { useRouter } from 'next/navigation';
-
-import { DOMAIN_URL, INVITATION_FORM, MUTATE_OPTIONS, QUERY_OPTIONS } from '@/constants';
-import { useMutation, useSuspenseQuery } from '@tanstack/react-query';
-
-import {
-  InvitationCover,
-  InvitationCoverPreview,
-  ProduceFormInput,
-} from '../../produce/[id]/_components';
+import EditForm from '../../_components/EditForm/EditForm';
+import Loading from './loading';
 
 const EditPage = ({ params }: { params: { id: string } }) => {
-  const route = useRouter();
-  const { data } = useSuspenseQuery(QUERY_OPTIONS.INVITATION(params.id));
-  const { data: imageFiles } = useSuspenseQuery(QUERY_OPTIONS.COVERT_IMAGE_FILE(data));
-  const { mutate, isPending } = useMutation(MUTATE_OPTIONS.INVITATION_PUT());
-  const { coverImageFile, thumbnailImageFile, galleryImageFiles } = imageFiles;
-  const form = useForm(
-    INVITATION_FORM.INITIAL_STATE_OPTION({
-      invitation: data,
-      coverImageFile,
-      thumbnailImageFile,
-      galleryImageFiles,
-    }),
+  const {
+    data,
+    isLoading: isLoadingInvitation,
+    error: invitationError,
+  } = useQuery<InvitationResponse>(QUERY_OPTIONS.INVITATION(params.id));
+  const { data: imageFiles, isLoading: isLoadingImageFiles } = useQuery(
+    QUERY_OPTIONS.CONVERT_IMAGE_FILE(data),
   );
+  const isLoading = isLoadingInvitation || isLoadingImageFiles;
+
+  if (invitationError) {
+    throw invitationError;
+  }
+
+  if (isLoading || !imageFiles || !data) {
+    return <Loading />;
+  }
+
+  const { coverImageFile, thumbnailImageFile, galleryImageFiles } = imageFiles;
 
   return (
-    <FormProvider {...form}>
-      <form
-        id='calc_header_footer_height'
-        className='flex w-full py-[4.8rem] px-[10rem] tablet:px-[5rem] mobile:px-[2rem] gap-[2rem] justify-center'
-      >
-        <div className='w-full max-w-[140rem] flex tablet:gap-[2rem] gap-[8rem] justify-center mobile:flex-col'>
-          <InvitationCover
-            isPending={isPending}
-            onClick={(id, invitationInfo) =>
-              mutate(
-                { id, invitationInfo },
-                {
-                  onSuccess: () => route.push(DOMAIN_URL.PROFILE),
-                },
-              )
-            }
-          />
-          <ProduceFormInput />
-          <InvitationCoverPreview />
-        </div>
-      </form>
-    </FormProvider>
+    <EditForm
+      invitation={data}
+      coverImageFile={coverImageFile}
+      thumbnailImageFile={thumbnailImageFile}
+      galleryImageFiles={galleryImageFiles}
+    />
   );
 };
 
