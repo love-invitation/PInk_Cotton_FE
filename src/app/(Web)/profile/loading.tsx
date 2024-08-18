@@ -1,6 +1,6 @@
 const Loading = () => {
   return (
-    <ul className='grid [grid-template-columns:repeat(auto-fill,minmax(40rem,40rem))] auto-rows-auto gap-[10rem] justify-center items-center'>
+    <ul className='grid [grid-template-columns:repeat(auto-fill,minmax(40rem,40rem))] auto-rows-auto gap-[10rem] justify-center items-center py-[5%]'>
       {new Array(3).fill(null).map((_, index) => {
         const id = index;
 

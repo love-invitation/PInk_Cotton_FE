@@ -1,19 +1,23 @@
-import { Suspense } from 'react';
 import { ErrorBoundary } from 'react-error-boundary';
 
-import { MyInvitationList, ProfileBanner } from './components';
+import dynamic from 'next/dynamic';
+
+import { ProfileBanner } from './components';
 import Error from './error';
 import Loading from './loading';
+
+const MyInvitationList = dynamic(() => import('./components/MyInvitationList/MyInvitationList'), {
+  ssr: false,
+  loading: () => <Loading />,
+});
 
 const ProfilePage = () => {
   return (
     <div>
       <ProfileBanner />
-      <section className='py-[10rem] px-[15%]'>
+      <section>
         <ErrorBoundary FallbackComponent={Error}>
-          <Suspense fallback={<Loading />}>
-            <MyInvitationList />
-          </Suspense>
+          <MyInvitationList />
         </ErrorBoundary>
       </section>
     </div>
