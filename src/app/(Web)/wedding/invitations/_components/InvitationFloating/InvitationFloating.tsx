@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 
 import { WeddingTemplates } from '@/components/client';
 import { TemplateLayout } from '@/components/server';
@@ -14,7 +14,12 @@ import { InvitationFloatingProps } from './InvitationFloating.type';
 
 const InvitationFloating = ({ id }: InvitationFloatingProps) => {
   const route = useRouter();
-  const ref = useClickAway<HTMLDivElement>(() => route.back());
+  const path = usePathname();
+  const ref = useClickAway<HTMLDivElement>(() => {
+    if (path !== '/login') {
+      route.back();
+    }
+  });
 
   const { data } = useQuery<WeddingTemplateResponse>(QUERY_OPTIONS.WEDDING_TEMPLATE(id));
 
