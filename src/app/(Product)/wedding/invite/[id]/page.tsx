@@ -10,6 +10,7 @@ import {
   InviteContact,
   InviteCover,
   InviteGallery,
+  InviteLocation,
 } from './_components';
 
 // 600246308994180233 ID key 값
@@ -41,6 +42,7 @@ const InvitePage = async ({ params }: { params: { id: string } }) => {
           <InviteContact contactData={data.result.contact} />
           <InviteCalender calenderData={data.result.cover.weddingDate} />
           <InviteGallery galleryData={data.result.gallery} />
+          <InviteLocation />
         </div>
       </section>
     </HydrationBoundary>
