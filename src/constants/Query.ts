@@ -58,6 +58,8 @@ export const QUERY_OPTIONS = {
   INVITATION: (produceId: number | string) => ({
     queryKey: QUERY_KEYS.INVITATION(produceId),
     queryFn: () => getInvitation(produceId),
+    gcTime: 0,
+    staleTime: 0,
   }),
 
   AUTH_USER: () => ({
@@ -70,49 +72,64 @@ export const QUERY_OPTIONS = {
   MY_INVITATIONS: () => ({
     queryKey: QUERY_KEYS.MY_INVITATIONS,
     queryFn: () => getMyInvitation(),
+    gcTime: 0,
+    staleTime: 0,
   }),
 
-  COVERT_IMAGE_FILE: (invitation: InvitationResponse) => ({
-    queryKey: QUERY_KEYS.COVERT_IMAGE_FILE(invitation),
-    queryFn: async () => {
-      const coverImagePromise = fetchImageAsBlob(invitation.result.cover.imageUrl);
-      const thumbnailImagePromise = fetchImageAsBlob(invitation.result.thumbnail.imageUrl);
-      const galleryImagePromises = invitation.result.gallery.galleries.map(
-        ({ imageUrl }: { imageUrl: string }) => fetchImageAsBlob(imageUrl),
-      );
+  CONVERT_IMAGE_FILE: (invitation: InvitationResponse | undefined) => {
+    if (!invitation) {
+      return {
+        queryKey: ['undefined'],
+      };
+    }
 
-      const [coverImage, thumbnailImage, ...galleryImages] = await Promise.all([
-        coverImagePromise,
-        thumbnailImagePromise,
-        ...galleryImagePromises,
-      ]);
+    return {
+      queryKey: QUERY_KEYS.COVERT_IMAGE_FILE(invitation),
+      enabled: !!invitation,
+      queryFn: async () => {
+        const coverImagePromise = fetchImageAsBlob(invitation.result.cover.imageUrl);
+        const thumbnailImagePromise = fetchImageAsBlob(invitation.result.thumbnail.imageUrl);
+        const galleryImagePromises = invitation.result.gallery.galleries.map(
+          ({ imageUrl }: { imageUrl: string }) => fetchImageAsBlob(imageUrl),
+        );
 
-      return { coverImage, thumbnailImage, galleryImages };
-    },
-    select: ({
-      coverImage,
-      thumbnailImage,
-      galleryImages,
-    }: {
-      coverImage: Blob;
-      thumbnailImage: Blob;
-      galleryImages: Blob[];
-    }) => {
-      const coverImageFile = new File([coverImage], coverImage.type.replace('/', '.'), {
-        type: coverImage.type,
-      });
-      const thumbnailImageFile = new File([thumbnailImage], thumbnailImage.type.replace('/', '.'), {
-        type: thumbnailImage.type,
-      });
-      const galleryImageFiles = galleryImages.map(
-        (blob) => new File([blob], blob.type.replace('/', '.'), { type: blob.type }),
-      );
+        const [coverImage, thumbnailImage, ...galleryImages] = await Promise.all([
+          coverImagePromise,
+          thumbnailImagePromise,
+          ...galleryImagePromises,
+        ]);
 
-      return { coverImageFile, thumbnailImageFile, galleryImageFiles };
-    },
-    gcTime: Infinity,
-    staleTime: Infinity,
-  }),
+        return { coverImage, thumbnailImage, galleryImages };
+      },
+      select: ({
+        coverImage,
+        thumbnailImage,
+        galleryImages,
+      }: {
+        coverImage: Blob;
+        thumbnailImage: Blob;
+        galleryImages: Blob[];
+      }) => {
+        const coverImageFile = new File([coverImage], coverImage.type.replace('/', '.'), {
+          type: coverImage.type,
+        });
+        const thumbnailImageFile = new File(
+          [thumbnailImage],
+          thumbnailImage.type.replace('/', '.'),
+          {
+            type: thumbnailImage.type,
+          },
+        );
+        const galleryImageFiles = galleryImages.map(
+          (blob) => new File([blob], blob.type.replace('/', '.'), { type: blob.type }),
+        );
+
+        return { coverImageFile, thumbnailImageFile, galleryImageFiles };
+      },
+      gcTime: Infinity,
+      staleTime: Infinity,
+    };
+  },
 };
 
 export const MUTATE_OPTIONS = {
