@@ -10,7 +10,7 @@ const InvitationsBanner = () => {
       <Image
         src={BANNER_IMAGE}
         alt='청첩장 종류 페이지 배너'
-        className='w-full h-auto max-h-[30rem]'
+        className='w-full max-h-[30rem] min-h-[15rem]'
       />
       <p
         className={`flex flex-col items-end absolute bottom-[10%] right-[13%] text-[2.4rem] text-white_100 mobile:text-[1.8rem] ${GyeonggiBatangFont.className}`}
