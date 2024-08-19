@@ -19,7 +19,7 @@ declare global {
   }
 }
 
-const KAKAO_API_KEY = process.env.DB_KAKAO_MAP_API_KEY;
+const KAKAO_API_KEY = process.env.NEXT_PUBLIC_KAKAO_API_KEY;
 const URL = `https://dapi.kakao.com/v2/maps/sdk.js?appkey=${KAKAO_API_KEY}&libraries=services,clusterer,drawing&autoload=false`;
 
 const RootLayout = ({
