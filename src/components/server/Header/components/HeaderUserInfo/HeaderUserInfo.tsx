@@ -9,20 +9,21 @@ import { useMutation, useQuery } from '@tanstack/react-query';
 
 import tailwindConfig from '../../../../../../tailwind.config';
 
+import { twJoin } from 'tailwind-merge';
 import resolveConfig from 'tailwindcss/resolveConfig';
 
 const HeaderUserInfo = () => {
-  const { data, isError, isFetched } = useQuery(QUERY_OPTIONS.AUTH_USER());
+  const { data, isError, isFetching } = useQuery(QUERY_OPTIONS.AUTH_USER());
   const { mutate } = useMutation(MUTATE_OPTIONS.LOGOUT());
   const { theme } = resolveConfig(tailwindConfig);
   const isLogin = !isError && data?.result;
-  const commonStyles = 'underline text-pink_500 text-size16 font-semiBold';
+  const commonStyles = 'underline text-pink_500 text-size16 font-semiBold text-nowrap';
 
   return (
-    <div className='w-[11rem] h-[2.4rem] mr-[4%] flex items-center justify-center'>
+    <div className='w-[11rem] h-[2.4rem] mr-[4%] flex gap-[2rem] items-center justify-center'>
       {isLogin && (
         <Button
-          disabled={isFetched}
+          disabled={isFetching}
           backgroundColor='naked'
           fontSize='1.8rem'
           fontWeight='regular'
@@ -46,10 +47,10 @@ const HeaderUserInfo = () => {
         </Link>
       ) : (
         <button
-          className={commonStyles}
+          className={twJoin(commonStyles, 'mt-[0.4rem]')}
           type='button'
           onClick={() => mutate()}
-          disabled={isFetched}
+          disabled={isFetching}
         >
           로그아웃
         </button>
