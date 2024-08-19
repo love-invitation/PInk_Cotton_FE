@@ -42,7 +42,7 @@ const InvitePage = async ({ params }: { params: { id: string } }) => {
           <InviteContact contactData={data.result.contact} />
           <InviteCalender calenderData={data.result.cover.weddingDate} />
           <InviteGallery galleryData={data.result.gallery} />
-          <InviteLocation />
+          <InviteLocation placeData={data.result.place} />
         </div>
       </section>
     </HydrationBoundary>
