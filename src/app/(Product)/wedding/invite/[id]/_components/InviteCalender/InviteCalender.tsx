@@ -3,6 +3,7 @@
 import { useRef } from 'react';
 
 import { Calender } from '@/components/client';
+import { Divider } from '@/components/server';
 
 import { INVITE_ANIMATION } from '../../Invite.constants';
 import { INVITE_STYLE } from '../../Invite.style';
@@ -45,12 +46,14 @@ const InviteCalender = ({ calenderData }: InviteCalenderProps) => {
             <p className='text-size18'>{`${CONVERT_DAY[date.week]} ${date.period} ${date.hours}시 ${date.minute}분`}</p>
           </motion.span>
 
-          <motion.hr
+          <motion.span
             initial={INVITE_ANIMATION.INIT}
             animate={INVITE_ANIMATION.ANIMATE}
             transition={{ duration: 1, delay: 0.6 }}
-            className='w-[90%] relative h-[0.3rem] bg-gray_900 brightness-[103%]'
-          />
+            className='w-[90%] relative'
+          >
+            <Divider className='h-[0.2rem]' />
+          </motion.span>
 
           <motion.div
             initial={INVITE_ANIMATION.INIT}
@@ -65,12 +68,14 @@ const InviteCalender = ({ calenderData }: InviteCalenderProps) => {
             />
           </motion.div>
 
-          <motion.hr
+          <motion.span
             initial={INVITE_ANIMATION.INIT}
             animate={INVITE_ANIMATION.ANIMATE}
             transition={{ duration: 1, delay: 1.2 }}
-            className='w-[90%] relative h-[0.3rem] bg-gray_900 brightness-[103%]'
-          />
+            className='w-[90%] relative'
+          >
+            <Divider className='h-[0.2rem]' />
+          </motion.span>
         </>
       )}
     </article>
