@@ -1,4 +1,5 @@
 import { PinkMap } from '@/components/client';
+import { Divider } from '@/components/server';
 
 import { INVITE_STYLE } from '../../Invite.style';
 import { InviteLocationProps } from './InviteLocation.type';
@@ -14,6 +15,8 @@ const InviteLocation = ({ placeData }: InviteLocationProps) => {
         center={{ lat: placeData.latitude, lng: placeData.longitude }}
         height='32rem'
       />
+
+      <Divider className='w-[90%] h-[0.2rem]' />
     </article>
   );
 };
