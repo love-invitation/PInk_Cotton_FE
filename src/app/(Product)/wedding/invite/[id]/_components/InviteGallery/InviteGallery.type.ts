@@ -1,5 +1,5 @@
-import { InvitationGallery } from '@/types/response';
+import { Gallery } from '@/types/response';
 
 export interface InviteGalleryProps {
-  galleryData: InvitationGallery;
+  galleryData: Gallery;
 }
