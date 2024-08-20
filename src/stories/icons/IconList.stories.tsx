@@ -18,6 +18,7 @@ import {
   KakaoLogoIcon,
   LayerIcon,
   NaverLogoIcon,
+  NaverMapLogoIcon,
   Paint3DIcon,
   SMSIcon,
   Send3DIcon,
@@ -152,6 +153,12 @@ export const KakaoLogo: Story = {
 export const NaverLogo: Story = {
   args: {
     children: <NaverLogoIcon />,
+  },
+};
+
+export const NaverMapLogo: Story = {
+  args: {
+    children: <NaverMapLogoIcon />,
   },
 };
 
