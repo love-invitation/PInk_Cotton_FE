@@ -23,6 +23,7 @@ import {
   SMSIcon,
   Send3DIcon,
   StarIcon,
+  TMapLogoIcon,
   UserIcon,
 } from '@/components/server';
 import type { Meta, StoryObj } from '@storybook/react';
@@ -207,5 +208,11 @@ export const BracketLeft: Story = {
 export const BracketRight: Story = {
   args: {
     children: <BracketRightIcon />,
+  },
+};
+
+export const TMapLogo: Story = {
+  args: {
+    children: <TMapLogoIcon />,
   },
 };
