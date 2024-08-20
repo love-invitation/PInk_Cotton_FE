@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 
 import { INVITE_ANIMATION } from '../../Invite.constants';
 import { INVITE_STYLE } from '../../Invite.style';
@@ -12,9 +12,19 @@ import { twJoin } from 'tailwind-merge';
 
 const InviteArticle = ({ article }: InviteArticleProps) => {
   const ref = useRef(null);
+  const articleRef = useRef<HTMLParagraphElement>(null);
   const inView = useInView(ref, { once: true });
 
-  const contentReplaced = article.contents.replace(/\\n | \n/g, '\n');
+  useEffect(() => {
+    const contentElement = articleRef.current;
+
+    if (!contentElement) {
+      return;
+    }
+
+    contentElement.innerHTML = article.contents;
+  }, [article.contents]);
+
   const { groom, bride } = article;
   return (
     <article className={twJoin(INVITE_STYLE.LAYOUT, 'px-[1.6rem] gap-[4.5rem]')}>
@@ -30,14 +40,15 @@ const InviteArticle = ({ article }: InviteArticleProps) => {
           {article.title}
         </h1>
       </motion.span>
+
       <motion.p
+        ref={articleRef}
         className='w-full relative text-size18 text-center whitespace-pre-line leading-[3.2rem]'
         initial={INVITE_ANIMATION.INIT}
         animate={inView ? INVITE_ANIMATION.ANIMATE : {}}
         transition={{ duration: 1.5, delay: 0.6 }}
-      >
-        {contentReplaced}
-      </motion.p>
+      />
+
       <motion.span
         className='w-full relative flex flex-col gap-[1rem]'
         initial={INVITE_ANIMATION.INIT}

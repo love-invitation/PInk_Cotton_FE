@@ -4,7 +4,7 @@ import { ArticleGroomBrideInfoProps } from './ArticleGroomBrideInfo.type';
 
 const ArticleGroomBrideInfo = ({ info }: ArticleGroomBrideInfoProps) => {
   return (
-    <span className='w-full flex justify-center items-center gap-[0.8rem] text-size20 font-bold'>
+    <span className='w-full flex justify-center items-center gap-[0.6rem] text-size20 font-bold text-nowrap'>
       {info.father.deceased && <DarkFlowerIcon size='1.8rem' />}
       <p>{info.father.name}</p>
       <DotIcon />
