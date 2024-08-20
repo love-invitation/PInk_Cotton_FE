@@ -18,9 +18,9 @@ const InviteGallery = ({ galleryData }: InviteGalleryProps) => {
       <h2 className={INVITE_STYLE.TITLE}>GALLERY</h2>
 
       <ul className='w-full px-[1.6rem] flex flex-wrap gap-[1rem] items-center justify-center'>
-        {galleryData.galleries.map(({ imageUrl, originFileName }, index) => (
+        {galleryData.galleries.map(({ imageUrl, priority }, index) => (
           <GalleryItem
-            key={`galleryItem_${originFileName}`}
+            key={`galleryItem_${priority}`}
             imageUrl={imageUrl}
             onClick={() => handleClick(index)}
           />
