@@ -5,7 +5,7 @@ import Script from 'next/script';
 
 import { PretendardFont } from '@/assets/font/index';
 
-import { MswProvider, TanstackProvider, ToastProvider } from './_components';
+import { GoogleAnalytics, MswProvider, TanstackProvider, ToastProvider } from './_components';
 
 export const metadata: Metadata = {
   title: 'Pink Cotton',
@@ -43,8 +43,14 @@ const RootLayout = ({
             src='https://developers.kakao.com/sdk/js/kakao.js'
             strategy='afterInteractive'
           />
+          {process.env.NEXT_PUBLIC_G_TAG ? <GoogleAnalytics /> : null}
           <MswProvider />
-          <main id='app'>{children}</main>
+          <main
+            id='app'
+            className='min-w-[40rem]'
+          >
+            {children}
+          </main>
           <ToastProvider />
         </TanstackProvider>
       </body>
