@@ -16,6 +16,7 @@ import {
   ImageIcon,
   KakaoChannelIcon,
   KakaoLogoIcon,
+  KakaoMapLogoIcon,
   LayerIcon,
   NaverLogoIcon,
   NaverMapLogoIcon,
@@ -148,6 +149,12 @@ export const KakaoChannel: Story = {
 export const KakaoLogo: Story = {
   args: {
     children: <KakaoLogoIcon />,
+  },
+};
+
+export const KakaoMapLogo: Story = {
+  args: {
+    children: <KakaoMapLogoIcon />,
   },
 };
 
