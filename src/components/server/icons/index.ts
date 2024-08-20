@@ -24,3 +24,4 @@ export { default as SMSIcon } from './SMSIcon/SMSIcon';
 export { default as BracketRightIcon } from './BracketRightIcon/BracketRightIcon';
 export { default as BracketLeftIcon } from './BracketLeftIcon/BracketLeftIcon';
 export { default as NaverMapLogoIcon } from './NaverMapLogoIcon/NaverMapLogoIcon';
+export { default as TMapLogoIcon } from './TMapLogoIcon/TMapLogoIcon';
