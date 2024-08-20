@@ -39,6 +39,7 @@ const WeddingTemplate4 = ({ groomName, brideName, imageUrl, details }: WeddingTe
           src={imageUrl}
           className='rounded-t-[99rem] object-cover'
           fill
+          priority
           alt='template - 1 Image'
         />
       </div>
