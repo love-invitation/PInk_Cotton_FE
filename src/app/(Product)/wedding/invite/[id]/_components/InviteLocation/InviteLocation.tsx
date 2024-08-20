@@ -22,7 +22,11 @@ const InviteLocation = ({ placeData }: InviteLocationProps) => {
         height='32rem'
       />
 
-      <LocationActions />
+      <LocationActions
+        lat={placeData.latitude}
+        lng={placeData.longitude}
+        placeName={placeData.name}
+      />
 
       <Divider className='w-[90%] h-[0.2rem]' />
     </article>

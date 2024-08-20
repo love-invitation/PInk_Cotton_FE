@@ -2,33 +2,31 @@
 
 import { useMemo } from 'react';
 
-import { PretendardFont } from '@/assets/font';
-import { Button } from '@/components/client';
-import { KakaoMapLogoIcon, NaverMapLogoIcon, TMapLogoIcon } from '@/components/server';
+import Link from 'next/link';
 
-const LocationActions = () => {
+import { PretendardFont } from '@/assets/font';
+import { KakaoMapLogoIcon, NaverMapLogoIcon } from '@/components/server';
+
+import { LocationActionsProps } from './LocationActions.type';
+
+const LocationActions = ({ lng, lat, placeName }: LocationActionsProps) => {
   const NAV_LIST = useMemo(
     () => [
       {
         key: 'naver',
-        buttonName: '네이버지도',
+        buttonName: '네이버 지도',
         logoIcon: <NaverMapLogoIcon size='2rem' />,
-        onClick: () => {},
+        href: `https://map.naver.com/?lng=${lng}&lat=${lat}&title=${placeName}`,
       },
-      {
-        key: 'TMap',
-        buttonName: '티맵',
-        logoIcon: <TMapLogoIcon size='2rem' />,
-        onClick: () => {},
-      },
+
       {
         key: 'kakao',
-        buttonName: '카카오내비',
+        buttonName: '카카오 지도',
         logoIcon: <KakaoMapLogoIcon size='2rem' />,
-        onClick: () => {},
+        href: `https://map.kakao.com/link/to/${placeName},${lat},${lng}`,
       },
     ],
-    [],
+    [lat, lng, placeName],
   );
 
   return (
@@ -36,29 +34,25 @@ const LocationActions = () => {
       <p className=' text-size12'>아래 버튼을 누르면 앱에서 길안내가 시작됩니다.</p>
 
       <ul className='w-full flex gap-[1rem]'>
-        {NAV_LIST.map(({ key, buttonName, logoIcon, onClick }) => (
+        {NAV_LIST.map(({ key, buttonName, logoIcon, href }) => (
           <li
             key={key}
             className='flex-grow-[1]'
           >
-            <Button
-              backgroundColor='naked'
-              fontColor='black'
-              border='gray'
-              fontWeight='regular'
-              className={`${PretendardFont.className} h-[3.6rem] m-0 p-0 w-full flex items-center justify-center gap-[0.6rem] text-size12 text-nowrap font-medium`}
-              onClick={onClick}
+            <Link
+              href={href}
+              target='_blank'
+              rel='noopener noreferrer'
+              className={`${PretendardFont.className} h-[4.2rem] w-full border-[0.1rem] border-gray_700 rounded-radius6 flex items-center justify-center gap-[0.6rem] text-size14 text-nowrap font-medium`}
             >
               {logoIcon}
               {buttonName}
-            </Button>
+            </Link>
           </li>
         ))}
       </ul>
     </div>
   );
 };
-
-// 카카오 https://map.kakao.com/link/to/weddingPlace,37.498454033368,127.03229336072
 
 export default LocationActions;
