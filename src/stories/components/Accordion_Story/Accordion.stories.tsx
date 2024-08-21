@@ -8,7 +8,7 @@ import type { Meta, StoryObj } from '@storybook/react';
  * - **children : **Accordion 내부에 담을 Component를 전달받습니다.
  *
  * - **buttonTitle ? : **Accordion Toggle Button 내부 타이틀을 전달받습니다.
- * - **type ? : **둘중 하나의 type을 전달받아 스타일을 변경합니다.  - main : 홈 질문 - edit : 청첩장 제작
+ * - **type ? : **둘중 하나의 type을 전달받아 스타일을 변경합니다.  - main : 홈 질문 - edit : 청첩장 제작 - account : 청첩장 뷰
  * - **defaultToggleValue ? : **Accordion의 기본 toggle 상태를 전달받습니다.
  * */
 const meta = {
@@ -23,7 +23,7 @@ const meta = {
   argTypes: {
     type: {
       description:
-        '둘중 하나의 type을 전달받아 스타일을 변경합니다.  - main : 홈 질문 - edit : 청첩장 제작',
+        '둘중 하나의 type을 전달받아 스타일을 변경합니다.  - main : 홈 질문 - edit : 청첩장 제작 - account : 청첩장 뷰',
     },
     buttonTitle: {
       control: 'text',
