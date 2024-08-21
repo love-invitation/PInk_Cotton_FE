@@ -2,12 +2,15 @@
 
 import React from 'react';
 
-import { ArrowDownIcon, Divider } from '@/components/server';
+import tailwindConfig from '@/../tailwind.config';
+import { AccountFlowerIcon, ArrowDownIcon, Divider } from '@/components/server';
 import { useToggle } from '@/hooks';
 
 import CheckBox from '../CheckBox/CheckBox';
 import { AccordionProps } from './Accordion.type';
 import { useAccordionStyle, useGetElementHeight } from './hooks';
+
+import resolveConfig from 'tailwindcss/resolveConfig';
 
 const Accordion = ({
   children,
@@ -18,6 +21,8 @@ const Accordion = ({
   const { isToggle, handleToggle } = useToggle(defaultToggleValue);
   const { ref, height } = useGetElementHeight();
   const { layoutStyle, buttonStyle, buttonInnerStyle, contentStyle } = useAccordionStyle({ type });
+
+  const { theme } = resolveConfig(tailwindConfig);
 
   return (
     <article className={layoutStyle}>
@@ -35,12 +40,20 @@ const Accordion = ({
           )}
           {type === 'main' && <strong className='text-size18 leading-[2] font-semibold'>Q.</strong>}
 
+          {type === 'account' && (
+            <AccountFlowerIcon
+              size='3rem'
+              fill={theme.colors.brown_500}
+            />
+          )}
+
           {buttonTitle}
         </div>
 
         <ArrowDownIcon
           size='2rem'
           className={`transition-transform duration-500 ${isToggle && 'rotate-180'}`}
+          fill={type === 'account' ? theme.colors.brown_500 : 'black'}
         />
       </button>
 
