@@ -1,4 +1,5 @@
 import {
+  AccountFlowerIcon,
   ArrowDownIcon,
   ArrowRightIcon,
   BracketLeftIcon,
@@ -221,5 +222,11 @@ export const BracketRight: Story = {
 export const TMapLogo: Story = {
   args: {
     children: <TMapLogoIcon />,
+  },
+};
+
+export const AccountFlower: Story = {
+  args: {
+    children: <AccountFlowerIcon />,
   },
 };
