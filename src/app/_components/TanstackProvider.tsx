@@ -22,7 +22,7 @@ const TanstackProvider = ({ children }: PropsWithChildren) => {
               getQueryClient().invalidateQueries({ queryKey: QUERY_KEYS.AUTH_USER });
             }
 
-            if (error instanceof Error && errorMessage.endsWith('403')) {
+            if (error instanceof Error && errorMessage.endsWith('404')) {
               route.push('/notfound');
             }
           },
