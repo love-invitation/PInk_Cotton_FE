@@ -5,6 +5,7 @@ import { InvitationResponse } from '@/types/response';
 import { HydrationBoundary, dehydrate } from '@tanstack/react-query';
 
 import {
+  InviteAccount,
   InviteArticle,
   InviteCalender,
   InviteContact,
@@ -46,6 +47,7 @@ const InvitePage = async ({ params }: { params: { id: string } }) => {
             placeData={data.result.place}
             transportData={data.result.transport}
           />
+          <InviteAccount />
         </div>
       </section>
     </HydrationBoundary>
