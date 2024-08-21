@@ -2,10 +2,11 @@
 
 import Lottie from 'react-lottie-player';
 
+import { ConfirmLottie } from '@/assets/lottie';
+
 import Button from '../Button/Button';
 import { Modal } from '../Modal';
 import { ConfirmModalProps } from './ConfirmModal.type';
-import ConfirmAnimationData from './Lottie_Confirm_Animation.json';
 
 const ConfirmModal = ({
   isShow,
@@ -25,7 +26,7 @@ const ConfirmModal = ({
     >
       <main className='flex w-[30rem] select-none flex-col items-center justify-center'>
         <Lottie
-          animationData={ConfirmAnimationData}
+          animationData={ConfirmLottie}
           className='h-[22rem] w-[22rem]'
           play
           loop={false}
