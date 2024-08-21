@@ -16,7 +16,7 @@ const InvitationFloating = ({ id }: InvitationFloatingProps) => {
   const route = useRouter();
   const path = usePathname();
   const ref = useClickAway<HTMLDivElement>(() => {
-    if (path !== '/login') {
+    if (path !== DOMAIN_URL.LOGIN) {
       route.back();
     }
   });
