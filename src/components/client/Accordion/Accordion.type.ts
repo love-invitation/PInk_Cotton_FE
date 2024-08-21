@@ -1,4 +1,4 @@
-export type AccordionStyleType = 'main' | 'edit';
+export type AccordionStyleType = 'main' | 'edit' | 'account';
 
 export interface AccordionProps {
   children: React.ReactNode;
