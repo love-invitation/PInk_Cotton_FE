@@ -9,6 +9,7 @@ import {
   CheckIcon,
   Clock3DIcon,
   CloseIcon,
+  CopyIcon,
   DarkFlowerIcon,
   DeleteIcon,
   DotIcon,
@@ -228,5 +229,11 @@ export const TMapLogo: Story = {
 export const AccountFlower: Story = {
   args: {
     children: <AccountFlowerIcon />,
+  },
+};
+
+export const Copy: Story = {
+  args: {
+    children: <CopyIcon />,
   },
 };
