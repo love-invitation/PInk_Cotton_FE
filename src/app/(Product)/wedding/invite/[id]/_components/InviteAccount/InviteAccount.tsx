@@ -10,25 +10,18 @@ import { INVITE_STYLE } from '../../Invite.style';
 import { InviteAccountProps } from './InviteAccount.type';
 import { InviteAccountItem } from './components';
 
+import copy from 'copy-to-clipboard';
 import { twMerge } from 'tailwind-merge';
 
 const InviteAccount = ({ accountData }: InviteAccountProps) => {
-  const handleCopyAccount = useCallback(async (account: string) => {
-    try {
-      await navigator.clipboard.writeText(account);
+  const handleCopyAccount = useCallback((account: string) => {
+    copy(account);
 
-      toast('복사 되었습니다!', {
-        position: 'bottom-center',
-        autoClose: 600,
-        hideProgressBar: true,
-      });
-    } catch (e) {
-      toast('실패하였습니다.', {
-        position: 'bottom-center',
-        autoClose: 800,
-        type: 'error',
-      });
-    }
+    toast('계좌번호가 복사되었습니다.', {
+      position: 'bottom-center',
+      hideProgressBar: true,
+      autoClose: 600,
+    });
   }, []);
 
   const { groom, bride } = accountData;
