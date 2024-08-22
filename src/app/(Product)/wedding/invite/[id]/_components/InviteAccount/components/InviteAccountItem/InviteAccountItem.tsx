@@ -13,13 +13,13 @@ const InviteAccountItem = ({ onCopy, accountInfo }: InviteAccountItemProps) => {
   const { accountNumber, bankName, name } = accountInfo;
 
   return (
-    <li className='w-full px-[1.6rem] py-[1.6rem] flex items-center'>
+    <li className='w-full px-[1.6rem] py-[1.6rem] flex items-center select-all'>
       <span className='flex-grow-[1] text-size14 flex flex-col gap-[0.6rem]'>
-        <p>
+        <p className=' select-auto'>
           <strong className='font-bold mr-[1rem]'>{bankName}</strong>
           {accountNumber}
         </p>
-        <p className='font-bold tracking-[0.2rem]'>{name}</p>
+        <p className='font-bold tracking-[0.2rem] text-size16'>{name}</p>
       </span>
 
       <div className='w-[4rem] flex items-center justify-center'>

@@ -1,6 +1,6 @@
 'use client';
 
-import { Fragment } from 'react';
+import { Fragment, useCallback } from 'react';
 import { toast } from 'react-toastify';
 
 import { Accordion } from '@/components/client';
@@ -13,7 +13,7 @@ import { InviteAccountItem } from './components';
 import { twMerge } from 'tailwind-merge';
 
 const InviteAccount = ({ accountData }: InviteAccountProps) => {
-  const handleCopyAccount = async (account: string) => {
+  const handleCopyAccount = useCallback(async (account: string) => {
     try {
       await navigator.clipboard.writeText(account);
 
@@ -29,7 +29,7 @@ const InviteAccount = ({ accountData }: InviteAccountProps) => {
         type: 'error',
       });
     }
-  };
+  }, []);
 
   const { groom, bride } = accountData;
 
