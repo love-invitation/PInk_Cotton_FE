@@ -6,15 +6,16 @@ import { UseAccordionStyle } from './useAccordionStyle.type';
 
 import { twJoin } from 'tailwind-merge';
 
-const useAccordionStyle = ({ type }: UseAccordionStyle) => {
+const useAccordionStyle = ({ type, isToggle }: UseAccordionStyle) => {
   const layoutStyle = useMemo(
     () =>
       twJoin(
         'w-full overflow-hidden',
         type === 'main' && 'max-w-[55rem]',
         type === 'edit' && 'max-w-[73rem] rounded-radius10 shadow-shadow_500',
+        isToggle && type === 'account' && 'pb-[0.2rem]',
       ),
-    [type],
+    [isToggle, type],
   );
 
   const buttonStyle = useMemo(
