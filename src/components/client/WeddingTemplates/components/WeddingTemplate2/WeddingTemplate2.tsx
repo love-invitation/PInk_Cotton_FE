@@ -39,6 +39,7 @@ const WeddingTemplate2 = ({ imageUrl, groomName, brideName, details }: WeddingTe
           src={imageUrl}
           className='object-top object-cover'
           fill
+          sizes='100% 100%'
           priority
           alt='template - 1 Image'
         />
