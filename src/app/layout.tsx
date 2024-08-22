@@ -45,12 +45,7 @@ const RootLayout = ({
           />
           {process.env.NEXT_PUBLIC_G_TAG ? <GoogleAnalytics /> : null}
           <MswProvider />
-          <main
-            id='app'
-            className='min-w-[40rem]'
-          >
-            {children}
-          </main>
+          <main id='app'>{children}</main>
           <ToastProvider />
         </TanstackProvider>
       </body>
