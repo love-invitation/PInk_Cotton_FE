@@ -20,7 +20,10 @@ const Accordion = ({
 }: AccordionProps) => {
   const { isToggle, handleToggle } = useToggle(defaultToggleValue);
   const { ref, height } = useGetElementHeight();
-  const { layoutStyle, buttonStyle, buttonInnerStyle, contentStyle } = useAccordionStyle({ type });
+  const { layoutStyle, buttonStyle, buttonInnerStyle, contentStyle } = useAccordionStyle({
+    type,
+    isToggle,
+  });
 
   const { theme } = resolveConfig(tailwindConfig);
 
