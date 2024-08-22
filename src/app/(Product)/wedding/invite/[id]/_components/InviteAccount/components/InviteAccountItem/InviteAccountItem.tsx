@@ -22,7 +22,7 @@ const InviteAccountItem = ({ onCopy, accountInfo }: InviteAccountItemProps) => {
         <p className='font-bold tracking-[0.2rem] text-size16'>{name}</p>
       </span>
 
-      <div className='w-[4rem] flex items-center justify-center'>
+      <div className='w-[4rem] flex items-center justify-center select-none'>
         <button
           type='button'
           aria-label='account_copy'
