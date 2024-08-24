@@ -11,6 +11,7 @@ import {
   InviteContact,
   InviteCover,
   InviteGallery,
+  InviteGuestBook,
   InviteLocation,
 } from './_components';
 
@@ -50,6 +51,7 @@ const InvitePage = async ({ params }: { params: { id: string } }) => {
             transportData={transport}
           />
           <InviteAccount accountData={account} />
+          <InviteGuestBook />
         </div>
       </section>
     </HydrationBoundary>

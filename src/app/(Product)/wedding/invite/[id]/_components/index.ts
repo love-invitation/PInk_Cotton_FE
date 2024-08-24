@@ -7,3 +7,4 @@ export { default as InviteCalender } from './InviteCalender/InviteCalender';
 export { default as InviteGallery } from './InviteGallery/InviteGallery';
 export { default as InviteLocation } from './InviteLocation/InviteLocation';
 export { default as InviteAccount } from './InviteAccount/InviteAccount';
+export { default as InviteGuestBook } from './InviteGuestBook/InviteGuestBook';
