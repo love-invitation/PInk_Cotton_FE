@@ -1,4 +1,5 @@
 import { INVITE_STYLE } from '../../Invite.style';
+import { CreateBookComment } from './components';
 
 import { twMerge } from 'tailwind-merge';
 
@@ -10,6 +11,8 @@ const InviteGuestBook = () => {
         <p className='text-size18 font-bold'>방명록</p>
         <p className='text-size14'>축복의 의미로 방명록을 작성해보세요.</p>
       </span>
+
+      <CreateBookComment />
     </section>
   );
 };
