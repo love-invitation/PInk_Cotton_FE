@@ -10,9 +10,8 @@ import { twMerge } from 'tailwind-merge';
 const InviteLocation = ({ placeData, transportData }: InviteLocationProps) => {
   return (
     <article className={twMerge(INVITE_STYLE.LAYOUT, 'gap-[4rem]')}>
-      <h2 className={INVITE_STYLE.TITLE}>LOCATION</h2>
-
-      <span className='w-full flex flex-col justify-center items-center gap-[1.2rem]'>
+      <span className='w-full flex flex-col justify-center items-center gap-[1.6rem]'>
+        <h2 className={INVITE_STYLE.TITLE}>LOCATION</h2>
         <p className='text-size18 font-bold'>{[placeData.name, placeData.detail].join(', ')}</p>
         <p className='text-size14'>{placeData.address}</p>
       </span>
