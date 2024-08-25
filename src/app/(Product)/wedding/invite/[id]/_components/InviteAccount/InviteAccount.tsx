@@ -28,9 +28,8 @@ const InviteAccount = ({ accountData }: InviteAccountProps) => {
 
   return (
     <article className={twMerge(INVITE_STYLE.LAYOUT, 'px-[1.6rem] gap-[4rem]')}>
-      <h2 className={INVITE_STYLE.TITLE}>ACCOUNT</h2>
-
-      <span className='w-full px-[1.6rem] flex flex-col gap-[2rem] items-center'>
+      <span className='w-full px-[1.6rem] flex flex-col gap-[1.6rem] items-center'>
+        <h2 className={INVITE_STYLE.TITLE}>ACCOUNT</h2>
         <p className='text-size18 font-bold'>마음 전하실 곳</p>
         <p className='text-size14'>축복의 의미로 축의금을 전달해보세요.</p>
       </span>
