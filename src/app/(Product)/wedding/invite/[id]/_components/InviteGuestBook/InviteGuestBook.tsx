@@ -1,6 +1,6 @@
 import { INVITE_STYLE } from '../../Invite.style';
 import { InviteGuestBookProps } from './InviteGuestBook.type';
-import { CreateBookComment } from './components';
+import { BookComments, CreateBookComment } from './components';
 
 import { twMerge } from 'tailwind-merge';
 
@@ -14,6 +14,8 @@ const InviteGuestBook = ({ inviteId }: InviteGuestBookProps) => {
       </span>
 
       <CreateBookComment inviteId={inviteId} />
+
+      <BookComments />
     </section>
   );
 };
