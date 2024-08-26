@@ -1,5 +1,6 @@
 import { fetchApi } from '@/api';
 import { InvitationInput } from '@/constants';
+import { GuestBookComment } from '@/types/request';
 
 export const fetchImageAsBlob = async (imageUrl: string): Promise<Blob> => {
   const response = await fetch(imageUrl);
@@ -179,6 +180,29 @@ export const putInvitation = async ({
     method: 'PUT',
     body: formData,
     credentials: 'include',
+  });
+
+  if (!response.ok) {
+    throw new Error(`HTTP error! status: ${response.status}`);
+  }
+
+  return response.json();
+};
+
+export const createGuestBook = async ({
+  inviteId,
+  data,
+}: {
+  inviteId: string;
+  data: GuestBookComment;
+}) => {
+  const response = await fetchApi(`/api/v1/products/invitations/${inviteId}/guestbooks`, {
+    method: 'POST',
+    body: JSON.stringify(data),
+    credentials: 'include',
+    headers: {
+      'Content-Type': 'application/json;charset=UTF-8',
+    },
   });
 
   if (!response.ok) {
