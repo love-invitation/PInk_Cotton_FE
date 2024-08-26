@@ -1,6 +1,7 @@
 import { cache } from 'react';
 
 import {
+  createGuestBook,
   fetchImageAsBlob,
   getAllWeddingTemplates,
   getAuthUser,
@@ -12,6 +13,7 @@ import {
   postInvitation,
   putInvitation,
 } from '@/services/server';
+import { GuestBookComment } from '@/types/request';
 import { InvitationResponse } from '@/types/response';
 import { QueryClient } from '@tanstack/react-query';
 
@@ -145,5 +147,9 @@ export const MUTATE_OPTIONS = {
 
   LOGOUT: () => ({
     mutationFn: () => logoutAuth(),
+  }),
+
+  INVITATION_GUEST_BOOK_POST: () => ({
+    mutationFn: (param: { inviteId: string; data: GuestBookComment }) => createGuestBook(param),
   }),
 };
