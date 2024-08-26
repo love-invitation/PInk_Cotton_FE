@@ -51,7 +51,7 @@ const InvitePage = async ({ params }: { params: { id: string } }) => {
             transportData={transport}
           />
           <InviteAccount accountData={account} />
-          <InviteGuestBook />
+          <InviteGuestBook inviteId={params.id} />
         </div>
       </section>
     </HydrationBoundary>

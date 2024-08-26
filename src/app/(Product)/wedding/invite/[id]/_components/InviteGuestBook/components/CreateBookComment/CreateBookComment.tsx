@@ -3,8 +3,12 @@
 import { FormProvider, useForm } from 'react-hook-form';
 
 import { Button, Input } from '@/components/client';
+import { MUTATE_OPTIONS } from '@/constants';
+import { useMutation } from '@tanstack/react-query';
 
-const CreateBookComment = () => {
+import { CreateBookCommentProps } from './CreateBookComment.type';
+
+const CreateBookComment = ({ inviteId }: CreateBookCommentProps) => {
   const formMethod = useForm({
     defaultValues: {
       name: '',
@@ -12,6 +16,8 @@ const CreateBookComment = () => {
       message: '',
     },
   });
+
+  const { mutate } = useMutation(MUTATE_OPTIONS.INVITATION_GUEST_BOOK_POST());
 
   return (
     <FormProvider {...formMethod}>
@@ -36,7 +42,7 @@ const CreateBookComment = () => {
           radius='0.8rem'
           backgroundColor='black'
           className='h-fit py-[1.6rem]'
-          onClick={formMethod.handleSubmit(() => {})}
+          onClick={formMethod.handleSubmit((data) => mutate({ inviteId, data }))}
         >
           축하메세지 남기기
         </Button>
