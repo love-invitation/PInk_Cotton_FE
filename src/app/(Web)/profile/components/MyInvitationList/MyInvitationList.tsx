@@ -9,7 +9,7 @@ import MyInvitationItem from '../MyInvitationItem/MyInvitationItem';
 const MyInvitations = () => {
   const { data } = useSuspenseQuery<MyInvitationsResponse>(QUERY_OPTIONS.MY_INVITATIONS());
 
-  if (!data || !data.result) {
+  if (!data?.result || data.result.length === 0) {
     return (
       <h1
         id='calc_header_footer_height'
