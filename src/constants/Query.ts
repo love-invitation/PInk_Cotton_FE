@@ -6,6 +6,7 @@ import {
   getAllWeddingTemplates,
   getAuthUser,
   getBestWeddingTemplates,
+  getGuestBooks,
   getInvitation,
   getMyInvitation,
   getWeddingTemplate,
@@ -33,6 +34,8 @@ export const QUERY_KEYS = {
     invitation.result.thumbnail.imageUrl,
     ...invitation.result.gallery.galleries.map((value) => value.imageUrl),
   ],
+
+  GET_GUEST_BOOKS: (inviteId: string) => ['invite', 'guestbooks', inviteId],
 };
 
 export const QUERY_OPTIONS = {
@@ -132,6 +135,11 @@ export const QUERY_OPTIONS = {
       staleTime: Infinity,
     };
   },
+
+  GET_GUEST_BOOKS: ({ inviteId }: { inviteId: string }) => ({
+    queryKey: QUERY_KEYS.GET_GUEST_BOOKS(inviteId),
+    queryFn: () => getGuestBooks(),
+  }),
 };
 
 export const MUTATE_OPTIONS = {
