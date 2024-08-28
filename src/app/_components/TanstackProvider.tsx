@@ -4,7 +4,7 @@ import { PropsWithChildren, useState } from 'react';
 
 import { useRouter } from 'next/navigation';
 
-import { DOMAIN_URL, QUERY_KEYS, getQueryClient } from '@/constants';
+import { DOMAIN_URL, QUERY_KEYS } from '@/constants';
 import { MutationCache, QueryCache, QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 
@@ -19,7 +19,7 @@ const TanstackProvider = ({ children }: PropsWithChildren) => {
 
             if (error instanceof Error && errorMessage.endsWith('401')) {
               route.push(DOMAIN_URL.LOGIN);
-              getQueryClient().invalidateQueries({ queryKey: QUERY_KEYS.AUTH_USER });
+              queryClient.invalidateQueries({ queryKey: QUERY_KEYS.AUTH_USER });
             }
 
             if (error instanceof Error && errorMessage.endsWith('404')) {
@@ -33,7 +33,7 @@ const TanstackProvider = ({ children }: PropsWithChildren) => {
 
             if (error instanceof Error && errorMessage.endsWith('401')) {
               route.push(DOMAIN_URL.LOGIN);
-              getQueryClient().invalidateQueries({ queryKey: QUERY_KEYS.AUTH_USER });
+              queryClient.invalidateQueries({ queryKey: QUERY_KEYS.AUTH_USER });
             }
           },
         }),

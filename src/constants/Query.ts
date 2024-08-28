@@ -145,10 +145,5 @@ export const MUTATE_OPTIONS = {
 
   LOGOUT: () => ({
     mutationFn: () => logoutAuth(),
-    onSettled: () => {
-      getQueryClient().invalidateQueries({
-        queryKey: QUERY_KEYS.AUTH_USER,
-      });
-    },
   }),
 };

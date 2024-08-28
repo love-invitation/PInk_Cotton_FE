@@ -3,8 +3,8 @@
 import Link from 'next/link';
 
 import { UserIcon } from '@/components/server/icons';
-import { DOMAIN_URL, MUTATE_OPTIONS, QUERY_OPTIONS } from '@/constants';
-import { useMutation, useQuery } from '@tanstack/react-query';
+import { DOMAIN_URL, MUTATE_OPTIONS, QUERY_KEYS, QUERY_OPTIONS } from '@/constants';
+import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 
 import tailwindConfig from '../../../../../../tailwind.config';
 
@@ -12,8 +12,16 @@ import { twJoin } from 'tailwind-merge';
 import resolveConfig from 'tailwindcss/resolveConfig';
 
 const HeaderUserInfo = () => {
+  const queryClient = useQueryClient();
   const { data, isError, isFetching } = useQuery(QUERY_OPTIONS.AUTH_USER());
-  const { mutate } = useMutation(MUTATE_OPTIONS.LOGOUT());
+  const { mutate } = useMutation({
+    ...MUTATE_OPTIONS.LOGOUT(),
+    onSettled: () => {
+      queryClient.invalidateQueries({
+        queryKey: QUERY_KEYS.AUTH_USER,
+      });
+    },
+  });
   const { theme } = resolveConfig(tailwindConfig);
   const isLogin = !isError && data?.result;
   const commonStyles = 'underline text-pink_500 text-size16 font-semiBold text-nowrap';
