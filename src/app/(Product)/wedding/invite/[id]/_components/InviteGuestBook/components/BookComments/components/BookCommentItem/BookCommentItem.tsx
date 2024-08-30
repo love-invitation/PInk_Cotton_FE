@@ -1,8 +1,15 @@
+'use client';
+
 import { DotColumIcon } from '@/components/server';
+import { useToggle } from '@/hooks';
 
 import { BookCommentItemProps } from './BookCommentItem.type';
 
+import { AnimatePresence, motion } from 'framer-motion';
+
 const BookCommentItem = ({ message, name, created }: BookCommentItemProps) => {
+  const { isToggle, handleToggle } = useToggle();
+
   return (
     <li
       key={message}
@@ -15,13 +22,30 @@ const BookCommentItem = ({ message, name, created }: BookCommentItemProps) => {
 
       <p className='text-size14'>{message}</p>
 
-      <button
-        type='button'
-        className=' absolute top-[1.6rem] right-[1.6rem]'
-        aria-label='comment_edit_button'
-      >
-        <DotColumIcon size='2.4rem' />
-      </button>
+      <span className='absolute top-[1.6rem] right-[1.6rem] flex flex-col justify-end items-end'>
+        <button
+          type='button'
+          aria-label='comment_edit_button'
+          onClick={handleToggle}
+        >
+          <DotColumIcon size='2.4rem' />
+        </button>
+
+        <AnimatePresence>
+          {isToggle && (
+            <motion.button
+              type='button'
+              aria-label='comment_delete_button'
+              className='text-size14 px-[1rem] py-[0.6rem] bg-white_100 border-[0.1rem] border-black_500 rounded-radius8'
+              initial={{ opacity: 0, scale: 0.2 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.2 }}
+            >
+              삭제하기
+            </motion.button>
+          )}
+        </AnimatePresence>
+      </span>
     </li>
   );
 };
