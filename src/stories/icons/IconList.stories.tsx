@@ -12,6 +12,7 @@ import {
   CopyIcon,
   DarkFlowerIcon,
   DeleteIcon,
+  DotColumIcon,
   DotIcon,
   Folder3DIcon,
   GoogleLogoIcon,
@@ -235,5 +236,11 @@ export const AccountFlower: Story = {
 export const Copy: Story = {
   args: {
     children: <CopyIcon />,
+  },
+};
+
+export const DotColum: Story = {
+  args: {
+    children: <DotColumIcon />,
   },
 };
