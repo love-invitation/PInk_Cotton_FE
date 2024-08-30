@@ -2,6 +2,7 @@ export interface GuestBookContent {
   id: number;
   name: string;
   message: string;
+  created: string;
 }
 
 export interface GuestBookPageAble {
