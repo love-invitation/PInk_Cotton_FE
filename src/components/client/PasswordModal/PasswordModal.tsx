@@ -37,8 +37,8 @@ const PasswordModal = ({ isShow, onClose, onAccept }: PasswordModalProps) => {
                   value: 12,
                 },
                 pattern: {
-                  value: /^[가-힣a-zA-Z0-9]+$/,
-                  message: '한글, 영어, 숫자만 사용 가능 합니다.',
+                  value: /^[a-zA-Z0-9]+$/,
+                  message: '영어, 숫자만 사용 가능 합니다.',
                 },
               }}
             />
