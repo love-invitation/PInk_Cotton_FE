@@ -35,3 +35,35 @@ export const getGuestBooks = async () => {
 
   return response.json();
 };
+/**
+ * TODO
+ *
+ * Delete 메서드 정비 후 재 정의하기
+ */
+
+export const deleteGuestBook = async ({
+  // inviteId,
+  // commentId,
+  password,
+}: {
+  // inviteId: string;
+  // commentId: string;
+  password: string;
+}) => {
+  const response = await fetchApi(
+    `/api/v1/products/invitations/600246308994180233/guestbooks?page=0`,
+    {
+      method: 'GET',
+      credentials: 'include',
+      headers: {
+        Password: password,
+      },
+    },
+  );
+
+  if (!response.ok) {
+    throw new Error(`HTTP error! status: ${response.status}`);
+  }
+
+  return response.json();
+};
