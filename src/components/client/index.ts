@@ -12,3 +12,4 @@ export { default as Dropdown } from './Dropdown/DropdownWrapper/DropdownWrapper'
 export { default as WeddingTemplates } from './WeddingTemplates/WeddingTemplates';
 export { default as Calender } from './Calender/Calender';
 export { default as PasswordModal } from './PasswordModal/PasswordModal';
+export { default as LoginModal } from './LoginModal/LoginModal';
