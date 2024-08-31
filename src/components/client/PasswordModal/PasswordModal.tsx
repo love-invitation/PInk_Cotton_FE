@@ -10,6 +10,8 @@ const PasswordModal = ({ isShow, onClose, onAccept }: PasswordModalProps) => {
 
   const handleSubmit: SubmitHandler<{ password: string }> = ({ password }) => {
     onAccept(password);
+    form.setValue('password', '');
+    onClose();
   };
 
   return (
