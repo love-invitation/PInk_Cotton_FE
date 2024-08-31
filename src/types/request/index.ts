@@ -1,1 +1,1 @@
-export * from './invitation';
+export * from './InviteGuestBook';

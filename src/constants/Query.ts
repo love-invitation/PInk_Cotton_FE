@@ -2,6 +2,7 @@ import { cache } from 'react';
 
 import {
   createGuestBook,
+  deleteGuestBook,
   fetchImageAsBlob,
   getAllWeddingTemplates,
   getAuthUser,
@@ -159,5 +160,10 @@ export const MUTATE_OPTIONS = {
 
   INVITATION_GUEST_BOOK_POST: () => ({
     mutationFn: (param: { inviteId: string; data: GuestBookComment }) => createGuestBook(param),
+  }),
+
+  INVITATION_GUEST_BOOK_DELETE: () => ({
+    mutationFn: (param: { inviteId: string; commentId: string; password: string }) =>
+      deleteGuestBook(param),
   }),
 };
