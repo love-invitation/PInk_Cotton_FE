@@ -10,6 +10,7 @@ import { useMutation, useQuery } from '@tanstack/react-query';
 
 import { BookCommentsProps } from './BookComments.type';
 import { BookCommentItem } from './components';
+import { useDeleteComment } from './hooks';
 
 export const BookComments = ({ inviteId }: BookCommentsProps) => {
   const { isToggle, handleSetTrue, handleSetFalse } = useToggle();
@@ -28,10 +29,18 @@ export const BookComments = ({ inviteId }: BookCommentsProps) => {
   const { data: authData, isError } = useQuery(QUERY_OPTIONS.AUTH_USER());
 
   const { data, refetch } = useQuery<GuestBook>(QUERY_OPTIONS.GET_GUEST_BOOKS({ inviteId: 'key' }));
-  const deleteMutation = useMutation(MUTATE_OPTIONS.INVITATION_GUEST_BOOK_DELETE());
+
   const adminMutation = useMutation(MUTATE_OPTIONS.INVITATION_GUEST_BOOK_DELETE_ADMIN());
   const [commentId, setCommentId] = useState('');
 
+  const handleDelete = useDeleteComment({
+    commentId,
+    inviteId,
+    onSuccess: () => {
+      refetch();
+      handleOpenAlert();
+    },
+  });
   const isLogin = useMemo(() => !isError && !!authData?.result, [authData?.result, isError]);
 
   const convertDate = useCallback((date: string) => {
@@ -39,21 +48,6 @@ export const BookComments = ({ inviteId }: BookCommentsProps) => {
 
     return `${changedDate.getFullYear()}.${changedDate.getMonth() + 1}.${changedDate.getDate()}`;
   }, []);
-
-  const handleDeleteComment = useCallback(
-    (password: string) => {
-      deleteMutation.mutate(
-        { inviteId, commentId, password },
-        {
-          onSuccess: () => {
-            refetch();
-            handleOpenAlert();
-          },
-        },
-      );
-    },
-    [commentId, deleteMutation, handleOpenAlert, inviteId, refetch],
-  );
 
   const handleOpenModal = useCallback(
     (newId: string) => {
@@ -96,7 +90,7 @@ export const BookComments = ({ inviteId }: BookCommentsProps) => {
         isShow={isToggle}
         isLogin={isLogin}
         onClose={handleSetFalse}
-        onAccept={handleDeleteComment}
+        onAccept={handleDelete}
         onLogin={handleOpenLogin}
         onAdminDelete={handleAdmin}
       />
