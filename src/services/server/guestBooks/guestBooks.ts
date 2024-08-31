@@ -36,7 +36,6 @@ export const getGuestBooks = async () => {
   return response.json();
 };
 
-// prettier-ignore
 export const deleteGuestBook = async ({
   inviteId,
   commentId,
@@ -46,14 +45,13 @@ export const deleteGuestBook = async ({
   commentId: string;
   password: string;
 }) => {
-  
   const response = await fetchApi(
     `/api/v1/products/invitations/${inviteId}/guestbooks/${commentId}`,
     {
       method: 'DELETE',
       credentials: 'include',
       headers: {
-        "Password": password,
+        Password: password,
       },
     },
   );
