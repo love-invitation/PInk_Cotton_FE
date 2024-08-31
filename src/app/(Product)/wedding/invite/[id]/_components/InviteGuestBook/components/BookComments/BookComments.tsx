@@ -1,6 +1,6 @@
 'use client';
 
-import { useCallback, useMemo } from 'react';
+import { useCallback } from 'react';
 
 import { AlertModal, LoginModal, PasswordModal } from '@/components/client';
 import { QUERY_OPTIONS } from '@/constants';
@@ -10,7 +10,7 @@ import { useQuery } from '@tanstack/react-query';
 
 import { BookCommentsProps } from './BookComments.type';
 import { BookCommentItem } from './components';
-import { useAdminDeleteComment, useCommentId, useDeleteComment } from './hooks';
+import { useAdminDeleteComment, useCheckLogin, useCommentId, useDeleteComment } from './hooks';
 
 export const BookComments = ({ inviteId }: BookCommentsProps) => {
   const { isToggle, handleSetTrue, handleSetFalse } = useToggle();
@@ -25,8 +25,6 @@ export const BookComments = ({ inviteId }: BookCommentsProps) => {
     handleSetTrue: handleOpenLogin,
     handleSetFalse: handleCloseLogin,
   } = useToggle();
-
-  const { data: authData, isError } = useQuery(QUERY_OPTIONS.AUTH_USER());
 
   const { data, refetch } = useQuery<GuestBook>(QUERY_OPTIONS.GET_GUEST_BOOKS({ inviteId: 'key' }));
 
@@ -50,7 +48,7 @@ export const BookComments = ({ inviteId }: BookCommentsProps) => {
     },
   });
 
-  const isLogin = useMemo(() => !isError && !!authData?.result, [authData?.result, isError]);
+  const isLogin = useCheckLogin();
 
   const convertDate = useCallback((date: string) => {
     const changedDate = new Date(date);
