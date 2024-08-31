@@ -1,8 +1,10 @@
 'use client';
 
-import { useCallback } from 'react';
+import { useCallback, useState } from 'react';
 
+import { PasswordModal } from '@/components/client';
 import { MUTATE_OPTIONS, QUERY_OPTIONS } from '@/constants';
+import { useToggle } from '@/hooks';
 import { GuestBook } from '@/types/response';
 import { useMutation, useQuery } from '@tanstack/react-query';
 
@@ -10,9 +12,11 @@ import { BookCommentsProps } from './BookComments.type';
 import { BookCommentItem } from './components';
 
 export const BookComments = ({ inviteId }: BookCommentsProps) => {
-  const { data } = useQuery<GuestBook>(QUERY_OPTIONS.GET_GUEST_BOOKS({ inviteId: 'key' }));
+  const { isToggle, handleSetTrue, handleSetFalse } = useToggle();
 
+  const { data } = useQuery<GuestBook>(QUERY_OPTIONS.GET_GUEST_BOOKS({ inviteId: 'key' }));
   const deleteMutation = useMutation(MUTATE_OPTIONS.INVITATION_GUEST_BOOK_DELETE());
+  const [commentId, setCommentId] = useState('');
 
   const convertDate = useCallback((date: string) => {
     const changedDate = new Date(date);
@@ -24,8 +28,18 @@ export const BookComments = ({ inviteId }: BookCommentsProps) => {
     return null;
   }
 
-  const handleDelete = (commentId: string) => {
-    deleteMutation.mutate({ commentId, inviteId, password: '테스트' });
+  const handleOpenModal = (newId: string) => {
+    setCommentId(newId);
+    handleSetTrue();
+  };
+
+  const handleDeleteComment = (password: string) => {
+    deleteMutation.mutate(
+      { inviteId, commentId, password },
+      {
+        onSuccess: () => {},
+      },
+    );
   };
 
   return (
@@ -37,9 +51,15 @@ export const BookComments = ({ inviteId }: BookCommentsProps) => {
           name={name}
           created={convertDate(created)}
           id={id}
-          onDelete={handleDelete}
+          onDelete={handleOpenModal}
         />
       ))}
+
+      <PasswordModal
+        isShow={isToggle}
+        onClose={handleSetFalse}
+        onAccept={handleDeleteComment}
+      />
     </ul>
   );
 };
