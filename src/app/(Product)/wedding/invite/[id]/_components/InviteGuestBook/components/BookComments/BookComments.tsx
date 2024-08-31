@@ -2,7 +2,7 @@
 
 import { useCallback, useState } from 'react';
 
-import { AlertModal, PasswordModal } from '@/components/client';
+import { AlertModal, LoginModal, PasswordModal } from '@/components/client';
 import { MUTATE_OPTIONS, QUERY_OPTIONS } from '@/constants';
 import { useToggle } from '@/hooks';
 import { GuestBook } from '@/types/response';
@@ -17,6 +17,12 @@ export const BookComments = ({ inviteId }: BookCommentsProps) => {
     isToggle: isAlertModal,
     handleSetTrue: handleOpenAlert,
     handleSetFalse: handleCloseAlert,
+  } = useToggle();
+
+  const {
+    isToggle: isLoginModal,
+    handleSetTrue: handleOpenLogin,
+    handleSetFalse: handleCloseLogin,
   } = useToggle();
 
   const { data, refetch } = useQuery<GuestBook>(QUERY_OPTIONS.GET_GUEST_BOOKS({ inviteId: 'key' }));
@@ -73,12 +79,18 @@ export const BookComments = ({ inviteId }: BookCommentsProps) => {
         isShow={isToggle}
         onClose={handleSetFalse}
         onAccept={handleDeleteComment}
+        onLogin={handleOpenLogin}
       />
 
       <AlertModal
         isShow={isAlertModal}
         onClose={handleCloseAlert}
         message='메세지가 정상적으로 제거되었습니다.'
+      />
+
+      <LoginModal
+        isShow={isLoginModal}
+        onClose={handleCloseLogin}
       />
     </ul>
   );
