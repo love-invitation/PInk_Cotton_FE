@@ -1,6 +1,6 @@
 'use client';
 
-import { useCallback, useMemo, useState } from 'react';
+import { useCallback, useMemo } from 'react';
 
 import { AlertModal, LoginModal, PasswordModal } from '@/components/client';
 import { QUERY_OPTIONS } from '@/constants';
@@ -10,7 +10,7 @@ import { useQuery } from '@tanstack/react-query';
 
 import { BookCommentsProps } from './BookComments.type';
 import { BookCommentItem } from './components';
-import { useAdminDeleteComment, useDeleteComment } from './hooks';
+import { useAdminDeleteComment, useCommentId, useDeleteComment } from './hooks';
 
 export const BookComments = ({ inviteId }: BookCommentsProps) => {
   const { isToggle, handleSetTrue, handleSetFalse } = useToggle();
@@ -30,7 +30,7 @@ export const BookComments = ({ inviteId }: BookCommentsProps) => {
 
   const { data, refetch } = useQuery<GuestBook>(QUERY_OPTIONS.GET_GUEST_BOOKS({ inviteId: 'key' }));
 
-  const [commentId, setCommentId] = useState('');
+  const { commentId, handleChangeId } = useCommentId(handleSetTrue);
 
   const handleDelete = useDeleteComment({
     commentId,
@@ -58,14 +58,6 @@ export const BookComments = ({ inviteId }: BookCommentsProps) => {
     return `${changedDate.getFullYear()}.${changedDate.getMonth() + 1}.${changedDate.getDate()}`;
   }, []);
 
-  const handleOpenModal = useCallback(
-    (newId: string) => {
-      setCommentId(newId);
-      handleSetTrue();
-    },
-    [handleSetTrue],
-  );
-
   if (!data) {
     return null;
   }
@@ -79,7 +71,7 @@ export const BookComments = ({ inviteId }: BookCommentsProps) => {
           name={name}
           created={convertDate(created)}
           id={id}
-          onDelete={handleOpenModal}
+          onDelete={handleChangeId}
         />
       ))}
 
