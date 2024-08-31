@@ -62,3 +62,25 @@ export const deleteGuestBook = async ({
 
   return response.json();
 };
+
+export const deleteAdminGuestBook = async ({
+  inviteId,
+  commentId,
+}: {
+  inviteId: string;
+  commentId: string;
+}) => {
+  const response = await fetchApi(
+    `/api/v1/products/invitations/${inviteId}/guestbooks/${commentId}`,
+    {
+      method: 'DELETE',
+      credentials: 'include',
+    },
+  );
+
+  if (!response.ok) {
+    throw new Error(`HTTP error! status: ${response.status}`);
+  }
+
+  return response.json();
+};
