@@ -3,14 +3,14 @@
 import { useCallback, useMemo, useState } from 'react';
 
 import { AlertModal, LoginModal, PasswordModal } from '@/components/client';
-import { MUTATE_OPTIONS, QUERY_OPTIONS } from '@/constants';
+import { QUERY_OPTIONS } from '@/constants';
 import { useToggle } from '@/hooks';
 import { GuestBook } from '@/types/response';
-import { useMutation, useQuery } from '@tanstack/react-query';
+import { useQuery } from '@tanstack/react-query';
 
 import { BookCommentsProps } from './BookComments.type';
 import { BookCommentItem } from './components';
-import { useDeleteComment } from './hooks';
+import { useAdminDeleteComment, useDeleteComment } from './hooks';
 
 export const BookComments = ({ inviteId }: BookCommentsProps) => {
   const { isToggle, handleSetTrue, handleSetFalse } = useToggle();
@@ -30,7 +30,6 @@ export const BookComments = ({ inviteId }: BookCommentsProps) => {
 
   const { data, refetch } = useQuery<GuestBook>(QUERY_OPTIONS.GET_GUEST_BOOKS({ inviteId: 'key' }));
 
-  const adminMutation = useMutation(MUTATE_OPTIONS.INVITATION_GUEST_BOOK_DELETE_ADMIN());
   const [commentId, setCommentId] = useState('');
 
   const handleDelete = useDeleteComment({
@@ -41,6 +40,16 @@ export const BookComments = ({ inviteId }: BookCommentsProps) => {
       handleOpenAlert();
     },
   });
+
+  const handleAdminDelete = useAdminDeleteComment({
+    commentId,
+    inviteId,
+    onSuccess: () => {
+      refetch();
+      handleOpenAlert();
+    },
+  });
+
   const isLogin = useMemo(() => !isError && !!authData?.result, [authData?.result, isError]);
 
   const convertDate = useCallback((date: string) => {
@@ -56,18 +65,6 @@ export const BookComments = ({ inviteId }: BookCommentsProps) => {
     },
     [handleSetTrue],
   );
-
-  const handleAdmin = useCallback(() => {
-    adminMutation.mutate(
-      { inviteId, commentId },
-      {
-        onSuccess: () => {
-          refetch();
-          handleOpenAlert();
-        },
-      },
-    );
-  }, [adminMutation, commentId, handleOpenAlert, inviteId, refetch]);
 
   if (!data) {
     return null;
@@ -92,7 +89,7 @@ export const BookComments = ({ inviteId }: BookCommentsProps) => {
         onClose={handleSetFalse}
         onAccept={handleDelete}
         onLogin={handleOpenLogin}
-        onAdminDelete={handleAdmin}
+        onAdminDelete={handleAdminDelete}
       />
 
       <AlertModal
