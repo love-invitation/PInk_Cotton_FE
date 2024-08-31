@@ -1,6 +1,6 @@
 'use client';
 
-import { useCallback, useState } from 'react';
+import { useCallback, useMemo, useState } from 'react';
 
 import { AlertModal, LoginModal, PasswordModal } from '@/components/client';
 import { MUTATE_OPTIONS, QUERY_OPTIONS } from '@/constants';
@@ -25,9 +25,14 @@ export const BookComments = ({ inviteId }: BookCommentsProps) => {
     handleSetFalse: handleCloseLogin,
   } = useToggle();
 
+  const { data: authData, isError } = useQuery(QUERY_OPTIONS.AUTH_USER());
+
   const { data, refetch } = useQuery<GuestBook>(QUERY_OPTIONS.GET_GUEST_BOOKS({ inviteId: 'key' }));
   const deleteMutation = useMutation(MUTATE_OPTIONS.INVITATION_GUEST_BOOK_DELETE());
+  const adminMutation = useMutation(MUTATE_OPTIONS.INVITATION_GUEST_BOOK_DELETE_ADMIN());
   const [commentId, setCommentId] = useState('');
+
+  const isLogin = useMemo(() => !isError && !!authData?.result, [authData?.result, isError]);
 
   const convertDate = useCallback((date: string) => {
     const changedDate = new Date(date);
@@ -58,6 +63,18 @@ export const BookComments = ({ inviteId }: BookCommentsProps) => {
     [handleSetTrue],
   );
 
+  const handleAdmin = useCallback(() => {
+    adminMutation.mutate(
+      { inviteId, commentId },
+      {
+        onSuccess: () => {
+          refetch();
+          handleOpenAlert();
+        },
+      },
+    );
+  }, [adminMutation, commentId, handleOpenAlert, inviteId, refetch]);
+
   if (!data) {
     return null;
   }
@@ -77,9 +94,11 @@ export const BookComments = ({ inviteId }: BookCommentsProps) => {
 
       <PasswordModal
         isShow={isToggle}
+        isLogin={isLogin}
         onClose={handleSetFalse}
         onAccept={handleDeleteComment}
         onLogin={handleOpenLogin}
+        onAdminDelete={handleAdmin}
       />
 
       <AlertModal

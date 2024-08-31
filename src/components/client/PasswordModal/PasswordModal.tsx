@@ -5,7 +5,14 @@ import InputWrapper from '../Input/InputWrapper/InputWrapper';
 import { Modal } from '../Modal';
 import { PasswordModalProps } from './PasswordModal.type';
 
-const PasswordModal = ({ isShow, onClose, onAccept, onLogin }: PasswordModalProps) => {
+const PasswordModal = ({
+  isShow,
+  isLogin,
+  onClose,
+  onAccept,
+  onLogin,
+  onAdminDelete,
+}: PasswordModalProps) => {
   const form = useForm({ defaultValues: { password: '' }, mode: 'onChange' });
 
   const handleSubmit: SubmitHandler<{ password: string }> = ({ password }) => {
@@ -59,17 +66,28 @@ const PasswordModal = ({ isShow, onClose, onAccept, onLogin }: PasswordModalProp
         </Button>
 
         <div className='w-full py-[1rem] flex items-center justify-evenly'>
-          <span className='text-size14 flex flex-col gap-[0.6rem]'>
+          <span className='text-size14 flex flex-col'>
             <p>신랑 신부는 로그인 후</p>
             <p>우측 버튼을 통해 삭제하실 수 있습니다.</p>
           </span>
 
-          <Button
-            className='w-[8rem]'
-            onClick={onLogin}
-          >
-            Login
-          </Button>
+          {!isLogin && (
+            <Button
+              className='w-[8rem]'
+              onClick={onLogin}
+            >
+              Login
+            </Button>
+          )}
+
+          {isLogin && (
+            <Button
+              className='w-[8rem]'
+              onClick={onAdminDelete}
+            >
+              삭제하기
+            </Button>
+          )}
         </div>
       </article>
     </Modal>
