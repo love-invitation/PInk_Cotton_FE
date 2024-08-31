@@ -15,7 +15,7 @@ const InviteGuestBook = ({ inviteId }: InviteGuestBookProps) => {
 
       <CreateBookComment inviteId={inviteId} />
 
-      <BookComments />
+      <BookComments inviteId={inviteId} />
     </section>
   );
 };

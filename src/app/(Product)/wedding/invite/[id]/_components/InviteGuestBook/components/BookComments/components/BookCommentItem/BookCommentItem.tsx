@@ -7,8 +7,8 @@ import { BookCommentItemProps } from './BookCommentItem.type';
 
 import { AnimatePresence, motion } from 'framer-motion';
 
-const BookCommentItem = ({ message, name, created }: BookCommentItemProps) => {
-  const { isToggle, handleToggle } = useToggle();
+const BookCommentItem = ({ message, name, created, id, onDelete }: BookCommentItemProps) => {
+  const { isToggle, handleToggle, handleSetFalse } = useToggle();
 
   return (
     <li
@@ -40,6 +40,10 @@ const BookCommentItem = ({ message, name, created }: BookCommentItemProps) => {
               initial={{ opacity: 0, scale: 0.2 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.2 }}
+              onClick={() => {
+                onDelete(id.toString());
+                handleSetFalse();
+              }}
             >
               삭제하기
             </motion.button>
