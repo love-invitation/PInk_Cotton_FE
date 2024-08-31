@@ -2,7 +2,7 @@
 
 import { useCallback, useState } from 'react';
 
-import { PasswordModal } from '@/components/client';
+import { AlertModal, PasswordModal } from '@/components/client';
 import { MUTATE_OPTIONS, QUERY_OPTIONS } from '@/constants';
 import { useToggle } from '@/hooks';
 import { GuestBook } from '@/types/response';
@@ -13,8 +13,13 @@ import { BookCommentItem } from './components';
 
 export const BookComments = ({ inviteId }: BookCommentsProps) => {
   const { isToggle, handleSetTrue, handleSetFalse } = useToggle();
+  const {
+    isToggle: isAlertModal,
+    handleSetTrue: handleOpenAlert,
+    handleSetFalse: handleCloseAlert,
+  } = useToggle();
 
-  const { data } = useQuery<GuestBook>(QUERY_OPTIONS.GET_GUEST_BOOKS({ inviteId: 'key' }));
+  const { data, refetch } = useQuery<GuestBook>(QUERY_OPTIONS.GET_GUEST_BOOKS({ inviteId: 'key' }));
   const deleteMutation = useMutation(MUTATE_OPTIONS.INVITATION_GUEST_BOOK_DELETE());
   const [commentId, setCommentId] = useState('');
 
@@ -24,23 +29,32 @@ export const BookComments = ({ inviteId }: BookCommentsProps) => {
     return `${changedDate.getFullYear()}.${changedDate.getMonth() + 1}.${changedDate.getDate()}`;
   }, []);
 
+  const handleDeleteComment = useCallback(
+    (password: string) => {
+      deleteMutation.mutate(
+        { inviteId, commentId, password },
+        {
+          onSuccess: () => {
+            refetch();
+            handleOpenAlert();
+          },
+        },
+      );
+    },
+    [commentId, deleteMutation, handleOpenAlert, inviteId, refetch],
+  );
+
+  const handleOpenModal = useCallback(
+    (newId: string) => {
+      setCommentId(newId);
+      handleSetTrue();
+    },
+    [handleSetTrue],
+  );
+
   if (!data) {
     return null;
   }
-
-  const handleOpenModal = (newId: string) => {
-    setCommentId(newId);
-    handleSetTrue();
-  };
-
-  const handleDeleteComment = (password: string) => {
-    deleteMutation.mutate(
-      { inviteId, commentId, password },
-      {
-        onSuccess: () => {},
-      },
-    );
-  };
 
   return (
     <ul className='w-full px-[1.6rem] flex flex-col gap-[2rem]'>
@@ -59,6 +73,12 @@ export const BookComments = ({ inviteId }: BookCommentsProps) => {
         isShow={isToggle}
         onClose={handleSetFalse}
         onAccept={handleDeleteComment}
+      />
+
+      <AlertModal
+        isShow={isAlertModal}
+        onClose={handleCloseAlert}
+        message='메세지가 정상적으로 제거되었습니다.'
       />
     </ul>
   );
