@@ -24,9 +24,9 @@ export const createGuestBook = async ({
   return response.json();
 };
 
-export const getGuestBooks = async () => {
+export const getGuestBooks = async ({ inviteId, page }: { inviteId: string; page: number }) => {
   const response = await fetchApi(
-    `/api/v1/products/invitations/600246308994180233/guestbooks?page=0`,
+    `/api/v1/products/invitations/${inviteId}/guestbooks?page=${page}`,
   );
 
   if (!response.ok) {

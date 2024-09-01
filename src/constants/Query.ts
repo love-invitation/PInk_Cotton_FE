@@ -37,7 +37,7 @@ export const QUERY_KEYS = {
     ...invitation.result.gallery.galleries.map((value) => value.imageUrl),
   ],
 
-  GET_GUEST_BOOKS: (inviteId: string) => ['invite', 'guestbooks', inviteId],
+  GET_GUEST_BOOKS: (inviteId: string, page: number) => ['invite', 'guestbooks', inviteId, page],
 };
 
 export const QUERY_OPTIONS = {
@@ -138,9 +138,9 @@ export const QUERY_OPTIONS = {
     };
   },
 
-  GET_GUEST_BOOKS: ({ inviteId }: { inviteId: string }) => ({
-    queryKey: QUERY_KEYS.GET_GUEST_BOOKS(inviteId),
-    queryFn: () => getGuestBooks(),
+  GET_GUEST_BOOKS: ({ inviteId, page }: { inviteId: string; page: number }) => ({
+    queryKey: QUERY_KEYS.GET_GUEST_BOOKS(inviteId, page),
+    queryFn: () => getGuestBooks({ inviteId, page }),
   }),
 };
 
