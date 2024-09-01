@@ -1,6 +1,6 @@
 'use client';
 
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useState } from 'react';
 
 import { AlertModal, LoginModal, PasswordModal } from '@/components/client';
 import { QUERY_OPTIONS } from '@/constants';
@@ -10,7 +10,13 @@ import { useQuery } from '@tanstack/react-query';
 
 import { BookCommentsProps } from './BookComments.type';
 import { BookCommentItem } from './components';
-import { useAdminDeleteComment, useCheckLogin, useCommentId, useDeleteComment } from './hooks';
+import {
+  useAdminDeleteComment,
+  useCheckLogin,
+  useCommentId,
+  useCommentPages,
+  useDeleteComment,
+} from './hooks';
 
 import { twJoin } from 'tailwind-merge';
 
@@ -35,6 +41,8 @@ export const BookComments = ({ inviteId }: BookCommentsProps) => {
   );
 
   const { commentId, handleChangeId } = useCommentId(handleSetTrue);
+  const pages = useCommentPages({ isLoading, data, page });
+  const isLogin = useCheckLogin();
 
   const handleDelete = useDeleteComment({
     commentId,
@@ -54,47 +62,11 @@ export const BookComments = ({ inviteId }: BookCommentsProps) => {
     },
   });
 
-  const isLogin = useCheckLogin();
-
   const convertDate = useCallback((date: string) => {
     const changedDate = new Date(date);
 
     return `${changedDate.getFullYear()}.${changedDate.getMonth() + 1}.${changedDate.getDate()}`;
   }, []);
-
-  const [pages, setPages] = useState<number[]>([]);
-
-  useEffect(() => {
-    if (isLoading) {
-      return;
-    }
-
-    if (!data) {
-      return setPages([]);
-    }
-
-    const { first, last, totalPages } = data.result;
-
-    if (totalPages < 6) {
-      const list = [];
-
-      for (let i = 1; i < totalPages + 1; i += 1) {
-        list.push(i);
-      }
-
-      return setPages(list);
-    }
-
-    if (first || page + 1 === 2) {
-      return setPages([1, 2, 3, 4, 5]);
-    }
-
-    if (page + 2 === totalPages || last) {
-      return setPages([totalPages - 4, totalPages - 3, totalPages - 2, totalPages - 1, totalPages]);
-    }
-
-    return setPages([page - 1, page, page + 1, page + 2, page + 3]);
-  }, [data, isLoading, page]);
 
   const handleNextPage = () => {
     setPage((prevPage) => {
