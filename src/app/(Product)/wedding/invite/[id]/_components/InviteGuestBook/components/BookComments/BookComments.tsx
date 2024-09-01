@@ -9,7 +9,7 @@ import { GuestBook } from '@/types/response';
 import { useQuery } from '@tanstack/react-query';
 
 import { BookCommentsProps } from './BookComments.type';
-import { BookCommentItem } from './components';
+import { BookCommentItem, CommentIndicator } from './components';
 import {
   useAdminDeleteComment,
   useCheckLogin,
@@ -18,8 +18,6 @@ import {
   useDeleteComment,
 } from './hooks';
 import { convertCommentDate } from './util';
-
-import { twJoin } from 'tailwind-merge';
 
 export const BookComments = ({ inviteId }: BookCommentsProps) => {
   const [page, setPage] = useState(0);
@@ -84,33 +82,12 @@ export const BookComments = ({ inviteId }: BookCommentsProps) => {
 
   return (
     <>
-      <div className='join '>
-        <button
-          type='button'
-          className='join-item btn text-size16'
-          onClick={handlePrevPage}
-        >
-          «
-        </button>
-
-        {pages.map((num) => (
-          <button
-            key={num}
-            type='button'
-            className={twJoin('join-item btn text-size16', num === page + 1 && 'btn-active')}
-          >
-            {num}
-          </button>
-        ))}
-
-        <button
-          type='button'
-          className='join-item btn text-size16'
-          onClick={handleNextPage}
-        >
-          »
-        </button>
-      </div>
+      <CommentIndicator
+        onNext={handleNextPage}
+        onPrev={handlePrevPage}
+        page={page}
+        pages={pages}
+      />
 
       <ul className='w-full min-h-[60rem] px-[1.6rem] flex flex-col gap-[2rem]'>
         {isError && (
