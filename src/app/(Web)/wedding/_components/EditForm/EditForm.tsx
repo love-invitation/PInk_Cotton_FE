@@ -2,14 +2,10 @@ import { FormProvider, useForm } from 'react-hook-form';
 
 import { useRouter } from 'next/navigation';
 
+import { InviteForm } from '@/components/client';
 import { DOMAIN_URL, INVITATION_FORM, MUTATE_OPTIONS } from '@/constants';
 import { useMutation } from '@tanstack/react-query';
 
-import {
-  InvitationCover,
-  InvitationCoverPreview,
-  ProduceFormInput,
-} from '../../produce/[id]/_components';
 import { EditFormProps } from './EditForm.type';
 
 const EditForm = ({
@@ -36,7 +32,7 @@ const EditForm = ({
         className='flex w-full py-[4.8rem] px-[10rem] tablet:px-[5rem] mobile:px-[2rem] gap-[2rem] justify-center'
       >
         <div className='w-full max-w-[140rem] flex tablet:gap-[2rem] gap-[8rem] justify-center mobile:flex-col'>
-          <InvitationCover
+          <InviteForm.InvitationCover
             isPending={isPending}
             onClick={(id, invitationInfo) =>
               mutate(
@@ -47,8 +43,8 @@ const EditForm = ({
               )
             }
           />
-          <ProduceFormInput />
-          <InvitationCoverPreview />
+          <InviteForm.ProduceFormInput />
+          <InviteForm.InvitationCoverPreview />
         </div>
       </form>
     </FormProvider>

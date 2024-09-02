@@ -4,7 +4,7 @@ import { QUERY_OPTIONS } from '@/constants';
 import { InvitationResponse } from '@/types/response';
 import { useQuery } from '@tanstack/react-query';
 
-import EditForm from '../../_components/EditForm/EditForm';
+import { EditForm } from '../../_components';
 import Loading from './loading';
 
 const EditPage = ({ params }: { params: { id: string } }) => {

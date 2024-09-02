@@ -13,3 +13,4 @@ export { default as WeddingTemplates } from './WeddingTemplates/WeddingTemplates
 export { default as Calender } from './Calender/Calender';
 export { default as PasswordModal } from './PasswordModal/PasswordModal';
 export { default as LoginModal } from './LoginModal/LoginModal';
+export { default as InviteForm } from './InviteForm/InviteForm';
