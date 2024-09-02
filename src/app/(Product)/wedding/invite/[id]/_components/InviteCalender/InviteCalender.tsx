@@ -1,9 +1,8 @@
 'use client';
 
-import { useRef } from 'react';
-
 import { Calender } from '@/components/client';
 import { Divider } from '@/components/server';
+import { useFramerInView } from '@/hooks';
 
 import { INVITE_ANIMATION } from '../../Invite.constants';
 import { INVITE_STYLE } from '../../Invite.style';
@@ -11,14 +10,12 @@ import { CONVERT_DAY } from './InviteCalender.constants';
 import { InviteCalenderProps } from './InviteCalender.type';
 import { useConvertInviteDate } from './hooks';
 
-import { motion, useInView } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { twJoin } from 'tailwind-merge';
 
 const InviteCalender = ({ calenderData }: InviteCalenderProps) => {
   const date = useConvertInviteDate({ calenderData });
-
-  const ref = useRef(null);
-  const inView = useInView(ref, { once: true });
+  const { ref, inView } = useFramerInView<HTMLSpanElement>({ once: true });
 
   return (
     <article
