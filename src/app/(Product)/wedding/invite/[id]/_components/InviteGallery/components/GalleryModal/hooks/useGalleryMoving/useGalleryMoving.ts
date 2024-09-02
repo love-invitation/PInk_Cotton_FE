@@ -31,6 +31,7 @@ const useGalleryMoving = ({ viewNumber, maxIndex }: UseGalleryMovingProps) => {
   return {
     handleClickPrev,
     handleClickNext,
+    viewIndex,
   };
 };
 

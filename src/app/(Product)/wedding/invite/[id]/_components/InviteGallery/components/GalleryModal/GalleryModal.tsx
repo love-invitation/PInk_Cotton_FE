@@ -14,7 +14,7 @@ import resolveConfig from 'tailwindcss/resolveConfig';
 const GalleryModal = ({ galleryList, viewNumber, isShow, onClose }: GalleryModalProps) => {
   const list = useMemo(() => galleryList.map(({ imageUrl }) => imageUrl), [galleryList]);
 
-  const { handleClickNext, handleClickPrev } = useGalleryMoving({
+  const { handleClickNext, handleClickPrev, viewIndex } = useGalleryMoving({
     viewNumber,
     maxIndex: galleryList.length - 1,
   });
@@ -32,6 +32,10 @@ const GalleryModal = ({ galleryList, viewNumber, isShow, onClose }: GalleryModal
         >
           <CloseIcon fill={theme.colors.gray_500} />
         </button>
+
+        <p className='text-size18 absolute left-[2.4rem] top-[2rem] z-modal text-gray_500 font-bold select-none'>
+          {viewIndex + 1} / {list.length}
+        </p>
 
         <div className='w-full max-w-[60rem] h-[6rem] absolute flex justify-between items-center px-[2rem] z-modal'>
           <button
