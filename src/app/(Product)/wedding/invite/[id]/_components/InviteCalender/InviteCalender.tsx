@@ -31,7 +31,7 @@ const InviteCalender = ({ calenderData }: InviteCalenderProps) => {
             className={INVITE_STYLE.TITLE}
             initial={INVITE_ANIMATION.INIT}
             animate={INVITE_ANIMATION.ANIMATE}
-            transition={{ duration: 1 }}
+            transition={INVITE_ANIMATION.DURATION}
           >
             WEDDING DAY
           </motion.h2>
@@ -40,7 +40,7 @@ const InviteCalender = ({ calenderData }: InviteCalenderProps) => {
             className='w-full relative flex flex-col gap-[1.2rem] items-center text-size20'
             initial={INVITE_ANIMATION.INIT}
             animate={INVITE_ANIMATION.ANIMATE}
-            transition={{ duration: 1, delay: 0.3 }}
+            transition={{ ...INVITE_ANIMATION.DURATION, delay: 0.3 }}
           >
             <p>{`${date.year}.${date.month}.${date.day}`}</p>
             <p className='text-size18'>{`${CONVERT_DAY[date.week]} ${date.period} ${date.hours}시 ${date.minute}분`}</p>
@@ -49,7 +49,7 @@ const InviteCalender = ({ calenderData }: InviteCalenderProps) => {
           <motion.span
             initial={INVITE_ANIMATION.INIT}
             animate={INVITE_ANIMATION.ANIMATE}
-            transition={{ duration: 1, delay: 0.6 }}
+            transition={{ ...INVITE_ANIMATION.DURATION, delay: 0.6 }}
             className='w-[90%] relative'
           >
             <Divider className='h-[0.2rem]' />
@@ -58,7 +58,7 @@ const InviteCalender = ({ calenderData }: InviteCalenderProps) => {
           <motion.div
             initial={INVITE_ANIMATION.INIT}
             animate={INVITE_ANIMATION.ANIMATE}
-            transition={{ duration: 1, delay: 0.9 }}
+            transition={{ ...INVITE_ANIMATION.DURATION, delay: 0.9 }}
             className='w-full relative'
           >
             <Calender
@@ -71,7 +71,7 @@ const InviteCalender = ({ calenderData }: InviteCalenderProps) => {
           <motion.span
             initial={INVITE_ANIMATION.INIT}
             animate={INVITE_ANIMATION.ANIMATE}
-            transition={{ duration: 1, delay: 1.2 }}
+            transition={{ ...INVITE_ANIMATION.DURATION, delay: 1.2 }}
             className='w-[90%] relative'
           >
             <Divider className='h-[0.2rem]' />
