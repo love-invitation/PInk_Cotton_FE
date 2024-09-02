@@ -5,6 +5,7 @@ import { InvitationResponse } from '@/types/response';
 import { HydrationBoundary, dehydrate } from '@tanstack/react-query';
 
 import {
+  InviteAccount,
   InviteArticle,
   InviteCalender,
   InviteContact,
@@ -31,21 +32,24 @@ const InvitePage = async ({ params }: { params: { id: string } }) => {
     return null;
   }
 
+  const { account, cover, article, contact, gallery, place, transport } = data.result;
+
   return (
     <HydrationBoundary state={dehydrate(queryClient)}>
       <section className='w-full h-full flex justify-center bg-gray_900'>
         <div
           className={`max-w-[45rem] w-full h-full overflow-scroll bg-white scrollbar-hide shadow-shadow_500 font-nanum ${NanumMyeongjo.className}`}
         >
-          <InviteCover coverData={data.result.cover} />
-          <InviteArticle article={data.result.article} />
-          <InviteContact contactData={data.result.contact} />
-          <InviteCalender calenderData={data.result.cover.weddingDate} />
-          <InviteGallery galleryData={data.result.gallery} />
+          <InviteCover coverData={cover} />
+          <InviteArticle article={article} />
+          <InviteContact contactData={contact} />
+          <InviteCalender calenderData={cover.weddingDate} />
+          <InviteGallery galleryData={gallery} />
           <InviteLocation
-            placeData={data.result.place}
-            transportData={data.result.transport}
+            placeData={place}
+            transportData={transport}
           />
+          <InviteAccount accountData={account} />
         </div>
       </section>
     </HydrationBoundary>

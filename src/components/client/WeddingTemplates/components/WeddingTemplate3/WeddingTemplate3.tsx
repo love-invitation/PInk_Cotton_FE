@@ -39,6 +39,7 @@ const Template3 = ({ groomName, brideName, imageUrl, details }: WeddingTemplateP
           className='object-cover'
           src={imageUrl}
           fill
+          sizes='100% 100%'
           priority
           alt='template - 1 Image'
         />

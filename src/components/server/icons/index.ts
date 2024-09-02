@@ -26,3 +26,5 @@ export { default as BracketLeftIcon } from './BracketLeftIcon/BracketLeftIcon';
 export { default as NaverMapLogoIcon } from './NaverMapLogoIcon/NaverMapLogoIcon';
 export { default as TMapLogoIcon } from './TMapLogoIcon/TMapLogoIcon';
 export { default as KakaoMapLogoIcon } from './KakaoMapLogoIcon/KakaoMapLogoIcon';
+export { default as AccountFlowerIcon } from './AccountFlowerIcon/AccountFlowerIcon';
+export { default as CopyIcon } from './CopyIcon/CopyIcon';
