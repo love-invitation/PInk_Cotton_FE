@@ -33,7 +33,7 @@ const InviteArticle = ({ article }: InviteArticleProps) => {
         className='w-full relative flex flex-col text-pink_500 gap-[1rem] opacity-0'
         initial={INVITE_ANIMATION.INIT}
         animate={inView ? INVITE_ANIMATION.ANIMATE : {}}
-        transition={{ duration: 1.5 }}
+        transition={INVITE_ANIMATION.DURATION}
       >
         <h2 className={INVITE_STYLE.TITLE}>INVITATION</h2>
         <h1 className='w-full flex justify-center text-size22 break-keep text-center'>
@@ -46,14 +46,14 @@ const InviteArticle = ({ article }: InviteArticleProps) => {
         className='w-full relative text-size18 text-center whitespace-pre-line leading-[3.2rem]'
         initial={INVITE_ANIMATION.INIT}
         animate={inView ? INVITE_ANIMATION.ANIMATE : {}}
-        transition={{ duration: 1.5, delay: 0.6 }}
+        transition={{ ...INVITE_ANIMATION.DURATION, delay: 0.6 }}
       />
 
       <motion.span
         className='w-full relative flex flex-col gap-[1rem]'
         initial={INVITE_ANIMATION.INIT}
         animate={inView ? INVITE_ANIMATION.ANIMATE : {}}
-        transition={{ duration: 1.5, delay: 1.2 }}
+        transition={{ ...INVITE_ANIMATION.DURATION, delay: 1.2 }}
       >
         <ArticleGroomBrideInfo info={groom} />
 
