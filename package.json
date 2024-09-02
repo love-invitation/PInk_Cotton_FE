@@ -33,7 +33,8 @@
     "react-toastify": "^10.0.5",
     "tailwind-scrollbar-hide": "^1.1.7",
     "tailwindcss-animated": "^1.0.1",
-    "uuid": "^10.0.0"
+    "uuid": "^10.0.0",
+    "zustand": "^4.5.5"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^1.2.26",
