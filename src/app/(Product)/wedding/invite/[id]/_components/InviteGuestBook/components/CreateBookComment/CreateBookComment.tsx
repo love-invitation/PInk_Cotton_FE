@@ -8,12 +8,15 @@ import { useToggle } from '@/hooks';
 import { useMutation } from '@tanstack/react-query';
 
 import { INVITE_ANIMATION } from '../../../../Invite.constants';
+import { useBookPageStore } from '../../store';
 import { CreateBookCommentProps } from './CreateBookComment.type';
 
 import { motion } from 'framer-motion';
 
 const CreateBookComment = ({ inviteId, inView }: CreateBookCommentProps) => {
+  const { resetPage } = useBookPageStore();
   const { isToggle, handleSetFalse, handleSetTrue } = useToggle();
+
   const formMethod = useForm({
     defaultValues: {
       name: '',
@@ -34,6 +37,7 @@ const CreateBookComment = ({ inviteId, inView }: CreateBookCommentProps) => {
           formMethod.setValue('password', '');
           formMethod.setValue('message', '');
           handleSetTrue();
+          resetPage();
         },
       },
     );

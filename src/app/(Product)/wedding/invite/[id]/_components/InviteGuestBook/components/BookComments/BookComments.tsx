@@ -1,7 +1,5 @@
 'use client';
 
-import { useState } from 'react';
-
 import { AlertModal, Button, LoginModal, PasswordModal } from '@/components/client';
 import { QUERY_OPTIONS } from '@/constants';
 import { useToggle } from '@/hooks';
@@ -9,6 +7,7 @@ import { GuestBook } from '@/types/response';
 import { useQuery } from '@tanstack/react-query';
 
 import { INVITE_ANIMATION } from '../../../../Invite.constants';
+import { useBookPageStore } from '../../store';
 import { BookCommentsProps } from './BookComments.type';
 import { BookCommentItem, CommentIndicator } from './components';
 import {
@@ -23,7 +22,7 @@ import { convertCommentDate } from './util';
 import { motion } from 'framer-motion';
 
 export const BookComments = ({ inviteId, inView }: BookCommentsProps) => {
-  const [page, setPage] = useState(0);
+  const { page, increasePage, decreasePage } = useBookPageStore();
 
   const { isToggle, handleSetTrue, handleSetFalse } = useToggle();
   const {
@@ -65,22 +64,19 @@ export const BookComments = ({ inviteId, inView }: BookCommentsProps) => {
   });
 
   const handleNextPage = () => {
-    setPage((prevPage) => {
-      if (prevPage + 1 === data?.result.totalPages) {
-        return prevPage;
-      }
-      return prevPage + 1;
-    });
+    if (page + 1 === data?.result.totalPages) {
+      return;
+    }
+
+    increasePage();
   };
 
   const handlePrevPage = () => {
-    setPage((prevPage) => {
-      if (prevPage === 0) {
-        return prevPage;
-      }
+    if (page === 0) {
+      return;
+    }
 
-      return prevPage - 1;
-    });
+    decreasePage();
   };
 
   return (
