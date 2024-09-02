@@ -11,16 +11,15 @@ const ArticleInput = () => {
     clearErrors,
     formState: { errors },
   } = useFormContext<InvitationInput>();
+  const content = watch('article.contents');
 
   useEffect(() => {
-    const content = watch('article.contents');
-
     if (!content) {
       return setError('article.contents', INVITATION_FORM.REGISTER_OPTION.ARTICLE.CONTENTS);
     }
 
     clearErrors('article.contents');
-  }, [clearErrors, setError, watch]);
+  }, [clearErrors, content, setError]);
 
   return (
     <Accordion
