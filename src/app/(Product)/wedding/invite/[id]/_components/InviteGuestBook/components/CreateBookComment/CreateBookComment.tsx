@@ -7,9 +7,12 @@ import { MUTATE_OPTIONS } from '@/constants';
 import { useToggle } from '@/hooks';
 import { useMutation } from '@tanstack/react-query';
 
+import { INVITE_ANIMATION } from '../../../../Invite.constants';
 import { CreateBookCommentProps } from './CreateBookComment.type';
 
-const CreateBookComment = ({ inviteId }: CreateBookCommentProps) => {
+import { motion } from 'framer-motion';
+
+const CreateBookComment = ({ inviteId, inView }: CreateBookCommentProps) => {
   const { isToggle, handleSetFalse, handleSetTrue } = useToggle();
   const formMethod = useForm({
     defaultValues: {
@@ -38,7 +41,12 @@ const CreateBookComment = ({ inviteId }: CreateBookCommentProps) => {
 
   return (
     <FormProvider {...formMethod}>
-      <div className='w-full px-[1.6rem] flex flex-col gap-[1rem]'>
+      <motion.div
+        className='w-full px-[1.6rem] flex flex-col gap-[1rem] relative'
+        initial={INVITE_ANIMATION.INIT}
+        animate={inView ? INVITE_ANIMATION.ANIMATE : {}}
+        transition={{ ...INVITE_ANIMATION.DURATION, delay: 0.6 }}
+      >
         <Input.Input
           name='name'
           placeholder='이름'
@@ -96,7 +104,7 @@ const CreateBookComment = ({ inviteId }: CreateBookCommentProps) => {
         >
           축하메세지 남기기
         </Button>
-      </div>
+      </motion.div>
 
       <AlertModal
         isShow={isToggle}
