@@ -141,8 +141,8 @@ export const QUERY_OPTIONS = {
   GET_GUEST_BOOKS: ({ inviteId, page }: { inviteId: string; page: number }) => ({
     queryKey: QUERY_KEYS.GET_GUEST_BOOKS(inviteId, page),
     queryFn: () => getGuestBooks({ inviteId, page }),
-    gcTime: 1000 * 60 * 10,
-    staleTime: 1000 * 60 * 8,
+    gcTime: 0,
+    staleTime: 0,
   }),
 };
 
