@@ -8,6 +8,7 @@ import { useToggle } from '@/hooks';
 import { GuestBook } from '@/types/response';
 import { useQuery } from '@tanstack/react-query';
 
+import { INVITE_ANIMATION } from '../../../../Invite.constants';
 import { BookCommentsProps } from './BookComments.type';
 import { BookCommentItem, CommentIndicator } from './components';
 import {
@@ -19,7 +20,9 @@ import {
 } from './hooks';
 import { convertCommentDate } from './util';
 
-export const BookComments = ({ inviteId }: BookCommentsProps) => {
+import { motion } from 'framer-motion';
+
+export const BookComments = ({ inviteId, inView }: BookCommentsProps) => {
   const [page, setPage] = useState(0);
 
   const { isToggle, handleSetTrue, handleSetFalse } = useToggle();
@@ -82,14 +85,26 @@ export const BookComments = ({ inviteId }: BookCommentsProps) => {
 
   return (
     <>
-      <CommentIndicator
-        onNext={handleNextPage}
-        onPrev={handlePrevPage}
-        page={page}
-        pages={pages}
-      />
+      <motion.div
+        className='relative'
+        initial={INVITE_ANIMATION.INIT}
+        animate={inView ? INVITE_ANIMATION.ANIMATE : {}}
+        transition={{ ...INVITE_ANIMATION.DURATION, delay: 1.2 }}
+      >
+        <CommentIndicator
+          onNext={handleNextPage}
+          onPrev={handlePrevPage}
+          page={page}
+          pages={pages}
+        />
+      </motion.div>
 
-      <ul className='w-full min-h-[60rem] px-[1.6rem] flex flex-col gap-[2rem]'>
+      <motion.ul
+        className='w-full min-h-[60rem] px-[1.6rem] flex flex-col gap-[2rem] relative'
+        initial={INVITE_ANIMATION.INIT}
+        animate={inView ? INVITE_ANIMATION.ANIMATE : {}}
+        transition={{ ...INVITE_ANIMATION.DURATION, delay: 1.2 }}
+      >
         {isError && (
           <li className='w-full py-[2rem] px-[10rem] flex justify-center items-center gap-[1.6rem] flex-col text-size14'>
             <p>불러오는데 실패하였습니다.</p>
@@ -103,7 +118,7 @@ export const BookComments = ({ inviteId }: BookCommentsProps) => {
           </li>
         )}
 
-        {!isError && (!data || data.result.empty) && (
+        {!isError && (!data || data.result.empty) && !isLoading && (
           <li className='w-full py-[6rem] flex justify-center text-size14'>
             <p>신랑 신부에게 축하메세지를 전해보세요!</p>
           </li>
@@ -119,27 +134,27 @@ export const BookComments = ({ inviteId }: BookCommentsProps) => {
             onDelete={handleChangeId}
           />
         ))}
+      </motion.ul>
 
-        <PasswordModal
-          isShow={isToggle}
-          isLogin={isLogin}
-          onClose={handleSetFalse}
-          onAccept={handleDelete}
-          onLogin={handleOpenLogin}
-          onAdminDelete={handleAdminDelete}
-        />
+      <PasswordModal
+        isShow={isToggle}
+        isLogin={isLogin}
+        onClose={handleSetFalse}
+        onAccept={handleDelete}
+        onLogin={handleOpenLogin}
+        onAdminDelete={handleAdminDelete}
+      />
 
-        <AlertModal
-          isShow={isAlertModal}
-          onClose={handleCloseAlert}
-          message='메세지가 정상적으로 제거되었습니다.'
-        />
+      <AlertModal
+        isShow={isAlertModal}
+        onClose={handleCloseAlert}
+        message='메세지가 정상적으로 제거되었습니다.'
+      />
 
-        <LoginModal
-          isShow={isLoginModal}
-          onClose={handleCloseLogin}
-        />
-      </ul>
+      <LoginModal
+        isShow={isLoginModal}
+        onClose={handleCloseLogin}
+      />
     </>
   );
 };
