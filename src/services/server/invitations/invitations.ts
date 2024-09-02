@@ -26,6 +26,7 @@ export const getMyInvitation = async () => {
 export const getInvitation = async (produceId: number | string) => {
   const response = await fetchApi(`/api/v1/products/invitations/${produceId}`, {
     cache: 'no-store',
+    method: 'GET',
   });
 
   if (!response.ok) {
