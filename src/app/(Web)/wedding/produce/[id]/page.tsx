@@ -28,7 +28,7 @@ const ProducePage = () => {
                 { id: Number(id), invitationInfo },
                 {
                   onSuccess: ({ result }: PostInvitation) =>
-                    route.push(DOMAIN_URL.WEDDING_PREVIEW(result)),
+                    route.push(DOMAIN_URL.WEDDING_PREVIEW(BigInt(result))),
                 },
               )
             }
