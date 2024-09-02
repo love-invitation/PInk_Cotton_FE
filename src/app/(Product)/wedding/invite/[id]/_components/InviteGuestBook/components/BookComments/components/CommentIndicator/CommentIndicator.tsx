@@ -1,3 +1,5 @@
+'use client';
+
 import { BracketLeftIcon, BracketRightIcon } from '@/components/server';
 
 import { CommentIndicatorProps } from './CommentIndicator.type';

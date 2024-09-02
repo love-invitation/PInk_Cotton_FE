@@ -15,8 +15,6 @@ import {
   InviteLocation,
 } from './_components';
 
-// 600246308994180233 ID key 값
-
 const NanumMyeongjo = Nanum_Myeongjo({
   subsets: ['latin'],
   weight: ['400', '700', '800'],
