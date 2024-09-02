@@ -1,3 +1,5 @@
+'use client';
+
 import { INVITE_STYLE } from '../../Invite.style';
 import { InviteContactProps } from './InviteContact.type';
 import { ContactList } from './components';
@@ -6,7 +8,7 @@ import { twJoin } from 'tailwind-merge';
 
 const InviteContact = ({ contactData }: InviteContactProps) => {
   return (
-    <div
+    <article
       className={twJoin(
         INVITE_STYLE.LAYOUT,
         'gap-[4rem] bg-[#f9f9f9] shadow-shadow_500 border-t-[0.1rem] border-b-[0.1rem]',
@@ -14,7 +16,7 @@ const InviteContact = ({ contactData }: InviteContactProps) => {
     >
       <h2 className={INVITE_STYLE.TITLE}>CONTACT</h2>
 
-      <article className='w-full flex justify-around '>
+      <div className='w-full flex justify-around '>
         <ContactList
           type='groom'
           data={contactData.groom}
@@ -23,8 +25,8 @@ const InviteContact = ({ contactData }: InviteContactProps) => {
           type='bride'
           data={contactData.bride}
         />
-      </article>
-    </div>
+      </div>
+    </article>
   );
 };
 
