@@ -8,4 +8,6 @@ export const INVITE_ANIMATION = {
     bottom: '0',
     opacity: 1,
   },
+
+  DURATION: { duration: 1.5 },
 };
