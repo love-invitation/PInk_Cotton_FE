@@ -1,32 +1,22 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
-
 import { useFramerInView } from '@/hooks';
 
 import { INVITE_ANIMATION } from '../../Invite.constants';
 import { INVITE_STYLE } from '../../Invite.style';
 import { InviteArticleProps } from './InviteArticle.type';
 import { ArticleGroomBrideInfo } from './components';
+import useArticleInnerText from './hooks/useArticleInnerText/useArticleInnerText';
 
 import { motion } from 'framer-motion';
 import { twJoin } from 'tailwind-merge';
 
 const InviteArticle = ({ article }: InviteArticleProps) => {
-  const articleRef = useRef<HTMLParagraphElement>(null);
+  const articleRef = useArticleInnerText({ article: article.contents });
   const { ref, inView } = useFramerInView<HTMLSpanElement>({ once: true });
 
-  useEffect(() => {
-    const contentElement = articleRef.current;
-
-    if (!contentElement) {
-      return;
-    }
-
-    contentElement.innerHTML = article.contents;
-  }, [article.contents]);
-
   const { groom, bride } = article;
+
   return (
     <article className={twJoin(INVITE_STYLE.LAYOUT, 'px-[1.6rem] gap-[4.5rem]')}>
       <motion.span
