@@ -1,18 +1,17 @@
 'use client';
 
-import { useRef } from 'react';
+import { useFramerInView } from '@/hooks';
 
 import { INVITE_ANIMATION } from '../../Invite.constants';
 import { INVITE_STYLE } from '../../Invite.style';
 import { InviteContactProps } from './InviteContact.type';
 import { ContactList } from './components';
 
-import { motion, useInView } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { twJoin } from 'tailwind-merge';
 
 const InviteContact = ({ contactData }: InviteContactProps) => {
-  const ref = useRef(null);
-  const inView = useInView(ref, { once: true });
+  const { ref, inView } = useFramerInView<HTMLHeadingElement>({ once: true });
 
   return (
     <article
@@ -26,7 +25,7 @@ const InviteContact = ({ contactData }: InviteContactProps) => {
         initial={INVITE_ANIMATION.INIT}
         animate={inView ? INVITE_ANIMATION.ANIMATE : {}}
         transition={INVITE_ANIMATION.DURATION}
-        className={twJoin(INVITE_STYLE.TITLE, 'relative')}
+        className={INVITE_STYLE.TITLE}
       >
         CONTACT
       </motion.h2>

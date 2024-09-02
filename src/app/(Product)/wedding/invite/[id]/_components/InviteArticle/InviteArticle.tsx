@@ -2,18 +2,19 @@
 
 import { useEffect, useRef } from 'react';
 
+import { useFramerInView } from '@/hooks';
+
 import { INVITE_ANIMATION } from '../../Invite.constants';
 import { INVITE_STYLE } from '../../Invite.style';
 import { InviteArticleProps } from './InviteArticle.type';
 import { ArticleGroomBrideInfo } from './components';
 
-import { motion, useInView } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { twJoin } from 'tailwind-merge';
 
 const InviteArticle = ({ article }: InviteArticleProps) => {
-  const ref = useRef(null);
   const articleRef = useRef<HTMLParagraphElement>(null);
-  const inView = useInView(ref, { once: true });
+  const { ref, inView } = useFramerInView<HTMLSpanElement>({ once: true });
 
   useEffect(() => {
     const contentElement = articleRef.current;
