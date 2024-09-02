@@ -10,7 +10,7 @@ import { motion } from 'framer-motion';
 const GalleryItem = ({ imageUrl, onClick, isInView, index }: GalleryItemProps) => {
   return (
     <motion.li
-      className='relative w-[12rem] h-[12rem] shadow-shadow_500 rounded-radius5'
+      className='relative w-[12rem] h-[12rem] my-[1.6rem] shadow-shadow_500 rounded-radius5'
       initial={INVITE_ANIMATION.INIT}
       animate={isInView ? INVITE_ANIMATION.ANIMATE : {}}
       transition={{ duration: 1, delay: 0.3 * index }}
