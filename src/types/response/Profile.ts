@@ -1,6 +1,6 @@
 export interface MyInvitationItem {
-  imageUrl: string;
-  title: string;
+  productInfoImageUrl: string;
+  productInfoName: string;
   lastModified: string;
   isPaid: boolean;
   tsid: bigint;

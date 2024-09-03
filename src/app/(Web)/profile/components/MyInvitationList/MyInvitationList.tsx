@@ -22,17 +22,19 @@ const MyInvitations = () => {
 
   return (
     <ul className='py-[5%] px-[10%] grid [grid-template-columns:repeat(auto-fill,minmax(35rem,35rem))] auto-rows-auto gap-[10rem] items-center justify-center'>
-      {data?.result.map(({ imageUrl, title, lastModified, isPaid, tsid, thumbnail }) => (
-        <MyInvitationItem
-          key={tsid}
-          imageUrl={imageUrl}
-          title={title}
-          lastModified={lastModified}
-          isPaid={isPaid}
-          tsid={tsid}
-          thumbnail={thumbnail}
-        />
-      ))}
+      {data?.result.map(
+        ({ productInfoImageUrl, productInfoName, lastModified, isPaid, tsid, thumbnail }) => (
+          <MyInvitationItem
+            key={tsid}
+            productInfoImageUrl={productInfoImageUrl}
+            productInfoName={productInfoName}
+            lastModified={lastModified}
+            isPaid={isPaid}
+            tsid={tsid}
+            thumbnail={thumbnail}
+          />
+        ),
+      )}
     </ul>
   );
 };

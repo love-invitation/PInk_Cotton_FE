@@ -15,8 +15,8 @@ const KAKAO_API_KEY = process.env.NEXT_PUBLIC_KAKAO_API_KEY;
 const PINK_COTTON_URL = process.env.NEXT_PUBLIC_PINK_COTTON_URL;
 
 const MyInvitationItem = ({
-  imageUrl,
-  title,
+  productInfoImageUrl,
+  productInfoName,
   lastModified,
   isPaid,
   tsid,
@@ -56,13 +56,13 @@ const MyInvitationItem = ({
       <Image
         width={200}
         height={300}
-        src={imageUrl}
+        src={productInfoImageUrl}
         alt='청첩장 커버'
         className='rounded-[2rem]'
       />
       <div className='flex items-center w-full justify-between gap-[2rem]'>
         <div>
-          <h3 className='text-[2.4rem] font-semibold'>{title}</h3>
+          <h3 className='text-[2.4rem] font-semibold'>{productInfoName}</h3>
           <p className='text-[1.8rem]'>마지막 편집 | {lastModified}</p>
         </div>
         {isPaid ? (
