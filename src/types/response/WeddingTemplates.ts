@@ -35,5 +35,5 @@ export interface WeddingTemplateItem {
 export interface PostInvitation {
   status: number;
   message: string;
-  result: bigint;
+  result: string;
 }
