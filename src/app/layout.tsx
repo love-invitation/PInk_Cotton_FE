@@ -4,13 +4,11 @@ import type { Metadata } from 'next';
 import Script from 'next/script';
 
 import { PretendardFont } from '@/assets/font/index';
+import { COMMON_META_DATA, HOME_META_DATA } from '@/constants/MetaData';
 
 import { GoogleAnalytics, MswProvider, TanstackProvider, ToastProvider } from './_components';
 
-export const metadata: Metadata = {
-  title: 'Pink Cotton',
-  description: '결혼식 청첩장',
-};
+export const metadata: Metadata = { ...COMMON_META_DATA, ...HOME_META_DATA };
 
 declare global {
   interface Window {
