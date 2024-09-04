@@ -5,7 +5,7 @@ import { FormProvider, SubmitHandler, useForm } from 'react-hook-form';
 import { AlertModal, Button, Input } from '@/components/client';
 import { MUTATE_OPTIONS } from '@/constants';
 import { useToggle } from '@/hooks';
-import { useMutation } from '@tanstack/react-query';
+import { useMutation, useQueryClient } from '@tanstack/react-query';
 
 import { INVITE_ANIMATION } from '../../../../Invite.constants';
 import { useBookPageStore } from '../../store';
@@ -16,6 +16,7 @@ import { motion } from 'framer-motion';
 const CreateBookComment = ({ inviteId, inView }: CreateBookCommentProps) => {
   const { resetPage } = useBookPageStore();
   const { isToggle, handleSetFalse, handleSetTrue } = useToggle();
+  const queryClient = useQueryClient();
 
   const formMethod = useForm({
     defaultValues: {
@@ -33,6 +34,7 @@ const CreateBookComment = ({ inviteId, inView }: CreateBookCommentProps) => {
       { inviteId, data },
       {
         onSuccess: () => {
+          queryClient.clear();
           formMethod.setValue('name', '');
           formMethod.setValue('password', '');
           formMethod.setValue('message', '');

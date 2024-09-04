@@ -51,6 +51,7 @@ export const BookComments = ({ inviteId, inView }: BookCommentsProps) => {
     onSuccess: () => {
       refetch();
       handleOpenAlert();
+      handleSetFalse();
     },
   });
 
@@ -60,6 +61,7 @@ export const BookComments = ({ inviteId, inView }: BookCommentsProps) => {
     onSuccess: () => {
       refetch();
       handleOpenAlert();
+      handleSetFalse();
     },
   });
 
