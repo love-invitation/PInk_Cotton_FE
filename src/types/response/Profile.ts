@@ -3,7 +3,7 @@ export interface MyInvitationItem {
   productInfoName: string;
   lastModified: string;
   isPaid: boolean;
-  tsid: bigint;
+  tsid: string;
   thumbnail: {
     title: string;
     contents: string;
