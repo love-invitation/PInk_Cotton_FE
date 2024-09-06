@@ -1,10 +1,10 @@
 import { WeddingTemplateResponse } from '@/types/response';
 
 const WEDDING_META_DATA = ({ result }: WeddingTemplateResponse) => ({
-  title: result.title,
-  description: `특별한 날을 위한 청첩장. ${result.details}`,
+  title: `PinkCotton - ${result.productInfo.templateName}`,
+  description: `특별한 날을 위한 청첩장. ${result.productInfo.templateName}`,
   openGraph: {
-    title: result.title,
+    title: result.productInfo.templateName,
     description: `특별한 날을 위한 청첩장. ${result.details}`,
     url: `https://pinkcotton.shop/wedding/invitation/${result.productInfo.id}`,
     images: [
@@ -17,7 +17,7 @@ const WEDDING_META_DATA = ({ result }: WeddingTemplateResponse) => ({
     ],
   },
   twitter: {
-    title: result.title,
+    title: result.productInfo.templateName,
     description: `특별한 날을 위한 청첩장. ${result.details}`,
     images: [result.productInfo.imageUrl],
   },
