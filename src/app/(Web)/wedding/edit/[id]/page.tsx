@@ -7,7 +7,11 @@ import { useQuery } from '@tanstack/react-query';
 import { EditForm } from '../../_components';
 import Loading from './loading';
 
-const EditPage = ({ params }: { params: { id: string } }) => {
+interface Props {
+  params: { id: string };
+}
+
+const EditPage = ({ params }: Props) => {
   const {
     data,
     isLoading: isLoadingInvitation,
