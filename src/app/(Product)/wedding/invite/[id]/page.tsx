@@ -1,6 +1,9 @@
+import { Metadata } from 'next';
 import { Nanum_Myeongjo } from 'next/font/google';
 
 import { QUERY_KEYS, QUERY_OPTIONS, getQueryClient } from '@/constants';
+import { INVITATION_META_DATA } from '@/constants/MetaData';
+import { getInvitation } from '@/services/server';
 import { InvitationResponse } from '@/types/response';
 import { HydrationBoundary, dehydrate } from '@tanstack/react-query';
 
@@ -15,13 +18,29 @@ import {
   InviteLocation,
 } from './_components';
 
+interface Props {
+  params: {
+    id: string;
+  };
+}
+
+export const generateMetadata = async ({ params }: Props): Promise<Metadata> => {
+  try {
+    const response: InvitationResponse = await getInvitation(params.id);
+
+    return INVITATION_META_DATA(response);
+  } catch (error) {
+    return {};
+  }
+};
+
 const NanumMyeongjo = Nanum_Myeongjo({
   subsets: ['latin'],
   weight: ['400', '700', '800'],
   variable: '--nanum',
 });
 
-const InvitePage = async ({ params }: { params: { id: string } }) => {
+const InvitePage = async ({ params }: Props) => {
   const queryClient = getQueryClient();
   await queryClient.prefetchQuery(QUERY_OPTIONS.INVITATION(params.id));
 
