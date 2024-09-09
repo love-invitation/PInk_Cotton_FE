@@ -1,5 +1,5 @@
 export interface MyInvitationItem {
-  productInfoImageUrl: string;
+  coverImageUrl: string;
   productInfoName: string;
   lastModified: string;
   isPaid: boolean;

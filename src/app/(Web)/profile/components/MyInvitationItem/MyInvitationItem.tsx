@@ -15,7 +15,7 @@ const KAKAO_API_KEY = process.env.NEXT_PUBLIC_KAKAO_API_KEY;
 const PINK_COTTON_URL = process.env.NEXT_PUBLIC_PINK_COTTON_URL;
 
 const MyInvitationItem = ({
-  productInfoImageUrl,
+  coverImageUrl,
   productInfoName,
   lastModified,
   isPaid,
@@ -56,7 +56,7 @@ const MyInvitationItem = ({
       <Image
         width={200}
         height={300}
-        src={productInfoImageUrl}
+        src={coverImageUrl}
         alt='청첩장 커버'
         className='rounded-[2rem]'
       />
