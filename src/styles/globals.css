@@ -45,7 +45,6 @@
     }
     scrollbar-width: none;
     -ms-overflow-style: none;
-    min-width: 40rem;
   }
 
   #fit-wrap {
